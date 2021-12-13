@@ -38,22 +38,6 @@ export class Cotizacion {
     this.#personas = personas;
   }
 
-  get centroVacacional(): number | CentroVacacionalEntidad {
-    return this.#centroVacacional;
-  }
-
-  get categoriaUsuarios(): number | CategoriaUsuariosEntidad {
-    return this.#categoriaUsuarios;
-  }
-
-  set centroVacacional( centroVacacional: number | CentroVacacionalEntidad ) {
-    this.#centroVacacional = centroVacacional;
-  }
-
-  set categoriaUsuarios( categoriaUsuarios: number | CategoriaUsuariosEntidad ) {
-    this.#categoriaUsuarios = categoriaUsuarios;
-  }
-
   get personas(): number {
     return this.#personas;
   }
@@ -64,20 +48,49 @@ export class Cotizacion {
 
   get fechaFin(): string {
     return this.#fechaFin;
+  }  
+
+  /**
+   * Getter y Setter centroVacacional
+   */
+  get centroVacacional(): number | CentroVacacionalEntidad {
+    return this.#centroVacacional;
+  }
+  set centroVacacional( centroVacacional: number | CentroVacacionalEntidad ) {
+    this.#centroVacacional = centroVacacional;
+  }
+
+  /**
+   * Getter y Setter categoriaUsuarios
+   */
+  get categoriaUsuarios(): number | CategoriaUsuariosEntidad {
+    return this.#categoriaUsuarios;
+  }
+
+  set categoriaUsuarios( categoriaUsuarios: number | CategoriaUsuariosEntidad ) {
+    this.#categoriaUsuarios = categoriaUsuarios;
   }
 
   private compararFechas( fechaInicio: string, fechaFin: string ): boolean {
-    if( fechaInicio > fechaFin ) 
-      throw new ErrorFechaInvalida( `{${ moment( fechaFin ).format( constantes.FORMATO_FECHA ) }} debe ser mayor que {${ moment( fechaInicio ).format( constantes.FORMATO_FECHA ) }}` );
+    if( fechaInicio > fechaFin ) {
+      const fechaFinFormateada =  moment( fechaFin ).format( constantes.FORMATO_FECHA );
+      const fechaInicioFormateada = moment( fechaInicio ).format( constantes.FORMATO_FECHA );
+      throw new ErrorFechaInvalida( 
+        `{${ fechaFinFormateada }} debe ser mayor 
+        que {${ fechaInicioFormateada }}` 
+      );
+    }
     return true;
   }
 
   private convertirFecha( fecha: string ): string {
-    if( ! fecha )
+    if( ! fecha ) {
       throw new ErrorValorRequerido( `Debes proporcionar una fecha` );
+    }
 
-    if( ! this.esValidoFormatoFecha( fecha ) )
+    if( ! this.esValidoFormatoFecha( fecha ) ) {
       throw new ErrorFechaInvalida( `{${ fecha }} no es una fecha válida` );
+    }
     return moment( fecha, constantes.FORMATO_FECHA, true ).format();
   }
 
@@ -103,31 +116,36 @@ export class Cotizacion {
           momFechaFin: moment.Moment    = moment( this.#fechaFin, constantes.FORMATO_FECHA ),
           diasTotales: number = momFechaFin.diff( momFechaInicio, 'days' )+1;
 
-    let diasAlta: number        = 0,
-        diasBaja: number        = 0,
-        totalAlta: number       = 0,
-        totalBaja: number       = 0,
-        totalIndividual: number = 0;
+    let diasAlta = 0,
+        diasBaja = 0,
+        totalAlta = 0,
+        totalBaja = 0,
+        totalIndividual = 0;
     
     // Añadiendo el día de inicio
 
     // Obteniendo festivos del calendario activo
-    if( ! ( centroVacacional.calendarios && centroVacacional.calendarios.length > 0 ) )
+    if( ! ( centroVacacional.calendarios && centroVacacional.calendarios.length > 0 ) ) {
       throw new ErrorCotizacionInvalida( `El centro vacacional no tiene calendarios disponibles en el momento` );
+    }
     
     // Obtener calendario activo apartir del almacenado en DB
     const calendarioActivo = centroVacacional.calendarios.find( calendario => calendario.id === centroVacacional.calendarioActivo );
     
-    if( ! calendarioActivo )
+    if( ! calendarioActivo ) {
       throw new ErrorCotizacionInvalida( `El centro vacacional no tiene calendarios disponibles en el momento` );
+    }
 
     if( calendarioActivo.festivos && calendarioActivo.festivos.length > 0 ) {
-      calendarioActivo.festivos.map( festivo => {  
+      
+      calendarioActivo.festivos.forEach( festivo => {  
         const momFestivo  = moment( festivo, constantes.FORMATO_FECHA );
         const rangoFechas = moment( momFestivo ).isBetween( momFechaInicio, momFechaFin, undefined, '[]' );
 
         // Día festivo/alta está entre la fecha.
-        if( rangoFechas ) diasAlta++;
+        if( rangoFechas ) {
+          diasAlta++;
+        }
       });
     }
     

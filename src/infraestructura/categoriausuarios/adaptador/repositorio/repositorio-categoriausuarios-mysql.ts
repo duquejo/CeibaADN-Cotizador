@@ -5,7 +5,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { CategoriaUsuarios } from 'src/dominio/categoriausuarios/modelo/categoriausuarios';
 import { CategoriaUsuariosEntidad } from 'src/infraestructura/categoriausuarios/entidad/categoriausuarios.entidad';
 import { RepositorioCategoriaUsuarios } from 'src/dominio/categoriausuarios/puerto/repositorio/repositorio-categoriausuarios';
-;
 @Injectable()
 export class RepositorioCategoriaUsuariosMysql implements RepositorioCategoriaUsuarios {
     
@@ -35,9 +34,10 @@ export class RepositorioCategoriaUsuariosMysql implements RepositorioCategoriaUs
      * @param {CategoriaUsuariosEntidad[]} categoriaUsuarios
      */
     async validarCategorias( categoriasUsuariosId: CategoriaUsuariosEntidad[]): Promise<[CategoriaUsuariosEntidad[], number]> {
-        return await this.repositorio.findAndCount({
+        const resultado = await this.repositorio.findAndCount({
             where: { id: In( categoriasUsuariosId ) },
         });
+        return resultado;
     }
 
     /**
@@ -45,9 +45,10 @@ export class RepositorioCategoriaUsuariosMysql implements RepositorioCategoriaUs
      * @param {number} categoriasUsuarioId
      */
     async existeCategoriaUsuarios( categoriasUsuarioId: number): Promise<[CategoriaUsuariosEntidad[], number]> {
-        return await this.repositorio.findAndCount({
+        const resultado = await this.repositorio.findAndCount({
             where: { id: categoriasUsuarioId }
         });
+        return resultado;
     }
 
     /**
@@ -55,6 +56,7 @@ export class RepositorioCategoriaUsuariosMysql implements RepositorioCategoriaUs
      * @param {number} categoriasUsuarioId
      */
     async obtenerUnaCategoriaUsuarios( categoriasUsuarioId: number): Promise<CategoriaUsuariosEntidad> {
-        return await this.repositorio.findOne( categoriasUsuarioId );
+        const resultado = await this.repositorio.findOne( categoriasUsuarioId );
+        return resultado;
     }
 }

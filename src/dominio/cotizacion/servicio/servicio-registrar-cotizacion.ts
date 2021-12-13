@@ -21,19 +21,21 @@ export class ServicioCrearCotizacion {
         
         // Validar existencia centro vacacional
         const centroVacacional = await this._repositorioCentroVacacional.obtenerUnCentroVacacional( cotizacion.centroVacacional as number );
-        if( ! centroVacacional )
+        if( ! centroVacacional ) {
             throw new NotFoundException( `El centro vacacional {${ cotizacion.centroVacacional }} no existe` );
+        }
             
         // Validar existencia categoria usuarios
         const categoriaUsuarios = await this._repositorioCategoriaUsuarios.obtenerUnaCategoriaUsuarios( cotizacion.categoriaUsuarios as number );
-        if( ! categoriaUsuarios )
+        if( ! categoriaUsuarios ) {
             throw new NotFoundException( `La categoría de usuarios {${ cotizacion.categoriaUsuarios }} no existe` );
+        }
         
         /**
          * Valores actualizados.
          */
-        cotizacion.centroVacacional = centroVacacional as CentroVacacionalEntidad;
-        cotizacion.categoriaUsuarios = categoriaUsuarios as CategoriaUsuariosEntidad;
+        cotizacion.centroVacacional = centroVacacional;
+        cotizacion.categoriaUsuarios = categoriaUsuarios;
 
         /**
          * Calcular cotización

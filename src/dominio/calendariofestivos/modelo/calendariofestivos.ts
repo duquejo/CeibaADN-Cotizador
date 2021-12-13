@@ -8,9 +8,9 @@ export class CalendarioFestivos {
   readonly #descripcion: string = '';
   readonly #festivos: string[] = [];
 
-  constructor(nombre: string, descripcion: string = '', festivos: string[] = [] ) {
+  constructor(nombre: string, descripcion: string, festivos: string[] = [] ) {
     this.#nombre = nombre;
-    this.#descripcion = descripcion;
+    this.#descripcion = descripcion ? descripcion : '';
     this.#festivos = festivos.length > 0 ? this.convertirFecha( festivos ) : [];
   }
 

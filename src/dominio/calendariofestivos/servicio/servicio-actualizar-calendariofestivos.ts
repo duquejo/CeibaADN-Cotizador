@@ -11,9 +11,9 @@ export class ServicioActualizarCalendarioFestivos {
     async ejecutar( calendarId: number, calendarioFestivos: CalendarioFestivos ): Promise<void> {
 
         // Validar existencia
-        if( ! await this._repositorioCalendarioFestivos.existeCalendario( calendarId ) )
+        if( ! await this._repositorioCalendarioFestivos.existeCalendario( calendarId ) ) {
             throw new NotFoundException( `El calendario {${ calendarId }} no existe` );
-
+        }
         await this._repositorioCalendarioFestivos.actualizar( calendarId, calendarioFestivos );
     }
 }

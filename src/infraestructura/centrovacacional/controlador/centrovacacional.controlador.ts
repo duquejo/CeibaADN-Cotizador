@@ -39,9 +39,9 @@ export class CentroVacacionalControlador {
    @UsePipes( new ValidationPipe({ transform: true }) )
    async actualizarCentroVacacional ( 
      @Param( 'centroVacacionalId', ParseIntPipe ) centroVacacionalId: number, 
-     @Body() ComandoActualizarCentroVacacional: ComandoActualizarCentroVacacional
+     @Body() comandoActualizarCentroVacacional: ComandoActualizarCentroVacacional
      ) {
-     await this._manejadorActualizarCentroVacacional.ejecutar( centroVacacionalId, ComandoActualizarCentroVacacional );
+     await this._manejadorActualizarCentroVacacional.ejecutar( centroVacacionalId, comandoActualizarCentroVacacional );
    }
  
    /**

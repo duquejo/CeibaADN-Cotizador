@@ -1,6 +1,8 @@
 # compiled output
 /dist
 /node_modules
+/src/infraestructura/migraciones/*
+!/src/infraestructura/migraciones/.gitkeep
 
 # Logs
 logs

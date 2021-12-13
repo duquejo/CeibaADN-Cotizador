@@ -1,4 +1,4 @@
-import { NotFoundException, UnprocessableEntityException, BadRequestException } from '@nestjs/common';
+import { NotFoundException, UnprocessableEntityException } from '@nestjs/common';
 
 import { CentroVacacional } from 'src/dominio/centrovacacional/modelo/centrovacacional';
 
@@ -20,25 +20,32 @@ export class ServicioActualizarCentroVacacional {
 
         // Validar existencia
         const [ centroVacacionalObjeto, resultados] = await this._repositorioCentroVacacional.existeCentroVacacional( centroVacacionalId );
-        if( resultados === 0 ) throw new NotFoundException( `El centro vacacional {${ centroVacacionalId }} no existe` );
+        if( resultados === 0 && ! centroVacacionalObjeto ) {
+            throw new NotFoundException( `El centro vacacional {${ centroVacacionalId }} no existe` );
+        }
 
         /**
          * Validar existencia de Calendarios Festivos
          */
          if( centroVacacional.calendarios ) {
 
-            const [ calendariosExistentes, resultadosCalendarios ]: [ CalendarioFestivosEntidad[], number] = await this._repositorioCalendarioFestivos.validarCalendarios( centroVacacional.calendarios );
+            /**
+             * Validar ID y obtener calendarios
+             */            
+            const [ resCalendarios, numCalendarios ]: [ CalendarioFestivosEntidad[], number] = await this._repositorioCalendarioFestivos
+                .validarCalendarios( centroVacacional.calendarios );
 
-            if( resultadosCalendarios === 0 ) throw new UnprocessableEntityException( `Los calendarios a modificar deben existir` );
+            if( numCalendarios === 0 && ! resCalendarios ) {
+                throw new UnprocessableEntityException( `Los calendarios a modificar deben existir` );
+            }
             
             // Asignación calendarios
-            centroVacacional.calendarios = calendariosExistentes;
+            centroVacacional.calendarios = resCalendarios;
 
-            
             // Validar existencia de calendario activo en calendarios
-            if ( ! calendariosExistentes.some( calendario => calendario.id === centroVacacional.calendarioActivo ) )
-                centroVacacional.calendarioActivo = calendariosExistentes[0]?.id ? calendariosExistentes[0].id : null;
-                
+            if ( ! resCalendarios.some( calendario => calendario.id === centroVacacional.calendarioActivo ) ) {
+                centroVacacional.calendarioActivo = resCalendarios[0]?.id ? resCalendarios[0].id : null;
+            }
         } else {
             centroVacacional.calendarioActivo = null;
         }
@@ -48,12 +55,18 @@ export class ServicioActualizarCentroVacacional {
          */
          if( centroVacacional.categoriasUsuarios ) {
 
-            const [ categoriasExistentes, resultadosCategorias ]: [ CategoriaUsuariosEntidad[], number] = await this._repositorioCategoriaUsuarios.validarCategorias( centroVacacional.categoriasUsuarios );
+            /**
+             * Validar ID y obtener categorías
+             */
+            const [ resCategorias, numCategorias ]: [ CategoriaUsuariosEntidad[], number] = await this._repositorioCategoriaUsuarios
+                .validarCategorias( centroVacacional.categoriasUsuarios );
             
-            if( resultadosCategorias === 0 ) throw new UnprocessableEntityException( `Las categorías a vincular deben existir` );
+            if( numCategorias === 0 && ! resCategorias ) {
+                throw new UnprocessableEntityException( `Las categorías a vincular deben existir` );
+            }
             
             // Asignación categorías
-            centroVacacional.categoriasUsuarios = categoriasExistentes;
+            centroVacacional.categoriasUsuarios = resCategorias;
         } else {
             centroVacacional.categoriasUsuarios = null;
         }

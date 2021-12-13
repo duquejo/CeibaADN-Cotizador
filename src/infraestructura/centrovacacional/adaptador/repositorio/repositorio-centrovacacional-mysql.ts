@@ -1,4 +1,4 @@
-import { getConnection, In, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
@@ -61,10 +61,10 @@ export class RepositorioCentroVacacionalMysql implements RepositorioCentroVacaci
      * @param {number} centroVacacionalId
      */
      async existeCentroVacacional( centroVacacionalId: number ): Promise<[CentroVacacionalEntidad[], number]> {
-        // return await this.repositorio.findOne( centroVacacionalId ) ? true : false;
-        return await this.repositorio.findAndCount({
+        const resultado = await this.repositorio.findAndCount({
             where: { id: centroVacacionalId } }
         );
+        return resultado;
     }    
 
     /**
@@ -72,7 +72,8 @@ export class RepositorioCentroVacacionalMysql implements RepositorioCentroVacaci
      * @param {number} centroVacacionalId
      */
      async obtenerUnCentroVacacional( centroVacacionalId: number ): Promise<CentroVacacionalEntidad> {
-        return await this.repositorio.findOne( centroVacacionalId );
+        const resultado = await this.repositorio.findOne( centroVacacionalId );
+        return resultado;        
     }
 
     /**
@@ -81,6 +82,7 @@ export class RepositorioCentroVacacionalMysql implements RepositorioCentroVacaci
      * @returns boolean
      */
      async existeNombreCentroVacacional (nombre: string ): Promise<boolean> {
-        return ( await this.repositorio.count({ nombre }) ) > 0;
+        const resultado = ( await this.repositorio.count({ nombre }) ) > 0;
+        return resultado;        
     }
 }

@@ -10,7 +10,7 @@ export class ComandoActualizarCalendarioFestivos {
 
   @IsOptional()
   @IsString()
-  @ApiProperty({ example: 'Días de reyes y carnavales', default: '' })
+  @ApiProperty({ example: 'Días de reyes y carnavales' })
   public descripcion: string;
 
   @IsOptional()

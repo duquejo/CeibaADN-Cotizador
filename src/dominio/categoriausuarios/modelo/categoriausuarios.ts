@@ -5,9 +5,9 @@ export class CategoriaUsuarios {
   readonly #valorAlta: number;
   readonly #valorBaja: number;
 
-  constructor( nombre: string, descripcion: string = '', valorAlta: number, valorBaja: number ) {
+  constructor( nombre: string, descripcion: string, valorAlta: number, valorBaja: number ) {
     this.#nombre = nombre;
-    this.#descripcion = descripcion;
+    this.#descripcion = descripcion ? descripcion : '';
     this.#valorAlta = valorAlta;
     this.#valorBaja = valorBaja;
   }

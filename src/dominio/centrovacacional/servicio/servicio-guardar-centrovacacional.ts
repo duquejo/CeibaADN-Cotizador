@@ -18,25 +18,32 @@ export class ServicioGuardarCentroVacacional {
 
     async ejecutar( centroVacacional: CentroVacacional ) {
 
-        if ( await this._repositorioCentroVacacional.existeNombreCentroVacacional( centroVacacional.nombre ) )
+        if ( await this._repositorioCentroVacacional.existeNombreCentroVacacional( centroVacacional.nombre ) ) {
             throw new BadRequestException( `El nombre del centro vacacional {${centroVacacional.nombre}} ya existe, ingresa otro.` );
+        }
 
         /**
          * Validar existencia de Calendarios Festivos
          */
         if( centroVacacional.calendarios ) {
 
-            const [ calendariosExistentes, resultadosCalendarios ]: [ CalendarioFestivosEntidad[], number] = await this._repositorioCalendarioFestivos.validarCalendarios( centroVacacional.calendarios );
+            /**
+             * Validar ID y obtener calendarios
+             */             
+            const [ resCalendarios, numCalendarios ]: [ CalendarioFestivosEntidad[], number] = await this._repositorioCalendarioFestivos
+                .validarCalendarios( centroVacacional.calendarios );
 
-            if( resultadosCalendarios === 0 ) throw new UnprocessableEntityException( `Los calendarios a guardar deben existir` );
+            if( numCalendarios === 0 && ! resCalendarios ) {
+                throw new UnprocessableEntityException( `Los calendarios a guardar deben existir` );
+            }
             
             // Asignación calendarios
-            centroVacacional.calendarios = calendariosExistentes;
+            centroVacacional.calendarios = resCalendarios;
 
             // Validar existencia de calendario activo en calendarios
-            if ( ! calendariosExistentes.some( calendario => calendario.id === centroVacacional.calendarioActivo ) )
-                centroVacacional.calendarioActivo = calendariosExistentes[0]?.id ? calendariosExistentes[0].id : null;
-                
+            if ( ! resCalendarios.some( calendario => calendario.id === centroVacacional.calendarioActivo ) ) {
+                centroVacacional.calendarioActivo = resCalendarios[0]?.id ? resCalendarios[0].id : null;
+            }
         } else {
             centroVacacional.calendarioActivo = null;
         }
@@ -46,12 +53,17 @@ export class ServicioGuardarCentroVacacional {
          */
         if( centroVacacional.categoriasUsuarios ) {
 
-            const [ categoriasExistentes, resultadosCategorias ]: [ CategoriaUsuariosEntidad[], number] = await this._repositorioCategoriaUsuarios.validarCategorias( centroVacacional.categoriasUsuarios );
+            /**
+             * Validar ID y obtener categorías
+             */                
+            const [ resCategorias, numCategorias ]: [ CategoriaUsuariosEntidad[], number] = await this._repositorioCategoriaUsuarios.validarCategorias( centroVacacional.categoriasUsuarios );
             
-            if( resultadosCategorias === 0 ) throw new UnprocessableEntityException( `Las categorías a vincular deben existir` );
+            if( numCategorias === 0 && ! resCategorias ) {
+                throw new UnprocessableEntityException( `Las categorías a vincular deben existir` );
+            }
             
             // Asignación categorías
-            centroVacacional.categoriasUsuarios = categoriasExistentes;
+            centroVacacional.categoriasUsuarios = resCategorias;
         } else {
             centroVacacional.categoriasUsuarios = null;
         }

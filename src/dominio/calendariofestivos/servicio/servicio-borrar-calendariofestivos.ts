@@ -10,8 +10,9 @@ export class ServicioBorrarCalendarioFestivos {
     async ejecutar( calendarId: number ): Promise<void> {
         
         // Validar existencia
-       if( ! await this._repositorioCalendarioFestivos.existeCalendario( calendarId ) )
-           throw new NotFoundException( `El calendario {${ calendarId }} no existe` );
+        if( ! await this._repositorioCalendarioFestivos.existeCalendario( calendarId ) ){
+            throw new NotFoundException( `El calendario {${ calendarId }} no existe` );
+        }
         await this._repositorioCalendarioFestivos.borrar( calendarId );
     }
 }

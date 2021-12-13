@@ -13,4 +13,4 @@ export interface ICotizacion {
     // Fechas
     fechaDeInicio : string,
     fechaDeFin : string   
-};
+}
