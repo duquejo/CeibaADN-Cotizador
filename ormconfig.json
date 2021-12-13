@@ -1,0 +1,14 @@
+{
+    "type": "mysql",
+    "username": "root",
+    "password": "cotizadorcv123",
+    "host": "localhost",
+    "port": "3306",
+    "database": "cotizadorcv",
+    "entities": ["dist/**/*.entidad{.ts,.js}"],
+    "migrations": ["dist/infraestructura/migraciones/*.js"],
+    "cli": {
+        "migrationsDir": "src/infraestructura/migraciones"
+    },
+    "synchronize": true
+}
