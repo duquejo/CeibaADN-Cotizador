@@ -1,4 +1,3 @@
-@Library('ceiba-jenkins-library') _
 pipeline{
 	
 		agent {
