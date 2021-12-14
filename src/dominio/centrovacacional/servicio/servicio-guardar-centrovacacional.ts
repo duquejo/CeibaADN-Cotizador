@@ -34,7 +34,7 @@ export class ServicioGuardarCentroVacacional {
                 await this._repositorioCalendarioFestivos.validarCalendarios( centroVacacional.calendarios )
             );
 
-            if( numCalendarios === 0 || ! resCalendarios ) {
+            if( numCalendarios === 0 ) {
                 throw new UnprocessableEntityException( `Los calendarios a guardar deben existir` );
             }
             
@@ -61,7 +61,7 @@ export class ServicioGuardarCentroVacacional {
                 await this._repositorioCategoriaUsuarios.validarCategorias( centroVacacional.categoriasUsuarios )
             );
             
-            if( numCategorias === 0 || ! resCategorias ) {
+            if( numCategorias === 0 ) {
                 throw new UnprocessableEntityException( `Las categorías a vincular deben existir` );
             }
             

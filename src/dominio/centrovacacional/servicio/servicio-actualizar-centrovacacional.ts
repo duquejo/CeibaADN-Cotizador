@@ -19,8 +19,8 @@ export class ServicioActualizarCentroVacacional {
     async ejecutar( centroVacacionalId: number, centroVacacional: CentroVacacional ): Promise<void> {
 
         // Validar existencia
-        const [ centroVacacionalObjeto, resultados] = await this._repositorioCentroVacacional.existeCentroVacacional( centroVacacionalId );
-        if( resultados === 0 || ! centroVacacionalObjeto ) {
+        const [, resultados] = ( await this._repositorioCentroVacacional.existeCentroVacacional( centroVacacionalId ) );
+        if( resultados === 0 ) {
             throw new NotFoundException( `El centro vacacional {${ centroVacacionalId }} no existe` );
         }
 
@@ -36,7 +36,7 @@ export class ServicioActualizarCentroVacacional {
                 await this._repositorioCalendarioFestivos.validarCalendarios( centroVacacional.calendarios )
             );
 
-            if( numCalendarios === 0 || ! resCalendarios ) {
+            if( numCalendarios === 0 ) {
                 throw new UnprocessableEntityException( `Los calendarios a modificar deben existir` );
             }
             
@@ -63,7 +63,7 @@ export class ServicioActualizarCentroVacacional {
                 await this._repositorioCategoriaUsuarios.validarCategorias( centroVacacional.categoriasUsuarios ) 
             );
             
-            if( numCategorias === 0 || ! resCategorias ) {
+            if( numCategorias === 0 ) {
                 throw new UnprocessableEntityException( `Las categorías a vincular deben existir` );
             }
             

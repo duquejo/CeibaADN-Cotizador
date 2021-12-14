@@ -2,9 +2,6 @@ import { IsArray, IsNumber, IsOptional, IsString } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { CalendarioFestivosEntidad } from 'src/infraestructura/calendariofestivos/entidad/calendariofestivos.entidad';
 import { CategoriaUsuariosEntidad } from 'src/infraestructura/categoriausuarios/entidad/categoriausuarios.entidad';
-
-const exampleDescripcion: number[] = [ 0, 2, 4 ];
-const exampleCategoriaUsuarios: number[] = [ 1, 3, 5 ];
 export class ComandoActualizarCentroVacacional {
 
   @IsOptional()
@@ -18,12 +15,12 @@ export class ComandoActualizarCentroVacacional {
   public descripcion: string;
   
   @IsArray()
-  @ApiPropertyOptional({ type: [ CalendarioFestivosEntidad ], example: exampleDescripcion })
+  @ApiPropertyOptional({ type: [ CalendarioFestivosEntidad ], example: [ 1 ] })
   @IsOptional()
   public calendarios: CalendarioFestivosEntidad[];
   
   @IsArray()
-  @ApiPropertyOptional({ type: [ Number ], example: exampleCategoriaUsuarios })
+  @ApiPropertyOptional({ type: [ Number ], example: [ 1 ] })
   @IsOptional()
   public categoriaUsuarios: CategoriaUsuariosEntidad[];
 
