@@ -34,10 +34,9 @@ export class RepositorioCategoriaUsuariosMysql implements RepositorioCategoriaUs
      * @param {CategoriaUsuariosEntidad[]} categoriaUsuarios
      */
     async validarCategorias( categoriasUsuariosId: CategoriaUsuariosEntidad[]): Promise<[CategoriaUsuariosEntidad[], number]> {
-        const resultado = await this.repositorio.findAndCount({
+        return ( await this.repositorio.findAndCount({
             where: { id: In( categoriasUsuariosId ) },
-        });
-        return resultado;
+        }) );
     }
 
     /**
@@ -45,10 +44,9 @@ export class RepositorioCategoriaUsuariosMysql implements RepositorioCategoriaUs
      * @param {number} categoriasUsuarioId
      */
     async existeCategoriaUsuarios( categoriasUsuarioId: number): Promise<[CategoriaUsuariosEntidad[], number]> {
-        const resultado = await this.repositorio.findAndCount({
+        return ( await this.repositorio.findAndCount({
             where: { id: categoriasUsuarioId }
-        });
-        return resultado;
+        }) );
     }
 
     /**
@@ -56,7 +54,6 @@ export class RepositorioCategoriaUsuariosMysql implements RepositorioCategoriaUs
      * @param {number} categoriasUsuarioId
      */
     async obtenerUnaCategoriaUsuarios( categoriasUsuarioId: number): Promise<CategoriaUsuariosEntidad> {
-        const resultado = await this.repositorio.findOne( categoriasUsuarioId );
-        return resultado;
+        return ( await this.repositorio.findOne( categoriasUsuarioId ) );
     }
 }
