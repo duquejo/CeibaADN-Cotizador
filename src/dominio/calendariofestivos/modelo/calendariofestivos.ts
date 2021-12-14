@@ -23,8 +23,9 @@ export class CalendarioFestivos {
       /**
        * Comprobar validez de fecha
        */
-      if( ! this.esValidoFormatoFecha( festivo ) )
+      if( ! this.esValidoFormatoFecha( festivo ) ) {
         throw new ErrorFechaInvalida( `{${ festivo }} no es una fecha válida` );
+      }
       return moment( festivo, constantes.FORMATO_FECHA, true ).format();
     } );
   }

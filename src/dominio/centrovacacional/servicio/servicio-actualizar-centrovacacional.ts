@@ -25,52 +25,52 @@ export class ServicioActualizarCentroVacacional {
         }
 
         /**
-         * Validar existencia de Calendarios Festivos
-         */
-         if( centroVacacional.calendarios ) {
-
-            /**
-             * Validar ID y obtener calendarios
-             */            
-            const [ resCalendarios, numCalendarios ]: [ CalendarioFestivosEntidad[], number] = (
-                await this._repositorioCalendarioFestivos.validarCalendarios( centroVacacional.calendarios )
-            );
-
-            if( numCalendarios === 0 ) {
-                throw new UnprocessableEntityException( `Los calendarios a modificar deben existir` );
-            }
-            
-            // Asignación calendarios
-            centroVacacional.calendarios = resCalendarios;
-
-            // Validar existencia de calendario activo en calendarios
-            if ( ! resCalendarios.some( calendario => calendario.id === centroVacacional.calendarioActivo ) ) {
-                centroVacacional.calendarioActivo = resCalendarios[0]?.id ? resCalendarios[0].id : null;
-            }
-        } else {
-            centroVacacional.calendarioActivo = null;
-        }
-
-        /**
-         * Validar existencia de Categorías de usuarios
+         * Validar existencia de Categorías
          */
          if( centroVacacional.categoriasUsuarios ) {
 
             /**
              * Validar ID y obtener categorías
              */
-            const [ resCategorias, numCategorias ]: [ CategoriaUsuariosEntidad[], number] = ( 
+            const [ resCat, numCat ]: [ CategoriaUsuariosEntidad[], number] = ( 
                 await this._repositorioCategoriaUsuarios.validarCategorias( centroVacacional.categoriasUsuarios ) 
             );
             
-            if( numCategorias === 0 ) {
+            if( numCat === 0 ) {
                 throw new UnprocessableEntityException( `Las categorías a vincular deben existir` );
             }
             
             // Asignación categorías
-            centroVacacional.categoriasUsuarios = resCategorias;
+            centroVacacional.categoriasUsuarios = resCat;
         } else {
             centroVacacional.categoriasUsuarios = null;
+        }        
+
+        /**
+         * Validar existencia de Calendarios
+         */
+         if( centroVacacional.calendarios ) {
+
+            /**
+             * Validar ID y obtener calendarios
+             */            
+            const [ resCal, numCal ]: [ CalendarioFestivosEntidad[], number] = (
+                await this._repositorioCalendarioFestivos.validarCalendarios( centroVacacional.calendarios )
+            );
+
+            if( numCal === 0 ) {
+                throw new UnprocessableEntityException( `Los calendarios a modificar deben existir` );
+            }
+            
+            // Asignación calendarios
+            centroVacacional.calendarios = resCal;
+
+            // Validar existencia de calendario activo en calendarios
+            if ( ! resCal.some( calendario => calendario.id === centroVacacional.calendarioActivo ) ) {
+                centroVacacional.calendarioActivo = resCal[0]?.id ? resCal[0].id : null;
+            }
+        } else {
+            centroVacacional.calendarioActivo = null;
         }
 
         // Guardar
