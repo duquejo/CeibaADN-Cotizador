@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="3.2" jmeter="3.2 r1790748">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -17,13 +17,14 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">30</stringProp>
+        <stringProp name="ThreadGroup.num_threads">5</stringProp>
         <stringProp name="ThreadGroup.ramp_time">15</stringProp>
         <longProp name="ThreadGroup.start_time">1582130051000</longProp>
         <longProp name="ThreadGroup.end_time">1582130051000</longProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">60</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
@@ -44,7 +45,7 @@
                 <stringProp name="Argument.value">{&#xd;
 	&quot;nombre&quot;:&quot;${__RandomString(6,1236547890,)}&quot;,&#xd;
 	&quot;clave&quot;:&quot;1478&quot;,&#xd;
-	&quot;fechaCreacion&quot;: &quot;2020-02-19 10:50:26&quot;&#xd;
+	&quot;fechaCreacion&quot;: &quot;2021-12-14T14:02:58.312Z&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -53,8 +54,8 @@
           <stringProp name="HTTPSampler.domain">localhost</stringProp>
           <stringProp name="HTTPSampler.port">3000</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/usuarios</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/usuarios</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -211,9 +212,5 @@
       </ResultCollector>
       <hashTree/>
     </hashTree>
-    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
-      <boolProp name="WorkBench.save">true</boolProp>
-    </WorkBench>
-    <hashTree/>
   </hashTree>
 </jmeterTestPlan>
