@@ -9,8 +9,10 @@ export class ServicioBorrarCentroVacacional {
     async ejecutar( centroVacacionalId: number ): Promise<void> {
         
         // Validar existencia
-        const [ centroVacacionalObj, resultados ] = await this._repositorioCentroVacacional.existeCentroVacacional( centroVacacionalId );
-        if( resultados === 0 && ! centroVacacionalObj ) {
+        const [ centroVacacionalObj, resultados ] = (
+            await this._repositorioCentroVacacional.existeCentroVacacional( centroVacacionalId )
+        );
+        if( resultados === 0 || ! centroVacacionalObj ) {
             throw new NotFoundException( `El centro vacacional {${ centroVacacionalId }} no existe` );
         }
         await this._repositorioCentroVacacional.borrar( centroVacacionalId );

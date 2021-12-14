@@ -20,7 +20,7 @@ export class ServicioActualizarCentroVacacional {
 
         // Validar existencia
         const [ centroVacacionalObjeto, resultados] = await this._repositorioCentroVacacional.existeCentroVacacional( centroVacacionalId );
-        if( resultados === 0 && ! centroVacacionalObjeto ) {
+        if( resultados === 0 || ! centroVacacionalObjeto ) {
             throw new NotFoundException( `El centro vacacional {${ centroVacacionalId }} no existe` );
         }
 
@@ -32,10 +32,11 @@ export class ServicioActualizarCentroVacacional {
             /**
              * Validar ID y obtener calendarios
              */            
-            const [ resCalendarios, numCalendarios ]: [ CalendarioFestivosEntidad[], number] = await this._repositorioCalendarioFestivos
-                .validarCalendarios( centroVacacional.calendarios );
+            const [ resCalendarios, numCalendarios ]: [ CalendarioFestivosEntidad[], number] = (
+                await this._repositorioCalendarioFestivos.validarCalendarios( centroVacacional.calendarios )
+            );
 
-            if( numCalendarios === 0 && ! resCalendarios ) {
+            if( numCalendarios === 0 || ! resCalendarios ) {
                 throw new UnprocessableEntityException( `Los calendarios a modificar deben existir` );
             }
             
@@ -58,10 +59,11 @@ export class ServicioActualizarCentroVacacional {
             /**
              * Validar ID y obtener categorías
              */
-            const [ resCategorias, numCategorias ]: [ CategoriaUsuariosEntidad[], number] = await this._repositorioCategoriaUsuarios
-                .validarCategorias( centroVacacional.categoriasUsuarios );
+            const [ resCategorias, numCategorias ]: [ CategoriaUsuariosEntidad[], number] = ( 
+                await this._repositorioCategoriaUsuarios.validarCategorias( centroVacacional.categoriasUsuarios ) 
+            );
             
-            if( numCategorias === 0 && ! resCategorias ) {
+            if( numCategorias === 0 || ! resCategorias ) {
                 throw new UnprocessableEntityException( `Las categorías a vincular deben existir` );
             }
             

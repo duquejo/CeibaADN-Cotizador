@@ -76,8 +76,7 @@ export class Cotizacion {
       const fechaFinFormateada =  moment( fechaFin ).format( constantes.FORMATO_FECHA );
       const fechaInicioFormateada = moment( fechaInicio ).format( constantes.FORMATO_FECHA );
       throw new ErrorFechaInvalida( 
-        `{${ fechaFinFormateada }} debe ser mayor 
-        que {${ fechaInicioFormateada }}` 
+        `{${ fechaFinFormateada }} debe ser mayor que {${ fechaInicioFormateada }}` 
       );
     }
     return true;

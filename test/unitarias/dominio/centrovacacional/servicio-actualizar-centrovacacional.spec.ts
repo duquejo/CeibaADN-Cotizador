@@ -108,7 +108,7 @@ describe('ServicioActualizarCentroVacacional', () => {
     // Calendarios válidos
     repositorioCalendarioFestivosStub.validarCalendarios.returns( Promise.resolve([[],1]) );
     
-    // Calendarios válidos
+    // Categorías válidos
     repositorioCategoriaUsuariosStub.validarCategorias.returns( Promise.resolve([[],0]) );
 
     /**
@@ -133,7 +133,7 @@ describe('ServicioActualizarCentroVacacional', () => {
     repositorioCalendarioFestivosStub.validarCalendarios.returns( Promise.resolve([[],1]) );
     
     // Categorías válidas ( Dos válidas por ej )
-    repositorioCategoriaUsuariosStub.validarCategorias.returns( Promise.resolve([[],2]) );
+    repositorioCategoriaUsuariosStub.validarCategorias.returns( Promise.resolve([[],1]) );
 
     /**
      * Act
