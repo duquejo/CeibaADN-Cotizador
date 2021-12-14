@@ -74,27 +74,6 @@ describe('ServicioActualizarCentroVacacional', () => {
       .toThrowError( NotFoundException );
   });
 
-  it( 'Un centro vacacional no debería actualizarse en el repositorio si todos los calendarios que serán asignados no existen', async () => {
-
-    // Arrange
-    const centroVacacionalValues = Object.values( centroVacacionalBaseData );
-    const centroVacacional = new _CentroVacacional( ...centroVacacionalValues );
-
-    // Existe el Centro Vacacional ( Dos válidos )
-    repositorioCentroVacacionalStub.existeCentroVacacional.returns( Promise.resolve([[], 2 ]));
-    
-    // Calendarios válidos
-    repositorioCalendarioFestivosStub.validarCalendarios.returns( Promise.resolve([[], 0]));
-
-    /**
-     * Act & Assert
-     * Send any number & class {CentroVacacional} Object
-     */
-    await expect( servicioActualizarCentroVacacional.ejecutar( centroVacacionalTestId, centroVacacional ) )
-      .rejects
-      .toThrowError( UnprocessableEntityException );
-  });
-
 
   it( 'Un centro vacacional no debería actualizarse en el repositorio si todas las categorías de usuarios que serán asignadas no existen', async () => {
 
@@ -103,10 +82,7 @@ describe('ServicioActualizarCentroVacacional', () => {
     const centroVacacional = new _CentroVacacional( ...centroVacacionalValues );
 
     // Existe el Centro Vacacional ( Dos válidos )
-    repositorioCentroVacacionalStub.existeCentroVacacional.returns( Promise.resolve([[],2]) );
-    
-    // Calendarios válidos
-    repositorioCalendarioFestivosStub.validarCalendarios.returns( Promise.resolve([[],1]) );
+    repositorioCentroVacacionalStub.existeCentroVacacional.returns( Promise.resolve([[],1]) );
     
     // Categorías válidos
     repositorioCategoriaUsuariosStub.validarCategorias.returns( Promise.resolve([[],0]) );
@@ -120,20 +96,45 @@ describe('ServicioActualizarCentroVacacional', () => {
       .toThrowError( UnprocessableEntityException );     
   });  
 
+
+  it( 'Un centro vacacional no debería actualizarse en el repositorio si todos los calendarios que serán asignados no existen', async () => {
+
+    // Arrange
+    const centroVacacionalValues = Object.values( centroVacacionalBaseData );
+    const centroVacacional = new _CentroVacacional( ...centroVacacionalValues );
+
+    // Nombre válido
+    repositorioCentroVacacionalStub.existeCentroVacacional.returns( Promise.resolve([[],1]));
+
+    // Categorías válidos
+    repositorioCategoriaUsuariosStub.validarCategorias.returns( Promise.resolve([[],2]) );
+
+    // Categorías válidos
+    repositorioCalendarioFestivosStub.validarCalendarios.returns( Promise.resolve([[],0]) );
+
+    /**
+     * Act & Assert
+     * Send any number & class {CentroVacacional} Object
+     */
+    await expect( servicioActualizarCentroVacacional.ejecutar( centroVacacionalTestId, centroVacacional ) )
+      .rejects
+      .toThrowError( UnprocessableEntityException );
+  });  
+
   it( 'Un centro vacacional debería actualizarse en el repositorio si están dadas todas las condiciones', async () => {
 
     // Arrange
     const centroVacacionalValues = Object.values( centroVacacionalBaseData );
     const centroVacacional = new _CentroVacacional( ...centroVacacionalValues );
 
-    // Existe el Centro Vacacional ( Dos válidos por ej )
-    repositorioCentroVacacionalStub.existeCentroVacacional.returns( Promise.resolve([[],2]) );
-    
-    // Calendarios válidos ( Uno válido por ej )
+    // Nombre válido
+    repositorioCentroVacacionalStub.existeCentroVacacional.returns( Promise.resolve([[],1]));
+
+    // Categorías válidos
+    repositorioCategoriaUsuariosStub.validarCategorias.returns( Promise.resolve([[],2]) );
+
+    // Calendarios válidos
     repositorioCalendarioFestivosStub.validarCalendarios.returns( Promise.resolve([[],1]) );
-    
-    // Categorías válidas ( Dos válidas por ej )
-    repositorioCategoriaUsuariosStub.validarCategorias.returns( Promise.resolve([[],1]) );
 
     /**
      * Act
