@@ -61,9 +61,9 @@ export class RepositorioCentroVacacionalMysql implements RepositorioCentroVacaci
      * @param {number} centroVacacionalId
      */
      async existeCentroVacacional( centroVacacionalId: number ): Promise<[CentroVacacionalEntidad[], number]> {
-        return ( await this.repositorio.findAndCount({
+        return this.repositorio.findAndCount({
             where: { id: centroVacacionalId } }
-        ) );
+        );
     }    
 
     /**
@@ -71,7 +71,7 @@ export class RepositorioCentroVacacionalMysql implements RepositorioCentroVacaci
      * @param {number} centroVacacionalId
      */
      async obtenerUnCentroVacacional( centroVacacionalId: number ): Promise<CentroVacacionalEntidad> {
-        return ( await this.repositorio.findOne( centroVacacionalId ) );        
+        return this.repositorio.findOne( centroVacacionalId );        
     }
 
     /**

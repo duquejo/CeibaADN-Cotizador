@@ -65,8 +65,8 @@ export class RepositorioCalendarioFestivosMysql implements RepositorioCalendario
      * @param {CalendarioFestivosEntidad[]} calendariosIds
      */
     async validarCalendarios( calendariosIds: CalendarioFestivosEntidad[] ): Promise<[ CalendarioFestivosEntidad[], number]> {
-        return ( await this.repositorio.findAndCount({
+        return this.repositorio.findAndCount({
             where: { id: In( calendariosIds ) },
-        }) );
+        });
     }
 }
