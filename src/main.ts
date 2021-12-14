@@ -6,6 +6,7 @@ import { FiltroExcepcionesDeNegocio } from './infraestructura/excepciones/filtro
 import { AppLogger } from 'src/infraestructura/configuracion/ceiba-logger.service';
 import { ConfigService } from '@nestjs/config';
 import { EnvVariables } from 'src/infraestructura/configuracion/environment/env-variables.enum';
+import * as helmet from 'helmet';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -25,6 +26,8 @@ async function bootstrap() {
 
   const swaggerDocument = SwaggerModule.createDocument(app, swaggerOptions);
   SwaggerModule.setup('/api/doc', app, swaggerDocument);
+
+  app.use(helmet());  
   
   await app.listen(configService.get(EnvVariables.APPLICATION_PORT));
 }
