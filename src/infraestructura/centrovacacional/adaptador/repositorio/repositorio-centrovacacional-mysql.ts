@@ -26,7 +26,7 @@ export class RepositorioCentroVacacionalMysql implements RepositorioCentroVacaci
         entidad.calendarios       = centroVacacional.calendarios;
         entidad.calendarioActivo  = centroVacacional.calendarioActivo;
         entidad.categoriaUsuarios = centroVacacional.categoriasUsuarios;
-        
+
         await this.repositorio.save(entidad);
     }
 

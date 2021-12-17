@@ -27,7 +27,7 @@ export class ServicioActualizarCentroVacacional {
         /**
          * Validar existencia de Categorías
          */
-         if( centroVacacional.categoriasUsuarios ) {
+         if( centroVacacional.categoriasUsuarios && centroVacacional.categoriasUsuarios ) {
 
             /**
              * Validar ID y obtener categorías
@@ -49,7 +49,7 @@ export class ServicioActualizarCentroVacacional {
         /**
          * Validar existencia de Calendarios
          */
-         if( centroVacacional.calendarios ) {
+         if( centroVacacional.calendarios && centroVacacional.calendarios.length ) {
 
             /**
              * Validar ID y obtener calendarios

@@ -9,7 +9,7 @@ import { EnvVariables } from 'src/infraestructura/configuracion/environment/env-
 import * as helmet from 'helmet';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
   const logger = await app.resolve(AppLogger);
   const configService = app.get(ConfigService);
 
@@ -26,8 +26,8 @@ async function bootstrap() {
 
   const swaggerDocument = SwaggerModule.createDocument(app, swaggerOptions);
   SwaggerModule.setup('/api/doc', app, swaggerDocument);
-
-  app.use(helmet());  
+  
+  app.use(helmet());
   
   await app.listen(configService.get(EnvVariables.APPLICATION_PORT));
 }

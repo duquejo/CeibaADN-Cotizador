@@ -37,7 +37,7 @@ export class CentroVacacional {
    */
   get calendarioActivo(): number  {
     if( this.#calendarioActivo === null ) {
-      if( this.#calendarios ) {
+      if( this.#calendarios && this.#calendarios.length ) {
         return Number( this.#calendarios[0] );
       } else {
         return null;
