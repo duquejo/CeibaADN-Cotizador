@@ -90,7 +90,7 @@ export class Cotizacion {
     if( ! this.esValidoFormatoFecha( fecha ) ) {
       throw new ErrorFechaInvalida( `{${ fecha }} no es una fecha válida` );
     }
-    return moment( fecha, constantes.FORMATO_FECHA, true ).format();
+    return moment( fecha, constantes.FORMATO_FECHA, true ).startOf('day').format();
   }
 
   private esValidoFormatoFecha( fecha: string ): boolean {
@@ -133,7 +133,7 @@ export class Cotizacion {
       throw new ErrorCotizacionInvalida( `El centro vacacional no tiene calendarios disponibles en el momento` );
     }
 
-    if( calendarioActivo.festivos && calendarioActivo.festivos.length > 0 ) {
+    if( calendarioActivo.festivos?.length > 0 ) {
       
       calendarioActivo.festivos.forEach( festivo => {  
         const momFestivo  = moment( festivo, constantes.FORMATO_FECHA );

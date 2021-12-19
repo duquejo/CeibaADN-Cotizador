@@ -50,6 +50,11 @@ describe('Cotizaciones', () => {
     // Assert
     expect( cotizacion.centroVacacional ).toBe( cotizacionDataTest.centroVacacional );
     expect( cotizacion.categoriaUsuarios ).toBe( cotizacionDataTest.categoriaUsuarios );
+    expect( cotizacion.personas ).toBe( cotizacionDataTest.personas );
+
+    expect( cotizacion.fechaInicio ).toBe( moment( cotizacionDataTest.fechaInicio ).format() );
+    expect( cotizacion.fechaFin ).toBe( moment( cotizacionDataTest.fechaFin ).format() );
+
   });
 
   it('La base de la cotización debería fallar si no se proveen las fechas', () => {
