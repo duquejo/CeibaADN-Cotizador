@@ -80,6 +80,6 @@ export class RepositorioCentroVacacionalMysql implements RepositorioCentroVacaci
      * @returns boolean
      */
      async existeNombreCentroVacacional (nombre: string ): Promise<boolean> {
-        return ( ( await this.repositorio.count({ nombre }) ) > 0 );        
+        return ( ( await this.repositorio.count({ nombre }) ) > 0 );
     }
 }

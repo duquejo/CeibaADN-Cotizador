@@ -52,7 +52,7 @@ export class ServicioGuardarCentroVacacional {
         /**
          * Validar existencia de Categorías de usuarios
          */
-        if( centroVacacional.categoriasUsuarios && centroVacacional.categoriasUsuarios ) {
+        if( centroVacacional.categoriasUsuarios && centroVacacional.categoriasUsuarios.length ) {
 
             /**
              * Validar ID y obtener categorías

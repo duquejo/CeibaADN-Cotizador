@@ -120,8 +120,6 @@ export class Cotizacion {
         totalAlta = 0,
         totalBaja = 0,
         totalIndividual = 0;
-    
-    // Añadiendo el día de inicio
 
     // Obteniendo festivos del calendario activo
     if( ! ( centroVacacional.calendarios && centroVacacional.calendarios.length > 0 ) ) {

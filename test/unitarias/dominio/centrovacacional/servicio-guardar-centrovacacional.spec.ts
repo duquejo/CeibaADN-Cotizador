@@ -8,6 +8,7 @@ import { ServicioGuardarCentroVacacional } from '../../../../src/dominio/centrov
 import { RepositorioCentroVacacional } from '../../../../src/dominio/centrovacacional/puerto/repositorio/repositorio-centrovacacional';
 import { RepositorioCalendarioFestivos } from '../../../../src/dominio/calendariofestivos/puerto/repositorio/repositorio-calendariofestivos';
 import { RepositorioCategoriaUsuarios } from '../../../../src/dominio/categoriausuarios/puerto/repositorio/repositorio-categoriausuarios';
+import { CategoriaUsuariosEntidad } from '../../../../src/infraestructura/categoriausuarios/entidad/categoriausuarios.entidad';
 
 
 describe('ServicioGuardarCentroVacacional', () => {
@@ -27,6 +28,7 @@ describe('ServicioGuardarCentroVacacional', () => {
     nombre: 'Parque Tayrona',
     descripcion: 'Aventúrate con tu familia',
     calendarios: [ 3, 5, 7 ],
+    categoriaUsuarios: [ 1, 2, 3],
     calendarioActivo: 3
   };
 

@@ -35,6 +35,10 @@ export class CotizacionDto {
   public fechaFin: string;  
 
   @Expose()
+  @ApiProperty({ example: 3 })  
+  public personas: number;
+
+  @Expose()
   @ApiProperty({ example: 150000 })  
   public total: number;  
 }
