@@ -25,7 +25,7 @@ export class ServicioGuardarCentroVacacional {
         /**
          * Validar existencia de Calendarios Festivos
          */
-        if( centroVacacional.calendarios && centroVacacional.calendarios.length ) {
+        if( centroVacacional.calendarios?.length ) {
 
             /**
              * Validar ID y obtener calendarios
@@ -36,7 +36,7 @@ export class ServicioGuardarCentroVacacional {
 
             if( numCalendarios === 0 ) {
                 throw new UnprocessableEntityException( `Los calendarios a guardar deben existir` );
-            }        
+            }
             
             // Asignación calendarios
             centroVacacional.calendarios = resCalendarios;
@@ -52,7 +52,7 @@ export class ServicioGuardarCentroVacacional {
         /**
          * Validar existencia de Categorías de usuarios
          */
-        if( centroVacacional.categoriasUsuarios && centroVacacional.categoriasUsuarios.length ) {
+        if( centroVacacional.categoriasUsuarios?.length ) {
 
             /**
              * Validar ID y obtener categorías
