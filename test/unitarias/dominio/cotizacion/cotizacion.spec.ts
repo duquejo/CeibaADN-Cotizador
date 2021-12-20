@@ -174,6 +174,7 @@ describe('Cotizaciones', () => {
       categoriaUsuariosDataMock
     );
     
+    // Assert
     expect( typeof totalCotizacion.diasBaja ).toBe( 'number' );
     expect( typeof totalCotizacion.diasAlta ).toBe( 'number' );
     expect( typeof totalCotizacion.diasTotales ).toBe( 'number' );
@@ -183,6 +184,63 @@ describe('Cotizaciones', () => {
     expect( typeof totalCotizacion.totalGrupo ).toBe( 'number' );
     expect( typeof totalCotizacion.fechaDeInicio ).toBe( 'string' );
     expect( typeof totalCotizacion.fechaDeFin ).toBe( 'string' );
+    
+    /**
+     * Valor alta 50000
+     * Valor baja 25000
+     * 
+     * Fecha Inicial 2021-12-10
+     * Fecha Final 2021-12-18
+     * Festivo 2021-12-18
+     * 
+     * Personas 3
+     * 
+     * 9 días en total
+     * 1 día alta
+     * 8 días baja
+     * 
+     * 8 x 25000 = 200000 ( Total baja )
+     * 1 x 50000 = 500000 ( Total alta )
+     * 
+     * 250000 * 3 = 750000 (Total grupo)
+     */
+    expect( totalCotizacion.totalGrupo ).toBe( 750000 );
+  });
+
+  it('Cotización debería calcular los días de alta y baja de manera efectiva', () => {
+
+    // Arrange 
+    let diasAlta = 0;
+
+    let fechaInicio = cotizacionDataTest.fechaInicio; 
+    let fechaFin = cotizacionDataTest.fechaFin;
+
+    let momFechaInicio: moment.Moment = moment( fechaInicio, constantes.FORMATO_FECHA ),
+        momFechaFin:    moment.Moment = moment( fechaFin, constantes.FORMATO_FECHA );
+
+    const cotizacionValues = Object.values( cotizacionDataTest );
+
+    // días alta check
+    centroVacacionalDataMock.calendarios[0].festivos.forEach( festivo => {
+      const momFestivo  = moment( festivo, constantes.FORMATO_FECHA );
+      const rangoFechas = moment( momFestivo ).isBetween( momFechaInicio, momFechaFin, undefined, '[]' );
+      if( rangoFechas ) {
+        diasAlta++;
+      }
+    });
+  
+
+    // Act
+    const cotizacion = new _Cotizacion( ...cotizacionValues );
+
+    const totalCotizacion = cotizacion.calcularCotizacion(
+      centroVacacionalDataMock,
+      categoriaUsuariosDataMock
+    );
+    
+    // Assert
+    expect( diasAlta ).toBe( totalCotizacion.diasAlta );
+    expect( ( totalCotizacion.diasTotales - diasAlta ) ).toBe(totalCotizacion.diasBaja);
 
     /**
      * Valor alta 50000

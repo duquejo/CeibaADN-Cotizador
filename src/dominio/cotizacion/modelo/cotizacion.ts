@@ -133,9 +133,10 @@ export class Cotizacion {
       throw new ErrorCotizacionInvalida( `El centro vacacional no tiene calendarios disponibles en el momento` );
     }
 
-    if( calendarioActivo.festivos?.length > 0 ) {
+    if( calendarioActivo.festivos?.length ) {
       
-      calendarioActivo.festivos.forEach( festivo => {  
+      calendarioActivo.festivos.forEach( festivo => {
+        
         const momFestivo  = moment( festivo, constantes.FORMATO_FECHA );
         const rangoFechas = moment( momFestivo ).isBetween( momFechaInicio, momFechaFin, undefined, '[]' );
 

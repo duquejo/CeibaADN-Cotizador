@@ -4,7 +4,6 @@ import { Module } from '@nestjs/common';
 /**
  * Módulos de la aplicación
  */
-import { UsuarioModule } from 'src/infraestructura/usuario/usuario.module';
 import { CentroVacacionalModule } from 'src/infraestructura/centrovacacional/centrovacacional.module';
 import { CalendarioFestivosModule } from 'src/infraestructura/calendariofestivos/calendariofestivos.module';
 import { CotizacionModule } from 'src/infraestructura/cotizacion/cotizacion.module';
@@ -32,7 +31,6 @@ import { databaseConfigFactory } from 'src/infraestructura/configuracion/databas
           .required(),
       }),
     }),
-    UsuarioModule,
     CentroVacacionalModule,
     CalendarioFestivosModule,
     CotizacionModule,
