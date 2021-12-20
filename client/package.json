@@ -2,6 +2,7 @@
   "name": "react-redux",
   "version": "0.1.0",
   "private": true,
+  "homepage": "client",
   "dependencies": {
     "@types/react-helmet": "^6.0.0",
     "@types/react-modal": "^3.13.1",
@@ -73,7 +74,8 @@
     "eslint-plugin-react": "^7.18.3",
     "node-sass": "^4.14.1",
     "sinon": "^9.0.0",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "babel-jest": "^24.9.0"
   },
   "jest": {
     "collectCoverageFrom": [
