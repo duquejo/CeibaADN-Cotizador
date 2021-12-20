@@ -15,16 +15,18 @@ export class CotizacionEntidad {
 
   @ManyToOne( () => CentroVacacionalEntidad, { 
     cascade: true,
-    nullable: false,
-    eager: true
+    eager: true,
+    onDelete: "SET NULL",
+    onUpdate: "SET NULL"
   })
   @JoinColumn({ name: 'centroVacacionalId' })
   centroVacacional: CentroVacacionalEntidad;
 
   @ManyToOne( () => CategoriaUsuariosEntidad, { 
     cascade: true,
-    nullable: false,
-    eager: true
+    eager: true,
+    onDelete: "SET NULL",
+    onUpdate: "SET NULL"
   })
   @JoinColumn({ name: 'categoriaUsuariosId' })
   categoriaUsuarios: CategoriaUsuariosEntidad;
