@@ -24,7 +24,7 @@ pipeline{
 			}
 		
 		
-			stage('compilar servidor '){
+			stage('Compilar servidor '){
                 steps {
 					dir('server') {
 						sh 'npm i'
@@ -32,7 +32,7 @@ pipeline{
 					}
 				}
             }
-            stage('test servidor '){
+            stage('Test servidor '){
                 steps {
 					dir('server') {
                     	sh 'npm run test:cov'
@@ -40,17 +40,19 @@ pipeline{
 				}
             }
 		
-			stage('compilar cliente '){
+			stage('Compilar cliente '){
                 steps {
-					sh 'cd client'
-                    sh 'npm i'
-                    sh 'npm run build'					
+					dir('client') {
+                    	sh 'npm i'
+                    	sh 'npm run build'					
+					}
 				}
             }
-            stage('test cliente '){
+            stage('Test cliente '){
                 steps {
-					sh 'cd client'
-                    sh 'npm run test:coverage'					
+					dir('client') {
+						sh 'npm run test:coverage'					
+					}
 				}
             }
 
