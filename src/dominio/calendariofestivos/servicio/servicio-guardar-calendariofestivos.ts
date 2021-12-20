@@ -8,6 +8,6 @@ export class ServicioGuardarCalendarioFestivos {
     ) {}
 
     async ejecutar( calendarioFestivos: CalendarioFestivos ) {
-        await this._repositorioCalendarioFestivos.guardar( calendarioFestivos );
+        return this._repositorioCalendarioFestivos.guardar( calendarioFestivos );
     }
 }

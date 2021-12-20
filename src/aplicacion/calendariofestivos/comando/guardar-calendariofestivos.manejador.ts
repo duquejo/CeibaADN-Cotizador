@@ -9,7 +9,7 @@ export class ManejadorGuardarCalendarioFestivos {
   ){}
 
   async ejecutar( comandoGuardarCalendarioFestivos: ComandoGuardarCalendarioFestivos ) {
-    await this._servicioGuardarCalendarioFestivos.ejecutar(
+    return this._servicioGuardarCalendarioFestivos.ejecutar(
       new CalendarioFestivos(
         comandoGuardarCalendarioFestivos.nombre,
         comandoGuardarCalendarioFestivos.descripcion,

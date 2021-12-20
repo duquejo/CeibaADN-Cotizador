@@ -27,8 +27,8 @@ export class CalendarioFestivosControlador {
   @UsePipes( new ValidationPipe({ transform: true }) )
   async crearCalendario ( 
     @Body() comandoGuardarCalendarioFestivos: ComandoGuardarCalendarioFestivos
-  ): Promise<void> {
-    await this._manejadorGuardarCalendarioFestivos.ejecutar( comandoGuardarCalendarioFestivos );
+  ): Promise<ComandoGuardarCalendarioFestivos> {
+    return await this._manejadorGuardarCalendarioFestivos.ejecutar( comandoGuardarCalendarioFestivos );
   }
 
   /**

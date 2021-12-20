@@ -13,7 +13,7 @@ export abstract class RepositorioCalendarioFestivos {
     /**
      * CRUD
      */
-    abstract guardar( calendario: CalendarioFestivos ): Promise<void>;
+    abstract guardar( calendario: CalendarioFestivos ): Promise<CalendarioFestivosEntidad>;
     abstract actualizar( calendarioId : number, calendario: CalendarioFestivos ): Promise<void>;
     abstract borrar( calendarioId : number ): Promise<void>;
 }

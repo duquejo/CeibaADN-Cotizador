@@ -17,7 +17,7 @@ export class RepositorioCalendarioFestivosMysql implements RepositorioCalendario
      * Guardar Repositorio
      * @param {CalendarioFestivos} calendarioFestivos
      */
-    async guardar( calendarioFestivos: CalendarioFestivos ): Promise<void> {
+    async guardar( calendarioFestivos: CalendarioFestivos ): Promise<CalendarioFestivosEntidad> {
 
         const entidad = new CalendarioFestivosEntidad();
 
@@ -25,7 +25,7 @@ export class RepositorioCalendarioFestivosMysql implements RepositorioCalendario
         entidad.descripcion = calendarioFestivos.descripcion;
         entidad.festivos = calendarioFestivos.festivos;
 
-        await this.repositorio.save(entidad);
+        return this.repositorio.save(entidad);
     }
 
     /** 
