@@ -7,5 +7,5 @@ Initial Project Reference Using Hexagonal Architecture with Nest JS (Server) and
 </p>
 
 <p align="center">
-  <a href="https://reactjs.org/" target="blank"><img src="https://reactjs.org/logo-og.png" width="320" alt="React Logo" /></a>
+  <a href="https://reactjs.org/" target="blank"><img src="https://www.vhv.rs/dpng/d/612-6126558_react-logo-png-react-js-logo-svg-transparent.png" width="320" alt="React Logo" /></a>
 </p>
