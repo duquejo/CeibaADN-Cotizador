@@ -5,6 +5,7 @@ import { ManejadorCrearCotizacion } from 'src/aplicacion/cotizacion/comando/regi
 
 import { CotizacionDto } from 'src/aplicacion/cotizacion/consulta/dto/cotizacion.dto';
 import { ManejadorObtenerCotizacion } from 'src/aplicacion/cotizacion/consulta/obtener-cotizacion.manejador';
+import { CotizacionEntidad } from '../entidad/cotizacion.entidad';
 
 @Controller('cotizaciones')
 export class CotizacionControlador {
@@ -15,10 +16,10 @@ export class CotizacionControlador {
 
   @Post()
   @UsePipes( new ValidationPipe({ transform: true }) )
-  async crearCotizacion(
+  crearCotizacion(
     @Body() comandoCrearCotizacion: ComandoCrearCotizacion
-  ): Promise<void> {
-    await this._manejadorCrearCotizacion.ejecutar( comandoCrearCotizacion );
+  ): Promise<CotizacionEntidad> {
+    return this._manejadorCrearCotizacion.ejecutar( comandoCrearCotizacion );
   }
 
   /**

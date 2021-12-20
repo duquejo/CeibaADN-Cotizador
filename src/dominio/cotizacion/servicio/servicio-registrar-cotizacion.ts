@@ -14,7 +14,7 @@ export class ServicioCrearCotizacion {
         private readonly _repositorioCategoriaUsuarios  : RepositorioCategoriaUsuarios
     ) {}
 
-    async ejecutar( cotizacion: Cotizacion ): Promise<void> {
+    async ejecutar( cotizacion: Cotizacion ) {
         
         // Validar existencia centro vacacional
         const centroVacacional = await this._repositorioCentroVacacional.obtenerUnCentroVacacional( cotizacion.centroVacacional as number );
@@ -43,6 +43,6 @@ export class ServicioCrearCotizacion {
         );
         
         // Guardar
-        await this._repositorioCotizador.crear( cotizacion, totalCotizacion );
+        return this._repositorioCotizador.crear( cotizacion, totalCotizacion );
     }
 }

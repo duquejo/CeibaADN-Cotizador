@@ -9,8 +9,8 @@ export class ManejadorCrearCotizacion {
     private _servicioCrearCotizacion: ServicioCrearCotizacion
   ){}
 
-  async ejecutar( comandoCrearCotizacion: ComandoCrearCotizacion ): Promise<void> {
-    await this._servicioCrearCotizacion.ejecutar( new Cotizacion(
+  async ejecutar( comandoCrearCotizacion: ComandoCrearCotizacion ) {
+    return this._servicioCrearCotizacion.ejecutar( new Cotizacion(
       comandoCrearCotizacion.centroVacacional,
       comandoCrearCotizacion.categoriaUsuarios,
       comandoCrearCotizacion.personas,

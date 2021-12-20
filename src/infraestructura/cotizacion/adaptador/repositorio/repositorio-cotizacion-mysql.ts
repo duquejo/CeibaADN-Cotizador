@@ -22,7 +22,7 @@ export class RepositorioCotizacionMysql implements RepositorioCotizacion {
      * Guardar Repositorio
      * @param {Cotizacion} Cotizacion
      */
-    async crear( cotizacion: Cotizacion, totalCotizacion: ICotizacion ): Promise<void> {
+    async crear( cotizacion: Cotizacion, totalCotizacion: ICotizacion ): Promise<CotizacionEntidad> {
 
         const entidad = new CotizacionEntidad();
 
@@ -33,6 +33,6 @@ export class RepositorioCotizacionMysql implements RepositorioCotizacion {
         entidad.fechaFin = cotizacion.fechaFin;
         entidad.total = totalCotizacion.totalGrupo;
         
-        await this.repositorio.save( entidad );
+        return this.repositorio.save( entidad );
     }
 }
