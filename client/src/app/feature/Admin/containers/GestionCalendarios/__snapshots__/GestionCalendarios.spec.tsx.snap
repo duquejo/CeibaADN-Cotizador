@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GestionCalendarios Test Debería renderizar el componente 1`] = `
+<Fragment>
+  <h2>
+    Gestión de calendarios 
+    <span
+      aria-label="Calendarios"
+      role="img"
+      title="Calendarios"
+    >
+      📅
+    </span>
+  </h2>
+  <p>
+    Administre los calendarios que podrá asignar a los Centros Vacacionales, los 
+    <em>
+      festivos o días de alta 
+    </em>
+    para la plataforma, corresponden evento único del día por el que cambia de manera dinámica el precio del día completo según el rango salarial de un usuario al momento de cotizar.
+  </p>
+  <styled.div>
+    <styled.div>
+      <CrearCalendario />
+    </styled.div>
+    <styled.div>
+      <AccionesCalendario />
+    </styled.div>
+  </styled.div>
+  <styled.hr />
+</Fragment>
+`;

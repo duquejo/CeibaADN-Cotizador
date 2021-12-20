@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
+<div>
+  <form
+    class="category__form"
+    novalidate=""
+  >
+    <h3>
+      Crear categoría de usuarios
+    </h3>
+    <label
+      for="title"
+    >
+      <b>
+        Título
+      </b>
+    </label>
+    <input
+      class="sc-AxjAm fjyWPa"
+      id="title"
+      name="title"
+      placeholder="Título de la categoría, por ejemplo: 'Asociados categoría 1'"
+      value=""
+    />
+    <label
+      for="description"
+    >
+      <b>
+        Descripción
+      </b>
+    </label>
+    <textarea
+      class="sc-AxiKw gNuUer"
+      id="description"
+      name="description"
+      placeholder="Descripción de la categoría, por ejemplo: 'Categoría para asociados seccional Medellín'"
+      rows="3"
+    />
+    <label
+      for="price_high"
+    >
+      <b>
+        Valor temporada alta
+      </b>
+    </label>
+    <input
+      class="sc-AxjAm fjyWPa"
+      id="priceHigh"
+      min="0"
+      name="priceHigh"
+      placeholder="Valor para días de temporada alta, por ejemplo: 50000, sin espacios y sin caracteres especiales"
+      type="number"
+      value=""
+    />
+    <label
+      for="price_low"
+    >
+      <b>
+        Valor temporada baja
+      </b>
+    </label>
+    <input
+      class="sc-AxjAm fjyWPa"
+      id="priceLow"
+      min="0"
+      name="priceLow"
+      placeholder="Valor para días de temporada baja, por ejemplo: 35000, sin espacios y sin caracteres especiales"
+      type="number"
+      value=""
+    />
+    <button
+      class="sc-AxirZ iHGsua"
+      type="submit"
+    >
+      Crear categoría de usuarios
+    </button>
+  </form>
+</div>
+`;

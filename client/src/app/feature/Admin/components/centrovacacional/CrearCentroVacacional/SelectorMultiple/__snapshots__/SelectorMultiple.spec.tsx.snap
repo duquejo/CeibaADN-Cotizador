@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectorMultiple test Debería renderizar <SelectorMultiple /> satisfactoriamente 1`] = `
+<Fragment>
+  <MultiSelect
+    className="selector__container clase_prueba"
+    labelledBy="Seleccionar"
+    onChange={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "Categoría de usuarios de prueba",
+          "value": 5,
+        },
+        Object {
+          "label": "Otra categoría de prueba",
+          "value": 12,
+        },
+      ]
+    }
+    overrideStrings={
+      Object {
+        "allItemsAreSelected": "Todos los elementos están seleccionados",
+        "clearSearch": "Limpiar búsqueda",
+        "clearSelected": "Limpiar selección",
+        "create": "Prueba - Seleccionar todos",
+        "noOptions": "No hay opciones",
+        "search": "Buscar",
+        "selectAll": "Seleccionar todos",
+        "selectAllFiltered": "Seleccionar todos",
+        "selectSomeItems": "Prueba - Seleccionar todos",
+      }
+    }
+    value={Array []}
+  />
+</Fragment>
+`;

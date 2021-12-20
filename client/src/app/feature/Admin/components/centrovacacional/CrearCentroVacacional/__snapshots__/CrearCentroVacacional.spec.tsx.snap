@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
+<div>
+  <form
+    class="cv__form"
+  >
+    <h3>
+      Crear centro vacacional
+    </h3>
+    <label
+      for="cv-title"
+    >
+      <b>
+        Título
+      </b>
+    </label>
+    <input
+      class="sc-AxirZ htyvkB"
+      id="cv-title"
+      name="title"
+      placeholder="Nombre del centro vacacional, ejemplo: 'Cartagena Resort'."
+      value=""
+    />
+    <label
+      for="cv-description"
+    >
+      <b>
+        Descripción
+      </b>
+    </label>
+    <textarea
+      class="sc-AxgMl gHNfE"
+      id="cv-description"
+      name="description"
+      placeholder="Descripción del centro vacacional, ejemplo: 'Pasajes paradisiacos en la costa Colombiana'."
+      rows="3"
+    />
+    <b>
+      Asignación de calendarios de temporadas altas
+    </b>
+    <small
+      class="sc-AxhCb fRACGO"
+    >
+      Dicha asignación le permitirá a los administradores tener una visión de los calendarios presentes para sus centros vacacionales y configuración de días de manera dinámica.
+    </small>
+    <div
+      class="rmsc selector__container calendarios__container"
+    >
+      <div
+        aria-labelledby="Seleccionar"
+        aria-readonly="true"
+        class="dropdown-container"
+        tabindex="0"
+      >
+        <div
+          class="dropdown-heading"
+        >
+          <div
+            class="dropdown-heading-value"
+          >
+            <span
+              class="gray"
+            >
+              Selecciona un calendario de festivos o días de alta
+            </span>
+          </div>
+          <svg
+            class="dropdown-heading-dropdown-arrow gray"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-width="2"
+            width="24"
+          >
+            <path
+              d="M6 9L12 15 18 9"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <b>
+      Asignación de categorías de usuarios
+    </b>
+    <small
+      class="sc-AxhCb fRACGO"
+    >
+      Dicha asignación le permitirá a los clientes obtener opciones personalizadas de precios según su nivel salarial.
+    </small>
+    <div
+      class="rmsc selector__container categorias__container"
+    >
+      <div
+        aria-labelledby="Seleccionar"
+        aria-readonly="true"
+        class="dropdown-container"
+        tabindex="0"
+      >
+        <div
+          class="dropdown-heading"
+        >
+          <div
+            class="dropdown-heading-value"
+          >
+            <span
+              class="gray"
+            >
+              Selecciona las categorías de usuarios
+            </span>
+          </div>
+          <svg
+            class="dropdown-heading-dropdown-arrow gray"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-width="2"
+            width="24"
+          >
+            <path
+              d="M6 9L12 15 18 9"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <label
+      for="calendarioActivo"
+    >
+      <b>
+        Asignación de calendario activo
+      </b>
+    </label>
+    <small
+      class="sc-AxhCb fRACGO"
+    >
+      El calendario activo será el que el cotizador tendrá visible y presente en los cálculos.
+    </small>
+    <select
+      class="sc-AxiKw ejmKwG"
+      id="active_calendar"
+      name="calendarioActivo"
+    >
+      <option
+        value=""
+      >
+        Selecciona un calendario del listado
+      </option>
+    </select>
+    <button
+      class="sc-AxjAm oBMhR"
+      type="submit"
+    >
+      Crear
+    </button>
+  </form>
+</div>
+`;

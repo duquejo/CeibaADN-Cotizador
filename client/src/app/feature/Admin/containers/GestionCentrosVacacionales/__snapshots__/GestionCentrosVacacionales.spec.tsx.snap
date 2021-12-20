@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GestionCentrosVacacionales Test Debería renderizar el componente 1`] = `
+<Fragment>
+  <h2>
+    Gestión de centros vacacionales 
+    <span
+      aria-label="Centros vacacionales"
+      role="img"
+      title="Centros vacacionales"
+    >
+      ⛱️
+    </span>
+  </h2>
+  <p>
+    Administre los centros vacacionales que los usuarios tendrán a su disposición en el cotizador.
+  </p>
+  <styled.div>
+    <styled.div>
+      <CrearCentroVacacional />
+    </styled.div>
+    <styled.div>
+      <AccionesCentrosVacacionales />
+    </styled.div>
+  </styled.div>
+  <styled.hr />
+</Fragment>
+`;
