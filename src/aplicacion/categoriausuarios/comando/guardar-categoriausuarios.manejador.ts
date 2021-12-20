@@ -10,8 +10,7 @@ export class ManejadorGuardarCategoriaUsuarios {
   ){}
 
   async ejecutar( comandoGuardarCategoriaUsuarios: ComandoGuardarCategoriaUsuarios ) {
-
-    await this._servicioGuardarCategoriaUsuarios.ejecutar( new CategoriaUsuarios(
+    return this._servicioGuardarCategoriaUsuarios.ejecutar( new CategoriaUsuarios(
       comandoGuardarCategoriaUsuarios.nombre,
       comandoGuardarCategoriaUsuarios.descripcion,
       comandoGuardarCategoriaUsuarios.valorAlta,

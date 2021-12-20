@@ -13,8 +13,7 @@ export abstract class RepositorioCentroVacacional {
     /**
      * CRUD
      */
-    //  abstract completarCentroVacacional( centroVacacionalId: number, centroVacacional: CentroVacacional ): Promise<CentroVacacionalEntidad>;
-     abstract guardar( centroVacacional: CentroVacacional ): Promise<void>;
+     abstract guardar( centroVacacional: CentroVacacional ): Promise<CentroVacacionalEntidad>;
      abstract actualizar( centroVacacionalId : number, centroVacacional: CentroVacacional ): Promise<void>;
      abstract borrar( centroVacacionalId : number ): Promise<void>;
 }

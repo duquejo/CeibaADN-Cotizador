@@ -72,6 +72,6 @@ export class ServicioGuardarCentroVacacional {
         }           
 
         // Guardar
-        await this._repositorioCentroVacacional.guardar( centroVacacional );
+        return this._repositorioCentroVacacional.guardar( centroVacacional );
     }
 }

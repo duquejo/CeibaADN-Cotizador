@@ -17,7 +17,7 @@ export class RepositorioCentroVacacionalMysql implements RepositorioCentroVacaci
      * Guardar Repositorio
      * @param {CentroVacacional} centroVacacional
      */
-    async guardar( centroVacacional: CentroVacacional ): Promise<void> {
+    async guardar( centroVacacional: CentroVacacional ): Promise<CentroVacacionalEntidad> {
 
         const entidad = new CentroVacacionalEntidad();
 
@@ -27,7 +27,7 @@ export class RepositorioCentroVacacionalMysql implements RepositorioCentroVacaci
         entidad.calendarioActivo  = centroVacacional.calendarioActivo;
         entidad.categoriaUsuarios = centroVacacional.categoriasUsuarios;
 
-        await this.repositorio.save(entidad);
+        return this.repositorio.save(entidad);
     }
 
     /** 

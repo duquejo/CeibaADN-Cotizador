@@ -20,10 +20,10 @@ export class CategoriaUsuariosControlador {
    */
    @Post()
    @UsePipes( new ValidationPipe({ transform: true }) )
-   async crearCategoriaUsuarios ( 
+   crearCategoriaUsuarios ( 
      @Body() comandoGuardarCategoriaUsuarios: ComandoGuardarCategoriaUsuarios
-   ): Promise<void> {
-     await this._manejadorGuardarCategoriaUsuarios.ejecutar( comandoGuardarCategoriaUsuarios );
+   ): Promise<ComandoGuardarCategoriaUsuarios> {
+    return this._manejadorGuardarCategoriaUsuarios.ejecutar( comandoGuardarCategoriaUsuarios );
    }
 
   /**

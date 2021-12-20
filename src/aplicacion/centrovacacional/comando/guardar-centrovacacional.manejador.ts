@@ -10,8 +10,7 @@ export class ManejadorGuardarCentroVacacional {
   ){}
 
   async ejecutar( comandoGuardarCentroVacacional: ComandoGuardarCentroVacacional ) {
-
-    await this._servicioGuardarCentroVacacional.ejecutar( new CentroVacacional(
+    return this._servicioGuardarCentroVacacional.ejecutar( new CentroVacacional(
       comandoGuardarCentroVacacional.nombre,
       comandoGuardarCentroVacacional.descripcion,
       comandoGuardarCentroVacacional.calendarios,

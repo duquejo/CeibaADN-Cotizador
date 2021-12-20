@@ -26,10 +26,10 @@ export class CentroVacacionalControlador {
    */
    @Post()
    @UsePipes( new ValidationPipe({ transform: true }) )
-   async crearCentroVacacional ( 
+   crearCentroVacacional ( 
      @Body() comandoGuardarCentroVacacional: ComandoGuardarCentroVacacional
-   ): Promise<void> {
-     await this._manejadorGuardarCentroVacacional.ejecutar( comandoGuardarCentroVacacional );
+   ): Promise<ComandoGuardarCentroVacacional> {
+    return this._manejadorGuardarCentroVacacional.ejecutar( comandoGuardarCentroVacacional );
    }
  
    /**

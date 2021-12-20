@@ -8,6 +8,6 @@ export class ServicioGuardarCategoriaUsuarios {
     ) {}
 
     async ejecutar( categoriaUsuarios: CategoriaUsuarios ) {
-        await this._repositorioCategoriaUsuarios.guardar( categoriaUsuarios );
+        return this._repositorioCategoriaUsuarios.guardar( categoriaUsuarios );
     }
 }

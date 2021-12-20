@@ -14,5 +14,5 @@ export abstract class RepositorioCategoriaUsuarios {
      /**
       * Operaciones transaccionales
       */
-     abstract guardar( categoriaUsuarios: CategoriaUsuarios ): Promise<void>;
+     abstract guardar( categoriaUsuarios: CategoriaUsuarios ): Promise<CategoriaUsuariosEntidad>;
 }

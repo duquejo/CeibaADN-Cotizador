@@ -17,7 +17,7 @@ export class RepositorioCategoriaUsuariosMysql implements RepositorioCategoriaUs
      * Guardar Repositorio
      * @param {CategoriaUsuarios} categoriaUsuarios
      */
-    async guardar( categoriaUsuarios: CategoriaUsuarios ): Promise<void> {
+    async guardar( categoriaUsuarios: CategoriaUsuarios ): Promise<CategoriaUsuariosEntidad> {
 
         const entidad = new CategoriaUsuariosEntidad();
 
@@ -26,7 +26,7 @@ export class RepositorioCategoriaUsuariosMysql implements RepositorioCategoriaUs
         entidad.valorAlta = categoriaUsuarios.valorAlta;
         entidad.valorBaja = categoriaUsuarios.valorBaja;
         
-        await this.repositorio.save( entidad );
+        return this.repositorio.save( entidad );
     }
 
     /**
