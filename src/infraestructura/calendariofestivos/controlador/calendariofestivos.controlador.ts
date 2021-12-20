@@ -11,6 +11,7 @@ import { ManejadorBorrarCalendarioFestivos } from 'src/aplicacion/calendariofest
 // Reading Imports
 import { ManejadorObtenerCalendarioFestivos } from 'src/aplicacion/calendariofestivos/consulta/obtener-calendariofestivos.manejador';
 import { CalendarioFestivosDto } from 'src/aplicacion/calendariofestivos/consulta/dto/calendariofestivos.dto';
+
 @Controller('calendariosFestivos')
 export class CalendarioFestivosControlador {
   constructor(
@@ -25,10 +26,10 @@ export class CalendarioFestivosControlador {
    */
   @Post()
   @UsePipes( new ValidationPipe({ transform: true }) )
-  async crearCalendario ( 
+  crearCalendario ( 
     @Body() comandoGuardarCalendarioFestivos: ComandoGuardarCalendarioFestivos
   ): Promise<ComandoGuardarCalendarioFestivos> {
-    return await this._manejadorGuardarCalendarioFestivos.ejecutar( comandoGuardarCalendarioFestivos );
+    return this._manejadorGuardarCalendarioFestivos.ejecutar( comandoGuardarCalendarioFestivos );
   }
 
   /**
