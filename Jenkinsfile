@@ -44,6 +44,7 @@ pipeline{
                 steps {
 					dir('client') {
                     	sh 'npm i'
+						sh 'pwd'
                     	sh 'npm run build'					
 					}
 				}
