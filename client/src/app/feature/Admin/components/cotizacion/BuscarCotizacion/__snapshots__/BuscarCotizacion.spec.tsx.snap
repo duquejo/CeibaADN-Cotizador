@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BuscarCotizacion test Debería coincidir con el snapshot 1`] = `
+<div>
+  <form
+    class="category__form"
+    novalidate=""
+  >
+    <h3>
+      Búsqueda de Cotizaciones
+    </h3>
+    <label
+      for="title"
+    >
+      <b>
+        Identificador
+      </b>
+    </label>
+    <input
+      class="sc-AxjAm fjyWPa"
+      id="id"
+      name="id"
+      placeholder="Identificador de la cotización, por ejemplo: '1'"
+      type="number"
+      value="0"
+    />
+    <button
+      class="sc-AxirZ iHGsua"
+      type="submit"
+    >
+      Buscar cotización
+    </button>
+  </form>
+</div>
+`;
+
+exports[`BuscarCotizacion test Debería coincidir con el snapshot 2`] = `
+<form
+  className="category__form"
+  noValidate={true}
+  onSubmit={[Function]}
+>
+  <h3>
+    Búsqueda de Cotizaciones
+  </h3>
+  <label
+    htmlFor="title"
+  >
+    <b>
+      Identificador
+    </b>
+  </label>
+  <input
+    className="sc-AxjAm fjyWPa"
+    id="id"
+    name="id"
+    onChange={[Function]}
+    placeholder="Identificador de la cotización, por ejemplo: '1'"
+    type="number"
+    value={0}
+  />
+  <button
+    className="sc-AxirZ iHGsua"
+    type="submit"
+  >
+    Buscar cotización
+  </button>
+</form>
+`;

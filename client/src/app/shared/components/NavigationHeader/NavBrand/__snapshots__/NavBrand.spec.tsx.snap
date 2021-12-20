@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas para el componente <NavBrand /> Debería renderizar el logo de la aplicación 1`] = `
+<BrandDiv>
+  <Styled(Link)
+    replace={true}
+    to="/"
+  >
+    <LogoImg
+      alt="Demo"
+      src="logo-ceiba.png"
+    />
+  </Styled(Link)>
+</BrandDiv>
+`;
+
+exports[`Pruebas para el componente <NavBrand /> No debería renderizar el logo de la aplicación, sino el texto si no está presente el parámetro 1`] = `
+<BrandDiv>
+  <Styled(Link)
+    replace={true}
+    to="/"
+  >
+    <LogoSpan>
+      Demo
+    </LogoSpan>
+  </Styled(Link)>
+</BrandDiv>
+`;

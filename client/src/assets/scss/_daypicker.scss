@@ -1,0 +1,61 @@
+.DayPicker {
+  .DayPicker-Day--today {
+    color: #d0021b !important;
+  }
+  .DayPicker-Day--diasAlta {
+    color: $primary-color;
+    text-decoration: underline;
+    font-weight: bolder;
+    &:hover {
+      background-color: lighten($primary-color, 50%);
+    }
+  }
+  .DayPicker-Caption {
+    text-transform: capitalize;
+  }
+  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+    background-color: $primary-color;
+    &:hover {
+      background-color: lighten($primary-color, 50%);
+    }
+  }
+  .DayPicker-Day {
+    padding: 2px;
+    width: 28px;
+    height: 26px;
+    font-size: 14px;
+    border-radius: inherit !important;
+    &:hover {
+      background-color: lighten($primary-color, 40%) !important;
+      color: #fff;
+    }
+  }
+  .DayPicker-Day--disabled {
+    &:hover {
+      opacity: 0.1;
+    }
+  }
+  .DayPicker-TodayButton {
+    color: #2d6133;
+    text-decoration: underline;
+    margin: auto;
+    display: block;
+  }
+}
+
+.Selectable
+  .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+  background-color: lighten($primary-color, 60%) !important;
+  color: $primary-color;
+}
+.Selectable .DayPicker-Day {
+  border-radius: 0 !important;
+}
+.Selectable .DayPicker-Day--start {
+  border-top-left-radius: 50% !important;
+  border-bottom-left-radius: 50% !important;
+}
+.Selectable .DayPicker-Day--end {
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50% !important;
+}

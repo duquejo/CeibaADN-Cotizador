@@ -1,0 +1,1456 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CrearCalendario test Debería coincidir con el snapshot 1`] = `
+<div>
+  <form
+    class="calendar__form"
+  >
+    <h3>
+      Crear calendario
+    </h3>
+    <label
+      for="title"
+    >
+      <b>
+        Título
+      </b>
+    </label>
+    <input
+      class="sc-AxjAm fjyWPa"
+      id="title"
+      name="title"
+      placeholder="Título personalizado del calendario, por ejemplo: 'Calendario de alta afluencia enero'."
+      value=""
+    />
+    <label
+      for="description"
+    >
+      <b>
+        Descripción
+      </b>
+    </label>
+    <textarea
+      class="sc-AxiKw gNuUer"
+      id="description"
+      name="description"
+      placeholder="Descripción del calendario. Extienda más información de carácter administrativo del mismo, generando más opciones de recordación o gestión."
+      rows="3"
+    />
+    <label
+      for="holidays"
+    >
+      <b>
+        Selección de festivos/temporada alta
+      </b>
+    </label>
+    <small
+      class="sc-AxhUy cfywdj"
+    >
+      Seleccione de los siguientes calendarios, los días que corresponda que son festivos o que sean días de temporada alta. El día marcado de color rojo corresponde al día actual.
+    </small>
+    <div>
+      <div
+        class="DayPicker"
+        lang="es"
+      >
+        <div
+          class="DayPicker-wrapper"
+          tabindex="0"
+        >
+          <div
+            class="DayPicker-NavBar"
+          >
+            <span
+              aria-label="Previous Month"
+              class="DayPicker-NavButton DayPicker-NavButton--prev"
+              role="button"
+              tabindex="0"
+            />
+            <span
+              aria-label="Next Month"
+              class="DayPicker-NavButton DayPicker-NavButton--next"
+              role="button"
+              tabindex="0"
+            />
+          </div>
+          <div
+            class="DayPicker-Months"
+          >
+            <div
+              class="DayPicker-Month"
+              role="grid"
+            >
+              <div
+                aria-live="polite"
+                class="DayPicker-Caption"
+                role="heading"
+              >
+                <div>
+                  diciembre 2021
+                </div>
+              </div>
+              <div
+                class="DayPicker-Weekdays"
+                role="rowgroup"
+              >
+                <div
+                  class="DayPicker-WeekdaysRow"
+                  role="row"
+                >
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="lunes"
+                    >
+                      lu
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="martes"
+                    >
+                      ma
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="miércoles"
+                    >
+                      mi
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="jueves"
+                    >
+                      ju
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="viernes"
+                    >
+                      vi
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="sábado"
+                    >
+                      sá
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="domingo"
+                    >
+                      do
+                    </abbr>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="DayPicker-Body"
+                role="rowgroup"
+              >
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--disabled DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--disabled DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    aria-label="mié. 1 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="0"
+                  >
+                    1
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="jue. 2 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    2
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="vie. 3 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    3
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="sáb. 4 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    4
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="dom. 5 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    5
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="true"
+                    aria-label="lun. 6 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    6
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="mar. 7 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    7
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="mié. 8 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    8
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="jue. 9 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    9
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="vie. 10 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    10
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="sáb. 11 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    11
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="dom. 12 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    12
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="true"
+                    aria-label="lun. 13 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    13
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="mar. 14 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    14
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="mié. 15 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    15
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="jue. 16 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    16
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="vie. 17 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    17
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="sáb. 18 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    18
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    aria-label="dom. 19 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--disabled"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    19
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="lun. 20 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day DayPicker-Day--today"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    20
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mar. 21 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    21
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mié. 22 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    22
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="jue. 23 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    23
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="vie. 24 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    24
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="sáb. 25 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    25
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="dom. 26 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    26
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="lun. 27 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    27
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mar. 28 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    28
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mié. 29 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    29
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="jue. 30 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    30
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="vie. 31 de dic. de 2021"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    31
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="DayPicker-Month"
+              role="grid"
+            >
+              <div
+                aria-live="polite"
+                class="DayPicker-Caption"
+                role="heading"
+              >
+                <div>
+                  enero 2022
+                </div>
+              </div>
+              <div
+                class="DayPicker-Weekdays"
+                role="rowgroup"
+              >
+                <div
+                  class="DayPicker-WeekdaysRow"
+                  role="row"
+                >
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="lunes"
+                    >
+                      lu
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="martes"
+                    >
+                      ma
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="miércoles"
+                    >
+                      mi
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="jueves"
+                    >
+                      ju
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="viernes"
+                    >
+                      vi
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="sábado"
+                    >
+                      sá
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="domingo"
+                    >
+                      do
+                    </abbr>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="DayPicker-Body"
+                role="rowgroup"
+              >
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="false"
+                    aria-label="sáb. 1 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="0"
+                  >
+                    1
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="dom. 2 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    2
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="lun. 3 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    3
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mar. 4 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    4
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mié. 5 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    5
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="jue. 6 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    6
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="vie. 7 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    7
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="sáb. 8 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    8
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="dom. 9 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    9
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="lun. 10 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    10
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mar. 11 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    11
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mié. 12 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    12
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="jue. 13 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    13
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="vie. 14 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    14
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="sáb. 15 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    15
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="dom. 16 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    16
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="lun. 17 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    17
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mar. 18 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    18
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mié. 19 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    19
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="jue. 20 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    20
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="vie. 21 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    21
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="sáb. 22 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    22
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="dom. 23 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    23
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="lun. 24 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    24
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mar. 25 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    25
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mié. 26 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    26
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="jue. 27 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    27
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="vie. 28 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    28
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="sáb. 29 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    29
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="dom. 30 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    30
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="lun. 31 de ene. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    31
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="DayPicker-Month"
+              role="grid"
+            >
+              <div
+                aria-live="polite"
+                class="DayPicker-Caption"
+                role="heading"
+              >
+                <div>
+                  febrero 2022
+                </div>
+              </div>
+              <div
+                class="DayPicker-Weekdays"
+                role="rowgroup"
+              >
+                <div
+                  class="DayPicker-WeekdaysRow"
+                  role="row"
+                >
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="lunes"
+                    >
+                      lu
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="martes"
+                    >
+                      ma
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="miércoles"
+                    >
+                      mi
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="jueves"
+                    >
+                      ju
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="viernes"
+                    >
+                      vi
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="sábado"
+                    >
+                      sá
+                    </abbr>
+                  </div>
+                  <div
+                    class="DayPicker-Weekday"
+                    role="columnheader"
+                  >
+                    <abbr
+                      title="domingo"
+                    >
+                      do
+                    </abbr>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="DayPicker-Body"
+                role="rowgroup"
+              >
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="false"
+                    aria-label="mar. 1 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="0"
+                  >
+                    1
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mié. 2 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    2
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="jue. 3 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    3
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="vie. 4 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    4
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="sáb. 5 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    5
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="dom. 6 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    6
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="lun. 7 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    7
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mar. 8 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    8
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mié. 9 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    9
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="jue. 10 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    10
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="vie. 11 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    11
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="sáb. 12 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    12
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="dom. 13 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    13
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="lun. 14 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    14
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mar. 15 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    15
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mié. 16 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    16
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="jue. 17 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    17
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="vie. 18 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    18
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="sáb. 19 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    19
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="dom. 20 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    20
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="lun. 21 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    21
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mar. 22 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    22
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="mié. 23 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    23
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="jue. 24 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    24
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="vie. 25 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    25
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="sáb. 26 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    26
+                  </div>
+                  <div
+                    aria-disabled="false"
+                    aria-label="dom. 27 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    27
+                  </div>
+                </div>
+                <div
+                  class="DayPicker-Week"
+                  role="row"
+                >
+                  <div
+                    aria-disabled="false"
+                    aria-label="lun. 28 de feb. de 2022"
+                    aria-selected="false"
+                    class="DayPicker-Day"
+                    role="gridcell"
+                    tabindex="-1"
+                  >
+                    28
+                  </div>
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--outside"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="sc-AxirZ iHGsua"
+      type="submit"
+    >
+      Crear calendario
+    </button>
+  </form>
+</div>
+`;

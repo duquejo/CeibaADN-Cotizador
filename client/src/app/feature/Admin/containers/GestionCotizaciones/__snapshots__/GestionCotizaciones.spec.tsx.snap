@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GestionCotizaciones Test should match snapshot 1`] = `
+<Fragment>
+  <h2>
+    Búsqueda de cotizaciones por Identificador 
+    <span
+      aria-label="Búsqueda cotizaciones"
+      role="img"
+      title="Búsqueda cotizaciones"
+    >
+      🔎
+    </span>
+  </h2>
+  <p>
+    Realice una búsqueda rápida por identificador para conocer los valores de la misma.
+  </p>
+  <styled.div>
+    <styled.div>
+      <BuscarCotizacion />
+    </styled.div>
+  </styled.div>
+  <styled.hr />
+</Fragment>
+`;

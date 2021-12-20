@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GestionCategoriasUsuarios Test Debería renderizar el componente 1`] = `
+<Fragment>
+  <h2>
+    Gestión de categorías de usuarios 
+    <span
+      aria-label="Categorías de usuarios"
+      role="img"
+      title="Categorías de usuarios"
+    >
+      👤
+    </span>
+  </h2>
+  <p>
+    Gestione las categorías de usuarios que podrá asignar a los Centros Vacacionales, estas categorías tienen influencia sobre el valor de la cotización que un usuario obtendrá.
+  </p>
+  <styled.div>
+    <styled.div>
+      <CrearCategoria />
+    </styled.div>
+    <styled.div>
+      <AccionesCategorias />
+    </styled.div>
+  </styled.div>
+  <styled.hr />
+</Fragment>
+`;

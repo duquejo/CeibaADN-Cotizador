@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas sobre componentes del header <NavigationHeader /> Debería renderizar el elemento adecuadamente 1`] = `
+<styled.nav>
+  <NavBrand
+    imgSrc="logo-ceiba.png"
+    text="Ceiba Software"
+  />
+  <NavList
+    items={
+      Array [
+        Object {
+          "label": "Home",
+          "url": "/home",
+        },
+        Object {
+          "label": "Administrador",
+          "url": "/administrador",
+        },
+        Object {
+          "label": "Cotizador",
+          "url": "/cotizador",
+        },
+      ]
+    }
+  />
+</styled.nav>
+`;
