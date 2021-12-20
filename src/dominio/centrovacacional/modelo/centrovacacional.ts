@@ -36,14 +36,14 @@ export class CentroVacacional {
    * @get
    */
   get calendarioActivo(): number  {
-    if( this.#calendarioActivo === null ) {
-      if( this.#calendarios?.length ) {
-        return Number( this.#calendarios[0] );
-      } else {
-        return null;
-      }
+    if( this.#calendarioActivo !== null ) {
+      return this.#calendarioActivo;
     }
-    return this.#calendarioActivo;
+
+    if( this.#calendarios?.length ) {
+      return Number( this.#calendarios[0] );
+    }
+    return null;
   }
   /**
    * @set
