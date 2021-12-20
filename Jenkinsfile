@@ -26,22 +26,17 @@ pipeline{
 		
 			stage('compilar servidor '){
                 steps {
-					sh 'pwd'
 					dir('server') {
-						sh 'pwd'
+						sh 'npm i'
+						sh 'npm run build'	
 					}
-					sh 'pwd'
-                    sh 'npm i'
-                    sh 'npm run build'					
 				}
             }
             stage('test servidor '){
                 steps {
-					sh 'pwd'
 					dir('server') {
-						sh 'pwd'
-					}
-                    sh 'npm run test:cov'					
+                    	sh 'npm run test:cov'
+					}					
 				}
             }
 		
