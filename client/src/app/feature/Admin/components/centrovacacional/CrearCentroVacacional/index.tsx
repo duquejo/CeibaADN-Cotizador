@@ -12,11 +12,12 @@ import { TextArea } from '../../../../../shared/components/TextArea/index';
 import { SelectorMultiple } from './SelectorMultiple/index';
 import { ISelectionOptions } from '../../../models/FormSelector';
 import { obtenerCalendarioActivo } from '../../../../../shared/utils/miscfunctions';
+import { yupConditions } from '../../../../../shared/utils/yupconditions.enum';
 
 interface FormValues {
   title: string;
   description?: string;
-  calendarioActivo?: string | number | undefined;
+  calendarioActivo?: string | number;
 }
 
 const initialValues: FormValues = {
@@ -27,10 +28,10 @@ const initialValues: FormValues = {
 
 const validationSchema = Yup.object().shape<FormValues>({
   title: Yup.string().required('El campo título es requerido')
-    .min(2, 'Ingresa un nombre más extenso')
-    .max(50, 'Sobrepasaste el límite de caracteres'),
+    .min( yupConditions.minStringLength, 'Ingresa un nombre más extenso')
+    .max( yupConditions.maxStringLength, 'Sobrepasaste el límite de caracteres'),
   description: Yup.string()
-    .max(50, 'No puedes ingresar más de 50 caracteres')
+    .max( yupConditions.maxStringLength, 'No puedes ingresar más de 50 caracteres')
 });
 
 export const CrearCentroVacacional: React.FC<any> = ({

@@ -25,6 +25,7 @@ import { SelectorMultiple } from '../../centrovacacional/CrearCentroVacacional/S
 import { Select } from '../../../../../shared/components/Select/index';
 import { ISelectionOptions } from '../../../models/FormSelector';
 import { obtenerCalendarioActivo } from '../../../../../shared/utils/miscfunctions';
+import { yupConditions } from '../../../../../shared/utils/yupconditions.enum';
 
 if (process.env.NODE_ENV !== 'test') {
     ReactModal.setAppElement('#root');
@@ -44,10 +45,10 @@ const initialValues: FormValues = {
 
 const validationSchema = Yup.object().shape<FormValues>({
     title: Yup.string().required('El campo título es requerido')
-      .min(2, 'Ingresa un nombre más extenso')
-      .max(50, 'Sobrepasaste el límite de caracteres'),
+      .min( yupConditions.minStringLength, 'Ingresa un nombre más extenso')
+      .max( yupConditions.maxStringLength, 'Sobrepasaste el límite de caracteres'),
     description: Yup.string()
-      .max(50, 'No puedes ingresar más de 50 caracteres')
+      .max(  yupConditions.maxStringLength, 'No puedes ingresar más de 50 caracteres')
 });
 
 const parseObjectToOptions = ( object: any ) => object.map( ( obj: any ) => ({
@@ -235,12 +236,12 @@ export const ModalCentrosVacacionales: React.FC<any> = ({
                             onChange={ formik.handleChange }
                         >
                         {
-                            calendariosSeleccionados && calendariosSeleccionados.length === 0 ?
+                            calendariosSeleccionados.length === 0 ?
                             <option value="">Selecciona un calendario del listado</option> :
                             <option value="">Seleccionar el primero según selección de temporadas altas</option>
                         }  
                         {
-                            calendariosSeleccionados && calendariosSeleccionados.map( ( calActivo: any ) => 
+                            calendariosSeleccionados.map( ( calActivo: any ) => 
                             <option key={ calActivo.value } value={ calActivo.value }>{ calActivo.label }</option>
                             )
                         }

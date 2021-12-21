@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { Calendario } from 'app/feature/Admin/models/Calendario';
 import { TiposAccionesCalendario, TiposAcciones } from './CalendariosTiposAcciones';
 import { CalendariosRepositorio } from '../../../api/calendarios.repositorio';
+import { statusCodes } from '../../../config/statusCodes';
 
 export function listarCalendarios( calendarios: Array<Calendario> ): TiposAccionesCalendario {
   return {
@@ -50,7 +51,7 @@ export const guardarNuevoCalendarioAsync = ( nuevoCalendario: Calendario ) => {
   return async ( dispatch: Dispatch ) => {
     try {
       const { data, status } = await CalendariosRepositorio.guardar( nuevoCalendario );
-      if( status === 201 ) {
+      if( status === statusCodes.CREATED ) {
         dispatch( agregarNuevoCalendario( data ) );
         Swal.fire( 'Éxito', `¡Calendario <u>${ data.nombre}</u> añadido!`, 'success' );
       }

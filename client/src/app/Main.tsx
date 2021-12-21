@@ -15,8 +15,10 @@ const MainPage = () => (
         <li>Uso del CLI <a target="_blank" rel="noopener noreferrer" href="https://github.com/facebook/create-react-app">create-react-app.</a></li>
         <li>Construido con <a target="_blank" rel="noopener noreferrer" href="https://www.typescriptlang.org/docs/handbook/react.html">Typescript.</a></li>
         <li>Soporte para enrutamiento con <a target="_blank" rel="noopener noreferrer" href="https://reacttraining.com/react-router/web/guides/quick-start">react-router</a>. </li>
-        <li>Soporte de <a target="_blank" rel="noopener noreferrer" href="https://react-redux.js.org/introduction/quick-start">redux</a>, para almacenar el estado de la aplicación.</li>
-        <li>Uso de <a target="_blank" rel="noopener noreferrer" href="https://styled-components.com/docs">Styled-components</a> para maquetado de estilos encapsulados de componentes.</li>
+        <li>Soporte de <a target="_blank" rel="noopener noreferrer" href="https://react-redux.js.org/introduction/quick-start">redux</a>, para almacenar 
+        el estado de la aplicación.</li>
+        <li>Uso de <a target="_blank" rel="noopener noreferrer" href="https://styled-components.com/docs">Styled-components</a> para maquetado de estilos 
+        encapsulados de componentes.</li>
         <li>Uso de <a target="_blank" rel="noopener noreferrer" href="https://jaredpalmer.com/formik">Formik</a> para la construcción de formularios reactivos.</li>
         <li>Soporte para peticiones Http con <a target="_blank" rel="noopener noreferrer" href="https://github.com/axios/axios">axios</a>. 
         Existe una instancia de axios que esta configurada con información que es transversal a todas las peticiones. Cada que se necesite acceder a una Api se recomienda usar 

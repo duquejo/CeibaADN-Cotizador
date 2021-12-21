@@ -34,7 +34,7 @@ export const extraerIdsDeArray = ( needle: Array<any>, haystack: Array<any> ) =>
   } );
 
   return haystack.filter( ( elemento: any ) => {
-    return needleIds.indexOf( elemento!.id ) !== -1
+    return ( needleIds.indexOf( elemento!.id ) !== -1 );
   });
 };
 
@@ -43,8 +43,8 @@ export const cotizacionTemplate = ( cotizacion: any, allInfo = false ) => {
   const identificador = allInfo ? `<th>Identificador</th>` : ``;
   const centroVacacionalCodigo = allInfo ? `<td>${ cotizacion.centroVacacional?.codigo }</td>` : ``;
   const categoriaUsuariosId = allInfo ? `<td>${ cotizacion.categoriaUsuarios.id }</td>` : ``;
-  const categoriaUsuariosDescripcion = cotizacion.categoriaUsuarios.descripcion ? cotizacion.categoriaUsuarios.descripcion : '';
-  const centroVacacionalDescripcion = cotizacion.centroVacacional.descripcion ? cotizacion.centroVacacional.descripcion : '';
+  const categoriaUsuariosDescripcion = cotizacion.categoriaUsuarios?.descripcion ? cotizacion.categoriaUsuarios.descripcion : '';
+  const centroVacacionalDescripcion = cotizacion.centroVacacional?.descripcion ? cotizacion.centroVacacional.descripcion : '';
 
   return `<table class="resultados__table">
             <caption>Información general</caption>

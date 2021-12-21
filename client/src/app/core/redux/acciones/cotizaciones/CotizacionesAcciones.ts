@@ -5,6 +5,7 @@ import { Cotizacion } from '../../../../feature/Cotizador/models/Cotizacion';
 import { TiposAccionesCotizacion, TiposAcciones } from './CotizacionesTiposAcciones';
 import { CotizacionRepositorio } from '../../../api/cotizaciones.repositorio';
 import { cotizacionTemplate } from 'app/shared/utils/miscfunctions';
+import { statusCodes } from '../../../config/statusCodes';
 
 export function agregarNuevaCotizacion( cotizacion: Cotizacion ): TiposAccionesCotizacion {
   return {
@@ -16,7 +17,7 @@ export function agregarNuevaCotizacion( cotizacion: Cotizacion ): TiposAccionesC
 export const obtenerCotizacionAsync = async ( cotizacionId: number ) => {
   try {
     const { data, status } = await CotizacionRepositorio.obtener( cotizacionId );
-    if( data !== '' && status === 200 ) {
+    if( data !== '' && status === statusCodes.SUCCESS ) {
       Swal.fire({
         title: `Información de la cotización`,
         html: cotizacionTemplate( data, true ),
@@ -31,6 +32,7 @@ export const obtenerCotizacionAsync = async ( cotizacionId: number ) => {
       });
     }
   } catch (error) {
+    console.log( error );
     Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
   }
 };
@@ -39,7 +41,7 @@ export const guardarNuevaCotizacionAsync = ( nuevaCotizacion: Cotizacion ) => {
   return async () => {
     try {
       const { data, status } = await CotizacionRepositorio.guardar( nuevaCotizacion );
-      if( status === 201 ) {
+      if( status === statusCodes.CREATED ) {
         Swal.fire({
           title: `¡La cotización fue realizada con éxito!`,
           html: cotizacionTemplate( data ),

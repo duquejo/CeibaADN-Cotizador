@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { CategoriaUsuarios } from '../../../../feature/Admin/models/CategoriaUsuarios';
 import { TiposAccionesCategoriaUsuarios, TiposAcciones } from '../categoriasusuarios/CategoriasUsuariosTiposAcciones';
 import { CategoriaUsuariosRepositorio } from '../../../api/categoriasusuarios.repositorio';
+import { statusCodes } from '../../../config/statusCodes';
 
 export function listarCategoriasUsuarios( categoriasUsuarios: Array<CategoriaUsuarios> ): TiposAccionesCategoriaUsuarios {
   return {
@@ -23,7 +24,7 @@ export const guardarNuevaCategoriaUsuariosAsync = ( nuevaCategoriaUsuarios: Cate
   return async ( dispatch: Dispatch ) => {
     try {
       const { data, status } = await CategoriaUsuariosRepositorio.guardar( nuevaCategoriaUsuarios );
-      if( status === 201 ) {
+      if( status === statusCodes.CREATED ) {
         dispatch( agregarNuevaCategoriaUsuarios( data ) );
         Swal.fire( 'Éxito', `La categoría de usuarios <u>${ data.nombre}</u> ha sido añadida!`, 'success' );
       }

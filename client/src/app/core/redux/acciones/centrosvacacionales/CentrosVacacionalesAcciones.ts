@@ -6,6 +6,7 @@ import { CentroVacacional } from 'app/feature/Admin/models/CentroVacacional';
 import { TiposAccionesCentroVacacional, TiposAcciones } from './CentrosVacacionalesTiposAcciones';
 import { CentrosVacacionalesRepositorio } from '../../../api/centrosvacacionales.repositorio';
 import { extraerIdsDeArray } from '../../../../shared/utils/miscfunctions';
+import { statusCodes } from '../../../config/statusCodes';
 
 export function listarCentrosVacacionales( centrosVacacionales: Array<CentroVacacional> ): TiposAccionesCentroVacacional {
   return {
@@ -56,7 +57,7 @@ export const guardarNuevoCentroVacacionalAsync = ( nuevoCentroVacacional: Centro
 
     try {
       const { data, status } = await CentrosVacacionalesRepositorio.guardar( nuevoCentroVacacional );
-      if( status === 201 ) {
+      if( status === statusCodes.CREATED ) {
          /**
           * Actualizar estado centro vacacional
           */
