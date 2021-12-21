@@ -16,7 +16,7 @@ export function agregarNuevaCotizacion( cotizacion: Cotizacion ): TiposAccionesC
 export const obtenerCotizacionAsync = async ( cotizacionId: number ) => {
   try {
     const { data, status } = await CotizacionRepositorio.obtener( cotizacionId );
-    if( data !== "" && status === 200 ) {
+    if( data !== '' && status === 200 ) {
       Swal.fire({
         title: `Información de la cotización`,
         html: cotizacionTemplate( data, true ),

@@ -62,7 +62,7 @@ export const ModalCalendarios: React.FC<any> = ({
      */
     const handlerSubmit = (  values: FormValues ) => {
         onSubmit({
-            id: calendarioActivo.id,
+            id: calendarioActivo!.id,
             nombre: values.title,
             descripcion: values.description,
             festivos: selectedDays.map( day => moment( day ).format( 'YYYY-MM-DD' ) )

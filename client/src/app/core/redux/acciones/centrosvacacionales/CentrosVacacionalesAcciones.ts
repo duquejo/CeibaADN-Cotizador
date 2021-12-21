@@ -1,5 +1,7 @@
+import { Dispatch } from 'redux';
 import Swal from 'sweetalert2';
 
+import { EstadoGeneral } from '../../modelo/EstadoGeneral';
 import { CentroVacacional } from 'app/feature/Admin/models/CentroVacacional';
 import { TiposAccionesCentroVacacional, TiposAcciones } from './CentrosVacacionalesTiposAcciones';
 import { CentrosVacacionalesRepositorio } from '../../../api/centrosvacacionales.repositorio';
@@ -47,7 +49,7 @@ export function limpiarCentroVacacional(): TiposAccionesCentroVacacional {
 }
 
 export const guardarNuevoCentroVacacionalAsync = ( nuevoCentroVacacional: CentroVacacional ) => {
-  return async ( dispatch: any, getState: any ) => {
+  return async ( dispatch: Dispatch, getState: () => EstadoGeneral ) => {
 
     const { calendarios } = getState().calendarios;
     const { categoriasUsuarios } = getState().categoriasUsuarios;
@@ -69,10 +71,6 @@ export const guardarNuevoCentroVacacionalAsync = ( nuevoCentroVacacional: Centro
          Swal.fire( 'Éxito', `El centro vacacionak <u>${ data.nombre }</u> añadido!`, 'success' );
       }
     } catch (error) {
-
-      /**
-       * @TODO OBTENER VALORES DE LAS RESPUESTAS DEL SERVIDOR
-       */
       console.error( error );
       Swal.fire( 'Error', `Algo ha sucedido`, 'error' );
     }
@@ -80,7 +78,7 @@ export const guardarNuevoCentroVacacionalAsync = ( nuevoCentroVacacional: Centro
 };
 
 export const actualizarCentroVacacionalAsync = ( centroVacacional: CentroVacacional ) => {
-  return async ( dispatch: any, getState: any ) => {
+  return async ( dispatch: Dispatch, getState: () => EstadoGeneral ) => {
     
     const { calendarios } = getState().calendarios;
     const { categoriasUsuarios } = getState().categoriasUsuarios;
@@ -109,7 +107,7 @@ export const actualizarCentroVacacionalAsync = ( centroVacacional: CentroVacacio
 };
 
 export const eliminarCentroVacacionalAsync = ( centroVacacional: CentroVacacional ) => {
-  return async ( dispatch: any ) => {
+  return async ( dispatch: Dispatch ) => {
     try {
       await CentrosVacacionalesRepositorio.eliminar( centroVacacional );
       dispatch( eliminarCentroVacacional( centroVacacional ) );
@@ -122,7 +120,7 @@ export const eliminarCentroVacacionalAsync = ( centroVacacional: CentroVacaciona
 };
 
 export const listarCentrosVacacionalesAsync = () => {
-  return async ( dispatch: any ) => {
+  return async ( dispatch: Dispatch ) => {
     try {
       const { data: centrosVacacionales } = await CentrosVacacionalesRepositorio.obtener();
       dispatch( listarCentrosVacacionales( centrosVacacionales ) );

@@ -94,7 +94,7 @@ export const ModalCentrosVacacionales: React.FC<any> = ({
             calendariosSeleccionados 
         );
         onSubmit({
-            id: centroVacacionalActivo.id,
+            id: centroVacacionalActivo!.id,
             nombre: values.title,
             descripcion: values.description,
             calendarios: calendariosSeleccionados.map( ( calendario: ISelectionOptions ) => calendario.value ),

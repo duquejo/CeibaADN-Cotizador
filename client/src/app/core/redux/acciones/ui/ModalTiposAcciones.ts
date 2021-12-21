@@ -1,4 +1,4 @@
-import { tiposModal } from "../../modelo/EstadoUI";
+import { tiposModal } from '../../modelo/EstadoUI';
 
 export enum TiposAcciones {
   ABRIR_MODAL = 'ABRIR_MODAL',

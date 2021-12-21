@@ -1,3 +1,4 @@
+import { Dispatch } from 'redux';
 import Swal from 'sweetalert2';
 
 import { CategoriaUsuarios } from '../../../../feature/Admin/models/CategoriaUsuarios';
@@ -19,7 +20,7 @@ export function agregarNuevaCategoriaUsuarios( categoriaUsuarios: CategoriaUsuar
 }
 
 export const guardarNuevaCategoriaUsuariosAsync = ( nuevaCategoriaUsuarios: CategoriaUsuarios ) => {
-  return async ( dispatch: any ) => {
+  return async ( dispatch: Dispatch ) => {
     try {
       const { data, status } = await CategoriaUsuariosRepositorio.guardar( nuevaCategoriaUsuarios );
       if( status === 201 ) {
@@ -35,7 +36,7 @@ export const guardarNuevaCategoriaUsuariosAsync = ( nuevaCategoriaUsuarios: Cate
 
 
 export const listarCategoriasUsuariosAsync = () => {
-  return async ( dispatch: any ) => {
+  return async ( dispatch: Dispatch ) => {
     try {
       const { data: categoriasUsuarios } = await CategoriaUsuariosRepositorio.obtener();
       dispatch( listarCategoriasUsuarios( categoriasUsuarios ) );

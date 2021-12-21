@@ -5,5 +5,5 @@ export enum tiposModal {
 
 export interface EstadoUI {
   modalOpen: boolean;
-  type: tiposModal;
+  type: tiposModal|boolean;
 }

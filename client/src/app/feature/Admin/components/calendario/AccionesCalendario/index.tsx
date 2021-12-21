@@ -15,8 +15,8 @@ import { tiposModal } from '../../../../../core/redux/modelo/EstadoUI';
 
 export interface AccionesCalendariosProps {
   calendarios: Array<Calendario>;
-  onSubmit: ( payload: Calendario ) => any;
-  onDeleteClick: ( payload: Calendario ) => any;
+  onSubmit: ( payload: Calendario ) => void;
+  onDeleteClick: ( payload: Calendario ) => void;
 };
 
 export const AccionesCalendario: React.FC<AccionesCalendariosProps> = ({ 
@@ -40,12 +40,12 @@ export const AccionesCalendario: React.FC<AccionesCalendariosProps> = ({
     if( respuestaModal.isConfirmed ) {
       onDeleteClick( calendario );
     }
-  }
+  };
 
   const handleEditCalendar = ( calendario: Calendario) => {
     dispatch( abrirModal( tiposModal.MODAL_CALENDARIOS ) );
     dispatch( activarCalendarioEdicion( calendario ) );
-  }
+  };
 
   return (
     <>

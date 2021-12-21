@@ -4,9 +4,9 @@ import { axiosInstance } from '../config/AxiosConfig';;
 
 export const CategoriaUsuariosRepositorio = {
   obtener: () => {
-    return axiosInstance.get(`/categoriasUsuarios`);
+    return axiosInstance.get(`/categoriasUsuarios`)
   },
   guardar: ( categoriaUsuarios: CategoriaUsuarios ) => {
-    return axiosInstance.post(`/categoriasUsuarios`, categoriaUsuarios );
+    return axiosInstance.post(`/categoriasUsuarios`, categoriaUsuarios )
   }
 };

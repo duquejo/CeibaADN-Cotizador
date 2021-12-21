@@ -1,3 +1,4 @@
+import { Dispatch } from 'redux';
 import Swal from 'sweetalert2';
 
 import { Calendario } from 'app/feature/Admin/models/Calendario';
@@ -46,7 +47,7 @@ export function limpiarCalendario(): TiposAccionesCalendario {
 }
 
 export const guardarNuevoCalendarioAsync = ( nuevoCalendario: Calendario ) => {
-  return async ( dispatch: any ) => {
+  return async ( dispatch: Dispatch ) => {
     try {
       const { data, status } = await CalendariosRepositorio.guardar( nuevoCalendario );
       if( status === 201 ) {
@@ -61,7 +62,7 @@ export const guardarNuevoCalendarioAsync = ( nuevoCalendario: Calendario ) => {
 };
 
 export const actualizarCalendarioAsync = ( calendario: Calendario ) => {
-  return async ( dispatch: any ) => {
+  return async ( dispatch: Dispatch ) => {
     try {
       await CalendariosRepositorio.actualizar( calendario );
       dispatch( actualizarCalendario( calendario ) );
@@ -74,7 +75,7 @@ export const actualizarCalendarioAsync = ( calendario: Calendario ) => {
 };
 
 export const eliminarCalendarioAsync = ( calendario: Calendario ) => {
-  return async ( dispatch: any ) => {
+  return async ( dispatch: Dispatch ) => {
     try {
       await CalendariosRepositorio.eliminar( calendario );
       dispatch( eliminarCalendario( calendario ) );
@@ -87,7 +88,7 @@ export const eliminarCalendarioAsync = ( calendario: Calendario ) => {
 };
 
 export const listarCalendariosAsync = () => {
-  return async ( dispatch: any ) => {
+  return async ( dispatch: Dispatch ) => {
     try {
       const { data: calendarios } = await CalendariosRepositorio.obtener();
       dispatch( listarCalendarios( calendarios ) );

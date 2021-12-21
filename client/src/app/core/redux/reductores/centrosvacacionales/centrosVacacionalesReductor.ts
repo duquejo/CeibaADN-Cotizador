@@ -1,15 +1,13 @@
 import { TiposAccionesCentroVacacional, TiposAcciones } from '../../acciones/centrosvacacionales/CentrosVacacionalesTiposAcciones';
 import { CentroVacacional } from 'app/feature/Admin/models/CentroVacacional';
+import { EstadoCentroVacacional } from '../../modelo/EstadoCentroVacacional';
 
-/**
- * @TODO
- */
-const initialState: any = {
+const initialState: EstadoCentroVacacional = {
   centrosVacacionales: Array<CentroVacacional>(),
   centroVacacionalActivo: null
 };
 
-export default function ( state = initialState, action: TiposAccionesCentroVacacional ): any {
+export default function ( state = initialState, action: TiposAccionesCentroVacacional ): EstadoCentroVacacional {
   switch ( action.type ) {
 
     case TiposAcciones.ACTIVAR_CENTRO_VACACIONAL_EDICION: {

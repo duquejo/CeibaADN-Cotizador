@@ -1,16 +1,14 @@
 import { TiposAccionesCalendario, TiposAcciones } from '../../acciones/calendarios/CalendariosTiposAcciones';
 
 import { Calendario } from 'app/feature/Admin/models/Calendario';
+import { EstadoCalendario } from '../../modelo/EstadoCalendario';
 
-/**
- * @TODO
- */
-const initialState: any = {
+const initialState: EstadoCalendario = {
   calendarios: Array<Calendario>(),
   calendarioActivo: null
 };
 
-export default function ( state = initialState, action: TiposAccionesCalendario ): any {
+export default function ( state = initialState, action: TiposAccionesCalendario ): EstadoCalendario {
   switch ( action.type ) {
 
     case TiposAcciones.ACTIVAR_CALENDARIO_EDICION: {
