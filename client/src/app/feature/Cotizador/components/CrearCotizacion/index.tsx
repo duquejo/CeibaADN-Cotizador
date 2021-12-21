@@ -56,7 +56,7 @@ export const CrearCotizacion: React.FC<CrearCotizacionProps> = ({
       return undefined;
     }
     return calendarioActivo.festivos.map( festivo => moment( festivo ).toDate() );
-  }
+  };
 
   const initialRange = {
     from: undefined,

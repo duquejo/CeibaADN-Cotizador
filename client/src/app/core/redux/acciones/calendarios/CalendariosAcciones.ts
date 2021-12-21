@@ -55,7 +55,6 @@ export const guardarNuevoCalendarioAsync = ( nuevoCalendario: Calendario ) => {
         Swal.fire( 'Éxito', `¡Calendario <u>${ data.nombre}</u> añadido!`, 'success' );
       }
     } catch (error) {
-      console.error( error );
       Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
     }
   };
@@ -68,7 +67,6 @@ export const actualizarCalendarioAsync = ( calendario: Calendario ) => {
       dispatch( actualizarCalendario( calendario ) );
       Swal.fire( 'Éxito', `El calendario <u>${ calendario.nombre}</u> fue actualizado!`, 'success' );
     } catch (error) {
-      console.error( error );
       Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
     }
   };
@@ -81,7 +79,6 @@ export const eliminarCalendarioAsync = ( calendario: Calendario ) => {
       dispatch( eliminarCalendario( calendario ) );
       Swal.fire( 'Éxito', `El calendario <u>${ calendario.nombre }</u> fue eliminado!`, 'success' );
     } catch (error) {
-      console.error( error );
       Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
     }
   };
@@ -93,7 +90,6 @@ export const listarCalendariosAsync = () => {
       const { data: calendarios } = await CalendariosRepositorio.obtener();
       dispatch( listarCalendarios( calendarios ) );
     } catch (error) {
-      console.error( error );
       Swal.fire( 'Error', `No se han listado los calendarios, comprueba tu conexión a internet e intenta nuevamente`, 'error' );
     }
   };

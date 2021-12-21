@@ -35,7 +35,7 @@ describe('SelectorMultiple test', () => {
         value: 5
       }],
       selectText: 'Prueba - Seleccionar todos'
-    },
+    };
 
     jest.clearAllMocks();
     componentWrapper = shallow( <SelectorMultiple {...componentProps} /> );

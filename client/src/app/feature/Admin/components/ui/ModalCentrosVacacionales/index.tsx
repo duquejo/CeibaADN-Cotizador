@@ -34,7 +34,7 @@ interface FormValues {
     title: string;
     description?: string;
     calendarioActivo?: string | number | undefined;
-};
+}
 
 const initialValues: FormValues = {
     title: '',

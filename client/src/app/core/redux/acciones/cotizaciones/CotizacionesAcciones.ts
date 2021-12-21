@@ -31,7 +31,6 @@ export const obtenerCotizacionAsync = async ( cotizacionId: number ) => {
       });
     }
   } catch (error) {
-    console.error( error );
     Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
   }
 };
@@ -49,7 +48,6 @@ export const guardarNuevaCotizacionAsync = ( nuevaCotizacion: Cotizacion ) => {
         });
       }
     } catch (error) {
-      console.error( error );
       Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
     }
   };

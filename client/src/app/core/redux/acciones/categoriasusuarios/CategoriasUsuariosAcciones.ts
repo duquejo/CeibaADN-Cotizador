@@ -28,7 +28,6 @@ export const guardarNuevaCategoriaUsuariosAsync = ( nuevaCategoriaUsuarios: Cate
         Swal.fire( 'Éxito', `La categoría de usuarios <u>${ data.nombre}</u> ha sido añadida!`, 'success' );
       }
     } catch (error) {
-      console.error( error );
       Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
     }
   };
@@ -41,7 +40,6 @@ export const listarCategoriasUsuariosAsync = () => {
       const { data: categoriasUsuarios } = await CategoriaUsuariosRepositorio.obtener();
       dispatch( listarCategoriasUsuarios( categoriasUsuarios ) );
     } catch (error) {
-      console.error( error );
       Swal.fire( 'Error', `No se han listado las categorías de usuarios, comprueba tu conexión a internet e intenta nuevamente`, 'error' );
     }
   };
