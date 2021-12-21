@@ -89,4 +89,22 @@ describe('Centro vacacional', () => {
         expect( centroVacacional.calendarios[0] ).toBe( centroVacacional.calendarioActivo );
         expect( centroVacacional.categoriasUsuarios ).toEqual( centroVacacionalCopia.categoriasUsuarios );
     });
+
+    it('Centro vacacional debería dar por valor de calendario activo nulo si no hay calendarios', () => {
+
+        // Arrange
+        const centroVacacionalCopia = Object.assign( {}, centroVacacionalBaseData );
+
+        // Calendario activo no corresponde a ninguno
+        centroVacacionalCopia.calendarios = [];
+        centroVacacionalCopia.calendarioActivo = null;
+
+        const centroVacacionalValues = Object.values( centroVacacionalCopia );
+
+        // Act
+        const centroVacacional = new _CentroVacacional( ...centroVacacionalValues );
+        
+        // Assert
+        expect( centroVacacional.calendarioActivo ).toBeNull();
+    });
 });

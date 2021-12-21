@@ -90,8 +90,7 @@ describe('ServicioGuardarCentroVacacional', () => {
     await expect( servicioGuardaCentroVacacional.ejecutar( centroVacacional ) )
       .rejects
       .toThrowError( UnprocessableEntityException );
-  });  
-
+  });   
 
   it( 'Un centro vacacional no debería guardarse en el repositorio si todas las categorías de usuarios que serán asignadas no existen', async () => {
 

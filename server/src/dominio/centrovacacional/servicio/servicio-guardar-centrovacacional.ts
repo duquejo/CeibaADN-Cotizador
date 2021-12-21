@@ -45,8 +45,6 @@ export class ServicioGuardarCentroVacacional {
             if ( ! resCalendarios.some( calendario => calendario.id === centroVacacional.calendarioActivo ) ) {
                 centroVacacional.calendarioActivo = resCalendarios[0]?.id ? resCalendarios[0].id : null;
             }
-        } else {
-            centroVacacional.calendarioActivo = null;
         }   
 
         /**
@@ -67,8 +65,6 @@ export class ServicioGuardarCentroVacacional {
             
             // Asignación categorías
             centroVacacional.categoriasUsuarios = resCategorias;
-        } else {
-            centroVacacional.categoriasUsuarios = null;
         }           
 
         // Guardar

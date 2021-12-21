@@ -42,8 +42,6 @@ export class ServicioActualizarCentroVacacional {
             
             // Asignación categorías
             centroVacacional.categoriasUsuarios = resCat;
-        } else {
-            centroVacacional.categoriasUsuarios = null;
         }
 
         /**
@@ -69,8 +67,6 @@ export class ServicioActualizarCentroVacacional {
             if ( ! resCal.some( calendario => calendario.id === centroVacacional.calendarioActivo ) ) {
                 centroVacacional.calendarioActivo = resCal[0]?.id ? resCal[0].id : null;
             }
-        } else {
-            centroVacacional.calendarioActivo = null;
         }
 
         // Guardar
