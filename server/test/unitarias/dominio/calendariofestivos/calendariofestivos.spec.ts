@@ -2,6 +2,7 @@ import * as moment from 'moment';
 
 import { CalendarioFestivos } from '../../../../src/dominio/calendariofestivos/modelo/calendariofestivos';
 import { ErrorFechaInvalida } from '../../../../src/dominio/errores/error-fecha-invalida';
+import { CalendarioFestivosBuilder } from '../../../util/test-builder';
 
 describe('Calendario Festivos', () => {
 
@@ -15,81 +16,84 @@ describe('Calendario Festivos', () => {
 
   it('Calendario festivos debería crear bien', () => {
     
-    // Arrange
-    const calendarioTestValues = Object.values( calendarioTestData );
+    // Arrange & Act
+    const _calendario: CalendarioFestivos = new CalendarioFestivosBuilder( 
+      calendarioTestData.nombre 
+    )
+    .setDescripcion( calendarioTestData.descripcion )
+    .setFestivos( calendarioTestData.festivos )
+    .build();
 
-    // Act
-    const calendarioFestivos = new _CalendarioFestivos( ...calendarioTestValues );
-    
     // Assert
-    expect( calendarioFestivos.nombre ).toEqual( calendarioTestData.nombre );
-    expect( calendarioFestivos.descripcion ).toEqual( calendarioTestData.descripcion );
-    expect( calendarioFestivos.festivos[0] ).toEqual( moment( calendarioTestData.festivos[0] ).format() );
+    expect( _calendario.nombre ).toBe( calendarioTestData.nombre );
+    expect( _calendario.descripcion ).toBe( calendarioTestData.descripcion );
+    expect( _calendario.festivos[0] ).toEqual( moment( calendarioTestData.festivos[0] ).format() );
   });
 
   it('Calendario festivos debería crear bien mapeando multiples fechas', () => {
 
     // Arrange
-    const multipleFestivoCalendario = {
-      ...calendarioTestData,
-      festivos: [ '2021-12-16', '2021-12-24', '2021-12-31' ]
-    };
-    const multipleFestivoCalendarioValues = Object.values( multipleFestivoCalendario );
-    const festivosFormatted = multipleFestivoCalendario.festivos.map( festivo => ( moment( festivo ).format() ) );
+    const festivosPlanos = [ '2021-12-16', '2021-12-24', '2021-12-31' ];
+    const festivosFormatted = festivosPlanos.map( festivo => ( moment( festivo ).format() ) );
 
     // Act
-    const calendarioFestivos = new _CalendarioFestivos( ...multipleFestivoCalendarioValues );
+    const _calendario: CalendarioFestivos = new CalendarioFestivosBuilder(
+      calendarioTestData.nombre
+    )
+    .setDescripcion( calendarioTestData.descripcion )
+    .setFestivos( festivosPlanos )
+    .build();    
 
     // Assert
-    expect( multipleFestivoCalendario.nombre ).toEqual( calendarioFestivos.nombre );
-    expect( multipleFestivoCalendario.descripcion ).toEqual( calendarioFestivos.descripcion );
-    expect( festivosFormatted ).toEqual( calendarioFestivos.festivos );
+    expect( calendarioTestData.nombre ).toBe( _calendario.nombre );
+    expect( calendarioTestData.descripcion ).toBe( _calendario.descripcion );
+    expect( festivosFormatted ).toEqual( _calendario.festivos );
   });
 
   it('Calendario festivos debería crear bien sin festivos', () => {
 
-    // Arrange
-    const calendarioCopia = Object.assign( {}, calendarioTestData );
-    delete calendarioCopia.festivos;
-    const calendarioCopiaValues = Object.values( calendarioCopia );
-
-    // Act
-    const calendarioFestivos = new _CalendarioFestivos( ...calendarioCopiaValues );
+    // Arrange & Act
+    const _calendario: CalendarioFestivos = new CalendarioFestivosBuilder(
+      calendarioTestData.nombre
+    )
+    .setDescripcion( calendarioTestData.descripcion )
+    .build(); 
 
     // Assert
-    expect( calendarioCopia.nombre ).toEqual( calendarioFestivos.nombre );
-    expect( calendarioCopia.descripcion ).toEqual( calendarioFestivos.descripcion );
-    expect( calendarioFestivos.festivos ).toEqual([]);
+    expect( _calendario.nombre ).toBe( calendarioTestData.nombre );
+    expect( _calendario.descripcion ).toBe( calendarioTestData.descripcion );
+    expect( _calendario.festivos ).toEqual([]);
   });  
 
   it('Calendario festivos debería fallar si la fecha no es válida', () => {
+    
+    // 3A
+    const bisiesto = [ '2020-02-30' ];
+    return expect( async () => {
 
-    // Arrange
-    const festivoCalendarioErroneo = {
-      ...calendarioTestData,
-      festivos: [ '2020-02-30' ] // Bisiesto
-    };
-    const calendarioCopiaValues = Object.values( festivoCalendarioErroneo );
-
-    // Act & Assert
-    return expect( async () => new _CalendarioFestivos( ...calendarioCopiaValues ) )
-          .rejects
-          .toStrictEqual( new ErrorFechaInvalida( `{${ festivoCalendarioErroneo.festivos[0] }} no es una fecha válida` ));
+        const _calendario: CalendarioFestivos = new CalendarioFestivosBuilder(
+          calendarioTestData.nombre
+        )
+        .setFestivos( bisiesto )
+        .build();
+        
+        return _calendario;
+      } )
+      .rejects
+      .toStrictEqual( new ErrorFechaInvalida( `{${ bisiesto[0] }} no es una fecha válida` ));
   });
 
   it('Calendario festivos debería crearlo con los valores por defecto', () => {
 
-    // Arrange
-    const calendarioSinParametros = {
-      nombre: 'Campaña Septiembre 2022'
-    };
-    
-    // Act
-    const calendarioFestivos = new _CalendarioFestivos( ...Object.values( calendarioSinParametros ) );
+    const nombre = 'Campaña Septiembre 2022';
+    // Arrange & Act
+    const _calendario: CalendarioFestivos = new CalendarioFestivosBuilder(
+      nombre
+    ).build();
 
     // Assert
-    expect( calendarioFestivos.nombre ).toEqual( calendarioSinParametros.nombre );
-    expect( calendarioFestivos.descripcion ).toBe('');
-    expect( calendarioFestivos.festivos ).toEqual([]);
+    expect( _calendario.nombre ).toEqual( nombre );
+    expect( _calendario.descripcion ).toBe('');
+    expect( _calendario.festivos ).toEqual([]);
   });  
 });
