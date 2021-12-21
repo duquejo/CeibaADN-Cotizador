@@ -40,7 +40,7 @@ exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
       Asignación de calendarios de temporadas altas
     </b>
     <small
-      class="sc-hKwDye bAqszT"
+      class="sc-hKwDye hDvPSz"
     >
       Dicha asignación le permitirá a los administradores tener una visión de los calendarios presentes para sus centros vacacionales y configuración de días de manera dinámica.
     </small>
@@ -84,7 +84,7 @@ exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
       Asignación de categorías de usuarios
     </b>
     <small
-      class="sc-hKwDye bAqszT"
+      class="sc-hKwDye hDvPSz"
     >
       Dicha asignación le permitirá a los clientes obtener opciones personalizadas de precios según su nivel salarial.
     </small>
@@ -132,7 +132,7 @@ exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <small
-      class="sc-hKwDye bAqszT"
+      class="sc-hKwDye hDvPSz"
     >
       El calendario activo será el que el cotizador tendrá visible y presente en los cálculos.
     </small>
@@ -148,7 +148,7 @@ exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
       </option>
     </select>
     <button
-      class="sc-bdvvtL bskYeZ"
+      class="sc-bdvvtL dMEYVs"
       type="submit"
     >
       Crear

@@ -25,7 +25,7 @@ exports[`BuscarCotizacion test Debería coincidir con el snapshot 1`] = `
       value="0"
     />
     <button
-      class="sc-gsDKAQ irMAco"
+      class="sc-gsDKAQ hIhMpF"
       type="submit"
     >
       Buscar cotización
@@ -60,7 +60,7 @@ exports[`BuscarCotizacion test Debería coincidir con el snapshot 2`] = `
     value={0}
   />
   <button
-    className="sc-gsDKAQ irMAco"
+    className="sc-gsDKAQ hIhMpF"
     type="submit"
   >
     Buscar cotización

@@ -44,7 +44,7 @@ exports[`CrearCalendario test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <small
-      class="sc-eCImPb lhXPRr"
+      class="sc-eCImPb hBpRFP"
     >
       Seleccione de los siguientes calendarios, los días que corresponda que son festivos o que sean días de temporada alta. El día marcado de color rojo corresponde al día actual.
     </small>
@@ -1446,7 +1446,7 @@ exports[`CrearCalendario test Debería coincidir con el snapshot 1`] = `
       </div>
     </div>
     <button
-      class="sc-gsDKAQ irMAco"
+      class="sc-gsDKAQ hIhMpF"
       type="submit"
     >
       Crear calendario
