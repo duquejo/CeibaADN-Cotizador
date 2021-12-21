@@ -122,6 +122,7 @@ export const ModalCentrosVacacionales: React.FC<any> = ({
     const closeModal = () => {
         dispatch( limpiarCentroVacacional() );
         dispatch( cerrarModal() );
+        formik.setValues( initialValues );        
     }
 
     /**
@@ -135,7 +136,10 @@ export const ModalCentrosVacacionales: React.FC<any> = ({
 
     useEffect(() => {
 
-        if( centroVacacionalActivo ) {
+        /**
+         * Bugfix infinite loop formik
+         */
+        if( centroVacacionalActivo && formik.values === initialValues ) {
 
             /**
              * Bugfix select modal
@@ -160,7 +164,7 @@ export const ModalCentrosVacacionales: React.FC<any> = ({
             setCalendariosSeleccionados( parseObjectToOptions( centroVacacionalActivo.calendarios ) );
             setCategoriasSeleccionadas( parseObjectToOptions( centroVacacionalActivo.categoriaUsuarios ) );
         }
-    }, [ centroVacacionalActivo ] );    
+    }, [ centroVacacionalActivo, formik ] );    
 
     return (
         <ReactModal

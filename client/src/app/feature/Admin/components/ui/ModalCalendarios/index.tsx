@@ -83,10 +83,10 @@ export const ModalCalendarios: React.FC<any> = ({
      * Close modal
      */
     const closeModal = () => {
-
         setSelectedDays([]);
         dispatch( limpiarCalendario() );
         dispatch( cerrarModal() );
+        formik.setValues( initialValues );
     }
 
     /**
@@ -112,7 +112,11 @@ export const ModalCalendarios: React.FC<any> = ({
     };    
 
     useEffect(() => {
-        if( calendarioActivo ) {
+
+        /**
+         * Bugfix infinite loop formik
+         */
+        if( calendarioActivo && formik.values === initialValues ) {
 
             /**
              * Update Form
@@ -131,7 +135,7 @@ export const ModalCalendarios: React.FC<any> = ({
                 ) 
             );
         }
-    }, [ calendarioActivo ] );
+    }, [ calendarioActivo, formik ] );
 
     return (
         <ReactModal
