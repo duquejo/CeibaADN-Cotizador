@@ -5,8 +5,6 @@ import { createStubObj } from '../../../util/create-object.stub';
 import { ServicioBorrarCentroVacacional } from '../../../../src/dominio/centrovacacional/servicio/servicio-borrar-centrovacacional';
 
 import { RepositorioCentroVacacional } from '../../../../src/dominio/centrovacacional/puerto/repositorio/repositorio-centrovacacional';
-import { RepositorioCalendarioFestivos } from '../../../../src/dominio/calendariofestivos/puerto/repositorio/repositorio-calendariofestivos';
-import { RepositorioCategoriaUsuarios } from '../../../../src/dominio/categoriausuarios/puerto/repositorio/repositorio-categoriausuarios';
 
 describe('ServicioBorrarCentroVacacional', () => {
 

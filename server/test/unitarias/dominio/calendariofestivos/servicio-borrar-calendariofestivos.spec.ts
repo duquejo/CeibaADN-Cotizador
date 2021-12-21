@@ -2,14 +2,11 @@ import { SinonStubbedInstance } from 'sinon';
 import { NotFoundException } from '@nestjs/common';
 import { createStubObj } from '../../../util/create-object.stub';
 
-import { CalendarioFestivos } from '../../../../src/dominio/calendariofestivos/modelo/calendariofestivos';
 import { RepositorioCalendarioFestivos } from '../../../../src/dominio/calendariofestivos/puerto/repositorio/repositorio-calendariofestivos';
 import { ServicioBorrarCalendarioFestivos } from '../../../../src/dominio/calendariofestivos/servicio/servicio-borrar-calendariofestivos';
 
 
 describe('ServicioBorrarCalendarioFestivos', () => {
-
-  const _CalendarioFestivos = CalendarioFestivos as any;
 
   let servicioBorrarCalendarioFestivos: ServicioBorrarCalendarioFestivos;
   let repositorioCalendarioFestivosStub: SinonStubbedInstance<RepositorioCalendarioFestivos>;

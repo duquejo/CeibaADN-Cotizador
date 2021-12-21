@@ -6,7 +6,7 @@ import { CalendarioFestivos } from '../../src/dominio/calendariofestivos/modelo/
  export class CalendarioFestivosBuilder {
 
     private _nombre: string;
-    private _descripcion: string = '';
+    private _descripcion = '';
     private _festivos: string[] = [];
   
     constructor(nombre: string ) {

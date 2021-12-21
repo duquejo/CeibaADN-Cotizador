@@ -1,5 +1,4 @@
 import { CentroVacacional } from '../../../../src/dominio/centrovacacional/modelo/centrovacacional';
-import { CalendarioFestivosEntidad } from '../../../../src/infraestructura/calendariofestivos/entidad/calendariofestivos.entidad';
 
 describe('Centro vacacional', () => {
 

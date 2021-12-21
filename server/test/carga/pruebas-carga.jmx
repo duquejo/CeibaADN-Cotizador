@@ -17,7 +17,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">5</stringProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
         <stringProp name="ThreadGroup.ramp_time">15</stringProp>
         <longProp name="ThreadGroup.start_time">1582130051000</longProp>
         <longProp name="ThreadGroup.end_time">1582130051000</longProp>
@@ -27,25 +27,18 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-          <collectionProp name="HeaderManager.headers">
-            <elementProp name="" elementType="Header">
-              <stringProp name="Header.name">Content-Type</stringProp>
-              <stringProp name="Header.value">application/json</stringProp>
-            </elementProp>
-          </collectionProp>
-        </HeaderManager>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Crear usuario" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Crear calendarios" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-	&quot;nombre&quot;:&quot;${__RandomString(6,1236547890,)}&quot;,&#xd;
-	&quot;clave&quot;:&quot;1478&quot;,&#xd;
-	&quot;fechaCreacion&quot;: &quot;2021-12-14T14:02:58.312Z&quot;&#xd;
+  &quot;nombre&quot;: &quot;Calendario ${__RandomString(6,1236547890,)}&quot;,&#xd;
+  &quot;descripcion&quot;: &quot;Pruebas&quot;,&#xd;
+  &quot;festivos&quot;: [&#xd;
+    &quot;2021-12-18&quot;, &quot;2021-12-20&quot;, &quot;2021-12-25&quot;&#xd;
+  ]&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -55,7 +48,7 @@
           <stringProp name="HTTPSampler.port">3000</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding">UTF8</stringProp>
-          <stringProp name="HTTPSampler.path">/api/usuarios</stringProp>
+          <stringProp name="HTTPSampler.path">/api/calendariosFestivos</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>

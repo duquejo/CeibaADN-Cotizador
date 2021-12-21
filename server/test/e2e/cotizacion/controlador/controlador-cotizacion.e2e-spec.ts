@@ -1,7 +1,7 @@
 import * as request from 'supertest';
 import { Test } from '@nestjs/testing';
 import { createStubObj } from '../../../util/create-object.stub';
-import { HttpStatus, INestApplication, Body, HttpCode } from '@nestjs/common';
+import { HttpStatus, INestApplication } from '@nestjs/common';
 import { createSandbox, SinonStubbedInstance } from 'sinon';
 
 import { AppLogger } from '../../../../src/infraestructura/configuracion/ceiba-logger.service';
@@ -14,8 +14,6 @@ import { servicioCrearCotizacionProveedor } from '../../../../src/infraestructur
 import { ManejadorCrearCotizacion } from '../../../../src/aplicacion/cotizacion/comando/registrar-cotizacion.manejador';
 import { ManejadorObtenerCotizacion } from '../../../../src/aplicacion/cotizacion/consulta/obtener-cotizacion.manejador';
 import { CentroVacacionalEntidad } from '../../../../src/infraestructura/centrovacacional/entidad/centrovacacional.entidad';
-import { CategoriaUsuariosEntidad } from '../../../../src/infraestructura/categoriausuarios/entidad/categoriausuarios.entidad';
-import { ComandoCrearCotizacion } from '../../../../src/aplicacion/cotizacion/comando/registrar-cotizacion.comando';
 import { RepositorioCentroVacacional } from '../../../../src/dominio/centrovacacional/puerto/repositorio/repositorio-centrovacacional';
 
 // Generales
@@ -97,21 +95,6 @@ describe('Pruebas al controlador de la cotización', () => {
         ]
       }]
     } as CentroVacacionalEntidad;
-  
-    const categoriaUsuariosDataMock = {
-      nombre: "Menor a $800.000 COP",
-      descripcion: "Cartagena",
-      valorAlta: 50000,
-      valorBaja: 25000
-    } as CategoriaUsuariosEntidad;  
-
-    const cotizacionDataMock : ComandoCrearCotizacion = {
-      centroVacacional: 1,
-      categoriaUsuarios: 2,
-      personas: 3,
-      fechaInicio: '2021-12-10',
-      fechaFin: '2021-12-18'
-    };
 
     repositorioCentroVacacional.obtenerUnCentroVacacional.returns( Promise.resolve( centroVacacionalDataMock ) );
 

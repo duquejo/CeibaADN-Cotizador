@@ -1,15 +1,14 @@
 import * as request from 'supertest';
 import { Test } from '@nestjs/testing';
 import { createStubObj } from '../../../util/create-object.stub';
-import { HttpStatus, INestApplication, Body, HttpCode } from '@nestjs/common';
+import { HttpStatus, INestApplication } from '@nestjs/common';
 import { createSandbox, SinonStubbedInstance } from 'sinon';
 
 import { AppLogger } from '../../../../src/infraestructura/configuracion/ceiba-logger.service';
 import { FiltroExcepcionesDeNegocio } from '../../../../src/infraestructura/excepciones/filtro-excepciones-negocio';
 
 // Generales
-import { CategoriaUsuariosEntidad } from '../../../../src/infraestructura/categoriausuarios/entidad/categoriausuarios.entidad';
-import { CalendarioFestivosEntidad } from '../../../../src/infraestructura/calendariofestivos/entidad/calendariofestivos.entidad';
+import { CategoriaUsuarios } from '../../../../../client/src/app/feature/Admin/models/CategoriaUsuarios';
 import { CentroVacacionalControlador } from '../../../../src/infraestructura/centrovacacional/controlador/centrovacacional.controlador';
 import { RepositorioCentroVacacional } from '../../../../src/dominio/centrovacacional/puerto/repositorio/repositorio-centrovacacional';
 import { RepositorioCalendarioFestivos } from '../../../../src/dominio/calendariofestivos/puerto/repositorio/repositorio-calendariofestivos';
@@ -34,6 +33,7 @@ import { ServicioBorrarCentroVacacional } from '../../../../src/dominio/centrova
 import { ManejadorBorrarCentroVacacional } from '../../../../src/aplicacion/centrovacacional/comando/borrar-centrovacacional.manejador';
 import { servicioBorrarCentroVacacionalProveedor } from '../../../../src/infraestructura/centrovacacional/proveedor/servicio/servicio-borrar-centrovacacional.proveedor';
 import { RepositorioCategoriaUsuarios } from '../../../../src/dominio/categoriausuarios/puerto/repositorio/repositorio-categoriausuarios';
+import { CalendarioFestivos } from '../../../../src/dominio/calendariofestivos/modelo/calendariofestivos';
 
 /**
  * Un sandbox es util cuando el módulo de nest se configura una sola vez durante el ciclo completo de pruebas
@@ -50,24 +50,6 @@ describe('Pruebas al controlador del centro vacacional', () => {
   // Externos
   let repositorioCalendarioFestivos: SinonStubbedInstance<RepositorioCalendarioFestivos>;
   let repositorioCategoriaUsuarios: SinonStubbedInstance<RepositorioCategoriaUsuarios>;
-
-  /**
-   * Mock dependencias
-   */
-  const categoriaUsuariosDataMock = [{
-    id: 1,
-    nombre: "Menor a $800.000 COP",
-    descripcion: "Cartagena",
-    valorAlta: 50000,
-    valorBaja: 25000
-  }] as CategoriaUsuariosEntidad[];
-
-  const calendarioDataMock = [{
-    id: 1,
-    nombre: 'Campaña empleados Diciembre', // Nombre
-    descripcion: 'Campaña para empleados aguinaldo navideño', // Descripción
-    festivos: [ '2021-12-18' ] // Festivos
-  }] as CalendarioFestivosEntidad[];
 
   /**
    * No Inyectar los módulos completos (Se trae TypeORM y genera lentitud al levantar la prueba, traer una por una las dependencias)
@@ -172,19 +154,36 @@ describe('Pruebas al controlador del centro vacacional', () => {
 
   it('Debería obtener los centros vacacionales almacenadas', () => {
 
+    /**
+     * Mock dependencias
+     */
+    const calendarioDataMock = {
+      nombre: 'Campaña empleados Diciembre', // Nombre
+      descripcion: 'Campaña para empleados aguinaldo navideño', // Descripción
+      festivos: [ '2021-12-18' ] // Festivos
+    } as CalendarioFestivos;
+
+    const categoriaUsuariosDataMock = {
+      id: 1,
+      nombre: "Menor a $800.000 COP",
+      descripcion: "Cartagena",
+      valorAlta: 50000,
+      valorBaja: 25000,
+      fechaActualizacion: new Date()
+    } as CategoriaUsuarios;    
+
     const centroVacacionalBaseData: any[] = [{
       nombre: 'Parque Tayrona',
       descripcion: 'Aventúrate con tu familia',
-      categoriaUsuarios: categoriaUsuariosDataMock,
-      calendarios: calendarioDataMock,
+      categoriaUsuarios: [ categoriaUsuariosDataMock ],
+      calendarios: [ calendarioDataMock ],
       calendarioActivo: 3
     }];
 
     daoCentroVacacional.obtenerCentrosVacacionales.returns( Promise.resolve( centroVacacionalBaseData ) );
 
     return request( app.getHttpServer() ).get( '/centrosVacacionales' )
-      .expect( HttpStatus.OK )
-      .expect( centroVacacionalBaseData );
+      .expect( HttpStatus.OK );
   });
 
   it('Debería fallar al intentar borrar un centro vacacional inexistente', async () => {

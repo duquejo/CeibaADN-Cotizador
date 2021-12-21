@@ -115,9 +115,6 @@ describe('ServicioCrearCotizacion', () => {
     const cotizacionValues = Object.values( cotizacionDataTest );
     const cotizacion = new _Cotizacion( ...cotizacionValues );
 
-
-    const categoriaUsuarios = new CategoriaUsuariosEntidad();
-
     // Centro vacacional válido y existente
     repositorioCentroVacacionalStub.obtenerUnCentroVacacional.returns( Promise.resolve( centroVacacionalDataMock ) );
 

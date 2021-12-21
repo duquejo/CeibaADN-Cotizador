@@ -58,11 +58,7 @@ describe('Cotizaciones', () => {
   });
 
   it('La base de la cotización debería fallar si no se proveen las fechas', () => {
-
-    // Arrange
-    const cotizacionSinParametros = {};
-
-    // Act & Assert
+    // 3A
     return expect( async () => new _Cotizacion() )
           .rejects
           .toStrictEqual( new ErrorValorRequerido( `Debes proporcionar una fecha` ) );
@@ -212,10 +208,10 @@ describe('Cotizaciones', () => {
     // Arrange 
     let diasAlta = 0;
 
-    let fechaInicio = cotizacionDataTest.fechaInicio; 
-    let fechaFin = cotizacionDataTest.fechaFin;
+    const fechaInicio = cotizacionDataTest.fechaInicio; 
+    const fechaFin = cotizacionDataTest.fechaFin;
 
-    let momFechaInicio: moment.Moment = moment( fechaInicio, constantes.FORMATO_FECHA ),
+    const momFechaInicio: moment.Moment = moment( fechaInicio, constantes.FORMATO_FECHA ),
         momFechaFin:    moment.Moment = moment( fechaFin, constantes.FORMATO_FECHA );
 
     const cotizacionValues = Object.values( cotizacionDataTest );

@@ -5,8 +5,6 @@ import { ErrorFechaInvalida } from '../../../../src/dominio/errores/error-fecha-
 import { CalendarioFestivosBuilder } from '../../../util/test-builder';
 
 describe('Calendario Festivos', () => {
-
-  const _CalendarioFestivos = CalendarioFestivos as any;
   
   const calendarioTestData = {
     nombre: 'Campaña empleados Diciembre', // Nombre

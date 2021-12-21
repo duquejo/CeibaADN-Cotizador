@@ -1,7 +1,7 @@
 import * as request from 'supertest';
 import { Test } from '@nestjs/testing';
 import { createStubObj } from '../../../util/create-object.stub';
-import { HttpStatus, INestApplication, Body, HttpCode } from '@nestjs/common';
+import { HttpStatus, INestApplication } from '@nestjs/common';
 import { createSandbox, SinonStubbedInstance } from 'sinon';
 
 import { AppLogger } from '../../../../src/infraestructura/configuracion/ceiba-logger.service';
@@ -160,7 +160,7 @@ describe('Pruebas al controlador del calendario de festivos', () => {
       festivos: [ '2021-12-18' ] // Festivos
     };
 
-    const response = await request( app.getHttpServer() ).post('/calendariosFestivos')
+    await request( app.getHttpServer() ).post('/calendariosFestivos')
       .send( calendariosFestivosMock )
       .expect( HttpStatus.CREATED );
   });  

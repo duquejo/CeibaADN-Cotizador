@@ -1,7 +1,7 @@
 import * as request from 'supertest';
 import { Test } from '@nestjs/testing';
 import { createStubObj } from '../../../util/create-object.stub';
-import { HttpStatus, INestApplication, Body, HttpCode } from '@nestjs/common';
+import { HttpStatus, INestApplication } from '@nestjs/common';
 import { createSandbox, SinonStubbedInstance } from 'sinon';
 
 import { AppLogger } from '../../../../src/infraestructura/configuracion/ceiba-logger.service';
@@ -105,7 +105,7 @@ describe('Pruebas al controlador de las categorías de usuarios', () => {
       valorBaja: 25000
     };
 
-    const response = await request( app.getHttpServer() ).post('/categoriasUsuarios')
+    await request( app.getHttpServer() ).post('/categoriasUsuarios')
       .send( categoriaUsuariosMock )
       .expect( HttpStatus.CREATED );
   });
