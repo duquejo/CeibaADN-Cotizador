@@ -7,4 +7,7 @@ export const DivContainer = styled.div`
   max-width: 800px;
   flex-wrap: nowrap;
   flex-direction: column;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }  
 `;

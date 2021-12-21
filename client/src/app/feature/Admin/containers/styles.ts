@@ -5,6 +5,9 @@ export const DivContainer = styled.div`
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }  
 `;
 
 export const DivRow = styled.div`
@@ -19,4 +22,8 @@ export const DivRow = styled.div`
     width: 50%;
     flex: 0 0 50%;
   }
+  @media (max-width: 768px) {
+    padding-right: 0px;
+    padding-left: 0px;
+  }  
 `;

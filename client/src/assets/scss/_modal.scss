@@ -39,4 +39,33 @@
   max-height: 620px;
   outline: none;
   padding: 10px;
+  h2 {
+    i {
+      text-decoration: underline;
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    max-width: 95%;
+    max-height: 100%;
+    overflow-y: scroll;
+    h2 {
+      font-size: 25px;
+      i {
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .swal2-popup.swal2-modal.swal2-icon-info.swal2-show,
+  .swal2-popup.swal2-modal.swal2-icon-success.swal2-show {
+    width: 100% !important;
+    .swal2-html-container {
+      margin: 10px !important;
+    }
+  }
 }

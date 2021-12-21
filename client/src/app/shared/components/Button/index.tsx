@@ -20,4 +20,9 @@ export const Button = styled.button`
   &[disabled] {
     opacity: 0.3;
   }
+  @media (max-width: 768px){
+    margin-bottom: 20px;
+    margin-top: 5px;
+    width: 100%;
+  }
 `;

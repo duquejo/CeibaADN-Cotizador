@@ -63,9 +63,36 @@ label {
 
 table {
   border-spacing: 0;
+  th {
+    @media (max-width: 768px) {
+      font-size: 13px;
+      padding: 5px;
+      small {
+        margin: 0 !important;
+      }
+    }
+  }
   td {
     padding-top: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    @media (max-width: 768px) {
+      padding: 5px;
+      font-size: 13px !important;
+    }
   }
+  tr:last-child {
+    td {
+      border-bottom: none;
+    }
+  }
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+h2 {
+  margin: 20px 0;
 }
 
 @import 'assets/scss/modal';
