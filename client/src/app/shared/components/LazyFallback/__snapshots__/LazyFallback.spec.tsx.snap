@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas sobre componente <LazyFallback /> Debería renderizar el elemento 1`] = `
+<styled.div>
+  <SpanFallback>
+    Cargando página...
+  </SpanFallback>
+</styled.div>
+`;

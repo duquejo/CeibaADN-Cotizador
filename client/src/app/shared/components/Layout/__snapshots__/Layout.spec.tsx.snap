@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas sobre componente <Layout /> Debería renderizar el elemento 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Cotizador de Centros Vacacionales | 
+      Página de prueba
+    </title>
+    <meta
+      content="Esta es la descripción de una página de prueba"
+      name="description"
+    />
+  </HelmetWrapper>
+  <styled.div>
+    <span>
+      GestionCalendarios
+    </span>
+  </styled.div>
+  <FooterContainer />
+</Fragment>
+`;

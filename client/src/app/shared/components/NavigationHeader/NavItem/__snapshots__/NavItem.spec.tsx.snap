@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas sobre componente <NavList /> Debería renderizar el elemento 1`] = `
+<styled.div>
+  <Styled(Link)
+    replace={true}
+    to="/menu1"
+  >
+    Item menú 1
+  </Styled(Link)>
+</styled.div>
+`;

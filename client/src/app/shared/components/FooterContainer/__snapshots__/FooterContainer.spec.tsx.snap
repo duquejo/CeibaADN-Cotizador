@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas sobre componente <FooterContainer /> Debería renderizar el elemento 1`] = `
+<styled.footer>
+  José Miguel Duque Mejía - 
+  2021
+</styled.footer>
+`;

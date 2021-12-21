@@ -5,6 +5,8 @@ export const SpanFallback = styled.span`
   font-size: 18px;
 `;
 
+SpanFallback.displayName = 'SpanFallback';
+
 export const Div = styled.div`
   margin-top: 10px;
   margin-left: 10px;

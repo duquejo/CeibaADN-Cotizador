@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas sobre componente <CheckBoxLabel /> Debería renderizar el elemento 1`] = `
+<label
+  className="sc-bdvvtL hKVzWT"
+/>
+`;

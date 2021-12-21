@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas sobre componente <NavList /> Debería renderizar el elemento 1`] = `
+<styled.ul>
+  <li
+    key="Item menú 1"
+  >
+    <NavItem
+      label="Item menú 1"
+      to="/menu1"
+    />
+  </li>
+  <li
+    key="Item menú 2"
+  >
+    <NavItem
+      label="Item menú 2"
+      to="/menu2"
+    />
+  </li>
+  <li
+    key="Item menú 2"
+  >
+    <NavItem
+      label="Item menú 2"
+      to="/menu2"
+    />
+  </li>
+</styled.ul>
+`;
