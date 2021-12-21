@@ -72,6 +72,7 @@ export const guardarNuevoCentroVacacionalAsync = ( nuevoCentroVacacional: Centro
          Swal.fire( 'Éxito', `El centro vacacionak <u>${ data.nombre }</u> añadido!`, 'success' );
       }
     } catch (error) {
+      console.log(error);
       Swal.fire( 'Error', `Algo ha sucedido`, 'error' );
     }
   };
@@ -112,6 +113,7 @@ export const eliminarCentroVacacionalAsync = ( centroVacacional: CentroVacaciona
       dispatch( eliminarCentroVacacional( centroVacacional ) );
       Swal.fire( 'Éxito', `El centro vacacional <u>${ centroVacacional.nombre }</u> fue eliminado!`, 'success' );
     } catch (error) {
+      console.log(error);
       Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
     }
   };
@@ -123,6 +125,7 @@ export const listarCentrosVacacionalesAsync = () => {
       const { data: centrosVacacionales } = await CentrosVacacionalesRepositorio.obtener();
       dispatch( listarCentrosVacacionales( centrosVacacionales ) );
     } catch (error) {
+      console.log(error);
       Swal.fire( 'Error', `No se han obtenido los centros vacacionales, comprueba tu conexión a internet e intenta nuevamente`, 'error' );
     }
   };

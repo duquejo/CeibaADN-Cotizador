@@ -50,6 +50,7 @@ export const guardarNuevaCotizacionAsync = ( nuevaCotizacion: Cotizacion ) => {
         });
       }
     } catch (error) {
+      console.log( error );
       Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
     }
   };
