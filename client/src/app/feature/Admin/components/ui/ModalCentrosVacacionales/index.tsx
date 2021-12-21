@@ -73,7 +73,7 @@ export const ModalCentrosVacacionales: React.FC<any> = ({
     const { centroVacacionalActivo } = useSelector( ( state: EstadoGeneral ) => state.centrosVacacionales );
 
     /**
-     * Todos
+     * Todos Calendarios
      */
     const { calendarios: todosCalendarios } = useSelector( ( state: EstadoGeneral ) => state.calendarios );
     const { categoriasUsuarios: todosCategoriasUsuarios } = useSelector( ( state: EstadoGeneral ) => state.categoriasUsuarios );
