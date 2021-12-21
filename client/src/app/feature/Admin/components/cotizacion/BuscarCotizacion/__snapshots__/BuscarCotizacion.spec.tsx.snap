@@ -17,7 +17,7 @@ exports[`BuscarCotizacion test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <input
-      class="sc-AxjAm fjyWPa"
+      class="sc-bdvvtL cJYwoi"
       id="id"
       name="id"
       placeholder="Identificador de la cotización, por ejemplo: '1'"
@@ -25,7 +25,7 @@ exports[`BuscarCotizacion test Debería coincidir con el snapshot 1`] = `
       value="0"
     />
     <button
-      class="sc-AxirZ iHGsua"
+      class="sc-gsDKAQ irMAco"
       type="submit"
     >
       Buscar cotización
@@ -51,7 +51,7 @@ exports[`BuscarCotizacion test Debería coincidir con el snapshot 2`] = `
     </b>
   </label>
   <input
-    className="sc-AxjAm fjyWPa"
+    className="sc-bdvvtL cJYwoi"
     id="id"
     name="id"
     onChange={[Function]}
@@ -60,7 +60,7 @@ exports[`BuscarCotizacion test Debería coincidir con el snapshot 2`] = `
     value={0}
   />
   <button
-    className="sc-AxirZ iHGsua"
+    className="sc-gsDKAQ irMAco"
     type="submit"
   >
     Buscar cotización

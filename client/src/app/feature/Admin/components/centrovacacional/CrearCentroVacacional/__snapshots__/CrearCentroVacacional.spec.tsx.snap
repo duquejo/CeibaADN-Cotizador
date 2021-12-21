@@ -16,7 +16,7 @@ exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <input
-      class="sc-AxirZ htyvkB"
+      class="sc-gsDKAQ kdvfBj"
       id="cv-title"
       name="title"
       placeholder="Nombre del centro vacacional, ejemplo: 'Cartagena Resort'."
@@ -30,7 +30,7 @@ exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <textarea
-      class="sc-AxgMl gHNfE"
+      class="sc-jRQBWg hlzhTV"
       id="cv-description"
       name="description"
       placeholder="Descripción del centro vacacional, ejemplo: 'Pasajes paradisiacos en la costa Colombiana'."
@@ -40,7 +40,7 @@ exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
       Asignación de calendarios de temporadas altas
     </b>
     <small
-      class="sc-AxhCb fRACGO"
+      class="sc-hKwDye bAqszT"
     >
       Dicha asignación le permitirá a los administradores tener una visión de los calendarios presentes para sus centros vacacionales y configuración de días de manera dinámica.
     </small>
@@ -84,7 +84,7 @@ exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
       Asignación de categorías de usuarios
     </b>
     <small
-      class="sc-AxhCb fRACGO"
+      class="sc-hKwDye bAqszT"
     >
       Dicha asignación le permitirá a los clientes obtener opciones personalizadas de precios según su nivel salarial.
     </small>
@@ -132,12 +132,12 @@ exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <small
-      class="sc-AxhCb fRACGO"
+      class="sc-hKwDye bAqszT"
     >
       El calendario activo será el que el cotizador tendrá visible y presente en los cálculos.
     </small>
     <select
-      class="sc-AxiKw ejmKwG"
+      class="sc-dkPtRN gkhtzY"
       id="active_calendar"
       name="calendarioActivo"
     >
@@ -148,7 +148,7 @@ exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
       </option>
     </select>
     <button
-      class="sc-AxjAm oBMhR"
+      class="sc-bdvvtL bskYeZ"
       type="submit"
     >
       Crear

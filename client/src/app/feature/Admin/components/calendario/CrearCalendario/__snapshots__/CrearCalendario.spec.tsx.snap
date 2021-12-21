@@ -16,7 +16,7 @@ exports[`CrearCalendario test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <input
-      class="sc-AxjAm fjyWPa"
+      class="sc-bdvvtL cJYwoi"
       id="title"
       name="title"
       placeholder="Título personalizado del calendario, por ejemplo: 'Calendario de alta afluencia enero'."
@@ -30,7 +30,7 @@ exports[`CrearCalendario test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <textarea
-      class="sc-AxiKw gNuUer"
+      class="sc-dkPtRN cFTRpZ"
       id="description"
       name="description"
       placeholder="Descripción del calendario. Extienda más información de carácter administrativo del mismo, generando más opciones de recordación o gestión."
@@ -44,7 +44,7 @@ exports[`CrearCalendario test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <small
-      class="sc-AxhUy cfywdj"
+      class="sc-eCImPb lhXPRr"
     >
       Seleccione de los siguientes calendarios, los días que corresponda que son festivos o que sean días de temporada alta. El día marcado de color rojo corresponde al día actual.
     </small>
@@ -1446,7 +1446,7 @@ exports[`CrearCalendario test Debería coincidir con el snapshot 1`] = `
       </div>
     </div>
     <button
-      class="sc-AxirZ iHGsua"
+      class="sc-gsDKAQ irMAco"
       type="submit"
     >
       Crear calendario
