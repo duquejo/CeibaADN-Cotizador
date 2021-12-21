@@ -1,2 +1,5 @@
 # compiled output
 /node_modules
+
+# Tests
+/coverage
