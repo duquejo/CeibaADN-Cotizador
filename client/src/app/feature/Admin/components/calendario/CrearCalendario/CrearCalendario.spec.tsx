@@ -77,7 +77,7 @@ describe('CrearCalendario test', () => {
       description && fireEvent.change(description, setTextEvent('description', 'Descripción del calendario de prueba'));
     });
     await wait(() => {
-      day && fireEvent.click(day)
+      day && fireEvent.click(day);
     });
     await wait(() => {
       submitButton && fireEvent.click(submitButton);

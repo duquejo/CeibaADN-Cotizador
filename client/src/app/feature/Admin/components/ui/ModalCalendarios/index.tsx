@@ -33,7 +33,7 @@ if (process.env.NODE_ENV !== 'test') {
 interface FormValues {
     title: string;
     description?: string
-};
+}
 
 const validationSchema = Yup.object().shape<FormValues>({
     title: Yup.string().required('El campo título es requerido.')
@@ -87,7 +87,7 @@ export const ModalCalendarios: React.FC<any> = ({
         dispatch( limpiarCalendario() );
         dispatch( cerrarModal() );
         formik.setValues( initialValues );
-    }
+    };
 
     /**
      * Guarda festivos del formulario de creación

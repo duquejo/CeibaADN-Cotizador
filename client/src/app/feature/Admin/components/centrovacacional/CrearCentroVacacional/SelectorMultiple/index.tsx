@@ -37,7 +37,7 @@ export const SelectorMultiple: React.FC<any> = ({
         if( elements ) {
             handlerSeleccion( elements );
         }
-    }, [ elements, handlerSeleccion ])
+    }, [ elements, handlerSeleccion ]);
 
     return (
         <>
@@ -50,5 +50,5 @@ export const SelectorMultiple: React.FC<any> = ({
                 overrideStrings={ overrideStrings }
             />
         </>
-    )
+    );
 };

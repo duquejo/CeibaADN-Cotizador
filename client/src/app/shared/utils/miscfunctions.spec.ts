@@ -19,23 +19,23 @@ describe('Funciones de miscelánea o utilidades', () => {
 
   const cotizacion = {
     categoriaUsuarios: {
-      id: 2, nombre: "Categoria", descripcion: "", valorAlta: 1200, valorBaja: 200 
+      id: 2, nombre: 'Categoria', descripcion: '', valorAlta: 1200, valorBaja: 200 
     },
     centroVacacional: {
-      id: 4, nombre: "Cosa!", descripcion: "asdasd", calendarioActivo: 27
+      id: 4, nombre: 'Cosa!', descripcion: 'asdasd', calendarioActivo: 27
     },
-    codigo: "29211171-9922-497c-bce6-0cad9e0d9492",
-    fechaFin: "2021-12-25T00:00:00-05:00",
-    fechaInicio: "2021-12-23T00:00:00-05:00",
+    codigo: '29211171-9922-497c-bce6-0cad9e0d9492',
+    fechaFin: '2021-12-25T00:00:00-05:00',
+    fechaInicio: '2021-12-23T00:00:00-05:00',
     id: 7,
     personas: 3,
     total: 1800
   };
 
   const isHTML = ( str: string ) => {
-    const doc = new DOMParser().parseFromString(str, "text/html");
+    const doc = new DOMParser().parseFromString(str, 'text/html');
     return Array.from(doc.body.childNodes).some(node => node.nodeType === 1);
-  }
+  };
 
   it('Debería devolver una cadena HTML válida', () => {
     // Arrange & Act

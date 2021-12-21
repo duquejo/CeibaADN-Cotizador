@@ -26,14 +26,14 @@ interface FormValues {
 }
 
 interface CrearCotizacionProps {
-  onSubmit: ( payload: Cotizacion ) => any;
+  onSubmit: ( payload: Cotizacion ) => void;
   centrosvacacionales: Array<CentroVacacional>;
   initialValues?: FormValues;
 }
 
 const validationSchema = Yup.object().shape<FormValues>({
   personas: Yup.number().required('La cantidad de personas es requerida.')
-               .moreThan(1, 'Debe cotizar para por lo menos una persona')
+               .moreThan(0, 'Debe cotizar para por lo menos una persona')
                .integer( 'La cantidad de personas debe ser un número entero' )
                .truncate(),
   categoriaUsuarios: Yup.number().required('Debes seleccionar una categoría de usuario')
@@ -108,11 +108,11 @@ export const CrearCotizacion: React.FC<CrearCotizacionProps> = ({
   const resetFormDynamicContent = () => {
     setSelectedDays(initialRange);
     setSelectedCentroVacacional(undefined);
-  }
+  };
 
   const handlerClickSelectionCV = ( centroVacacionalSeleccionado: CentroVacacional ) => {
     setSelectedCentroVacacional( centroVacacionalSeleccionado );
-  }
+  };
 
   const formik = useFormik({
     initialValues,

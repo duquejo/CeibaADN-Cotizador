@@ -17,7 +17,7 @@ interface FormValues {
   title: string;
   description?: string;
   calendarioActivo?: string | number | undefined;
-};
+}
 
 const initialValues: FormValues = {
   title: '',
@@ -76,11 +76,11 @@ export const CrearCentroVacacional: React.FC<any> = ({
 
   const handlerCalendariosSeleccionados = ( calendarios: ISelectionOptions[] ) => {
     setCalendariosSeleccionados( calendarios );
-  }
+  };
 
   const handlerCategoriasSeleccionadas = ( categorias: ISelectionOptions[] ) => {
     setCategoriasSeleccionadas( categorias );
-  }
+  };
 
   return (
     <form className="cv__form" onSubmit={ formik.handleSubmit }>

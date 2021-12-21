@@ -2,7 +2,6 @@ import * as React from 'react';
 import { ShallowWrapper, shallow } from 'enzyme';
 import { GestionCentrosVacacionales } from './index';
 import { SinonStub } from 'sinon';
-import { agregarNuevoCentroVacacional } from '../../../../core/redux/acciones/centrosvacacionales/CentrosVacacionalesAcciones';
 
 describe('GestionCentrosVacacionales Test', () => {
 

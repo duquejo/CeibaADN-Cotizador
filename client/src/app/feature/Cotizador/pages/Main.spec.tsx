@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
 import AdminMainPage from 'app/feature/Admin/pages/Main';
 import { ShallowWrapper, shallow } from 'enzyme';
 
@@ -13,10 +12,10 @@ describe('Pruebas sobre <AdminMainPage />', () => {
         history: {
           replace: jest.fn(),
         },
-    }
+    };
 
     it('Debería renderizar bien el elemento padre', () => {
         componentWrapper = shallow( <AdminMainPage {...defaultProps} /> );
-        expect( componentWrapper ).toMatchSnapshot()
+        expect( componentWrapper ).toMatchSnapshot();
     });
-})
+});

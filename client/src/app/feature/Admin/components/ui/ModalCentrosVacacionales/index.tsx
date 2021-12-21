@@ -110,11 +110,11 @@ export const ModalCentrosVacacionales: React.FC<any> = ({
      */
     const handlerCalendariosSeleccionados = ( calendarios: ISelectionOptions[] ) => {
         setCalendariosSeleccionados( calendarios );
-    }   
+    };
     
     const handlerCategoriasSeleccionadas = ( categoriasUsuarios: ISelectionOptions[] ) => {
         setCategoriasSeleccionadas( categoriasUsuarios );
-    }
+    };
 
     /**
      * Close modal
@@ -123,7 +123,7 @@ export const ModalCentrosVacacionales: React.FC<any> = ({
         dispatch( limpiarCentroVacacional() );
         dispatch( cerrarModal() );
         formik.setValues( initialValues );        
-    }
+    };
 
     /**
      * Formik config

@@ -3,4 +3,4 @@ export interface Calendario {
   nombre: string;
   descripcion: string;
   festivos: Array<string>;
-};
+}

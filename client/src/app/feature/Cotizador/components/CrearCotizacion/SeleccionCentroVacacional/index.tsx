@@ -24,7 +24,7 @@ export const SeleccionCentroVacacional: React.FC<SeleccionCentroVacacionalProps>
         document.querySelectorAll('.swiper-slide').forEach( el => el.classList.remove('selected') );
         e.currentTarget.className += ' selected';
         handlerSeleccion( centroVacacional );
-    }
+    };
 
     return elementos ? (
     <SwiperContainer>
@@ -49,7 +49,7 @@ export const SeleccionCentroVacacional: React.FC<SeleccionCentroVacacionalProps>
         }
         </Swiper>
     </SwiperContainer>
-  ) : <h5>No hay centros vacacionales disponibles.</h5>
+  ) : ( <h5>No hay centros vacacionales disponibles.</h5> );
 };
 
 SeleccionCentroVacacional.propTypes = {

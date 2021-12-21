@@ -1,5 +1,5 @@
-import { Calendario } from "./Calendario";
-import { CategoriaUsuarios } from "./CategoriaUsuarios";
+import { Calendario } from './Calendario';
+import { CategoriaUsuarios } from './CategoriaUsuarios';
 
 export interface CentroVacacional {
   id?: number;

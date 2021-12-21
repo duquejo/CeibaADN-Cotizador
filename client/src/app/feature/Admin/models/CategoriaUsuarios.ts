@@ -4,4 +4,4 @@ export interface CategoriaUsuarios {
   descripcion: string;
   valorAlta: number;
   valorBaja: number;
-};
+}

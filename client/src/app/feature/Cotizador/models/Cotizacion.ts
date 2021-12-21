@@ -10,4 +10,4 @@ export interface Cotizacion {
   personas: number;
   fechaFin: string;
   total?: number;
-};
+}

@@ -10,7 +10,7 @@ export const obtenerCalendarioActivo = (
         return Number( calendario.value ) === Number( calendarioActivo );
     });
 
-    if( calendarioActivo === "" || ! estaActivoEnCalendarios ) {
+    if( calendarioActivo === '' || ! estaActivoEnCalendarios ) {
       if( todosCalendarios.length > 0 && todosCalendarios[0].value ) {
         return Number( todosCalendarios[0].value );
       } else {
@@ -18,7 +18,7 @@ export const obtenerCalendarioActivo = (
       }
     }
     return Number( calendarioActivo );
-}
+};
 
 export const extraerIdsDeArray = ( needle: Array<any>, haystack: Array<any> ) => {
   
@@ -36,9 +36,16 @@ export const extraerIdsDeArray = ( needle: Array<any>, haystack: Array<any> ) =>
   return haystack.filter( ( elemento: any ) => {
     return needleIds.indexOf( elemento!.id ) !== -1
   });
-}
+};
 
 export const cotizacionTemplate = ( cotizacion: any, allInfo = false ) => {
+
+  const identificador = allInfo ? `<th>Identificador</th>` : ``;
+  const centroVacacionalCodigo = allInfo ? `<td>${ cotizacion.centroVacacional?.codigo }</td>` : ``;
+  const categoriaUsuariosId = allInfo ? `<td>${ cotizacion.categoriaUsuarios.id }</td>` : ``;
+  const categoriaUsuariosDescripcion = cotizacion.categoriaUsuarios.descripcion ? cotizacion.categoriaUsuarios.descripcion : '';
+  const centroVacacionalDescripcion = cotizacion.centroVacacional.descripcion ? cotizacion.centroVacacional.descripcion : '';
+
   return `<table class="resultados__table">
             <caption>Información general</caption>
             <thead>
@@ -66,23 +73,23 @@ export const cotizacionTemplate = ( cotizacion: any, allInfo = false ) => {
             <caption>Información del centro vacacional</caption>
             <thead>
               <tr>
-                ${ allInfo ? `<th>Identificador</th>` : `` }
+                ${ identificador }
                 <th>Nombre</th>
                 <th>Descripción</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                ${ allInfo ? `<td>${ cotizacion.centroVacacional?.codigo }</td>` : `` }
+                ${ centroVacacionalCodigo }
                 <td>${ cotizacion.centroVacacional?.nombre }</td>
-                <td>${ cotizacion.centroVacacional?.descripcion }</td>
+                <td>${ centroVacacionalDescripcion }</td>
               </tr>
             </tbody>
             <table class="resultados__table">
               <caption>Información de la categoría de usuario</caption>
               <thead>
                 <tr>
-                  ${ allInfo ? `<th>Identificador</th>` : `` }
+                  ${ identificador }
                   <th>Nombre</th>
                   <th>Descripción</th>
                   <th>Valor de día temporada alta</th>
@@ -91,13 +98,13 @@ export const cotizacionTemplate = ( cotizacion: any, allInfo = false ) => {
               </thead>
               <tbody>
                 <tr>
-                  ${ allInfo ? `<td>${ cotizacion.categoriaUsuarios.id }</td>` : `` }
+                  ${ categoriaUsuariosId }
                   <td>${ cotizacion.categoriaUsuarios.nombre }</td>
-                  <td>${ cotizacion.categoriaUsuarios.descripcion }</td>
+                  <td>${ categoriaUsuariosDescripcion }</td>
                   <td>$ ${ cotizacion.categoriaUsuarios.valorAlta }</td>
                   <td>$ ${ cotizacion.categoriaUsuarios.valorBaja }</td>
                 </tr>
               </tbody>                
             </table>
           </table>`;
-}
+};
