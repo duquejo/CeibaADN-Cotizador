@@ -17,7 +17,7 @@ export interface AccionesCalendariosProps {
   calendarios: Array<Calendario>;
   onSubmit: ( payload: Calendario ) => void;
   onDeleteClick: ( payload: Calendario ) => void;
-};
+}
 
 export const AccionesCalendario: React.FC<AccionesCalendariosProps> = ({ 
   calendarios,

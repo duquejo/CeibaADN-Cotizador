@@ -2,13 +2,13 @@
 import { TiposAcciones, TiposAccionesCategoriaUsuarios } from '../../acciones/categoriasusuarios/CategoriasUsuariosTiposAcciones';
 
 import { CategoriaUsuarios } from '../../../../feature/Admin/models/CategoriaUsuarios';
+import { EstadoCategoriaUsuarios } from '../../modelo/EstadoCategoriaUsuarios';
 
-const initialState: any = {
-  categoriasUsuarios: Array<CategoriaUsuarios>(),
-  categoriaUsuarios: null
+const initialState: EstadoCategoriaUsuarios = {
+  categoriasUsuarios: Array<CategoriaUsuarios>()
 };
 
-export default function ( state = initialState, action: TiposAccionesCategoriaUsuarios ): any {
+export default function ( state = initialState, action: TiposAccionesCategoriaUsuarios ): EstadoCategoriaUsuarios {
   switch ( action.type ) {
 
     case TiposAcciones.LISTAR_CATEGORIA_USUARIOS: {

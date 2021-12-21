@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
-import { MultiSelect } from "react-multi-select-component";
+import { MultiSelect } from 'react-multi-select-component';
 
 
 export const SelectorMultiple: React.FC<any> = ({

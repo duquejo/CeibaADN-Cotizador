@@ -15,9 +15,9 @@ import { Small } from '../../../../../shared/components/Small/index';
 
 export interface AccionesCentrosVacacionalesProps {
   centrosVacacionales: Array<CentroVacacional>;
-  onSubmit: ( payload: CentroVacacional ) => any;
-  onDeleteClick: ( payload: CentroVacacional ) => any;  
-}; 
+  onSubmit: ( payload: CentroVacacional ) => void;
+  onDeleteClick: ( payload: CentroVacacional ) => void;  
+}
 
 export const AccionesCentrosVacacionales: React.FC<AccionesCentrosVacacionalesProps> = ({
   centrosVacacionales,
@@ -39,12 +39,12 @@ export const AccionesCentrosVacacionales: React.FC<AccionesCentrosVacacionalesPr
     if( respuestaModal.isConfirmed ) {
       onDeleteClick( centroVacacional );
     }
-  }
+  };
 
   const handleEditCentroVacacional = ( centroVacacional: CentroVacacional ) => {
     dispatch( abrirModal( tiposModal.MODAL_CENTROS_VACACIONALES ) );
     dispatch( activarCentroVacacionalEdicion( centroVacacional ) );
-  }  
+  };
 
   return (
     <>

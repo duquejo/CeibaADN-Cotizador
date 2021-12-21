@@ -33,7 +33,7 @@ describe('Funciones de miscelánea o utilidades', () => {
   };
 
   const isHTML = ( str: string ) => {
-    var doc = new DOMParser().parseFromString(str, "text/html");
+    const doc = new DOMParser().parseFromString(str, "text/html");
     return Array.from(doc.body.childNodes).some(node => node.nodeType === 1);
   }
 

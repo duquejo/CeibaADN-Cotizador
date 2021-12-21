@@ -8,7 +8,7 @@ import { Small } from '../../../../../shared/components/Small/index';
 
 export interface AccionesCategoriasProps {
   categorias: Array<CategoriaUsuarios>;
-};
+}
 
 export const AccionesCategorias: React.FC<AccionesCategoriasProps> = ({ categorias }) => {
   return (

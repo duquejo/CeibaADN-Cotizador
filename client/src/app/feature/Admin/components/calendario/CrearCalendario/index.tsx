@@ -26,7 +26,7 @@ interface FormValues {
 }
 
 interface CrearCalendarioProps {
-  onSubmit: ( payload: Calendario ) => any;
+  onSubmit: ( payload: Calendario ) => void;
   initialValues?: FormValues;
 }
 
@@ -67,7 +67,7 @@ export const CrearCalendario: React.FC<CrearCalendarioProps> = ({
 
   const resetSelectedDays = () => {
     setSelectedDays([]);
-  }
+  };
 
   const formik = useFormik({
     initialValues,

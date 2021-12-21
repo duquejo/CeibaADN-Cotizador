@@ -19,7 +19,7 @@ interface FormValues {
 }
 
 interface CrearCategoriaUsuariosProps {
-  onSubmit: ( payload: CategoriaUsuarios ) => any;
+  onSubmit: ( payload: CategoriaUsuarios ) => void;
   initialValues?: FormValues;
 }
 

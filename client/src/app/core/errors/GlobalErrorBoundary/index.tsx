@@ -1,7 +1,15 @@
 import * as React from 'react';
-import { ErrorInfo } from 'react';
+import { ErrorInfo, ReactNode } from 'react';
 
-export class GlobalErrorBoundary extends React.Component<any, any> {
+interface Props {
+  children: ReactNode;
+}
+
+interface State {
+  hasError: boolean;
+}
+
+export class GlobalErrorBoundary extends React.Component<Props, State> {
   constructor(props: any) {
     super(props);
     this.state = { hasError: false };
