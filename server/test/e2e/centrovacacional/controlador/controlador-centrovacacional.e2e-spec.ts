@@ -19,7 +19,7 @@ import { DaoCentroVacacional } from '../../../../src/dominio/centrovacacional/pu
 import { ManejadorObtenerCentroVacacional } from '../../../../src/aplicacion/centrovacacional/consulta/obtener-centrovacacional.manejador';
 
 // Guardar
-import { ComandoGuardarCentroVacacional } from '../../../../src/aplicacion/centrovacacional/comando/guardar-centrovacacional.comando';
+// import { ComandoGuardarCentroVacacional } from '../../../../src/aplicacion/centrovacacional/comando/guardar-centrovacacional.comando';
 import { ServicioGuardarCentroVacacional } from '../../../../src/dominio/centrovacacional/servicio/servicio-guardar-centrovacacional';
 import { ManejadorGuardarCentroVacacional } from '../../../../src/aplicacion/centrovacacional/comando/guardar-centrovacacional.manejador';
 import { servicioGuardarCentroVacacionalProveedor } from '../../../../src/infraestructura/centrovacacional/proveedor/servicio/servicio-guardar-centrovacacional.proveedor';
@@ -34,7 +34,6 @@ import { ServicioBorrarCentroVacacional } from '../../../../src/dominio/centrova
 import { ManejadorBorrarCentroVacacional } from '../../../../src/aplicacion/centrovacacional/comando/borrar-centrovacacional.manejador';
 import { servicioBorrarCentroVacacionalProveedor } from '../../../../src/infraestructura/centrovacacional/proveedor/servicio/servicio-borrar-centrovacacional.proveedor';
 import { RepositorioCategoriaUsuarios } from '../../../../src/dominio/categoriausuarios/puerto/repositorio/repositorio-categoriausuarios';
-import { ComandoActualizarCentroVacacional } from '../../../../src/aplicacion/centrovacacional/comando/actualizar-centrovacacional.comando';
 
 /**
  * Un sandbox es util cuando el módulo de nest se configura una sola vez durante el ciclo completo de pruebas
@@ -99,7 +98,7 @@ describe('Pruebas al controlador del centro vacacional', () => {
         AppLogger,
         {
           provide:    ServicioGuardarCentroVacacional,
-          inject:     [ RepositorioCentroVacacional,RepositorioCategoriaUsuarios,  RepositorioCalendarioFestivos ],
+          inject:     [ RepositorioCentroVacacional, RepositorioCategoriaUsuarios, RepositorioCalendarioFestivos ],
           useFactory: servicioGuardarCentroVacacionalProveedor,
         },
         {
@@ -141,6 +140,36 @@ describe('Pruebas al controlador del centro vacacional', () => {
 
   afterAll( async () => await app.close() );
 
+  // it('Debería crear un centro vacacional de manera exitosa', async () => {
+
+  //   const centroVacacionalBaseData: any = {
+  //     nombre: 'Parque Tayrona',
+  //     descripcion: 'Aventúrate con tu familia',
+  //     calendarios: [ 1,2,3 ],
+  //     categoriaUsuarios: [1,2,3 ],
+  //     calendarioActivo: 3
+  //   };
+
+  //   const calendariosFestivosMock = [{
+  //     id: 1,
+  //     nombre: 'Campaña empleados Diciembre', // Nombre
+  //     descripcion: 'Campaña para empleados aguinaldo navideño', // Descripción
+  //     festivos: [ '2021-12-18' ] // Festivos
+  //   }] as CalendarioFestivosEntidad[];
+
+  //   repositorioCentroVacacional.existeNombreCentroVacacional.returns( Promise.resolve( false ) );
+    
+  //   // // Calendarios válidos ( Uno válido por ej )
+  //   repositorioCalendarioFestivos.validarCalendarios.returns( Promise.resolve([ calendariosFestivosMock,2]) );
+    
+  //   // // Categorías válidas ( Dos válidas por ej )
+  //   // repositorioCategoriaUsuarios.validarCategorias.returns( Promise.resolve([[],2]) );
+
+  //   const response = await request( app.getHttpServer() ).post('/centrosVacacionales')
+  //     .send( centroVacacionalBaseData )
+  //     .expect( HttpStatus.CREATED );
+  // });
+
   it('Debería obtener los centros vacacionales almacenadas', () => {
 
     const centroVacacionalBaseData: any[] = [{
@@ -156,6 +185,21 @@ describe('Pruebas al controlador del centro vacacional', () => {
     return request( app.getHttpServer() ).get( '/centrosVacacionales' )
       .expect( HttpStatus.OK )
       .expect( centroVacacionalBaseData );
+  });
+
+  it('Debería fallar al intentar borrar un centro vacacional inexistente', async () => {
+
+    // Arrange
+    const centroVacacionalId = 1;
+
+    repositorioCentroVacacional.existeCentroVacacional.returns( Promise.resolve( [[], 0]) );
+
+    const response = await request( app.getHttpServer() )
+      .delete( `/centrosVacacionales/${ centroVacacionalId }`)
+      .expect( HttpStatus.NOT_FOUND );
+
+    expect(response.body.message).toBe( `El centro vacacional {${ centroVacacionalId }} no existe` );
+    expect(response.body.statusCode).toBe(HttpStatus.NOT_FOUND);
   });
 
   // it('Debería fallar al actualizar un centro vacacional que no existe', async () => {
@@ -183,27 +227,4 @@ describe('Pruebas al controlador del centro vacacional', () => {
   //     .send( centroVacacionalBaseData )
   //     .expect( HttpStatus.NOT_FOUND );
   // }); 
-
-  // it('Debería crear un centro vacacional de manera exitosa', async () => {
-
-  //   const centroVacacionalBaseData: any = {
-  //     nombre: 'Parque Tayrona',
-  //     descripcion: 'Aventúrate con tu familia',
-  //     calendarios: [ 1,2,3 ],
-  //     categoriaUsuarios: [1,2,3 ],
-  //     calendarioActivo: 3
-  //   };
-
-  //   // repositorioCentroVacacional.existeNombreCentroVacacional.returns( Promise.resolve( false ) );
-    
-  //   // // Calendarios válidos ( Uno válido por ej )
-  //   // repositorioCalendarioFestivos.validarCalendarios.returns( Promise.resolve([[],1]) );
-    
-  //   // // Categorías válidas ( Dos válidas por ej )
-  //   // repositorioCategoriaUsuarios.validarCategorias.returns( Promise.resolve([[],2]) );
-
-  //   const response = await request( app.getHttpServer() ).post('/centrosVacacionales')
-  //     .send( centroVacacionalBaseData )
-  //     .expect( HttpStatus.CREATED );
-  // });
 });

@@ -13,6 +13,10 @@ import { ServicioCrearCotizacion } from '../../../../src/dominio/cotizacion/serv
 import { servicioCrearCotizacionProveedor } from '../../../../src/infraestructura/cotizacion/proveedor/servicio/servicio-registrar-cotizacion.proveedor';
 import { ManejadorCrearCotizacion } from '../../../../src/aplicacion/cotizacion/comando/registrar-cotizacion.manejador';
 import { ManejadorObtenerCotizacion } from '../../../../src/aplicacion/cotizacion/consulta/obtener-cotizacion.manejador';
+import { CentroVacacionalEntidad } from '../../../../src/infraestructura/centrovacacional/entidad/centrovacacional.entidad';
+import { CategoriaUsuariosEntidad } from '../../../../src/infraestructura/categoriausuarios/entidad/categoriausuarios.entidad';
+import { ComandoCrearCotizacion } from '../../../../src/aplicacion/cotizacion/comando/registrar-cotizacion.comando';
+import { RepositorioCentroVacacional } from '../../../../src/dominio/centrovacacional/puerto/repositorio/repositorio-centrovacacional';
 
 // Generales
 
@@ -29,7 +33,7 @@ describe('Pruebas al controlador de la cotización', () => {
 
   let app: INestApplication;
   let repositorioCotizacion: SinonStubbedInstance<RepositorioCotizacion>;
-  // let repositorioCentroVacacional: SinonStubbedInstance<RepositorioCentroVacacional>;
+  let repositorioCentroVacacional: SinonStubbedInstance<RepositorioCentroVacacional>;
   let daoCotizacion: SinonStubbedInstance<DaoCotizacion>;
 
   /**
@@ -41,9 +45,9 @@ describe('Pruebas al controlador de la cotización', () => {
       'crear'
     ], sinonSandbox);
 
-    // repositorioCentroVacacional = createStubObj<RepositorioCentroVacacional>([
-    //   'obtenerUnCentroVacacional'
-    // ], sinonSandbox);
+    repositorioCentroVacacional = createStubObj<RepositorioCentroVacacional>([
+      'obtenerUnCentroVacacional'
+    ], sinonSandbox);
 
     daoCotizacion         = createStubObj<DaoCotizacion>(['obtenerUnaCotizacion'], sinonSandbox);
     
@@ -53,11 +57,11 @@ describe('Pruebas al controlador de la cotización', () => {
         AppLogger,
         {
           provide:    ServicioCrearCotizacion,
-          inject:     [ RepositorioCotizacion ],
-          // inject:     [ RepositorioCotizacion, RepositorioCentroVacacional ],
+          inject:     [ RepositorioCotizacion, RepositorioCentroVacacional ],
           useFactory: servicioCrearCotizacionProveedor,
         },
         { provide: RepositorioCotizacion, useValue: repositorioCotizacion },
+        { provide: RepositorioCentroVacacional, useValue: repositorioCentroVacacional },
         { provide: DaoCotizacion, useValue: daoCotizacion },
 
         /**
@@ -82,7 +86,41 @@ describe('Pruebas al controlador de la cotización', () => {
 
   afterAll( async () => await app.close() );
 
-  it('Debería obtener un cotización registrada', () => {
+  it('Debería fallar al registrar si la cotización no tiene un centro vacacional válido', async () => {
+
+    const centroVacacionalDataMock = {
+      calendarioActivo: 1,
+      calendarios: [{
+        id: 1,
+        festivos: [
+          "2021-12-18"
+        ]
+      }]
+    } as CentroVacacionalEntidad;
+  
+    const categoriaUsuariosDataMock = {
+      nombre: "Menor a $800.000 COP",
+      descripcion: "Cartagena",
+      valorAlta: 50000,
+      valorBaja: 25000
+    } as CategoriaUsuariosEntidad;  
+
+    const cotizacionDataMock : ComandoCrearCotizacion = {
+      centroVacacional: 1,
+      categoriaUsuarios: 2,
+      personas: 3,
+      fechaInicio: '2021-12-10',
+      fechaFin: '2021-12-18'
+    };
+
+    repositorioCentroVacacional.obtenerUnCentroVacacional.returns( Promise.resolve( centroVacacionalDataMock ) );
+
+    await request( app.getHttpServer() )
+      .post( `/centrosVacacionales`)
+      .expect( HttpStatus.NOT_FOUND );
+  });
+
+  it('Debería obtener una cotización registrada', () => {
 
     const cotizacionDataMock : any = {
       centroVacacional: 1,
@@ -101,39 +139,4 @@ describe('Pruebas al controlador de la cotización', () => {
       .expect( HttpStatus.OK )
       .expect( cotizacionDataMock );
   });
-
-  // it('Debería fallar al registrar si la cotización no tiene un centro vacacional válido', async () => {
-
-  //   const centroVacacionalDataMock = {
-  //     calendarioActivo: 1,
-  //     calendarios: [{
-  //       id: 1,
-  //       festivos: [
-  //         "2021-12-18"
-  //       ]
-  //     }]
-  //   } as CentroVacacionalEntidad;
-  
-  //   const categoriaUsuariosDataMock = {
-  //     nombre: "Menor a $800.000 COP",
-  //     descripcion: "Cartagena",
-  //     valorAlta: 50000,
-  //     valorBaja: 25000
-  //   } as CategoriaUsuariosEntidad;  
-
-  //   const cotizacionDataMock : ComandoCrearCotizacion = {
-  //     centroVacacional: 1,
-  //     categoriaUsuarios: 2,
-  //     personas: 3,
-  //     fechaInicio: '2021-12-10',
-  //     fechaFin: '2021-12-18'
-  //   };
-
-  //   repositorioCentroVacacional.obtenerUnCentroVacacional.returns( Promise.resolve( centroVacacionalDataMock ) );
-
-  //   return request( app.getHttpServer() )
-  //     .post('/cotizaciones')
-  //     .send( cotizacionDataMock )
-  //     .expect( HttpStatus.NOT_FOUND );   
-  // });
 });
