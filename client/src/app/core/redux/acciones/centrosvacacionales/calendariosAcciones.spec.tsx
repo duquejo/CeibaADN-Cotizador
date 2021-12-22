@@ -74,6 +74,15 @@ describe('Acciones de centrosVacacionales', () => {
         expect( store.getActions() ).toEqual( expectedPayload );
     });
 
+    it( 'Ejecuta ACTIVAR_CENTRO_VACACIONAL_EDICION mediante el dispatch', () => {
+
+        const expectedPayload  = [
+            { type: TiposAcciones.ACTIVAR_CENTRO_VACACIONAL_EDICION, payload: expect.any(Object) }
+        ];
+        store.dispatch( activarCentroVacacionalEdicion( centroVacacionalMock ) );
+        expect( store.getActions() ).toEqual( expectedPayload );
+    });
+
     it( 'Ejecuta DESACTIVAR_CENTRO_VACACIONAL_EDICION mediante el dispatch', () => {
 
         const expectedPayload  = [
