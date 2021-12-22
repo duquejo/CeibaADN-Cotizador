@@ -9,7 +9,7 @@ import {
 import { TiposAcciones } from './CalendariosTiposAcciones';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { calendarioMock } from '../../reductores/__mocks__/reductoresMock';
+import { calendarioMock } from '../../__mocks__/reductoresMock';
 import { EstadoCalendario } from '../../modelo/EstadoCalendario';
 
 describe('Acciones de Calendarios', () => {
@@ -45,15 +45,6 @@ describe('Acciones de Calendarios', () => {
             { type: TiposAcciones.LISTAR_CALENDARIO, payload: expect.any(Array) }
         ];
         store.dispatch( listarCalendarios( [ calendarioMock ] ) );
-        expect( store.getActions() ).toEqual( expectedPayload );
-    });
-
-    it( 'Ejecuta ELIMINAR_CALENDARIO mediante el dispatch', () => {
-
-        const expectedPayload  = [
-            { type: TiposAcciones.ELIMINAR_CALENDARIO, payload: expect.any(Object) }
-        ];
-        store.dispatch( eliminarCalendario( calendarioMock ) );
         expect( store.getActions() ).toEqual( expectedPayload );
     });
 

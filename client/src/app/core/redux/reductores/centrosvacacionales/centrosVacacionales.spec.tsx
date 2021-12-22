@@ -1,6 +1,6 @@
 import reducer from './centrosVacacionalesReductor';
 import { TiposAcciones, TiposAccionesCentroVacacional } from '../../acciones/centrosvacacionales/CentrosVacacionalesTiposAcciones';
-import { centroVacacionalMock } from '../__mocks__/reductoresMock';
+import { centroVacacionalMock } from '../../__mocks__/reductoresMock';
 import { CentroVacacional } from 'app/feature/Admin/models/CentroVacacional';
 import { EstadoCentroVacacional } from '../../modelo/EstadoCentroVacacional';
 
