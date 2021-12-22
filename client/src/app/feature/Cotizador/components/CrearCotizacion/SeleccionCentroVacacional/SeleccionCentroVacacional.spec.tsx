@@ -34,23 +34,4 @@ describe('SeleccionCentroVacacional Test', () => {
   it('Debería renderizar el componente', () => {
     expect(componentWrapper).toMatchSnapshot();
   });
-
-//   it('Debería activar el elemento al hacerle click', () => {
-
-//     const slideBefore = componentWrapper.find('SwiperSlide').first();
-
-//     console.log( 'before', slideBefore.first().props() );
-
-//     slideBefore.simulate( 'click', { 
-//         currentTarget: () => ' selected', 
-//         centroVacacional: componentProps.elementos[0]
-//      } );
-    
-//     const slideAfter = componentWrapper.find('SwiperSlide').first();
-
-//     console.log( 'after', slideAfter.first().props() );
-
-//     // expect( slideBefore.prop('className') ).toContain( ' selected' );
-//   });
-
 });

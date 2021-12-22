@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { RenderResult, fireEvent, render, wait } from '@testing-library/react';
 import { SinonStub, stub } from 'sinon';
-import { CrearCotizacion } from '.';
+import { CrearCotizacion } from './index';
 import { CentroVacacional } from '../../../Admin/models/CentroVacacional';
+import { setTextEvent } from '../../../../shared/utils/test';
 
 describe('CrearCotizacion test', () => {
     
@@ -25,7 +26,13 @@ describe('CrearCotizacion test', () => {
         nombre: 'Centro de prueba',
         descripcion: 'Descripción de prueba',
         calendarios: [],
-        categoriaUsuarios: [],
+        categoriaUsuarios: [{
+          id: 1,
+          nombre: 'Categoría prueba',
+          descripcion: '',
+          valorAlta: 200,
+          valorBaja: 100
+        }],
         calendarioActivo: 1
       }],
       onSubmit: stub(),
@@ -62,54 +69,46 @@ describe('CrearCotizacion test', () => {
     expect( spans[3].textContent ).toBe('Debes seleccionar un rango de fechas para proceder con la cotización');
   });
 
-  // it('Debería realizar el submit con la información básica', async () => {
+  it('Debería realizar submit con toda la información', async () => {
 
-  //   // Arrange
-  //   const elem = componentWrapper.container;
-  //   const title = elem.querySelector('input[name="title"]');
-  //   const submitButton = elem.querySelector('button[type="submit"]');
+    // Arrange
+    const elem = componentWrapper.container;
+  
+    const centroVacacional = elem.querySelector('.swiper-slide:first-child');
+    const personas = elem.querySelector('input[name="personas"]');
+    const categoriaUsuarios = elem.querySelector('select[name="categoriaUsuarios"]');
+    const submitButton = elem.querySelector('button[type="submit"]');
+    const day = elem.querySelector('.DayPicker-Month:nth-child(2) .DayPicker-Week:nth-child(4) .DayPicker-Day:first-child');
 
-  //   // Act
-  //   await wait(() => {
-  //     title && fireEvent.change(title, setTextEvent('title', 'Calendario de prueba'));
-  //   });
-  //   await wait(() => {
-  //     submitButton && fireEvent.click(submitButton);
-  //   });
 
-  //   // Assert
-  //   const formSubmitted = componentProps.onSubmit.firstCall.args[0];
-  //   expect( formSubmitted.nombre ).toBe('Calendario de prueba');
-  // });
+    // Act
+    await wait(() => {
+      centroVacacional && fireEvent.click(centroVacacional);
+    });    
+    await wait(() => {
+      personas && fireEvent.change(personas, setTextEvent('personas', '3'));
+    });    
+    await wait(() => {
+      personas && fireEvent.change(personas, setTextEvent('personas', '3'));
+    });
+    await wait(() => {
+      categoriaUsuarios && fireEvent.change( categoriaUsuarios, setTextEvent('categoriaUsuarios', '1'));
+    });    
+    await wait(() => {
+      day && fireEvent.click(day);
+    });    
+    await wait(() => {
+      submitButton && fireEvent.click(submitButton);
+    });
 
-  // it('Debería realizar el submit con toda la información', async () => {
-
-  //   // Arrange
-  //   const elem = componentWrapper.container;
-  //   const title = elem.querySelector('input[name="title"]');
-  //   const description = elem.querySelector('textarea[name="description"]');
-  //   const day = elem.querySelector('.DayPicker-Month:nth-child(2) .DayPicker-Week:nth-child(4) .DayPicker-Day:first-child');
-
-  //   const submitButton = elem.querySelector('button[type="submit"]');
-
-  //   // Act
-  //   await wait(() => {
-  //     title && fireEvent.change(title, setTextEvent('title', 'Calendario de prueba'));
-  //   });
-  //   await wait(() => {
-  //     description && fireEvent.change(description, setTextEvent('description', 'Descripción del calendario de prueba'));
-  //   });
-  //   await wait(() => {
-  //     day && fireEvent.click(day);
-  //   });
-  //   await wait(() => {
-  //     submitButton && fireEvent.click(submitButton);
-  //   });
-
-  //   // // Assert
-  //   const formSubmitted = componentProps.onSubmit.firstCall.args[0];
-  //   expect( formSubmitted.nombre ).toBe('Calendario de prueba');
-  //   expect( formSubmitted.descripcion ).toBe('Descripción del calendario de prueba');
-  //   expect( formSubmitted.festivos.length ).toBe( 1 );
-  // });
+    // Assert
+    const spans = elem.querySelectorAll('span:not(.DayPicker-NavButton)');
+    expect( spans.length ).toBe(0);
+    const formSubmitted = componentProps.onSubmit.firstCall.args[0];
+    expect( formSubmitted.centroVacacional ).toBe( 1 );
+    expect( formSubmitted.categoriaUsuarios ).toBe( 1 );
+    expect( formSubmitted.personas ).toBe( 3 );
+    expect( formSubmitted.fechaInicio ).toBe( '2022-01-17' );
+    expect( formSubmitted.fechaFin ).toBe( '2021-12-21' );
+  });
 });
