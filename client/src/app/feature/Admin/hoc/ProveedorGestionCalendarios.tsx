@@ -1,8 +1,8 @@
 import {
-  listarCalendariosAsync,
-  guardarNuevoCalendarioAsync,
   actualizarCalendarioAsync,
-  eliminarCalendarioAsync
+  eliminarCalendarioAsync,
+  guardarNuevoCalendarioAsync,
+  listarCalendariosAsync
 } from '../../../core/redux/acciones/calendarios/CalendariosAcciones';
 
 import { EstadoGeneral } from '../../../core/redux/modelo/EstadoGeneral';

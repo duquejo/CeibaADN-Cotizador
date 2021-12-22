@@ -14,7 +14,7 @@ describe('Pruebas para el componente <NavBrand />', () => {
 
     it('Debería renderizar el logo de la aplicación', () => {
         // Arrange
-        let params = {
+        const params = {
             text: 'Demo',
             imgSrc: LogoCeiba
         };       
@@ -31,7 +31,7 @@ describe('Pruebas para el componente <NavBrand />', () => {
 
     it('No debería renderizar el logo de la aplicación, sino el texto si no está presente el parámetro', () => {
         // Arrange
-        let params = {
+        const params = {
             text: 'Demo'
         };       
         // Act

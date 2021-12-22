@@ -1,7 +1,7 @@
 import { 
     agregarNuevaCotizacion,
-    obtenerCotizacionAsync,
-    guardarNuevaCotizacionAsync
+    guardarNuevaCotizacionAsync,
+    obtenerCotizacionAsync
 } from './CotizacionesAcciones';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';

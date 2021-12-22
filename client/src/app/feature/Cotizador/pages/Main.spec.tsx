@@ -6,7 +6,7 @@ jest.mock('ChildrenNode', () => {
     return ( <span>ChildrenNode</span> );
 }, { virtual: true });
 
-const historyMock = { push: jest.fn() }
+const historyMock = { push: jest.fn() };
 
 describe('Pruebas sobre <AdminMainPage />', () => {
 

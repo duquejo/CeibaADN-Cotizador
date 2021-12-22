@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 
 import { EstadoGeneral } from '../../modelo/EstadoGeneral';
 import { CentroVacacional } from 'app/feature/Admin/models/CentroVacacional';
-import { TiposAccionesCentroVacacional, TiposAcciones } from './CentrosVacacionalesTiposAcciones';
+import { TiposAcciones, TiposAccionesCentroVacacional } from './CentrosVacacionalesTiposAcciones';
 import { CentrosVacacionalesRepositorio } from '../../../api/centrosvacacionales.repositorio';
 import { extraerIdsDeArray } from '../../../../shared/utils/miscfunctions';
 import { statusCodes } from '../../../config/statusCodes';
@@ -73,7 +73,7 @@ export const guardarNuevoCentroVacacionalAsync = ( nuevoCentroVacacional: Centro
       }
     } catch (error) {
       console.log(error);
-      Swal.fire( 'Error', `Algo ha sucedido`, 'error' );
+      Swal.fire( 'Error', 'Algo ha sucedido', 'error' );
     }
   };
 };
@@ -101,7 +101,7 @@ export const actualizarCentroVacacionalAsync = ( centroVacacional: CentroVacacio
       dispatch( actualizarCentroVacacional( centroVacacional ) );
       Swal.fire( 'Éxito', `El centro vacacional <u>${ centroVacacional.nombre}</u> fue actualizado!`, 'success' );
     } catch ( error ) {
-      Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
+      Swal.fire( 'Error', 'Algo ha sucedido, recarga la vista e intenta de nuevo.', 'error' );
     }
   };
 };
@@ -114,7 +114,7 @@ export const eliminarCentroVacacionalAsync = ( centroVacacional: CentroVacaciona
       Swal.fire( 'Éxito', `El centro vacacional <u>${ centroVacacional.nombre }</u> fue eliminado!`, 'success' );
     } catch (error) {
       console.log(error);
-      Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
+      Swal.fire( 'Error', 'Algo ha sucedido, recarga la vista e intenta de nuevo.', 'error' );
     }
   };
 };
@@ -126,7 +126,7 @@ export const listarCentrosVacacionalesAsync = () => {
       dispatch( listarCentrosVacacionales( centrosVacacionales ) );
     } catch (error) {
       console.log(error);
-      Swal.fire( 'Error', `No se han obtenido los centros vacacionales, comprueba tu conexión a internet e intenta nuevamente`, 'error' );
+      Swal.fire( 'Error', 'No se han obtenido los centros vacacionales, comprueba tu conexión a internet e intenta nuevamente', 'error' );
     }
   };
 };

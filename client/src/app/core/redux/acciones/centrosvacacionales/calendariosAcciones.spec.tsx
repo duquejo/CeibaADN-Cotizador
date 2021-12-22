@@ -1,10 +1,10 @@
 import { 
-    listarCentrosVacacionales, 
-    agregarNuevoCentroVacacional,
+    activarCentroVacacionalEdicion, 
     actualizarCentroVacacional,
+    agregarNuevoCentroVacacional,
     eliminarCentroVacacional,
-    activarCentroVacacionalEdicion,
-    limpiarCentroVacacional
+    limpiarCentroVacacional,
+    listarCentrosVacacionales
 } from './CentrosVacacionalesAcciones';
 import { TiposAcciones } from './CentrosVacacionalesTiposAcciones';
 import configureMockStore from 'redux-mock-store';

@@ -1,8 +1,8 @@
 import {
-  listarCentrosVacacionalesAsync,
-  guardarNuevoCentroVacacionalAsync,
   actualizarCentroVacacionalAsync,
-  eliminarCentroVacacionalAsync
+  eliminarCentroVacacionalAsync,
+  guardarNuevoCentroVacacionalAsync,
+  listarCentrosVacacionalesAsync
 } from '../../../core/redux/acciones/centrosvacacionales/CentrosVacacionalesAcciones';
 
 import { EstadoGeneral } from '../../../core/redux/modelo/EstadoGeneral';

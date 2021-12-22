@@ -2,9 +2,9 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
 // Direct React component imports
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/swiper.min.css'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
 
 import { CentroVacacional } from '../../../../Admin/models/CentroVacacional';
 

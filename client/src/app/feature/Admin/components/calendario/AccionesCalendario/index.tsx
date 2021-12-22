@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
 
 import { Calendario } from '../../../models/Calendario';
-import { Table, EmojiDetails } from './styles';
+import { EmojiDetails, Table } from './styles';
 
 import { ModalCalendarios } from '../../ui/ModalCalendarios/index';
 import { Small } from '../../../../../shared/components/Small/index';

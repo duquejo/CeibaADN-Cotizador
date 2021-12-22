@@ -1,10 +1,10 @@
 import { 
-    listarCalendarios, 
-    agregarNuevoCalendario,
+    activarCalendarioEdicion, 
     actualizarCalendario,
+    agregarNuevoCalendario,
     eliminarCalendario,
-    activarCalendarioEdicion,
-    limpiarCalendario
+    limpiarCalendario,
+    listarCalendarios
 } from './CalendariosAcciones';
 import { TiposAcciones } from './CalendariosTiposAcciones';
 import configureMockStore from 'redux-mock-store';

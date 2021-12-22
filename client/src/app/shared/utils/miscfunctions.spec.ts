@@ -1,4 +1,4 @@
-import { extraerIdsDeArray, obtenerCalendarioActivo, cotizacionTemplate } from './miscfunctions';
+import { cotizacionTemplate, extraerIdsDeArray, obtenerCalendarioActivo } from './miscfunctions';
 import { ISelectionOptions } from '../../feature/Admin/models/FormSelector';
 
 describe('Funciones de miscelánea o utilidades', () => {

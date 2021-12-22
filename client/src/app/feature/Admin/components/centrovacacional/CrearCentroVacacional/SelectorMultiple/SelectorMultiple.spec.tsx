@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { SinonStub, stub } from 'sinon';
 import { SelectorMultiple } from '.';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { ShallowWrapper, shallow } from 'enzyme';
 
 describe('SelectorMultiple test', () => {
     

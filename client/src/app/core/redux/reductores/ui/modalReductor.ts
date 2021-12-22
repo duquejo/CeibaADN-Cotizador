@@ -1,4 +1,4 @@
-import { TiposAccionesModal, TiposAcciones } from '../../acciones/ui/ModalTiposAcciones';
+import { TiposAcciones, TiposAccionesModal } from '../../acciones/ui/ModalTiposAcciones';
 import { EstadoUI } from '../../modelo/EstadoUI';
 
 const initialState: EstadoUI = {

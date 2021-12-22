@@ -10,7 +10,7 @@ import { EstadoUI } from './modelo/EstadoUI';
 
 describe('Pruebas sobre el RootStore', () => {
 
-    let store = createStore( rootReducer );
+    const store = createStore( rootReducer );
 
     const estadoInicialCalendario: EstadoCalendario = {
         calendarios: Array<Calendario>(),
@@ -31,10 +31,10 @@ describe('Pruebas sobre el RootStore', () => {
         type: false
     };
 
-    it("Debería instanciar el RootStore", () => {
+    it('Debería instanciar el RootStore', () => {
         expect( store.getState().calendarios ).toEqual( estadoInicialCalendario );
         expect( store.getState().categoriasUsuarios ).toEqual( estadoInicialCategoriaUsuarios );
         expect( store.getState().centrosVacacionales ).toEqual( estadoInicialCentroVacacional );
         expect( store.getState().ui ).toEqual( estadoInicialUI ); 
     });
-})
+});

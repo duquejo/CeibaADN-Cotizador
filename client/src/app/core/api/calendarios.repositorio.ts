@@ -4,10 +4,10 @@ import { axiosInstance } from '../config/AxiosConfig';
 
 export const CalendariosRepositorio = {
   obtener: () => {
-    return axiosInstance.get(`/calendariosFestivos`);
+    return axiosInstance.get('/calendariosFestivos');
   },
   guardar: ( calendario: Calendario ) => {
-    return axiosInstance.post(`/calendariosFestivos`, calendario );
+    return axiosInstance.post('/calendariosFestivos', calendario );
   },
   actualizar: ( calendario: Calendario ) => {
     return  axiosInstance.patch(`/calendariosFestivos/${ calendario.id }`, calendario );

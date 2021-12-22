@@ -2,7 +2,7 @@ import { Dispatch } from 'redux';
 import Swal from 'sweetalert2';
 
 import { Calendario } from 'app/feature/Admin/models/Calendario';
-import { TiposAccionesCalendario, TiposAcciones } from './CalendariosTiposAcciones';
+import { TiposAcciones, TiposAccionesCalendario } from './CalendariosTiposAcciones';
 import { CalendariosRepositorio } from '../../../api/calendarios.repositorio';
 import { statusCodes } from '../../../config/statusCodes';
 
@@ -57,7 +57,7 @@ export const guardarNuevoCalendarioAsync = ( nuevoCalendario: Calendario ) => {
       }
     } catch (error) {
       console.error(error);
-      Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
+      Swal.fire( 'Error', 'Algo ha sucedido, recarga la vista e intenta de nuevo.', 'error' );
     }
   };
 };
@@ -70,7 +70,7 @@ export const actualizarCalendarioAsync = ( calendario: Calendario ) => {
       Swal.fire( 'Éxito', `El calendario <u>${ calendario.nombre}</u> fue actualizado!`, 'success' );
     } catch (error) {
       console.error(error);
-      Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
+      Swal.fire( 'Error', 'Algo ha sucedido, recarga la vista e intenta de nuevo.', 'error' );
     }
   };
 };
@@ -83,7 +83,7 @@ export const eliminarCalendarioAsync = ( calendario: Calendario ) => {
       Swal.fire( 'Éxito', `El calendario <u>${ calendario.nombre }</u> fue eliminado!`, 'success' );
     } catch (error) {
       console.error(error);
-      Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
+      Swal.fire( 'Error', 'Algo ha sucedido, recarga la vista e intenta de nuevo.', 'error' );
     }
   };
 };
@@ -95,7 +95,7 @@ export const listarCalendariosAsync = () => {
       dispatch( listarCalendarios( calendarios ) );
     } catch (error) {
       console.error(error);
-      Swal.fire( 'Error', `No se han listado los calendarios, comprueba tu conexión a internet e intenta nuevamente`, 'error' );
+      Swal.fire( 'Error', 'No se han listado los calendarios, comprueba tu conexión a internet e intenta nuevamente', 'error' );
     }
   };
 };

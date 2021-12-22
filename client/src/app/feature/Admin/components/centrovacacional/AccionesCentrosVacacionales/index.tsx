@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
 
 import { CentroVacacional } from '../../../models/CentroVacacional';
-import { Table, EmojiDetails } from './styles';
+import { EmojiDetails, Table } from './styles';
 
 import { ModalCentrosVacacionales } from '../../ui/ModalCentrosVacacionales/index';
 

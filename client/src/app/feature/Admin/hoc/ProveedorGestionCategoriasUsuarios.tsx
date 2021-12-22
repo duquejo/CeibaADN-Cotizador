@@ -1,6 +1,6 @@
 import {
-  listarCategoriasUsuariosAsync,
-  guardarNuevaCategoriaUsuariosAsync
+  guardarNuevaCategoriaUsuariosAsync,
+  listarCategoriasUsuariosAsync
 } from '../../../core/redux/acciones/categoriasusuarios/CategoriasUsuariosAcciones';
 
 import { EstadoGeneral } from '../../../core/redux/modelo/EstadoGeneral';

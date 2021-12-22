@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 import * as React from 'react';
 import moment from 'moment';
 import ReactModal from 'react-modal';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { useFormik } from 'formik';
 import { Input } from '../../../../../shared/components/Input/index';

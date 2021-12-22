@@ -1,4 +1,4 @@
-import { TiposAccionesCalendario, TiposAcciones } from '../../acciones/calendarios/CalendariosTiposAcciones';
+import { TiposAcciones, TiposAccionesCalendario } from '../../acciones/calendarios/CalendariosTiposAcciones';
 
 import { Calendario } from 'app/feature/Admin/models/Calendario';
 import { EstadoCalendario } from '../../modelo/EstadoCalendario';
