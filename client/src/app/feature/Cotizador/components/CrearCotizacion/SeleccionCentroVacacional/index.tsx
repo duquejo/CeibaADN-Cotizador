@@ -1,12 +1,10 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
-import { SwiperContainer, SlideContent, SlideTitle, SlideDescripcion } from './styles';
-
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
-import { Pagination } from 'swiper';
-import 'swiper/swiper.scss';
-import 'swiper/modules/pagination/pagination.scss'; // Pagination module
+// Direct React component imports
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
 
 import { CentroVacacional } from '../../../../Admin/models/CentroVacacional';
 
@@ -27,9 +25,8 @@ export const SeleccionCentroVacacional: React.FC<SeleccionCentroVacacionalProps>
     };
 
     return elementos ? (
-    <SwiperContainer>
+    <div className="swiperContainer">
         <Swiper
-            modules={[ Pagination ]}
             spaceBetween={ 20 }
             slidesPerView={3}
             pagination={true}
@@ -40,15 +37,15 @@ export const SeleccionCentroVacacional: React.FC<SeleccionCentroVacacionalProps>
                     key={ elemento.id }
                     onClick={ ( event: React.MouseEvent<HTMLElement> ) => handlerClick( event, elemento ) }
                 >
-                    <SlideContent>
-                        <SlideTitle>{ elemento.nombre }</SlideTitle>
-                        <SlideDescripcion>{ elemento.descripcion }</SlideDescripcion>
-                    </SlideContent>
+                    <article className="slideContent">
+                        <div className="slideTitle">{ elemento.nombre }</div>
+                        <div className="slideDescripcion">{ elemento.descripcion }</div>
+                    </article>
                 </SwiperSlide>
             ))
         }
         </Swiper>
-    </SwiperContainer>
+    </div>
   ) : ( <h5>No hay centros vacacionales disponibles.</h5> );
 };
 

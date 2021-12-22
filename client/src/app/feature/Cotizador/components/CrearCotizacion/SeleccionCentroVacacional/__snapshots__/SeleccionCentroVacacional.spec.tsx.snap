@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SeleccionCentroVacacional Test Debería renderizar el componente 1`] = `
+<div
+  className="swiperContainer"
+>
+  <Swiper
+    pagination={true}
+    slidesPerView={3}
+    spaceBetween={20}
+  >
+    <SwiperSlide
+      key="1"
+      onClick={[Function]}
+    >
+      <article
+        className="slideContent"
+      >
+        <div
+          className="slideTitle"
+        >
+          Centro de prueba
+        </div>
+        <div
+          className="slideDescripcion"
+        >
+          Descripción de prueba
+        </div>
+      </article>
+    </SwiperSlide>
+  </Swiper>
+</div>
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GestionCotizaciones Test Debería renderizar el componente 1`] = `
+<Fragment>
+  <h2>
+    Generación de cotizaciones
+  </h2>
+  <p>
+    Proporcione la información según la disponibilidad de los calendarios que vaya seleccionando en el formulario
+  </p>
+  <styled.div>
+    <CrearCotizacion
+      centrosvacacionales={
+        Array [
+          Object {
+            "calendarioActivo": 1,
+            "calendarios": Array [],
+            "categoriaUsuarios": Array [],
+            "descripcion": "Descripción de prueba",
+            "id": 1,
+            "nombre": "Centro de prueba",
+          },
+        ]
+      }
+      onSubmit={[Function]}
+    />
+  </styled.div>
+</Fragment>
+`;

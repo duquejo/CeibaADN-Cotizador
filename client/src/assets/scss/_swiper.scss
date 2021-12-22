@@ -1,0 +1,39 @@
+.swiperContainer {
+  display: block;
+  margin: 20px auto;
+  .swiper-slide {
+    display: block;
+    box-sizing: border-box;
+    min-height: 300px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #d2d2d2;
+    color: #fff;
+    position: relative;
+    padding-bottom: 60px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    &.selected {
+      background-color: #2d6133;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #2d6133 !important;
+  }
+
+  .slideContent {
+    position: absolute;
+    bottom: 65px;
+    padding: 10px 0;
+    background: #000000ad;
+    width: 100%;
+    min-height: 50px;
+    .slideTitle {
+      display: block;
+    }
+    .slideDescripcion {
+      display: block;
+      font-size: 14px;
+    }
+  }
+}
