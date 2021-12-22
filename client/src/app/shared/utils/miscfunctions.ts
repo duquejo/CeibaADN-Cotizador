@@ -40,7 +40,10 @@ export const extraerIdsDeArray = ( needle: Array<any>, haystack: Array<any> ) =>
 
 export const cotizacionTemplate = ( cotizacion: any, allInfo = false ) => {
 
+  console.log( )
+
   const identificador = allInfo ? `<th>Identificador</th>` : ``;
+  const centroVacacionalId = allInfo ? `<td>${ cotizacion.centroVacacional?.id }</td>` : ``;
   const centroVacacionalCodigo = allInfo ? `<td>${ cotizacion.centroVacacional?.codigo }</td>` : ``;
   const categoriaUsuariosId = allInfo ? `<td>${ cotizacion.categoriaUsuarios.id }</td>` : ``;
   const categoriaUsuariosDescripcion = cotizacion.categoriaUsuarios?.descripcion ? cotizacion.categoriaUsuarios.descripcion : '';
@@ -80,6 +83,7 @@ export const cotizacionTemplate = ( cotizacion: any, allInfo = false ) => {
             </thead>
             <tbody>
               <tr>
+                ${ centroVacacionalId }
                 ${ centroVacacionalCodigo }
                 <td>${ cotizacion.centroVacacional?.nombre }</td>
                 <td>${ centroVacacionalDescripcion }</td>
