@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { ShallowWrapper, shallow } from 'enzyme';
-import { GestionCotizaciones } from './index';
 import { SinonStub, stub } from 'sinon';
 import { CentroVacacional } from '../../../Admin/models/CentroVacacional';
-
+import { GestionCotizaciones } from './index';
 
 describe('GestionCotizaciones Test', () => {
 

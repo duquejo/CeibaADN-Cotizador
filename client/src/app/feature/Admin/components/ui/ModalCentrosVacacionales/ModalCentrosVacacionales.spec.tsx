@@ -3,7 +3,7 @@ import { RenderResult, render } from '@testing-library/react';
 import { ModalCentrosVacacionales } from '.';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer from '../../../../../core/redux/reductores'
+import rootReducer from '../../../../../core/redux/reductores';
 
 describe('ModalCentrosVacacionales test', () => {
 

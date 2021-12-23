@@ -13,7 +13,7 @@ exports[`CrearCotizacion test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <small
-      class="sc-bdvvtL KJUJ"
+      class="sc-hKwDye hDvPSz"
     >
       Seleccione uno de los siguientes Centros Vacacionales
     </small>
@@ -59,12 +59,12 @@ exports[`CrearCotizacion test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <small
-      class="sc-bdvvtL KJUJ"
+      class="sc-hKwDye hDvPSz"
     >
       Seleccione la cantidad de personas que desean ir al Centro vacacional seleccionado, recuerde, Los menores de edad también cuentan como adulto
     </small>
     <input
-      class="sc-dkPtRN fIzTAr"
+      class="sc-gsDKAQ kdvfBj"
       id="personas"
       min="0"
       name="personas"
@@ -80,12 +80,12 @@ exports[`CrearCotizacion test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <small
-      class="sc-bdvvtL KJUJ"
+      class="sc-hKwDye hDvPSz"
     >
       Seleccione el rango salarial al que pertenece como afiliado de la compañía
     </small>
     <select
-      class="sc-hKwDye cLKCMv"
+      class="sc-dkPtRN gkhtzY"
       id="categoria"
       name="categoriaUsuarios"
     >
@@ -103,7 +103,7 @@ exports[`CrearCotizacion test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <small
-      class="sc-bdvvtL KJUJ"
+      class="sc-hKwDye hDvPSz"
     >
       Seleccione un día o rango de fechas las cuales desearía reservar en el centro vacacional.
     </small>
@@ -1517,7 +1517,7 @@ exports[`CrearCotizacion test Debería coincidir con el snapshot 1`] = `
       </div>
     </div>
     <button
-      class="sc-gsDKAQ hIhMpF"
+      class="sc-bdvvtL dMEYVs"
       type="submit"
     >
       Crear calendario

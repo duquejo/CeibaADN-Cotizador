@@ -1,16 +1,16 @@
 import { 
-    listarCalendarios, 
-    agregarNuevoCalendario,
+    activarCalendarioEdicion, 
     actualizarCalendario,
+    agregarNuevoCalendario,
     eliminarCalendario,
-    activarCalendarioEdicion,
-    limpiarCalendario
+    limpiarCalendario,
+    listarCalendarios
 } from './CalendariosAcciones';
+import { EstadoCalendario } from '../../modelo/EstadoCalendario';
 import { TiposAcciones } from './CalendariosTiposAcciones';
+import { calendarioMock } from '../../__mocks__/reductoresMock';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { calendarioMock } from '../../__mocks__/reductoresMock';
-import { EstadoCalendario } from '../../modelo/EstadoCalendario';
 
 describe('Acciones de Calendarios', () => {
 

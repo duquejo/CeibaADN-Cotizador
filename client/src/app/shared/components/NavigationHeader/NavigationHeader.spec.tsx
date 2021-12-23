@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
 import { NavigationHeader } from './index';
+import { shallow } from 'enzyme';
 
 describe('Pruebas sobre componentes del header <NavigationHeader />', () => {
 

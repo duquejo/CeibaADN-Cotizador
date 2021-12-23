@@ -1,17 +1,14 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import Swal from 'sweetalert2';
-import { useDispatch } from 'react-redux';
-
+import { EmojiDetails, Table } from './styles';
 import { CentroVacacional } from '../../../models/CentroVacacional';
-import { Table, EmojiDetails } from './styles';
-
 import { ModalCentrosVacacionales } from '../../ui/ModalCentrosVacacionales/index';
-
-import { activarCentroVacacionalEdicion } from '../../../../../core/redux/acciones/centrosvacacionales/CentrosVacacionalesAcciones';
-import { abrirModal } from '../../../../../core/redux/acciones/ui/ModalAcciones';
-import { tiposModal } from '../../../../../core/redux/modelo/EstadoUI';
 import { Small } from '../../../../../shared/components/Small/index';
+import Swal from 'sweetalert2';
+import { abrirModal } from '../../../../../core/redux/acciones/ui/ModalAcciones';
+import { activarCentroVacacionalEdicion } from '../../../../../core/redux/acciones/centrosvacacionales/CentrosVacacionalesAcciones';
+import { tiposModal } from '../../../../../core/redux/modelo/EstadoUI';
+import { useDispatch } from 'react-redux';
 
 export interface AccionesCentrosVacacionalesProps {
   centrosVacacionales: Array<CentroVacacional>;
@@ -51,8 +48,8 @@ export const AccionesCentrosVacacionales: React.FC<AccionesCentrosVacacionalesPr
       <h3>Acciones de los centros vacacionales</h3>
       <Small>A continuación podrá tomar acciones rápidas para gestionar los Centros vacacionales almacenados actualmente, la cantidad de 
         <b> calendarios asociados</b>, así como las <b>categorías de usuario</b> que los clientes podrán visualizar en el cotizador. Recuerde que a pesar de tener múltiples
-        calendarios vinculados al Centro Vacacional, sólo se tendrá en cuenta el que figure como <b>"activo"</b>.<br/><br/>Para motivos de agilidad, si lo prefiere, puede dejar
-        vacío el campo <b>"asignación de calendario activo"</b>, la plataforma seleccionará de manera automática el primero que agregó en el listado de calendarios.</Small>
+        calendarios vinculados al Centro Vacacional, sólo se tendrá en cuenta el que figure como <b>&quot;activo&ldquo;</b>.<br/><br/>Para motivos de agilidad, si lo prefiere, puede dejar
+        vacío el campo <b>&quot;asignación de calendario activo&ldquo;</b>, la plataforma seleccionará de manera automática el primero que agregó en el listado de calendarios.</Small>
       {
         centrosVacacionales && centrosVacacionales.length ?
         <>

@@ -1,13 +1,13 @@
 import * as React from 'react';
+import { ReactWrapper, mount } from 'enzyme';
 import { RenderResult, fireEvent, render, wait } from '@testing-library/react';
 import { BuscarCotizacion } from '.';
-import { mount, ReactWrapper } from 'enzyme';
 
 describe('BuscarCotizacion test', () => {
     
   let componentWrapper: RenderResult;
   let wrapper: ReactWrapper;
-  let value = {
+  const value = {
     name: 'id',
     value: 1
   };

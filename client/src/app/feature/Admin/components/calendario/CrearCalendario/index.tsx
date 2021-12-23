@@ -1,24 +1,20 @@
-import * as Yup from 'yup';
-import * as React from 'react';
-import moment from 'moment';
-
-import { useFormik } from 'formik';
-import { FormikHelpers } from 'formik/dist/types';
-
-import DayPicker from 'react-day-picker';
-import MomentLocaleUtils from 'react-day-picker/moment';
 import 'moment/locale/es';
 import 'react-day-picker/lib/style.css';
-
-import { Input } from '../../../../../shared/components/Input/index';
-import { Button } from '../../../../../shared/components/Button/index';
-import { TextArea } from '../../../../../shared/components/TextArea/index';
-import { SpanError } from '../../../../../shared/components/SpanErrors/index';
-
-import { Calendario } from 'app/feature/Admin/models/Calendario';
-import { useState } from 'react';
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import * as Yup from 'yup';
+import { Button } from '../../../../../shared/components/Button/index';
+import { Calendario } from 'app/feature/Admin/models/Calendario';
+import DayPicker from 'react-day-picker';
+import { FormikHelpers } from 'formik/dist/types';
+import { Input } from '../../../../../shared/components/Input/index';
+import MomentLocaleUtils from 'react-day-picker/moment';
 import { Small } from '../../../../../shared/components/Small/index';
+import { SpanError } from '../../../../../shared/components/SpanErrors/index';
+import { TextArea } from '../../../../../shared/components/TextArea/index';
+import moment from 'moment';
+import { useFormik } from 'formik';
+import { useState } from 'react';
 
 interface FormValues {
   title: string;

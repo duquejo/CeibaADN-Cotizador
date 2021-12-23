@@ -1,13 +1,11 @@
 import * as React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
-
+import { GestionCotizaciones } from '../containers/GestionCotizaciones/index';
 import { Layout } from 'app/shared/components/Layout';
-import { Separation } from '../../../shared/components/Separation/index';
-
 import { ProveedorGestionCalendarios } from '../hoc/ProveedorGestionCalendarios';
 import { ProveedorGestionCategoriasUsuarios } from '../hoc/ProveedorGestionCategoriasUsuarios';
 import { ProveedorGestionCentrosVacacionales } from '../hoc/ProveedorGestionCentrosVacacionales';
-import { GestionCotizaciones } from '../containers/GestionCotizaciones/index';
+import { RouteComponentProps } from 'react-router-dom';
+import { Separation } from '../../../shared/components/Separation/index';
 
 const AdminMainPage: React.FC<RouteComponentProps> = () => {
   return (

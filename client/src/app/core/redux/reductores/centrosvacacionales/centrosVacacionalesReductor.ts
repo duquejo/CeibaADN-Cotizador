@@ -1,4 +1,4 @@
-import { TiposAccionesCentroVacacional, TiposAcciones } from '../../acciones/centrosvacacionales/CentrosVacacionalesTiposAcciones';
+import { TiposAcciones, TiposAccionesCentroVacacional } from '../../acciones/centrosvacacionales/CentrosVacacionalesTiposAcciones';
 import { CentroVacacional } from 'app/feature/Admin/models/CentroVacacional';
 import { EstadoCentroVacacional } from '../../modelo/EstadoCentroVacacional';
 

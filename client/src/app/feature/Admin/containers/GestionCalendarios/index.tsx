@@ -1,14 +1,11 @@
-import * as React from 'react';
-import { useEffect } from 'react';
 import * as PropTypes from 'prop-types';
-
-import { Calendario } from '../../models/Calendario';
-
-import { CrearCalendario } from '../../components/calendario/CrearCalendario/index';
-import { AccionesCalendario } from '../../components/calendario/AccionesCalendario/index';
-
+import * as React from 'react';
 import { DivContainer, DivRow } from '../styles';
+import { AccionesCalendario } from '../../components/calendario/AccionesCalendario/index';
+import { Calendario } from '../../models/Calendario';
+import { CrearCalendario } from '../../components/calendario/CrearCalendario/index';
 import { Separation } from '../../../../shared/components/Separation/index';
+import { useEffect } from 'react';
 
 interface GestionCalendariosProps {
   calendarios: Array<Calendario>;

@@ -1,7 +1,7 @@
-import { Calendario } from "app/feature/Admin/models/Calendario";
-import { CategoriaUsuarios } from "app/feature/Admin/models/CategoriaUsuarios";
-import { CentroVacacional } from "app/feature/Admin/models/CentroVacacional";
-import { Cotizacion } from "app/feature/Cotizador/models/Cotizacion";
+import { Calendario } from 'app/feature/Admin/models/Calendario';
+import { CategoriaUsuarios } from 'app/feature/Admin/models/CategoriaUsuarios';
+import { CentroVacacional } from 'app/feature/Admin/models/CentroVacacional';
+import { Cotizacion } from 'app/feature/Cotizador/models/Cotizacion';
 
 export const calendarioMock = {
   id: 1,

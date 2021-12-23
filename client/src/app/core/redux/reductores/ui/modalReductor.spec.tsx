@@ -1,6 +1,6 @@
-import reducer from './modalReductor';
-import { TiposAcciones, TiposAccionesModal } from '../../acciones/ui/ModalTiposAcciones';
 import { EstadoUI, tiposModal } from '../../modelo/EstadoUI';
+import { TiposAcciones, TiposAccionesModal } from '../../acciones/ui/ModalTiposAcciones';
+import reducer from './modalReductor';
 
 
 describe('Pruebas sobre los reducers de las categorías de usuarios', () => {

@@ -1,12 +1,10 @@
-import * as React from 'react';
-import { useEffect } from 'react';
 import * as PropTypes from 'prop-types';
-
+import * as React from 'react';
 import { CentroVacacional } from 'app/feature/Admin/models/CentroVacacional';
 import { Cotizacion } from 'app/feature/Cotizador/models/Cotizacion';
-
-import { DivContainer } from '../styles';
 import { CrearCotizacion } from '../../components/CrearCotizacion/index';
+import { DivContainer } from '../styles';
+import { useEffect } from 'react';
 
 interface GestionCotizacionesProps {
   centrosVacacionales: Array<CentroVacacional>;

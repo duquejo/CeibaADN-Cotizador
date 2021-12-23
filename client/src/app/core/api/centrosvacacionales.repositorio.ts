@@ -4,10 +4,10 @@ import { axiosInstance } from '../config/AxiosConfig';
 
 export const CentrosVacacionalesRepositorio = {
   obtener: () => {
-    return axiosInstance.get(`/centrosVacacionales`);
+    return axiosInstance.get('/centrosVacacionales');
   },
   guardar: ( centroVacacional: CentroVacacional ) => {
-    return axiosInstance.post(`/centrosVacacionales`, centroVacacional );
+    return axiosInstance.post('/centrosVacacionales', centroVacacional );
   },
   actualizar: ( centroVacacional: CentroVacacional ) => {
     return  axiosInstance.patch(`/centrosVacacionales/${ centroVacacional.id }`, centroVacacional );

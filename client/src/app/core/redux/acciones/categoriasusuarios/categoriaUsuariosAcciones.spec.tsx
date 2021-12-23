@@ -1,11 +1,9 @@
+import { agregarNuevaCategoriaUsuarios, listarCategoriasUsuarios } from './CategoriasUsuariosAcciones';
+import { EstadoCategoriaUsuarios } from '../../modelo/EstadoCategoriaUsuarios';
+import { TiposAcciones } from './CategoriasUsuariosTiposAcciones';
+import { categoriaUsuariosMock } from '../../__mocks__/reductoresMock';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { EstadoCategoriaUsuarios } from '../../modelo/EstadoCategoriaUsuarios';
-import { categoriaUsuariosMock } from '../../__mocks__/reductoresMock';
-import {
-    agregarNuevaCategoriaUsuarios, listarCategoriasUsuarios
-} from './CategoriasUsuariosAcciones';
-import { TiposAcciones } from './CategoriasUsuariosTiposAcciones';
 
 describe('Acciones de categoriasUsuarios', () => {
 

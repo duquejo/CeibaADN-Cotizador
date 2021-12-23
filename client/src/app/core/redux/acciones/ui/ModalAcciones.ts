@@ -1,5 +1,5 @@
+import { TiposAcciones, TiposAccionesModal } from './ModalTiposAcciones';
 import { tiposModal } from '../../modelo/EstadoUI';
-import { TiposAccionesModal, TiposAcciones } from './ModalTiposAcciones';
 
 export function abrirModal( tipoModal: tiposModal ): TiposAccionesModal {
   return {

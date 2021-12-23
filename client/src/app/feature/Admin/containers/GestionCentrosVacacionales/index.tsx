@@ -1,15 +1,13 @@
-import * as React from 'react';
-import { useEffect } from 'react';
 import * as PropTypes from 'prop-types';
-
+import * as React from 'react';
 import { DivContainer, DivRow } from '../styles';
-import { CrearCentroVacacional } from '../../components/centrovacacional/CrearCentroVacacional/index';
 import { AccionesCentrosVacacionales } from '../../components/centrovacacional/AccionesCentrosVacacionales/index';
-
 import { Calendario } from '../../models/Calendario';
-import { CentroVacacional } from '../../models/CentroVacacional';
 import { CategoriaUsuarios } from '../../models/CategoriaUsuarios';
+import { CentroVacacional } from '../../models/CentroVacacional';
+import { CrearCentroVacacional } from '../../components/centrovacacional/CrearCentroVacacional/index';
 import { Separation } from '../../../../shared/components/Separation/index';
+import { useEffect } from 'react';
 
 interface GestionCentrosVacacionalesProps {
   centrosVacacionales: Array<CentroVacacional>;

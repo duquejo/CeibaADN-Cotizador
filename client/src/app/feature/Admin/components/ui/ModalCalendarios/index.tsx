@@ -1,29 +1,22 @@
-import * as Yup from 'yup';
-import * as React from 'react';
-import moment from 'moment';
-import ReactModal from 'react-modal';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { useFormik } from 'formik';
-import { Input } from '../../../../../shared/components/Input/index';
-import { Button } from '../../../../../shared/components/Button/index';
-
-import DayPicker from 'react-day-picker';
-import MomentLocaleUtils from 'react-day-picker/moment';
 import 'moment/locale/es';
 import 'react-day-picker/lib/style.css';
-
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import * as Yup from 'yup';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { Button } from '../../../../../shared/components/Button/index';
+import DayPicker from 'react-day-picker';
 import { EstadoGeneral } from '../../../../../core/redux/modelo/EstadoGeneral';
-
-/**
- * Redux actions
- */
+import { Input } from '../../../../../shared/components/Input/index';
+import MomentLocaleUtils from 'react-day-picker/moment';
+import ReactModal from 'react-modal';
+import { TextArea } from '../../../../../shared/components/TextArea/index';
 import { cerrarModal } from '../../../../../core/redux/acciones/ui/ModalAcciones';
 import { limpiarCalendario } from '../../../../../core/redux/acciones/calendarios/CalendariosAcciones';
-import { useEffect, useState } from 'react';
-import * as PropTypes from 'prop-types';
-import { TextArea } from '../../../../../shared/components/TextArea/index';
+import moment from 'moment';
 import { tiposModal } from 'app/core/redux/modelo/EstadoUI';
+import { useFormik } from 'formik';
 
 
 if (process.env.NODE_ENV !== 'test') {

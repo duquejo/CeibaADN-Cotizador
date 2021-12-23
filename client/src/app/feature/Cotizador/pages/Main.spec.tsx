@@ -1,12 +1,12 @@
 import * as React from 'react';
-import AdminMainPage from 'app/feature/Admin/pages/Main';
 import { ShallowWrapper, shallow } from 'enzyme';
+import AdminMainPage from 'app/feature/Admin/pages/Main';
 
 jest.mock('ChildrenNode', () => {
     return ( <span>ChildrenNode</span> );
 }, { virtual: true });
 
-const historyMock = { push: jest.fn() }
+const historyMock = { push: jest.fn() };
 
 describe('Pruebas sobre <AdminMainPage />', () => {
 

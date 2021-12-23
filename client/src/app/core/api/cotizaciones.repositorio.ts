@@ -7,6 +7,6 @@ export const CotizacionRepositorio = {
     return axiosInstance.get(`/cotizaciones/${ cotizacionId }`);
   },
   guardar: ( cotizacion: Cotizacion ) => {
-    return axiosInstance.post(`/cotizaciones`, cotizacion );
+    return axiosInstance.post('/cotizaciones', cotizacion );
   }
 };

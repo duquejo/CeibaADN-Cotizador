@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, mount, ShallowWrapper, shallow } from 'enzyme';
+import { ShallowWrapper, mount, render, shallow } from 'enzyme';
 import { LazyFallback } from './index';
 
 describe('Pruebas sobre componente <LazyFallback />', () => {

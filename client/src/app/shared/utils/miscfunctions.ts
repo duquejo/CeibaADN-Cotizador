@@ -1,5 +1,5 @@
-import moment from 'moment';
 import { ISelectionOptions } from '../../feature/Admin/models/FormSelector';
+import moment from 'moment';
 
 export const obtenerCalendarioActivo = (
     calendarioActivo: string | number | null = null, 
@@ -27,7 +27,7 @@ export const extraerIdsDeArray = ( needle: Array<any>, haystack: Array<any> ) =>
   }
 
   const needleIds = needle.map( ( elemento: any ) => {
-    if( ! elemento.hasOwnProperty( 'id' ) ){
+    if( ! Object.prototype.hasOwnProperty.call( elemento, 'id' ) ){
       return elemento;
     }
     return elemento.id;
@@ -40,12 +40,9 @@ export const extraerIdsDeArray = ( needle: Array<any>, haystack: Array<any> ) =>
 
 export const cotizacionTemplate = ( cotizacion: any, allInfo = false ) => {
 
-  console.log( )
-
-  const identificador = allInfo ? `<th>Identificador</th>` : ``;
-  const centroVacacionalId = allInfo ? `<td>${ cotizacion.centroVacacional?.id }</td>` : ``;
-  const centroVacacionalCodigo = allInfo ? `<td>${ cotizacion.centroVacacional?.codigo }</td>` : ``;
-  const categoriaUsuariosId = allInfo ? `<td>${ cotizacion.categoriaUsuarios.id }</td>` : ``;
+  const identificador = allInfo ? '<th>Identificador</th>' : '';
+  const centroVacacionalId = allInfo ? `<td>${ cotizacion.centroVacacional?.id }</td>` : '';
+  const categoriaUsuariosId = allInfo ? `<td>${ cotizacion.categoriaUsuarios.id }</td>` : '';
   const categoriaUsuariosDescripcion = cotizacion.categoriaUsuarios?.descripcion ? cotizacion.categoriaUsuarios.descripcion : '';
   const centroVacacionalDescripcion = cotizacion.centroVacacional?.descripcion ? cotizacion.centroVacacional.descripcion : '';
 
@@ -84,7 +81,6 @@ export const cotizacionTemplate = ( cotizacion: any, allInfo = false ) => {
             <tbody>
               <tr>
                 ${ centroVacacionalId }
-                ${ centroVacacionalCodigo }
                 <td>${ cotizacion.centroVacacional?.nombre }</td>
                 <td>${ centroVacacionalDescripcion }</td>
               </tr>

@@ -1,13 +1,10 @@
-import * as Yup from 'yup';
 import * as React from 'react';
-
-import { useFormik } from 'formik';
-
-import { Input } from '../../../../../shared/components/Input/index';
+import * as Yup from 'yup';
 import { Button } from '../../../../../shared/components/Button/index';
+import { Input } from '../../../../../shared/components/Input/index';
 import { SpanError } from '../../../../../shared/components/SpanErrors/index';
-
 import { obtenerCotizacionAsync } from '../../../../../core/redux/acciones/cotizaciones/CotizacionesAcciones';
+import { useFormik } from 'formik';
 
 interface FormValues {
   id: number;

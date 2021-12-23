@@ -1,9 +1,8 @@
 import * as React from 'react';
-import MainPage from 'app/Main';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
 import { AdminRouter } from 'app/feature/Admin/AdminRouter';
 import { CotizadorRouter } from './feature/Cotizador/CotizadorRouter';
+import MainPage from 'app/Main';
 import { NavigationHeader } from 'app/shared/components/NavigationHeader';
 
 export const AppRouter = () => {

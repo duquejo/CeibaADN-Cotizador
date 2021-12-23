@@ -1,10 +1,8 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
 import { CategoriaUsuarios } from '../../../models/CategoriaUsuarios';
-import { Table } from './styles';
-
 import { Small } from '../../../../../shared/components/Small/index';
+import { Table } from './styles';
 
 export interface AccionesCategoriasProps {
   categorias: Array<CategoriaUsuarios>;

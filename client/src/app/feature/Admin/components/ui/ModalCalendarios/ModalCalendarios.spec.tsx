@@ -4,7 +4,7 @@ import { SinonStub, stub } from 'sinon';
 import { ModalCalendarios } from './';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer from '../../../../../core/redux/reductores'
+import rootReducer from '../../../../../core/redux/reductores';
 
 describe('ModalCalendarios test', () => {
 

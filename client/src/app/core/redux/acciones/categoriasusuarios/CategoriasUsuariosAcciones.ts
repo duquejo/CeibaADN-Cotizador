@@ -1,9 +1,8 @@
+import { TiposAcciones, TiposAccionesCategoriaUsuarios } from '../categoriasusuarios/CategoriasUsuariosTiposAcciones';
+import { CategoriaUsuarios } from '../../../../feature/Admin/models/CategoriaUsuarios';
+import { CategoriaUsuariosRepositorio } from '../../../api/categoriasusuarios.repositorio';
 import { Dispatch } from 'redux';
 import Swal from 'sweetalert2';
-
-import { CategoriaUsuarios } from '../../../../feature/Admin/models/CategoriaUsuarios';
-import { TiposAccionesCategoriaUsuarios, TiposAcciones } from '../categoriasusuarios/CategoriasUsuariosTiposAcciones';
-import { CategoriaUsuariosRepositorio } from '../../../api/categoriasusuarios.repositorio';
 import { statusCodes } from '../../../config/statusCodes';
 
 export function listarCategoriasUsuarios( categoriasUsuarios: Array<CategoriaUsuarios> ): TiposAccionesCategoriaUsuarios {
@@ -30,7 +29,7 @@ export const guardarNuevaCategoriaUsuariosAsync = ( nuevaCategoriaUsuarios: Cate
       }
     } catch (error) {
       console.log( error );
-      Swal.fire( 'Error', `Algo ha sucedido, recarga la vista e intenta de nuevo.`, 'error' );
+      Swal.fire( 'Error', 'Algo ha sucedido, recarga la vista e intenta de nuevo.', 'error' );
     }
   };
 };
@@ -43,7 +42,7 @@ export const listarCategoriasUsuariosAsync = () => {
       dispatch( listarCategoriasUsuarios( categoriasUsuarios ) );
     } catch (error) {
       console.log( error );
-      Swal.fire( 'Error', `No se han listado las categorías de usuarios, comprueba tu conexión a internet e intenta nuevamente`, 'error' );
+      Swal.fire( 'Error', 'No se han listado las categorías de usuarios, comprueba tu conexión a internet e intenta nuevamente', 'error' );
     }
   };
 };
