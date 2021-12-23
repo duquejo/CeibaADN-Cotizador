@@ -42,7 +42,6 @@ export const cotizacionTemplate = ( cotizacion: any, allInfo = false ) => {
 
   const identificador = allInfo ? '<th>Identificador</th>' : '';
   const centroVacacionalId = allInfo ? `<td>${ cotizacion.centroVacacional?.id }</td>` : '';
-  const centroVacacionalCodigo = allInfo ? `<td>${ cotizacion.centroVacacional?.codigo }</td>` : '';
   const categoriaUsuariosId = allInfo ? `<td>${ cotizacion.categoriaUsuarios.id }</td>` : '';
   const categoriaUsuariosDescripcion = cotizacion.categoriaUsuarios?.descripcion ? cotizacion.categoriaUsuarios.descripcion : '';
   const centroVacacionalDescripcion = cotizacion.centroVacacional?.descripcion ? cotizacion.centroVacacional.descripcion : '';
@@ -82,7 +81,6 @@ export const cotizacionTemplate = ( cotizacion: any, allInfo = false ) => {
             <tbody>
               <tr>
                 ${ centroVacacionalId }
-                ${ centroVacacionalCodigo }
                 <td>${ cotizacion.centroVacacional?.nombre }</td>
                 <td>${ centroVacacionalDescripcion }</td>
               </tr>

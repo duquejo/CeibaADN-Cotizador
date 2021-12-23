@@ -31,6 +31,9 @@
     }
   }
   .DayPicker-Day--disabled {
+    color: #dce0e0 !important;
+    cursor: default;
+    pointer-events: none;
     &:hover {
       opacity: 0.1;
     }
