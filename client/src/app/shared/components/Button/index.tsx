@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  background: #2d6133;
+  background: #009e99;
   border-radius: 8px;
   color: #fff;
   font-weight: bold;
@@ -15,7 +15,7 @@ export const Button = styled.button`
   text-align: center;
   transition: background-color 0.2s ease-in;
   &:hover{
-    background: #389843;
+    background: #00c9c2;
   }
   &[disabled] {
     opacity: 0.3;

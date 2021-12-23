@@ -52,7 +52,7 @@ export const AccionesCalendario: React.FC<AccionesCalendariosProps> = ({
         puede visualizar en la columna <em>festivos</em>.</Small>
       {
         calendarios && calendarios.length ?
-        <> 
+        <div className="elements_container"> 
           <Table className="calendar">
             <thead className="calendar__header">
               <tr>
@@ -89,7 +89,7 @@ export const AccionesCalendario: React.FC<AccionesCalendariosProps> = ({
             handleEditCalendar={ handleEditCalendar }
             onSubmit={ onSubmit }
           />
-        </>
+        </div>
         : <p>No hay calendarios disponibles actualmente. <i>Prueba creando uno.</i></p>
       }
     </>    

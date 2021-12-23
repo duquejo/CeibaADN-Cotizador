@@ -13,9 +13,9 @@ Ej:
 */
 
 /* Colores */
-$primary-color: #2d6133;
+$primary-color: #009e99;
 $disabled-calendar: #dce0e0;
-$url-color: #389843;
+$url-color: #009e99;
 
 html {
   box-sizing: border-box;
@@ -86,13 +86,29 @@ table {
     }
   }
 }
-
 h1 {
-  margin: 10px 0;
+  margin: auto auto 35px;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  color: #fff;
+  background: #009e99;
+  align-items: center;
+  justify-content: center;
 }
 
 h2 {
   margin: 20px 0;
+}
+
+.elements_container {
+  overflow-y: auto;
+  max-height: 500px;
+  h3 {
+    margin-bottom: 10px;
+  }
 }
 
 @import 'assets/scss/modal';

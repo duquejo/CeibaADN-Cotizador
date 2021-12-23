@@ -14,11 +14,11 @@
     cursor: pointer;
     transition: background-color 0.2s ease;
     &.selected {
-      background-color: #2d6133;
+      background-color: $primary-color;
     }
   }
   .swiper-pagination-bullet-active {
-    background-color: #2d6133 !important;
+    background-color: $primary-color !important;
   }
 
   .slideContent {

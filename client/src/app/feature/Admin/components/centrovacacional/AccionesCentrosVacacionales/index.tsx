@@ -52,7 +52,7 @@ export const AccionesCentrosVacacionales: React.FC<AccionesCentrosVacacionalesPr
         vacío el campo <b>&quot;asignación de calendario activo&ldquo;</b>, la plataforma seleccionará de manera automática el primero que agregó en el listado de calendarios.</Small>
       {
         centrosVacacionales && centrosVacacionales.length ?
-        <>
+        <div className="elements_container">
           <Table className="category">
             <thead className="category__header">
               <tr>
@@ -103,7 +103,7 @@ export const AccionesCentrosVacacionales: React.FC<AccionesCentrosVacacionalesPr
             handleEditCentroVacacional={ handleEditCentroVacacional }
             onSubmit={ onSubmit }
           />
-        </>
+        </div>
         : <p>No hay centros vacacionales disponibles actualmente. <i>Prueba creando uno.</i></p>
       }
     </>  

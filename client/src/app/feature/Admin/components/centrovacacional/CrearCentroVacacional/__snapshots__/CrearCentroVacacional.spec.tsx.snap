@@ -148,7 +148,7 @@ exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
       </option>
     </select>
     <button
-      class="sc-bdvvtL dMEYVs"
+      class="sc-bdvvtL ibsxaf"
       type="submit"
     >
       Crear

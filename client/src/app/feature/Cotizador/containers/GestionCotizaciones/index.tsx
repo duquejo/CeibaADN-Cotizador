@@ -27,7 +27,6 @@ export const GestionCotizaciones: React.FC<GestionCotizacionesProps> = ({
 
   return (
     <>
-      <h2>Generación de cotizaciones</h2>
       <p>Proporcione la información según la disponibilidad de los calendarios que vaya seleccionando en el formulario</p>
       <DivContainer>
         <CrearCotizacion 

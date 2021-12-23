@@ -70,7 +70,7 @@ exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
       value=""
     />
     <button
-      class="sc-bdvvtL dMEYVs"
+      class="sc-bdvvtL ibsxaf"
       type="submit"
     >
       Crear categoría de usuarios

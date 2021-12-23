@@ -3,7 +3,7 @@
 exports[`Pruebas sobre componentes del header <NavigationHeader /> Debería renderizar el elemento adecuadamente 1`] = `
 <styled.nav>
   <NavBrand
-    imgSrc="logo-ceiba.png"
+    imgSrc="logoCeibaSoftware.png"
     text="Ceiba Software"
   />
   <NavList

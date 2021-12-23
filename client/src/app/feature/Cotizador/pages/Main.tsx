@@ -5,13 +5,15 @@ import { RouteComponentProps } from 'react-router-dom';
 
 const AdminMainPage: React.FC<RouteComponentProps> = () => {
   return (
-    
-    <Layout title="Cotizador" description="Generación de cotizaciones">
+    <>
+      <h1>Generación de cotizaciones</h1>    
+      <Layout title="Cotizador" description="Generación de cotizaciones">
 
-      {/* Proveedor Redux Gestión de Cotizaciones */}
-      <ProveedorGestionCotizaciones />
+        {/* Proveedor Redux Gestión de Cotizaciones */}
+        <ProveedorGestionCotizaciones />
 
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

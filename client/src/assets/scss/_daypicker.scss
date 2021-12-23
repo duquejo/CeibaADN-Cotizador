@@ -26,7 +26,7 @@
     font-size: 14px;
     border-radius: inherit !important;
     &:hover {
-      background-color: lighten($primary-color, 40%) !important;
+      background-color: lighten($primary-color, 10%) !important;
       color: #fff;
     }
   }
@@ -39,7 +39,7 @@
     }
   }
   .DayPicker-TodayButton {
-    color: #2d6133;
+    color: $primary-color;
     text-decoration: underline;
     margin: auto;
     display: block;

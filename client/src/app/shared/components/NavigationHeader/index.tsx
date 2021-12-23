@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { HeaderNav } from './styles';
-import LogoCeiba from 'assets/img/logo-ceiba.png';
+import LogoCeiba from 'assets/img/logoCeibaSoftware.png';
 import { NavBrand } from './NavBrand';
 import { NavList } from './NavList';
 

@@ -470,10 +470,10 @@ exports[`CrearCotizacion test Debería coincidir con el snapshot 1`] = `
                     21
                   </div>
                   <div
-                    aria-disabled="false"
+                    aria-disabled="true"
                     aria-label="mié. 22 de dic. de 2021"
                     aria-selected="false"
-                    class="DayPicker-Day DayPicker-Day--today"
+                    class="DayPicker-Day DayPicker-Day--disabled"
                     role="gridcell"
                     tabindex="-1"
                   >
@@ -483,7 +483,7 @@ exports[`CrearCotizacion test Debería coincidir con el snapshot 1`] = `
                     aria-disabled="false"
                     aria-label="jue. 23 de dic. de 2021"
                     aria-selected="false"
-                    class="DayPicker-Day"
+                    class="DayPicker-Day DayPicker-Day--today"
                     role="gridcell"
                     tabindex="-1"
                   >
@@ -1517,7 +1517,7 @@ exports[`CrearCotizacion test Debería coincidir con el snapshot 1`] = `
       </div>
     </div>
     <button
-      class="sc-bdvvtL dMEYVs"
+      class="sc-bdvvtL ibsxaf"
       type="submit"
     >
       Crear calendario
