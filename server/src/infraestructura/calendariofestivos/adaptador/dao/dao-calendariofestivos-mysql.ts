@@ -16,6 +16,7 @@ export class DaoCalendarioFestivosMysql implements DaoCalendarioFestivos {
     const calendarios = await this.entityManager
       .createQueryBuilder( CalendarioFestivosEntidad, 'calendariofestivos' )
       .select()
+      .limit(50)
       .getMany();
     return plainToClass( CalendarioFestivosDto, calendarios );
   }

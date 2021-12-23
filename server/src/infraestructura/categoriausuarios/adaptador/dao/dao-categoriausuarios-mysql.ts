@@ -19,6 +19,7 @@ export class DaoCategoriaUsuariosMysql implements DaoCategoriaUsuarios {
     const categoriasUsuarios = await this.entityManager
       .createQueryBuilder( CategoriaUsuariosEntidad, 'categoriausuarios' )
       .select()
+      .limit(50)      
       .getMany();
     return plainToClass( CategoriaUsuariosDto, categoriasUsuarios );
   }

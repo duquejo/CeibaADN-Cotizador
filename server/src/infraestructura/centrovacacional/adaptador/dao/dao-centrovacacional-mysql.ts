@@ -20,6 +20,7 @@ export class DaoCentroVacacionalMysql implements DaoCentroVacacional {
       .createQueryBuilder( CentroVacacionalEntidad, 'centrovacacional' )
       .leftJoinAndSelect( 'centrovacacional.calendarios', 'calendariofestivos' )
       .leftJoinAndSelect( 'centrovacacional.categoriaUsuarios', 'categoriausuarios' )
+      .limit(50)      
       .getMany();
     return plainToClass( CentroVacacionalDto, centrosVacacionales );
   }
