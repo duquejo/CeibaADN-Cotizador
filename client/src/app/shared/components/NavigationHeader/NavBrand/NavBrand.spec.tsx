@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ShallowWrapper, shallow } from 'enzyme';
-import { NavBrand } from './index';
 import LogoCeiba from 'assets/img/logo-ceiba.png';
+import { NavBrand } from './index';
 
 describe('Pruebas para el componente <NavBrand />', () => {
 

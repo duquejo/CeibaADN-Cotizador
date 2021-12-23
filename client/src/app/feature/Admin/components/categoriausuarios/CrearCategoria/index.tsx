@@ -1,16 +1,14 @@
-import * as Yup from 'yup';
-import * as React from 'react';
 import * as PropTypes from 'prop-types';
-
-import { useFormik } from 'formik';
-import { FormikHelpers } from 'formik/dist/types';
-
-import { Input } from '../../../../../shared/components/Input/index';
+import * as React from 'react';
+import * as Yup from 'yup';
 import { Button } from '../../../../../shared/components/Button/index';
-import { TextArea } from '../../../../../shared/components/TextArea/index';
-import { SpanError } from '../../../../../shared/components/SpanErrors/index';
-
 import { CategoriaUsuarios } from '../../../models/CategoriaUsuarios';
+import { FormikHelpers } from 'formik/dist/types';
+import { Input } from '../../../../../shared/components/Input/index';
+import { SpanError } from '../../../../../shared/components/SpanErrors/index';
+import { TextArea } from '../../../../../shared/components/TextArea/index';
+import { useFormik } from 'formik';
+
 interface FormValues {
   title: string;
   description?: string;

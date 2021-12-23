@@ -1,12 +1,11 @@
-import * as React from 'react';
-import { useEffect } from 'react';
 import * as PropTypes from 'prop-types';
-
+import * as React from 'react';
 import { DivContainer, DivRow } from '../styles';
 import { AccionesCategorias } from '../../components/categoriausuarios/AccionesCategorias/index';
-import { CrearCategoria } from '../../components/categoriausuarios/CrearCategoria/index';
 import { CategoriaUsuarios } from '../../models/CategoriaUsuarios';
+import { CrearCategoria } from '../../components/categoriausuarios/CrearCategoria/index';
 import { Separation } from '../../../../shared/components/Separation/index';
+import { useEffect } from 'react';
 
 interface GestionCategoriasUsuariosProps {
   categoriasUsuarios: Array<CategoriaUsuarios>;

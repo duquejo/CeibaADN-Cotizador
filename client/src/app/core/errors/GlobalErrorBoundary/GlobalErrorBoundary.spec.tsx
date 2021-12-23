@@ -1,10 +1,7 @@
 import * as React from 'react';
-import { RenderResult, fireEvent, render, wait } from '@testing-library/react';
-import { SinonStub, stub } from 'sinon';
-import { setTextEvent } from 'app/shared/utils/test';
+import { ShallowWrapper, shallow } from 'enzyme';
 import { GlobalErrorBoundary } from './index';
 import { ReactNode } from 'react';
-import { ShallowWrapper, shallow } from 'enzyme';
 
 describe('Pruebas sobre <GlobalErrorBoundary />', () => {
     

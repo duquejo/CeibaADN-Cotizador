@@ -1,17 +1,16 @@
-import { useFormik } from 'formik';
 import * as React from 'react';
-import { useState } from 'react';
 import * as Yup from 'yup';
-
 import { Button } from '../../../../../shared/components/Button/index';
+import { ISelectionOptions } from '../../../models/FormSelector';
 import { Input } from '../../../../../shared/components/Input/index';
 import { Select } from '../../../../../shared/components/Select/index';
+import { SelectorMultiple } from './SelectorMultiple/index';
 import { Small } from '../../../../../shared/components/Small/index';
 import { SpanError } from '../../../../../shared/components/SpanErrors';
 import { TextArea } from '../../../../../shared/components/TextArea/index';
-import { SelectorMultiple } from './SelectorMultiple/index';
-import { ISelectionOptions } from '../../../models/FormSelector';
 import { obtenerCalendarioActivo } from '../../../../../shared/utils/miscfunctions';
+import { useFormik } from 'formik';
+import { useState } from 'react';
 import { yupConditions } from '../../../../../shared/utils/yupconditions.enum';
 
 interface FormValues {

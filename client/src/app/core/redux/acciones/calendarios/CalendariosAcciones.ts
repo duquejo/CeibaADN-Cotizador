@@ -1,9 +1,8 @@
+import { TiposAcciones, TiposAccionesCalendario } from './CalendariosTiposAcciones';
+import { Calendario } from 'app/feature/Admin/models/Calendario';
+import { CalendariosRepositorio } from '../../../api/calendarios.repositorio';
 import { Dispatch } from 'redux';
 import Swal from 'sweetalert2';
-
-import { Calendario } from 'app/feature/Admin/models/Calendario';
-import { TiposAcciones, TiposAccionesCalendario } from './CalendariosTiposAcciones';
-import { CalendariosRepositorio } from '../../../api/calendarios.repositorio';
 import { statusCodes } from '../../../config/statusCodes';
 
 export function listarCalendarios( calendarios: Array<Calendario> ): TiposAccionesCalendario {

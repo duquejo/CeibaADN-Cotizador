@@ -1,6 +1,6 @@
 import * as React from 'react';
-import AdminMainPage from 'app/feature/Admin/pages/Main';
 import { ShallowWrapper, shallow } from 'enzyme';
+import AdminMainPage from 'app/feature/Admin/pages/Main';
 
 jest.mock('ChildrenNode', () => {
     return ( <span>ChildrenNode</span> );

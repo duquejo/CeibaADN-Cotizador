@@ -1,7 +1,7 @@
-import reducer from './categoriaUsuariosReductor';
 import { TiposAcciones, TiposAccionesCategoriaUsuarios } from '../../acciones/categoriasusuarios/CategoriasUsuariosTiposAcciones';
-import { categoriaUsuariosMock } from '../../__mocks__/reductoresMock';
 import { EstadoCategoriaUsuarios } from '../../modelo/EstadoCategoriaUsuarios';
+import { categoriaUsuariosMock } from '../../__mocks__/reductoresMock';
+import reducer from './categoriaUsuariosReductor';
 
 describe('Pruebas sobre los reducers de las categorías de usuarios', () => {
 

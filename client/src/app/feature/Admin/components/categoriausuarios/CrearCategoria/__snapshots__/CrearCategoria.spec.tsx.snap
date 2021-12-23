@@ -17,7 +17,7 @@ exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <input
-      class="sc-bdvvtL cJYwoi"
+      class="sc-gsDKAQ kdvfBj"
       id="title"
       name="title"
       placeholder="Título de la categoría, por ejemplo: 'Asociados categoría 1'"
@@ -31,7 +31,7 @@ exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <textarea
-      class="sc-dkPtRN cFTRpZ"
+      class="sc-hKwDye bWFZtO"
       id="description"
       name="description"
       placeholder="Descripción de la categoría, por ejemplo: 'Categoría para asociados seccional Medellín'"
@@ -45,7 +45,7 @@ exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <input
-      class="sc-bdvvtL cJYwoi"
+      class="sc-gsDKAQ kdvfBj"
       id="priceHigh"
       min="0"
       name="priceHigh"
@@ -61,7 +61,7 @@ exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <input
-      class="sc-bdvvtL cJYwoi"
+      class="sc-gsDKAQ kdvfBj"
       id="priceLow"
       min="0"
       name="priceLow"
@@ -70,7 +70,7 @@ exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
       value=""
     />
     <button
-      class="sc-gsDKAQ hIhMpF"
+      class="sc-bdvvtL dMEYVs"
       type="submit"
     >
       Crear categoría de usuarios

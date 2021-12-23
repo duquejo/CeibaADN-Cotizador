@@ -1,9 +1,8 @@
 import * as React from 'react';
-import moment from 'moment';
 import { RenderResult, fireEvent, render, wait } from '@testing-library/react';
 import { SinonStub, stub } from 'sinon';
-import { CrearCotizacion } from './index';
 import { CentroVacacional } from '../../../Admin/models/CentroVacacional';
+import { CrearCotizacion } from './index';
 import { setTextEvent } from '../../../../shared/utils/test';
 
 describe('CrearCotizacion test', () => {

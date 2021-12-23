@@ -1,9 +1,8 @@
+import { TiposAcciones, TiposAccionesCategoriaUsuarios } from '../categoriasusuarios/CategoriasUsuariosTiposAcciones';
+import { CategoriaUsuarios } from '../../../../feature/Admin/models/CategoriaUsuarios';
+import { CategoriaUsuariosRepositorio } from '../../../api/categoriasusuarios.repositorio';
 import { Dispatch } from 'redux';
 import Swal from 'sweetalert2';
-
-import { CategoriaUsuarios } from '../../../../feature/Admin/models/CategoriaUsuarios';
-import { TiposAcciones, TiposAccionesCategoriaUsuarios } from '../categoriasusuarios/CategoriasUsuariosTiposAcciones';
-import { CategoriaUsuariosRepositorio } from '../../../api/categoriasusuarios.repositorio';
 import { statusCodes } from '../../../config/statusCodes';
 
 export function listarCategoriasUsuarios( categoriasUsuarios: Array<CategoriaUsuarios> ): TiposAccionesCategoriaUsuarios {

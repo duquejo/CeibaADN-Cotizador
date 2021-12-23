@@ -1,33 +1,27 @@
-import * as Yup from 'yup';
-import * as PropTypes from 'prop-types';
-import * as React from 'react';
-import { useFormik } from 'formik';
 import 'moment/locale/es';
 import 'react-day-picker/lib/style.css';
-import ReactModal from 'react-modal';
-
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
-
-/**
- * Redux actions
- */
-import { cerrarModal } from '../../../../../core/redux/acciones/ui/ModalAcciones';
-import { EstadoGeneral } from '../../../../../core/redux/modelo/EstadoGeneral';
-
-import { Input } from '../../../../../shared/components/Input/index';
-import { Button } from '../../../../../shared/components/Button/index';
 import { useEffect, useState } from 'react';
-import { limpiarCentroVacacional } from '../../../../../core/redux/acciones/centrosvacacionales/CentrosVacacionalesAcciones';
-import { tiposModal } from 'app/core/redux/modelo/EstadoUI';
-import { SpanError } from '../../../../../shared/components/SpanErrors/index';
-import { Small } from '../../../../../shared/components/Small/index';
-import { SelectorMultiple } from '../../centrovacacional/CrearCentroVacacional/SelectorMultiple/index';
-import { Select } from '../../../../../shared/components/Select/index';
+import { Button } from '../../../../../shared/components/Button/index';
+import { EstadoGeneral } from '../../../../../core/redux/modelo/EstadoGeneral';
 import { ISelectionOptions } from '../../../models/FormSelector';
+import { Input } from '../../../../../shared/components/Input/index';
+import ReactModal from 'react-modal';
+import { Select } from '../../../../../shared/components/Select/index';
+import { SelectorMultiple } from '../../centrovacacional/CrearCentroVacacional/SelectorMultiple/index';
+import { Small } from '../../../../../shared/components/Small/index';
+import { SpanError } from '../../../../../shared/components/SpanErrors/index';
+import { cerrarModal } from '../../../../../core/redux/acciones/ui/ModalAcciones';
+import { limpiarCentroVacacional } from '../../../../../core/redux/acciones/centrosvacacionales/CentrosVacacionalesAcciones';
 import { obtenerCalendarioActivo } from '../../../../../shared/utils/miscfunctions';
+import { tiposModal } from 'app/core/redux/modelo/EstadoUI';
+import { useFormik } from 'formik';
 import { yupConditions } from '../../../../../shared/utils/yupconditions.enum';
 
-if (process.env.NODE_ENV !== 'test') {
+if ( process.env.NODE_ENV !== 'test' ) {
     ReactModal.setAppElement('#root');
 }
 

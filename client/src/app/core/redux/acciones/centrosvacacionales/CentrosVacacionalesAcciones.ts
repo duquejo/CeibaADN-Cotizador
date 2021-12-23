@@ -1,10 +1,9 @@
-import { Dispatch } from 'redux';
-import Swal from 'sweetalert2';
-
-import { EstadoGeneral } from '../../modelo/EstadoGeneral';
-import { CentroVacacional } from 'app/feature/Admin/models/CentroVacacional';
 import { TiposAcciones, TiposAccionesCentroVacacional } from './CentrosVacacionalesTiposAcciones';
+import { CentroVacacional } from 'app/feature/Admin/models/CentroVacacional';
 import { CentrosVacacionalesRepositorio } from '../../../api/centrosvacacionales.repositorio';
+import { Dispatch } from 'redux';
+import { EstadoGeneral } from '../../modelo/EstadoGeneral';
+import Swal from 'sweetalert2';
 import { extraerIdsDeArray } from '../../../../shared/utils/miscfunctions';
 import { statusCodes } from '../../../config/statusCodes';
 

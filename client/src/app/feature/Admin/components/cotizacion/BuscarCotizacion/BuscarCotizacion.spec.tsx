@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { ReactWrapper, mount } from 'enzyme';
 import { RenderResult, fireEvent, render, wait } from '@testing-library/react';
 import { BuscarCotizacion } from '.';
-import { ReactWrapper, mount } from 'enzyme';
 
 describe('BuscarCotizacion test', () => {
     

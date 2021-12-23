@@ -1,9 +1,7 @@
-import Swal from 'sweetalert2';
-
-import { Cotizacion } from '../../../../feature/Cotizador/models/Cotizacion';
-
 import { TiposAcciones, TiposAccionesCotizacion } from './CotizacionesTiposAcciones';
+import { Cotizacion } from '../../../../feature/Cotizador/models/Cotizacion';
 import { CotizacionRepositorio } from '../../../api/cotizaciones.repositorio';
+import Swal from 'sweetalert2';
 import { cotizacionTemplate } from 'app/shared/utils/miscfunctions';
 import { statusCodes } from '../../../config/statusCodes';
 

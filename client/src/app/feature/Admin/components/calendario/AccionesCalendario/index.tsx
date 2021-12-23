@@ -1,17 +1,14 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import Swal from 'sweetalert2';
-import { useDispatch } from 'react-redux';
-
-import { Calendario } from '../../../models/Calendario';
 import { EmojiDetails, Table } from './styles';
-
+import { Calendario } from '../../../models/Calendario';
 import { ModalCalendarios } from '../../ui/ModalCalendarios/index';
 import { Small } from '../../../../../shared/components/Small/index';
-
+import Swal from 'sweetalert2';
 import { abrirModal } from '../../../../../core/redux/acciones/ui/ModalAcciones';
 import { activarCalendarioEdicion } from '../../../../../core/redux/acciones/calendarios/CalendariosAcciones';
 import { tiposModal } from '../../../../../core/redux/modelo/EstadoUI';
+import { useDispatch } from 'react-redux';
 
 export interface AccionesCalendariosProps {
   calendarios: Array<Calendario>;

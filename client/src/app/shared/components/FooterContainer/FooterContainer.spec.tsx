@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { ShallowWrapper, mount, render, shallow } from 'enzyme';
+import { ShallowWrapper, shallow } from 'enzyme';
 import { FooterContainer } from './index';
-
 
 describe('Pruebas sobre componente <FooterContainer />', () => {
 

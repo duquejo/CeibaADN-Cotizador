@@ -1,16 +1,16 @@
 import { 
-    activarCentroVacacionalEdicion, 
-    actualizarCentroVacacional,
+    activarCentroVacacionalEdicion,
+    actualizarCentroVacacional, 
     agregarNuevoCentroVacacional,
     eliminarCentroVacacional,
     limpiarCentroVacacional,
     listarCentrosVacacionales
 } from './CentrosVacacionalesAcciones';
+import { EstadoCentroVacacional } from '../../modelo/EstadoCentroVacacional';
 import { TiposAcciones } from './CentrosVacacionalesTiposAcciones';
+import { centroVacacionalMock } from '../../__mocks__/reductoresMock';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { centroVacacionalMock } from '../../__mocks__/reductoresMock';
-import { EstadoCentroVacacional } from '../../modelo/EstadoCentroVacacional';
 
 describe('Acciones de centrosVacacionales', () => {
 

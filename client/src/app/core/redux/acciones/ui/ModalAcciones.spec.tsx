@@ -1,8 +1,8 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
+import { EstadoUI, tiposModal } from '../../modelo/EstadoUI';
 import { abrirModal, cerrarModal } from './ModalAcciones';
 import { TiposAcciones } from './ModalTiposAcciones';
-import { EstadoUI, tiposModal } from '../../modelo/EstadoUI';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 
 describe('Acciones de categoriasUsuarios', () => {
 

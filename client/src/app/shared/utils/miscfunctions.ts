@@ -1,5 +1,5 @@
-import moment from 'moment';
 import { ISelectionOptions } from '../../feature/Admin/models/FormSelector';
+import moment from 'moment';
 
 export const obtenerCalendarioActivo = (
     calendarioActivo: string | number | null = null, 
@@ -27,7 +27,7 @@ export const extraerIdsDeArray = ( needle: Array<any>, haystack: Array<any> ) =>
   }
 
   const needleIds = needle.map( ( elemento: any ) => {
-    if( ! elemento.hasOwnProperty( 'id' ) ){
+    if( ! Object.prototype.hasOwnProperty.call( elemento, 'id' ) ){
       return elemento;
     }
     return elemento.id;

@@ -1,12 +1,8 @@
-import { 
-    agregarNuevaCotizacion,
-    guardarNuevaCotizacionAsync,
-    obtenerCotizacionAsync
-} from './CotizacionesAcciones';
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
+import { agregarNuevaCotizacion, guardarNuevaCotizacionAsync, obtenerCotizacionAsync } from './CotizacionesAcciones';
 import { TiposAcciones } from '../cotizaciones/CotizacionesTiposAcciones';
+import configureMockStore from 'redux-mock-store';
 import { cotizacionMock } from '../../__mocks__/reductoresMock';
+import thunk from 'redux-thunk';
 
 describe('Acciones de centros Vacacionales', () => {
 

@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { ShallowWrapper, shallow } from 'enzyme';
-import { SeleccionCentroVacacional } from './index';
 import { SinonStub, stub } from 'sinon';
 import { CentroVacacional } from '../../../../Admin/models/CentroVacacional';
+import { SeleccionCentroVacacional } from './index';
 
 describe('SeleccionCentroVacacional Test', () => {
 
   let componentWrapper: ShallowWrapper;
-
-//   const handlerClick = jest.fn();
 
   let componentProps: React.ComponentProps<typeof SeleccionCentroVacacional> & {
     elementos: CentroVacacional[];

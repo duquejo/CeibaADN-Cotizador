@@ -1,12 +1,12 @@
-import rootReducer from './reductores';
-import { createStore } from 'redux';
-import { EstadoCalendario } from './modelo/EstadoCalendario';
 import { Calendario } from '../../feature/Admin/models/Calendario';
 import { CategoriaUsuarios } from '../../feature/Admin/models/CategoriaUsuarios';
 import { CentroVacacional } from '../../feature/Admin/models/CentroVacacional';
+import { EstadoCalendario } from './modelo/EstadoCalendario';
 import { EstadoCategoriaUsuarios } from './modelo/EstadoCategoriaUsuarios';
 import { EstadoCentroVacacional } from './modelo/EstadoCentroVacacional';
 import { EstadoUI } from './modelo/EstadoUI';
+import { createStore } from 'redux';
+import rootReducer from './reductores';
 
 describe('Pruebas sobre el RootStore', () => {
 

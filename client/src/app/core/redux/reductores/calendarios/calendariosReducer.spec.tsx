@@ -1,8 +1,8 @@
-import reducer from './calendariosReductor';
 import { TiposAcciones, TiposAccionesCalendario } from '../../acciones/calendarios/CalendariosTiposAcciones';
-import { calendarioMock } from '../../__mocks__/reductoresMock';
-import { EstadoCalendario } from '../../modelo/EstadoCalendario';
 import { Calendario } from '../../../../feature/Admin/models/Calendario';
+import { EstadoCalendario } from '../../modelo/EstadoCalendario';
+import { calendarioMock } from '../../__mocks__/reductoresMock';
+import reducer from './calendariosReductor';
 
 describe('Pruebas sobre los reducers del calendario', () => {
 
