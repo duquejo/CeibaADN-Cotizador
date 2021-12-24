@@ -11,6 +11,7 @@ import { EstadoGeneral } from '../../../../../core/redux/modelo/EstadoGeneral';
 import { Input } from '../../../../../shared/components/Input/index';
 import MomentLocaleUtils from 'react-day-picker/moment';
 import ReactModal from 'react-modal';
+import { SpanError } from '../../../../../shared/components/SpanErrors/index';
 import { TextArea } from '../../../../../shared/components/TextArea/index';
 import { cerrarModal } from '../../../../../core/redux/acciones/ui/ModalAcciones';
 import { limpiarCalendario } from '../../../../../core/redux/acciones/calendarios/CalendariosAcciones';
@@ -152,6 +153,10 @@ export const ModalCalendarios: React.FC<any> = ({
                             value={formik.values.title}
                             onChange={formik.handleChange}
                         />
+                        {formik.touched.title && formik.errors.title && (
+                            <SpanError>{formik.errors.title}</SpanError>
+                        )}
+
                         <label htmlFor="description">
                             <b>Descripción</b>
                         </label>

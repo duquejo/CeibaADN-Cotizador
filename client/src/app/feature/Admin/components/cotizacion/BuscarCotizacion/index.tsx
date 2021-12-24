@@ -34,7 +34,7 @@ export const BuscarCotizacion: React.FC = () => {
   });  
 
   return (
-    <form className="category__form" onSubmit={ formik.handleSubmit } noValidate>
+    <form className="cotizacion__form" onSubmit={ formik.handleSubmit } noValidate>
       <h3>Búsqueda de Cotizaciones</h3>
 
       <label htmlFor="title">

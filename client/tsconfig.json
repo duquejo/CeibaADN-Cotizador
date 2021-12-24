@@ -36,7 +36,8 @@
     "src/setupTests.ts"
   ],
   "types": [
-    "typePatches"
+    "typePatches",
+    "cypress"
   ],
   "include": [
     "src",

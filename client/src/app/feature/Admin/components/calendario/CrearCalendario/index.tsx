@@ -56,9 +56,27 @@ export const CrearCalendario: React.FC<CrearCalendarioProps> = ({
    * Guarda festivos del formulario de creación
    */
   const handleDayClick = ( day: Date ) => {
-    setSelectedDays( ( days: Date[] ) => [
-      ...selectedDays, day
-    ] );
+
+    const filteredArray = selectedDays.filter( selectedDay => 
+        moment( selectedDay ).format('YYYY-MM-DD') !== moment( day ).format('YYYY-MM-DD')
+    );
+    /**
+     * Lo elimina si existe
+     */
+    if( filteredArray.length < selectedDays.length ) {
+        setSelectedDays( ( days: Date[] ) => filteredArray );
+    } else {
+        /**
+         * Añade de no existir
+         */
+        setSelectedDays( ( days: Date[] ) => [
+            ...selectedDays, moment( day ).startOf('day').toDate()
+        ] );
+    }
+
+    // setSelectedDays( ( days: Date[] ) => [
+    //   ...selectedDays, day
+    // ] );
   };
 
   const resetSelectedDays = () => {

@@ -3,7 +3,7 @@
 exports[`BuscarCotizacion test Debería coincidir con el snapshot 1`] = `
 <div>
   <form
-    class="category__form"
+    class="cotizacion__form"
     novalidate=""
   >
     <h3>
@@ -36,7 +36,7 @@ exports[`BuscarCotizacion test Debería coincidir con el snapshot 1`] = `
 
 exports[`BuscarCotizacion test Debería coincidir con el snapshot 2`] = `
 <form
-  className="category__form"
+  className="cotizacion__form"
   noValidate={true}
   onSubmit={[Function]}
 >

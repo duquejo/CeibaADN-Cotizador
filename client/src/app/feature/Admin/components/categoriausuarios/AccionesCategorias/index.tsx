@@ -31,11 +31,11 @@ export const AccionesCategorias: React.FC<AccionesCategoriasProps> = ({ categori
                 </th>
               </tr>
             </thead>
-            <tbody className="calendar__body">
+            <tbody className="category__body">
             {
               categorias.map( ( categoria: CategoriaUsuarios ) => {
                 return (
-                  <tr className="calendar__details" key={ categoria.id }>
+                  <tr className="category__details" key={ categoria.id }>
                     <td>{ categoria.nombre }</td>
                     <td><Small>{ categoria.descripcion ? categoria.descripcion : 'Sin descripción' }</Small></td>
                     <td>$ { categoria.valorAlta ? categoria.valorAlta : 0 }</td>
