@@ -1,0 +1,2204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] = `
+<Suspense
+  fallback={<LazyFallback />}
+>
+  Array [
+    <h1>
+      Administrador
+    </h1>,
+    Array [
+      "",
+      <div
+        className="sc-furwcr ckvjpV"
+      >
+        <p>
+          En la siguiente interfaz podrá tomar acciones relacionadas con la gestión de 
+          <b>
+            Calendarios de temporadas altas
+          </b>
+          ,
+          <b>
+            Categorías de usuarios
+          </b>
+           y 
+          <b>
+            Centros Vacacionales
+          </b>
+          . 
+          <br />
+          Los calendarios personalizados gestionados en el módulo de 
+          <b>
+            Gestión de calendarios
+          </b>
+           tienen un impacto sobre el cálculo de la cotización final según el 
+          <b>
+            Centro Vacacional
+          </b>
+           que lo tenga asignado, así como la 
+          <b>
+            Categoría de usuarios
+          </b>
+           relacionada, que le permite realizar a un usuario diferentes cotizaciones según su rango salarial.
+        </p>
+        <hr
+          className="sc-iCfMLu lmoAtF"
+        />
+        Array [
+          <h2>
+            Gestión de calendarios 
+            <span
+              aria-label="Calendarios"
+              role="img"
+              title="Calendarios"
+            >
+              📅
+            </span>
+          </h2>,
+          <p>
+            Administre los calendarios que podrá asignar a los Centros Vacacionales, los 
+            <em>
+              festivos o días de alta 
+            </em>
+            para la plataforma, corresponden evento único del día por el que cambia de manera dinámica el precio del día completo según el rango salarial de un usuario al momento de cotizar.
+          </p>,
+          <div
+            className="sc-dkPtRN ffCKks"
+          >
+            <div
+              className="sc-hKwDye imUYjf"
+            >
+              <form
+                className="calendar__form"
+                onSubmit={[Function]}
+              >
+                <h3>
+                  Crear calendario
+                </h3>
+                <label
+                  htmlFor="title"
+                >
+                  <b>
+                    Título
+                  </b>
+                </label>
+                <input
+                  className="sc-jRQBWg fpIRMD"
+                  id="title"
+                  name="title"
+                  onChange={[Function]}
+                  placeholder="Título personalizado del calendario, por ejemplo: 'Calendario de alta afluencia enero'."
+                  value=""
+                />
+                <label
+                  htmlFor="description"
+                >
+                  <b>
+                    Descripción
+                  </b>
+                </label>
+                <textarea
+                  className="sc-iqseJM eAHJmX"
+                  defaultValue=""
+                  id="description"
+                  name="description"
+                  onChange={[Function]}
+                  placeholder="Descripción del calendario. Extienda más información de carácter administrativo del mismo, generando más opciones de recordación o gestión."
+                  rows={3}
+                />
+                <label
+                  htmlFor="holidays"
+                >
+                  <b>
+                    Selección de festivos/temporada alta
+                  </b>
+                </label>
+                <small
+                  className="sc-crHmcD cUsFA"
+                >
+                  Seleccione de los siguientes calendarios, los días que corresponda que son festivos o que sean días de temporada alta. El día marcado de color rojo corresponde al día actual.
+                </small>
+                <div>
+                  <div
+                    className="DayPicker"
+                    lang="es"
+                  >
+                    <div
+                      className="DayPicker-wrapper"
+                      onKeyDown={[Function]}
+                      tabIndex={0}
+                    >
+                      <div
+                        className="DayPicker-NavBar"
+                      >
+                        <span
+                          aria-label="Previous Month"
+                          className="DayPicker-NavButton DayPicker-NavButton--prev"
+                          key="previous"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
+                        <span
+                          aria-label="Next Month"
+                          className="DayPicker-NavButton DayPicker-NavButton--next"
+                          key="right"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
+                      </div>
+                      <div
+                        className="DayPicker-Months"
+                      >
+                        <div
+                          className="DayPicker-Month"
+                          role="grid"
+                        >
+                          <div
+                            aria-live="polite"
+                            className="DayPicker-Caption"
+                            role="heading"
+                          >
+                            <div
+                              onKeyUp={[Function]}
+                            >
+                              diciembre 2021
+                            </div>
+                          </div>
+                          <div
+                            className="DayPicker-Weekdays"
+                            role="rowgroup"
+                          >
+                            <div
+                              className="DayPicker-WeekdaysRow"
+                              role="row"
+                            >
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="lunes"
+                                >
+                                  lu
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="martes"
+                                >
+                                  ma
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="miércoles"
+                                >
+                                  mi
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="jueves"
+                                >
+                                  ju
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="viernes"
+                                >
+                                  vi
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="sábado"
+                                >
+                                  sá
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="domingo"
+                                >
+                                  do
+                                </abbr>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className="DayPicker-Body"
+                            role="rowgroup"
+                          >
+                            <div
+                              className="DayPicker-Week"
+                              key="1638205200000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--disabled DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--disabled DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                aria-label="mié. 1 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={0}
+                              >
+                                1
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="jue. 2 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                2
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="vie. 3 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                3
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="sáb. 4 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                4
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="dom. 5 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                5
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1638810000000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={true}
+                                aria-label="lun. 6 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                6
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="mar. 7 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                7
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="mié. 8 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                8
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="jue. 9 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                9
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="vie. 10 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                10
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="sáb. 11 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                11
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="dom. 12 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                12
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1639414800000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={true}
+                                aria-label="lun. 13 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                13
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="mar. 14 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                14
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="mié. 15 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                15
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="jue. 16 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                16
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="vie. 17 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                17
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="sáb. 18 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                18
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="dom. 19 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                19
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1640019600000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={true}
+                                aria-label="lun. 20 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                20
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="mar. 21 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                21
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="mié. 22 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                22
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="jue. 23 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                23
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                aria-label="vie. 24 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--disabled"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                24
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="sáb. 25 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day DayPicker-Day--today"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                25
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="dom. 26 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                26
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1640624400000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={false}
+                                aria-label="lun. 27 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                27
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mar. 28 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                28
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mié. 29 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                29
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="jue. 30 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                30
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="vie. 31 de dic. de 2021"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                31
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="DayPicker-Month"
+                          role="grid"
+                        >
+                          <div
+                            aria-live="polite"
+                            className="DayPicker-Caption"
+                            role="heading"
+                          >
+                            <div
+                              onKeyUp={[Function]}
+                            >
+                              enero 2022
+                            </div>
+                          </div>
+                          <div
+                            className="DayPicker-Weekdays"
+                            role="rowgroup"
+                          >
+                            <div
+                              className="DayPicker-WeekdaysRow"
+                              role="row"
+                            >
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="lunes"
+                                >
+                                  lu
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="martes"
+                                >
+                                  ma
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="miércoles"
+                                >
+                                  mi
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="jueves"
+                                >
+                                  ju
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="viernes"
+                                >
+                                  vi
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="sábado"
+                                >
+                                  sá
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="domingo"
+                                >
+                                  do
+                                </abbr>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className="DayPicker-Body"
+                            role="rowgroup"
+                          >
+                            <div
+                              className="DayPicker-Week"
+                              key="1640624400000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={false}
+                                aria-label="sáb. 1 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={0}
+                              >
+                                1
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="dom. 2 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                2
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1641229200000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={false}
+                                aria-label="lun. 3 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                3
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mar. 4 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                4
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mié. 5 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                5
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="jue. 6 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                6
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="vie. 7 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                7
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="sáb. 8 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                8
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="dom. 9 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                9
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1641834000000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={false}
+                                aria-label="lun. 10 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                10
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mar. 11 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                11
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mié. 12 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                12
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="jue. 13 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                13
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="vie. 14 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                14
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="sáb. 15 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                15
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="dom. 16 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                16
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1642438800000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={false}
+                                aria-label="lun. 17 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                17
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mar. 18 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                18
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mié. 19 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                19
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="jue. 20 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                20
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="vie. 21 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                21
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="sáb. 22 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                22
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="dom. 23 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                23
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1643043600000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={false}
+                                aria-label="lun. 24 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                24
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mar. 25 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                25
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mié. 26 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                26
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="jue. 27 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                27
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="vie. 28 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                28
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="sáb. 29 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                29
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="dom. 30 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                30
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1643648400000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={false}
+                                aria-label="lun. 31 de ene. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                31
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="DayPicker-Month"
+                          role="grid"
+                        >
+                          <div
+                            aria-live="polite"
+                            className="DayPicker-Caption"
+                            role="heading"
+                          >
+                            <div
+                              onKeyUp={[Function]}
+                            >
+                              febrero 2022
+                            </div>
+                          </div>
+                          <div
+                            className="DayPicker-Weekdays"
+                            role="rowgroup"
+                          >
+                            <div
+                              className="DayPicker-WeekdaysRow"
+                              role="row"
+                            >
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="lunes"
+                                >
+                                  lu
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="martes"
+                                >
+                                  ma
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="miércoles"
+                                >
+                                  mi
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="jueves"
+                                >
+                                  ju
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="viernes"
+                                >
+                                  vi
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="sábado"
+                                >
+                                  sá
+                                </abbr>
+                              </div>
+                              <div
+                                className="DayPicker-Weekday"
+                                role="columnheader"
+                              >
+                                <abbr
+                                  title="domingo"
+                                >
+                                  do
+                                </abbr>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className="DayPicker-Body"
+                            role="rowgroup"
+                          >
+                            <div
+                              className="DayPicker-Week"
+                              key="1643648400000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={false}
+                                aria-label="mar. 1 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={0}
+                              >
+                                1
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mié. 2 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                2
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="jue. 3 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                3
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="vie. 4 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                4
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="sáb. 5 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                5
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="dom. 6 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                6
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1644253200000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={false}
+                                aria-label="lun. 7 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                7
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mar. 8 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                8
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mié. 9 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                9
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="jue. 10 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                10
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="vie. 11 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                11
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="sáb. 12 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                12
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="dom. 13 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                13
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1644858000000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={false}
+                                aria-label="lun. 14 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                14
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mar. 15 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                15
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mié. 16 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                16
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="jue. 17 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                17
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="vie. 18 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                18
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="sáb. 19 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                19
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="dom. 20 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                20
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1645462800000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={false}
+                                aria-label="lun. 21 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                21
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mar. 22 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                22
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="mié. 23 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                23
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="jue. 24 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                24
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="vie. 25 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                25
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="sáb. 26 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                26
+                              </div>
+                              <div
+                                aria-disabled={false}
+                                aria-label="dom. 27 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                27
+                              </div>
+                            </div>
+                            <div
+                              className="DayPicker-Week"
+                              key="1646067600000"
+                              role="row"
+                            >
+                              <div
+                                aria-disabled={false}
+                                aria-label="lun. 28 de feb. de 2022"
+                                aria-selected={false}
+                                className="DayPicker-Day"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="gridcell"
+                                tabIndex={-1}
+                              >
+                                28
+                              </div>
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                              <div
+                                aria-disabled={true}
+                                className="DayPicker-Day DayPicker-Day--outside"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  className="sc-eCImPb jgAthF"
+                  type="submit"
+                >
+                  Crear calendario
+                </button>
+              </form>
+            </div>
+            <div
+              className="sc-hKwDye imUYjf"
+            >
+              Array [
+                <h3>
+                  Acciones de los calendarios
+                </h3>,
+                <small
+                  className="sc-crHmcD cUsFA"
+                >
+                  Edite rápidamente los calendarios existentes, o elimínelos según el caso. Para ver detalladamente los festivos o días de temporada alta entre al modo edición haciendo click a través del lápiz. el número de festivos o días de temporada alta, lo puede visualizar en la columna 
+                  <em>
+                    festivos
+                  </em>
+                  .
+                </small>,
+                <p>
+                  No hay calendarios disponibles actualmente. 
+                  <i>
+                    Prueba creando uno.
+                  </i>
+                </p>,
+              ]
+            </div>
+          </div>,
+          <hr
+            className="sc-iCfMLu lmoAtF"
+          />,
+        ]
+        Array [
+          <h2>
+            Gestión de categorías de usuarios 
+            <span
+              aria-label="Categorías de usuarios"
+              role="img"
+              title="Categorías de usuarios"
+            >
+              👤
+            </span>
+          </h2>,
+          <p>
+            Gestione las categorías de usuarios que podrá asignar a los Centros Vacacionales, estas categorías tienen influencia sobre el valor de la cotización que un usuario obtendrá.
+          </p>,
+          <div
+            className="sc-dkPtRN ffCKks"
+          >
+            <div
+              className="sc-hKwDye imUYjf"
+            >
+              <form
+                className="category__form"
+                noValidate={true}
+                onSubmit={[Function]}
+              >
+                <h3>
+                  Crear categoría de usuarios
+                </h3>
+                <label
+                  htmlFor="title"
+                >
+                  <b>
+                    Título
+                  </b>
+                </label>
+                <input
+                  className="sc-jRQBWg fpIRMD"
+                  id="title"
+                  name="title"
+                  onChange={[Function]}
+                  placeholder="Título de la categoría, por ejemplo: 'Asociados categoría 1'"
+                  value=""
+                />
+                <label
+                  htmlFor="description"
+                >
+                  <b>
+                    Descripción
+                  </b>
+                </label>
+                <textarea
+                  className="sc-iqseJM eAHJmX"
+                  defaultValue=""
+                  id="description"
+                  name="description"
+                  onChange={[Function]}
+                  placeholder="Descripción de la categoría, por ejemplo: 'Categoría para asociados seccional Medellín'"
+                  rows={3}
+                />
+                <label
+                  htmlFor="price_high"
+                >
+                  <b>
+                    Valor temporada alta
+                  </b>
+                </label>
+                <input
+                  className="sc-jRQBWg fpIRMD"
+                  id="priceHigh"
+                  min="0"
+                  name="priceHigh"
+                  onChange={[Function]}
+                  placeholder="Valor para días de temporada alta, por ejemplo: 50000, sin espacios y sin caracteres especiales"
+                  type="number"
+                  value=""
+                />
+                <label
+                  htmlFor="price_low"
+                >
+                  <b>
+                    Valor temporada baja
+                  </b>
+                </label>
+                <input
+                  className="sc-jRQBWg fpIRMD"
+                  id="priceLow"
+                  min="0"
+                  name="priceLow"
+                  onChange={[Function]}
+                  placeholder="Valor para días de temporada baja, por ejemplo: 35000, sin espacios y sin caracteres especiales"
+                  type="number"
+                  value=""
+                />
+                <button
+                  className="sc-eCImPb jgAthF"
+                  type="submit"
+                >
+                  Crear categoría de usuarios
+                </button>
+              </form>
+            </div>
+            <div
+              className="sc-hKwDye imUYjf"
+            >
+              <div
+                className="elements_container"
+              >
+                <h3>
+                  Listado de categorías de usuarios
+                </h3>
+                <p>
+                  No hay categorías de usuarios disponibles actualmente. 
+                  <i>
+                    Prueba creando una.
+                  </i>
+                </p>
+              </div>
+            </div>
+          </div>,
+          <hr
+            className="sc-iCfMLu lmoAtF"
+          />,
+        ]
+        Array [
+          <h2>
+            Gestión de centros vacacionales 
+            <span
+              aria-label="Centros vacacionales"
+              role="img"
+              title="Centros vacacionales"
+            >
+              ⛱️
+            </span>
+          </h2>,
+          <p>
+            Administre los centros vacacionales que los usuarios tendrán a su disposición en el cotizador.
+          </p>,
+          <div
+            className="sc-dkPtRN ffCKks"
+          >
+            <div
+              className="sc-hKwDye imUYjf"
+            >
+              <form
+                className="cv__form"
+                onSubmit={[Function]}
+              >
+                <h3>
+                  Crear centro vacacional
+                </h3>
+                <label
+                  htmlFor="cv-title"
+                >
+                  <b>
+                    Título
+                  </b>
+                </label>
+                <input
+                  className="sc-jRQBWg fpIRMD"
+                  id="cv-title"
+                  name="title"
+                  onChange={[Function]}
+                  placeholder="Nombre del centro vacacional, ejemplo: 'Cartagena Resort'."
+                  value=""
+                />
+                <label
+                  htmlFor="cv-description"
+                >
+                  <b>
+                    Descripción
+                  </b>
+                </label>
+                <textarea
+                  className="sc-iqseJM eAHJmX"
+                  id="cv-description"
+                  name="description"
+                  onChange={[Function]}
+                  placeholder="Descripción del centro vacacional, ejemplo: 'Pasajes paradisiacos en la costa Colombiana'."
+                  rows={3}
+                  value=""
+                />
+                <b>
+                  Asignación de calendarios de temporadas altas
+                </b>
+                <small
+                  className="sc-crHmcD cUsFA"
+                >
+                  Dicha asignación le permitirá a los administradores tener una visión de los calendarios presentes para sus centros vacacionales y configuración de días de manera dinámica.
+                </small>
+                <div
+                  className="rmsc selector__container calendarios__container"
+                >
+                  <div
+                    aria-labelledby="Seleccionar"
+                    aria-readonly={true}
+                    className="dropdown-container"
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      className="dropdown-heading"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="dropdown-heading-value"
+                      >
+                        <span
+                          className="gray"
+                        >
+                          Selecciona un calendario de festivos o días de alta
+                        </span>
+                      </div>
+                      <svg
+                        className="dropdown-heading-dropdown-arrow gray"
+                        fill="none"
+                        height="24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        width="24"
+                      >
+                        <path
+                          d="M6 9L12 15 18 9"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <b>
+                  Asignación de categorías de usuarios
+                </b>
+                <small
+                  className="sc-crHmcD cUsFA"
+                >
+                  Dicha asignación le permitirá a los clientes obtener opciones personalizadas de precios según su nivel salarial.
+                </small>
+                <div
+                  className="rmsc selector__container categorias__container"
+                >
+                  <div
+                    aria-labelledby="Seleccionar"
+                    aria-readonly={true}
+                    className="dropdown-container"
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                  >
+                    <div
+                      className="dropdown-heading"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="dropdown-heading-value"
+                      >
+                        <span
+                          className="gray"
+                        >
+                          Selecciona las categorías de usuarios
+                        </span>
+                      </div>
+                      <svg
+                        className="dropdown-heading-dropdown-arrow gray"
+                        fill="none"
+                        height="24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        width="24"
+                      >
+                        <path
+                          d="M6 9L12 15 18 9"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <label
+                  htmlFor="calendarioActivo"
+                >
+                  <b>
+                    Asignación de calendario activo
+                  </b>
+                </label>
+                <small
+                  className="sc-crHmcD cUsFA"
+                >
+                  El calendario activo será el que el cotizador tendrá visible y presente en los cálculos.
+                </small>
+                <select
+                  className="sc-fotOHu fIotlI"
+                  id="active_calendar"
+                  name="calendarioActivo"
+                  onChange={[Function]}
+                  value=""
+                >
+                  <option
+                    value=""
+                  >
+                    Selecciona un calendario del listado
+                  </option>
+                </select>
+                <button
+                  className="sc-eCImPb jgAthF"
+                  type="submit"
+                >
+                  Crear
+                </button>
+              </form>
+            </div>
+            <div
+              className="sc-hKwDye imUYjf"
+            >
+              Array [
+                <h3>
+                  Acciones de los centros vacacionales
+                </h3>,
+                <small
+                  className="sc-crHmcD cUsFA"
+                >
+                  A continuación podrá tomar acciones rápidas para gestionar los Centros vacacionales almacenados actualmente, la cantidad de
+                  <b>
+                     calendarios asociados
+                  </b>
+                  , así como las 
+                  <b>
+                    categorías de usuario
+                  </b>
+                   que los clientes podrán visualizar en el cotizador. Recuerde que a pesar de tener múltiples calendarios vinculados al Centro Vacacional, sólo se tendrá en cuenta el que figure como 
+                  <b>
+                    "activo“
+                  </b>
+                  .
+                  <br />
+                  <br />
+                  Para motivos de agilidad, si lo prefiere, puede dejar vacío el campo 
+                  <b>
+                    "asignación de calendario activo“
+                  </b>
+                  , la plataforma seleccionará de manera automática el primero que agregó en el listado de calendarios.
+                </small>,
+                <p>
+                  No hay centros vacacionales disponibles actualmente. 
+                  <i>
+                    Prueba creando uno.
+                  </i>
+                </p>,
+              ]
+            </div>
+          </div>,
+          <hr
+            className="sc-iCfMLu lmoAtF"
+          />,
+        ]
+        Array [
+          <h2>
+            Búsqueda de cotizaciones por Identificador 
+            <span
+              aria-label="Búsqueda cotizaciones"
+              role="img"
+              title="Búsqueda cotizaciones"
+            >
+              🔎
+            </span>
+          </h2>,
+          <p>
+            Realice una búsqueda rápida por identificador para conocer los valores de la misma.
+          </p>,
+          <div
+            className="sc-dkPtRN ffCKks"
+          >
+            <div
+              className="sc-hKwDye imUYjf"
+            >
+              <form
+                className="cotizacion__form"
+                noValidate={true}
+                onSubmit={[Function]}
+              >
+                <h3>
+                  Búsqueda de Cotizaciones
+                </h3>
+                <label
+                  htmlFor="title"
+                >
+                  <b>
+                    Identificador
+                  </b>
+                </label>
+                <input
+                  className="sc-jRQBWg fpIRMD"
+                  id="id"
+                  name="id"
+                  onChange={[Function]}
+                  placeholder="Identificador de la cotización, por ejemplo: '1'"
+                  type="number"
+                  value={0}
+                />
+                <button
+                  className="sc-eCImPb jgAthF"
+                  type="submit"
+                >
+                  Buscar cotización
+                </button>
+              </form>
+            </div>
+          </div>,
+          <hr
+            className="sc-iCfMLu lmoAtF"
+          />,
+        ]
+      </div>,
+      <footer
+        className="sc-pVTFL cYBcsb"
+      >
+        José Miguel Duque Mejía - 
+        2021
+      </footer>,
+    ],
+  ]
+</Suspense>
+`;
+
+exports[`Pruebas en <AdminRouter /> debería mostrar el espere... 1`] = `
+<Suspense
+  fallback={<LazyFallback />}
+>
+  <div
+    className="sc-gsDKAQ lePQGS"
+  >
+    <span
+      className="sc-bdvvtL hhfXhm"
+    >
+      Cargando página...
+    </span>
+  </div>
+</Suspense>
+`;

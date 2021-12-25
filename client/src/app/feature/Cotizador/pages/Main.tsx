@@ -3,7 +3,7 @@ import { Layout } from 'app/shared/components/Layout';
 import { ProveedorGestionCotizaciones } from '../hoc/ProveedorGestionCotizaciones';
 import { RouteComponentProps } from 'react-router-dom';
 
-const AdminMainPage: React.FC<RouteComponentProps> = () => {
+const CotizadorMainPage: React.FC<RouteComponentProps> = () => {
   return (
     <>
       <h1>Generación de cotizaciones</h1>    
@@ -17,6 +17,6 @@ const AdminMainPage: React.FC<RouteComponentProps> = () => {
   );
 };
 
-AdminMainPage.displayName = 'AdminMainPage';
+CotizadorMainPage.displayName = 'CotizadorMainPage';
 
-export default AdminMainPage;
+export default CotizadorMainPage;

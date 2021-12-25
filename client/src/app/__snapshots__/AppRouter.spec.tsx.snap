@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <AppRouter /> Debe mostrar la página principal y la barra de navegación 1`] = `
+Array [
+  <nav
+    className="sc-eCImPb jkEbnM"
+  >
+    <div
+      className="sc-jRQBWg crXLoC"
+    >
+      <a
+        className="sc-pVTFL cMsDCu"
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt="Ceiba Software"
+          className="sc-gKclnd kLyXxA"
+          src="logoCeibaSoftware.png"
+        />
+      </a>
+    </div>
+    <ul
+      className="sc-kDTinF bBbztF"
+    >
+      <li
+        key="Home"
+      >
+        <div
+          className="sc-jrQzAO gTpbyf"
+        >
+          <a
+            className="sc-pVTFL cMsDCu"
+            href="/home"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </div>
+      </li>
+      <li
+        key="Administrador"
+      >
+        <div
+          className="sc-jrQzAO gTpbyf"
+        >
+          <a
+            className="sc-pVTFL cMsDCu"
+            href="/administrador"
+            onClick={[Function]}
+          >
+            Administrador
+          </a>
+        </div>
+      </li>
+      <li
+        key="Cotizador"
+      >
+        <div
+          className="sc-jrQzAO gTpbyf"
+        >
+          <a
+            className="sc-pVTFL cMsDCu"
+            href="/cotizador"
+            onClick={[Function]}
+          >
+            Cotizador
+          </a>
+        </div>
+      </li>
+    </ul>
+  </nav>,
+  Array [
+    <h1>
+      Inicio
+    </h1>,
+    Array [
+      "",
+      <div
+        className="sc-dkPtRN iawJ"
+      >
+        <h2>
+          Características
+        </h2>
+        <p>
+          Las características principales de este bloque son:
+        </p>
+        <div>
+          <ol>
+            <li>
+              Uso del CLI 
+              <a
+                href="https://github.com/facebook/create-react-app"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                create-react-app.
+              </a>
+            </li>
+            <li>
+              Construido con 
+              <a
+                href="https://www.typescriptlang.org/docs/handbook/react.html"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Typescript.
+              </a>
+            </li>
+            <li>
+              Soporte para enrutamiento con 
+              <a
+                href="https://reacttraining.com/react-router/web/guides/quick-start"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                react-router
+              </a>
+              . 
+            </li>
+            <li>
+              Soporte de 
+              <a
+                href="https://react-redux.js.org/introduction/quick-start"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                redux
+              </a>
+              , para almacenar el estado de la aplicación.
+            </li>
+            <li>
+              Uso de 
+              <a
+                href="https://styled-components.com/docs"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Styled-components
+              </a>
+               para maquetado de estilos encapsulados de componentes.
+            </li>
+            <li>
+              Uso de 
+              <a
+                href="https://jaredpalmer.com/formik"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Formik
+              </a>
+               para la construcción de formularios reactivos.
+            </li>
+            <li>
+              Soporte para peticiones Http con 
+              <a
+                href="https://github.com/axios/axios"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                axios
+              </a>
+              . Existe una instancia de axios que esta configurada con información que es transversal a todas las peticiones. Cada que se necesite acceder a una Api se recomienda usar esta instancia que se encuentra en 
+              <strong>
+                src/core/config/AxiosConfig.ts
+              </strong>
+            </li>
+            <li>
+              Uso de  
+              <a
+                href="https://create-react-app.dev/docs/adding-custom-environment-variables/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                variables por ambiente
+              </a>
+              ; existen dos archivos .env.development (variables en ambiente desarrollo) y .env.production (variables para producción, reemplazadas cuando se ejecuta la tarea
+              <strong>
+                 npm run build
+              </strong>
+              ). Adicionalmente puede crear más archivos de variables como está descrito en el link. 
+            </li>
+            <li>
+              Soporte de pruebas unitarias con 
+              <a
+                href="https://enzymejs.github.io/enzyme/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                enzyme
+              </a>
+              .
+            </li>
+          </ol>
+        </div>
+        <h2>
+          Estructura del proyecto
+        </h2>
+        <ol>
+          <li>
+            Se utiliza la guía de estilos de 
+            <a
+              href="https://angular.io/guide/styleguide"
+            >
+              Angular
+            </a>
+             adaptada para 
+            <a
+              href="https://medium.com/@amcdnl/react-for-the-angular-dev-be21a39a382"
+            >
+              react.
+            </a>
+          </li>
+        </ol>
+        <h2>
+          Ejecución del proyecto
+        </h2>
+        <p>
+          Para instalar este bloque se deben ejecutar los siguientes comandos:
+        </p>
+        <div>
+          <ol>
+            <li>
+              <code>
+                npm install
+              </code>
+               para descargar las dependencias
+            </li>
+            <li>
+              <code>
+                npm start
+              </code>
+               inicia la aplicación en modo desarrollo, puede abrir el navegador en la siguiente url 
+              <a
+                href="http://localhost:3000"
+              >
+                http://localhost:3000
+              </a>
+            </li>
+            <li>
+              <code>
+                npm test
+              </code>
+               para ejecutar las pruebas.
+            </li>
+            <li>
+              <code>
+                npm run build
+              </code>
+               para generar el artefacto distribuible para producción.
+            </li>
+          </ol>
+        </div>
+      </div>,
+      <footer
+        className="sc-hKwDye jhOZQf"
+      >
+        José Miguel Duque Mejía - 
+        2021
+      </footer>,
+    ],
+  ],
+]
+`;

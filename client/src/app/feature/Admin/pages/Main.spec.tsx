@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ShallowWrapper, shallow } from 'enzyme';
-import CotizadorMainPage from 'app/feature/Cotizador/pages/Main';
+import AdminMainPage from 'app/feature/Admin/pages/Main';
 
 jest.mock('ChildrenNode', () => {
     return ( <span>ChildrenNode</span> );
@@ -8,15 +8,15 @@ jest.mock('ChildrenNode', () => {
 
 const historyMock = { push: jest.fn() };
 
-describe('Pruebas sobre <CotizadorMainPage />', () => {
+describe('Pruebas sobre <AdminMainPage />', () => {
 
     let componentWrapper: ShallowWrapper;
-    let componentProps: React.ComponentProps<typeof CotizadorMainPage> & {
+    let componentProps: React.ComponentProps<typeof AdminMainPage> & {
         children: ChildNode
     };
     
     beforeEach( () => {
-        componentWrapper = shallow( <CotizadorMainPage {...componentProps} /> );
+        componentWrapper = shallow( <AdminMainPage {...componentProps} /> );
     });
 
     it('Debería renderizar bien el elemento padre', () => {
