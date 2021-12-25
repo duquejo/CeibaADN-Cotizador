@@ -103,10 +103,8 @@ describe('Pruebas e2e sobre el administrador de la plataforma de las categorías
     .click('bottom');
 
     // Swal modal confirmation
-    cy.wait(1000)
-    .get('.swal2-container')
+    cy.get('.swal2-container')
     .should('contain.text', 'Éxito' )
-    .wait(500)
     .get('button.swal2-confirm')
     .click('bottom');
     

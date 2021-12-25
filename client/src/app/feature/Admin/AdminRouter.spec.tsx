@@ -23,7 +23,7 @@ describe('Pruebas en <AdminRouter />', () => {
         );
         expect( wrapper ).toMatchSnapshot();
         expect( wrapper.find('span').text() ).toBe('Cargando página...');
-    })
+    });
     
 
     it('Debe mostrar la vista del Administrador', () => {
@@ -39,4 +39,4 @@ describe('Pruebas en <AdminRouter />', () => {
         expect( wrapper.find('h1').text() ).toBe('Administrador');
         
     });
-})
+});

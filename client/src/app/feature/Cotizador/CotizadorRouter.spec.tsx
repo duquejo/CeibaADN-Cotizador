@@ -23,7 +23,7 @@ describe('Pruebas en <CotizadorRouter />', () => {
         );
         expect( wrapper ).toMatchSnapshot();
         expect( wrapper.find('span').text() ).toBe('Cargando página...');
-    })
+    });
     
 
     it('Debe mostrar la vista del Cotizador', () => {
@@ -39,4 +39,4 @@ describe('Pruebas en <CotizadorRouter />', () => {
         expect( wrapper.find('h1').text() ).toBe('Generación de cotizaciones');
         
     });
-})
+});
