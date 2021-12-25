@@ -91,7 +91,7 @@
       "src/**/*.{ts,tsx}",
       "!src/serviceWorker.ts",
       "!<rootDir>/node_modules/",
-      "!<rootDir>/src/cypress/",
+      "!<rootDir>/src/cypress/**",
       "!<rootDir>/path/to/dir/"
     ],
     "coverageThreshold": {
