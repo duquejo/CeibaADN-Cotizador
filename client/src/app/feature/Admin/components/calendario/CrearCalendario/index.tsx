@@ -73,10 +73,6 @@ export const CrearCalendario: React.FC<CrearCalendarioProps> = ({
             ...selectedDays, moment( day ).startOf('day').toDate()
         ] );
     }
-
-    // setSelectedDays( ( days: Date[] ) => [
-    //   ...selectedDays, day
-    // ] );
   };
 
   const resetSelectedDays = () => {
@@ -93,7 +89,7 @@ export const CrearCalendario: React.FC<CrearCalendarioProps> = ({
     <form className="calendar__form" onSubmit={ formik.handleSubmit }>
       <h3>Crear calendario</h3>
       
-      <label htmlFor="title"><b>Título</b></label>
+      <label htmlFor="title"><b>Título <span className="required">*</span></b></label>
       <Input
         name="title"
         placeholder="Título personalizado del calendario, por ejemplo: 'Calendario de alta afluencia enero'."

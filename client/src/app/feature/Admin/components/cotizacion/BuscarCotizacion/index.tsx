@@ -38,7 +38,7 @@ export const BuscarCotizacion: React.FC = () => {
       <h3>Búsqueda de Cotizaciones</h3>
 
       <label htmlFor="title">
-        <b>Identificador</b>
+        <b>Identificador <span className="required">*</span></b>
       </label>
       <Input
         id="id"

@@ -1,17 +1,21 @@
-import { NestFactory } from '@nestjs/core';
-import { ValidationPipe } from '@nestjs/common';
+import * as helmet from 'helmet';
+import * as compression from 'compression';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from 'src/app.module';
-import { FiltroExcepcionesDeNegocio } from './infraestructura/excepciones/filtro-excepciones-negocio';
 import { AppLogger } from 'src/infraestructura/configuracion/ceiba-logger.service';
 import { ConfigService } from '@nestjs/config';
 import { EnvVariables } from 'src/infraestructura/configuracion/environment/env-variables.enum';
-import * as helmet from 'helmet';
+import { FiltroExcepcionesDeNegocio } from './infraestructura/excepciones/filtro-excepciones-negocio';
+import { NestFactory } from '@nestjs/core';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
   const logger = await app.resolve(AppLogger);
   const configService = app.get(ConfigService);
+
+  // Compression gzip strategy
+  app.use( compression() );  
 
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalFilters(new FiltroExcepcionesDeNegocio(logger));
@@ -27,8 +31,9 @@ async function bootstrap() {
   const swaggerDocument = SwaggerModule.createDocument(app, swaggerOptions);
   SwaggerModule.setup('/api/doc', app, swaggerDocument);
   
-  app.use(helmet());
+  // CSP Protection
+  app.use( helmet() );
   
-  await app.listen(configService.get(EnvVariables.APPLICATION_PORT));
+  await app.listen( configService.get( EnvVariables.APPLICATION_PORT ) );
 }
 bootstrap();

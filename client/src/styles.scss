@@ -58,6 +58,9 @@ ul {
 label {
   b {
     margin-bottom: 5px;
+    span.required {
+      color: red;
+    }
   }
 }
 
@@ -105,6 +108,7 @@ h2 {
 
 .elements_container {
   overflow-y: auto;
+  margin-top: 20px;
   max-height: 500px;
   h3 {
     margin-bottom: 10px;

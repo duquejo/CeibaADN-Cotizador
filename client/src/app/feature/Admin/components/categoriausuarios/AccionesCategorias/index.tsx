@@ -12,6 +12,8 @@ export const AccionesCategorias: React.FC<AccionesCategoriasProps> = ({ categori
   return (
     <>
       <h3>Listado de categorías de usuarios</h3>
+      <Small>A continuación obtendrá una vista general de las categorías almacenadas. Estas categorías de usuarios influyen 
+        en el valor total de la cotización al realizar el respectivo cálculo.</Small>
       {
         categorias && categorias.length ?
         <div className="elements_container">
