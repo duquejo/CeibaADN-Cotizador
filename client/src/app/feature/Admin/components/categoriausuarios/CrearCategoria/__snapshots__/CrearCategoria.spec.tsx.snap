@@ -36,7 +36,7 @@ exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <textarea
-      class="sc-hKwDye bWFZtO"
+      class="sc-eCImPb gxYXsq"
       id="description"
       name="description"
       placeholder="Descripción de la categoría, por ejemplo: 'Categoría para asociados seccional Medellín'"
@@ -55,7 +55,7 @@ exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <small
-      class="sc-eCImPb hBpRFP"
+      class="sc-dkPtRN ksOCes"
     >
       Este campo corresponde al valor en pesos ($) a las fechas festivas/altas por día que están preconfiguradas en el calendario de festivos.
     </small>
@@ -81,7 +81,7 @@ exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
       </b>
     </label>
     <small
-      class="sc-eCImPb hBpRFP"
+      class="sc-dkPtRN ksOCes"
     >
       Este campo corresponde al valor en pesos ($) a las fechas convencionales que el usuario seleccione del calendario.
     </small>
