@@ -140,7 +140,7 @@ describe('Pruebas e2e sobre el administrador de la plataforma de los calendarios
       
       $element.find('span')
       .first()
-      .click();
+      .trigger('click');
 
       cy.get('.ReactModal__Content h2')
       .should('contain.html', `<i>"${ elementoPrevio }"</i>` );

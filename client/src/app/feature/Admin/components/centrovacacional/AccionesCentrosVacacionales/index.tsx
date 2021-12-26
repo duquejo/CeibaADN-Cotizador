@@ -53,8 +53,8 @@ export const AccionesCentrosVacacionales: React.FC<AccionesCentrosVacacionalesPr
       {
         centrosVacacionales && centrosVacacionales.length ?
         <div className="elements_container">
-          <Table className="category">
-            <thead className="category__header">
+          <Table className="cv">
+            <thead className="cv__header">
               <tr>
                 <th>
                   <b>Título</b>
@@ -76,11 +76,11 @@ export const AccionesCentrosVacacionales: React.FC<AccionesCentrosVacacionalesPr
                 </th>
               </tr>
             </thead>
-            <tbody className="calendar__body">
+            <tbody className="cv__body">
             {
               centrosVacacionales.map( ( centroVacacional: CentroVacacional ) => {
               return (
-                <tr className="calendar__details" key={ centroVacacional.id }>
+                <tr className="cv__details" key={ centroVacacional.id }>
                   <td>{ centroVacacional.nombre }</td>
                   <td><b>({ centroVacacional.calendarios.length })</b></td>
                   <td><b>({ centroVacacional.categoriaUsuarios.length })</b></td>

@@ -207,6 +207,7 @@ export const ModalCentrosVacacionales: React.FC<any> = ({
                             personalizadas para el centro vacacional según la configuración.</Small>
                         <SelectorMultiple 
                             options={ todosCalendarios }
+                            containerClass="selector__container-calendarios"
                             initialvalues={ calendariosSeleccionados }
                             handlerSeleccion={ handlerCalendariosSeleccionados }
                             selectText="Selecciona un calendario de festivos o días de alta"
@@ -217,6 +218,7 @@ export const ModalCentrosVacacionales: React.FC<any> = ({
                         personalizadas según sus rango salarial.</Small>      
                         <SelectorMultiple 
                             options={ todosCategoriasUsuarios }
+                            containerClass="selector__container-categorias"
                             initialvalues={ categoriasSeleccionadas }
                             handlerSeleccion={ handlerCategoriasSeleccionadas }
                             selectText="Selecciona las categorías de usuarios"

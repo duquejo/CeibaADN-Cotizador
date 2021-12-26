@@ -38,7 +38,6 @@ export const SelectorMultiple: React.FC<any> = ({
             handlerSeleccion( elements );
         }
     }, [ elements, handlerSeleccion ]);
-
     return (
         <>
             <MultiSelect

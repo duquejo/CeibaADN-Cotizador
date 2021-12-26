@@ -1866,19 +1866,17 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
             <div
               className="sc-hKwDye imUYjf"
             >
-              <div
-                className="elements_container"
-              >
+              Array [
                 <h3>
                   Listado de categorías de usuarios
-                </h3>
+                </h3>,
                 <p>
                   No hay categorías de usuarios disponibles actualmente. 
                   <i>
                     Prueba creando una.
                   </i>
-                </p>
-              </div>
+                </p>,
+              ]
             </div>
           </div>,
           <hr

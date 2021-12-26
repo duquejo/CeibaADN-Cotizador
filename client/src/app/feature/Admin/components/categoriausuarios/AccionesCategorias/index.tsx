@@ -10,10 +10,11 @@ export interface AccionesCategoriasProps {
 
 export const AccionesCategorias: React.FC<AccionesCategoriasProps> = ({ categorias }) => {
   return (
-    <div className="elements_container">
+    <>
       <h3>Listado de categorías de usuarios</h3>
       {
         categorias && categorias.length ?
+        <div className="elements_container">
           <Table className="category">
             <thead className="category__header">
               <tr>
@@ -46,9 +47,10 @@ export const AccionesCategorias: React.FC<AccionesCategoriasProps> = ({ categori
             }
             </tbody>
           </Table>
+        </div>
         : <p>No hay categorías de usuarios disponibles actualmente. <i>Prueba creando una.</i></p>
       }
-    </div>
+    </>
   );
 };
 

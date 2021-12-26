@@ -3,13 +3,13 @@ import * as Yup from 'yup';
 import { Button } from '../../../../../shared/components/Button/index';
 import { ISelectionOptions } from '../../../models/FormSelector';
 import { Input } from '../../../../../shared/components/Input/index';
+import { FormikHelpers, useFormik } from 'formik';
 import { Select } from '../../../../../shared/components/Select/index';
 import { SelectorMultiple } from './SelectorMultiple/index';
 import { Small } from '../../../../../shared/components/Small/index';
 import { SpanError } from '../../../../../shared/components/SpanErrors';
 import { TextArea } from '../../../../../shared/components/TextArea/index';
 import { obtenerCalendarioActivo } from '../../../../../shared/utils/miscfunctions';
-import { useFormik } from 'formik';
 import { useState } from 'react';
 import { yupConditions } from '../../../../../shared/utils/yupconditions.enum';
 
@@ -45,7 +45,7 @@ export const CrearCentroVacacional: React.FC<any> = ({
   /**
    * Submit handler
    */
-  const handlerSubmit = (  values: FormValues ) => {
+  const handlerSubmit = (  values: FormValues, { resetForm }: FormikHelpers<FormValues> ) => {
 
     const calendarioActivoAuto = obtenerCalendarioActivo( 
       values.calendarioActivo, 
@@ -59,6 +59,8 @@ export const CrearCentroVacacional: React.FC<any> = ({
       calendarios: calendariosSeleccionados.map( ( calendario: any ) => Number( calendario.value ) ),
       categoriaUsuarios: categoriasSeleccionadas.map( ( categoriaSeleccionada: any ) => Number( categoriaSeleccionada.value ) ),
     });
+
+    resetForm();
   };  
 
   /**
