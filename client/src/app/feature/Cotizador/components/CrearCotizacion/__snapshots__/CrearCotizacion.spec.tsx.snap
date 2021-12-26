@@ -1520,7 +1520,7 @@ exports[`CrearCotizacion test Debería coincidir con el snapshot 1`] = `
       class="sc-bdvvtL ibsxaf"
       type="submit"
     >
-      Crear calendario
+      Generar cotización
     </button>
   </form>
 </div>

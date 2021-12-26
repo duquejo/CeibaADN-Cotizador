@@ -1727,7 +1727,7 @@ exports[`Pruebas en <CotizadorRouter /> Debe mostrar la vista del Cotizador 1`] 
                 className="sc-eCImPb jgAthF"
                 type="submit"
               >
-                Crear calendario
+                Generar cotización
               </button>
             </form>
           </div>,

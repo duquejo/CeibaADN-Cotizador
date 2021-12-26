@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as Yup from 'yup';
+import { FormikHelpers, useFormik } from 'formik';
 import { Button } from '../../../../../shared/components/Button/index';
 import { ISelectionOptions } from '../../../models/FormSelector';
 import { Input } from '../../../../../shared/components/Input/index';
-import { FormikHelpers, useFormik } from 'formik';
 import { Select } from '../../../../../shared/components/Select/index';
 import { SelectorMultiple } from './SelectorMultiple/index';
 import { Small } from '../../../../../shared/components/Small/index';

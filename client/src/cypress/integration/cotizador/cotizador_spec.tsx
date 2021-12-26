@@ -84,7 +84,7 @@ describe('Pruebas e2e sobre el generador de cotizaciones', () => {
 
     cy.get('.cotizador__form input[name="personas"]')
     .clear()
-    .type('3')
+    .type('3');
 
     cy.get('.cotizador__form')
     .find('select[name="categoriaUsuarios"]')

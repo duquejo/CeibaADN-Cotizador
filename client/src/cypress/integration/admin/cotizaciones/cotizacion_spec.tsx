@@ -64,7 +64,7 @@ describe('Pruebas e2e sobre el administrador de la plataforma de las cotizacione
 
     cy.get('.cotizacion__form input[name="id"]')
     .clear()    
-    .type('1')
+    .type('1');
 
     cy.get('.cotizacion__form button[type="submit"]')
     .click('bottom');

@@ -86,6 +86,7 @@ describe('Pruebas e2e sobre el administrador de la plataforma de los centros vac
     .find('.dropdown-content')
     .should('be.visible');
 
+    /* eslint-disable cypress/no-unnecessary-waiting */
     cy.get('@calendarios')
     .find('.dropdown-content .select-item[tabindex="2"]').as('calendarioSel')
     .wait(1000)
@@ -96,6 +97,7 @@ describe('Pruebas e2e sobre el administrador de la plataforma de los centros vac
       .select(0)
       .should('contain.text', 'Seleccionar el primero según selección de temporadas altas');          
     });
+    /* eslint-enable cypress/no-unnecessary-waiting */
 
     // Selección Categorías
     cy.get('.categorias__container .dropdown-container').as('categorias');
@@ -107,6 +109,7 @@ describe('Pruebas e2e sobre el administrador de la plataforma de los centros vac
     .find('.dropdown-content')
     .should('be.visible');
 
+    /* eslint-disable cypress/no-unnecessary-waiting */
     cy.get('@categorias')
     .find('.dropdown-content .select-item[tabindex="2"]').as('categoriaSel')
     .wait(1000)
@@ -114,6 +117,7 @@ describe('Pruebas e2e sobre el administrador de la plataforma de los centros vac
     .then( option => {
       option.trigger('click');        
     });
+    /* eslint-enable cypress/no-unnecessary-waiting */
 
     cy.get('.cv__form button[type="submit"]')
     .click('bottom',{force: true});
