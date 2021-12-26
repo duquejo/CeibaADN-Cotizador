@@ -116,7 +116,7 @@ describe('Pruebas e2e sobre el administrador de la plataforma de los centros vac
     });
 
     cy.get('.cv__form button[type="submit"]')
-    .click('bottom');
+    .click('bottom',{force: true});
 
     // Swal modal confirmation
     cy.get('.swal2-container')
@@ -161,20 +161,20 @@ describe('Pruebas e2e sobre el administrador de la plataforma de los centros vac
       .type('Editando el centro vacacional personalizado')
       .should('have.value', 'Editando el centro vacacional personalizado');
 
-        cy.get('.ReactModal__Content button[type="submit"]')
-        .click('bottom');
+      cy.get('.ReactModal__Content button[type="submit"]')
+      .click('bottom', {force: true});
 
-        // Swal modal confirmation
-        cy.get('.swal2-container')
-        .should('contain.text', 'Éxito' )
-        .get('button.swal2-confirm')
-        .click('bottom');
-        
-        cy.get('table.cv .cv__details')
-        .first()
-        .find('td')
-        .first()
-        .should('have.text', 'Editando mi centro vacacional personalizado' );
+      // Swal modal confirmation
+      cy.get('.swal2-container')
+      .should('contain.text', 'Éxito' )
+      .get('button.swal2-confirm')
+      .click('bottom');
+      
+      cy.get('table.cv .cv__details')
+      .first()
+      .find('td')
+      .first()
+      .should('have.text', 'Editando mi centro vacacional personalizado' );
     });
   });
 

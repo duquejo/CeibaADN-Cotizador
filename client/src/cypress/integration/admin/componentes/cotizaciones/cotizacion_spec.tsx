@@ -25,22 +25,55 @@ describe('Pruebas e2e sobre el administrador de la plataforma de las cotizacione
   it('Debería campo ID no debería permitir ingresar números negativos o letras', () => {
 
     cy.get('.cotizacion__form input[name="id"]')
+    .clear()
     .type('-5')
     .should('have.text', '' );
 
     cy.get('.cotizacion__form input[name="id"]')
+    .clear()    
     .type('Número')
     .should('have.text', '' );
 
     cy.get('.cotizacion__form input[name="id"]')
+    .clear()    
     .type('e')
     .should('have.text', '' );
   });  
 
-  it('Debería campo ID debería mostrar el detalle de la cotización si existe.', () => {
+
+  it('Debería mostrar un aviso de no encontrado si no se encuentra la factura', () => {
+
+    const busquedaMal = '10000';
 
     cy.get('.cotizacion__form input[name="id"]')
+    .clear()
+    .type( busquedaMal );
+
+    cy.get('.cotizacion__form button[type="submit"]')
+    .click('bottom');    
+
+    // Swal modal confirmation
+    cy.get('.swal2-container')
+    .should('contain.text', `No se encontró alguna cotización con el identificador #${ busquedaMal }` )
+    .get('button.swal2-confirm')
+    .click('bottom');
+
+  });    
+
+  it('Debería mostrar los detalles de la cotización si existen.', () => {
+
+    cy.get('.cotizacion__form input[name="id"]')
+    .clear()    
     .type('1')
-    .should('have.text', '' );
+
+    cy.get('.cotizacion__form button[type="submit"]')
+    .click('bottom');
+
+    // Swal modal confirmation
+    cy.get('.swal2-container')
+    .should('contain.text', 'Información de la cotización' )
+    .get('button.swal2-confirm')
+    .click('bottom');
+
   });  
 });

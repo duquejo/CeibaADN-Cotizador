@@ -191,7 +191,7 @@ export const CrearCotizacion: React.FC<CrearCotizacionProps> = ({
       { ( ! selectedDays.from && ! formik.isValid ) && (
         <SpanError>Debes seleccionar un rango de fechas para proceder con la cotización</SpanError>
       )}
-      <Button type="submit">Crear calendario</Button>
+      <Button type="submit">Generar cotización</Button>
     </form>
   );
 };
