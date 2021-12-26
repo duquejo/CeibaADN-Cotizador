@@ -46,17 +46,18 @@ describe('Pruebas e2e sobre el administrador de la plataforma de los centros vac
     .find('.dropdown-content')
     .should('be.visible');
 
+    /* eslint-disable cypress/no-unnecessary-waiting */
     cy.get('@calendarios')
-    .find('.dropdown-content .select-panel li')
-    .contains('Un texto de prueba')
+    .find('.dropdown-content .select-item[tabindex="2"]').as('calendarioSel')
+    .wait(1500)
+    .get('@calendarioSel')
     .then( option => {
-
       option.trigger('click');
-
       cy.get('.cv__form select[name="calendarioActivo"]')
-      .select(0)
+      .select(0, { force: true })
       .should('contain.text', 'Seleccionar el primero según selección de temporadas altas');          
     });
+    /* eslint-enable cypress/no-unnecessary-waiting */
   });
 
   it('Debería fallar al intentar enviar sin los campos obligatorios', () => {
@@ -89,12 +90,12 @@ describe('Pruebas e2e sobre el administrador de la plataforma de los centros vac
     /* eslint-disable cypress/no-unnecessary-waiting */
     cy.get('@calendarios')
     .find('.dropdown-content .select-item[tabindex="2"]').as('calendarioSel')
-    .wait(1000)
+    .wait(1500)
     .get('@calendarioSel')
     .then( option => {
       option.trigger('click');
       cy.get('.cv__form select[name="calendarioActivo"]')
-      .select(0)
+      .select(0, { force: true })
       .should('contain.text', 'Seleccionar el primero según selección de temporadas altas');          
     });
     /* eslint-enable cypress/no-unnecessary-waiting */
@@ -112,7 +113,7 @@ describe('Pruebas e2e sobre el administrador de la plataforma de los centros vac
     /* eslint-disable cypress/no-unnecessary-waiting */
     cy.get('@categorias')
     .find('.dropdown-content .select-item[tabindex="2"]').as('categoriaSel')
-    .wait(1000)
+    .wait(1500)
     .get('@categoriaSel')
     .then( option => {
       option.trigger('click');        
