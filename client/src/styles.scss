@@ -58,8 +58,9 @@ ul {
 label {
   b {
     margin-bottom: 5px;
-    span.required {
+    div.required {
       color: red;
+      display: inline;
     }
   }
 }

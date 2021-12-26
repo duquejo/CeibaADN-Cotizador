@@ -12,7 +12,12 @@ exports[`CrearCentroVacacional test Debería coincidir con el snapshot 1`] = `
       for="cv-title"
     >
       <b>
-        Título
+        Título 
+        <div
+          class="required"
+        >
+          *
+        </div>
       </b>
     </label>
     <input

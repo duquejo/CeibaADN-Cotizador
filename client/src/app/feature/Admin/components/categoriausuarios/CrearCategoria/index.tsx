@@ -5,10 +5,10 @@ import { Button } from '../../../../../shared/components/Button/index';
 import { CategoriaUsuarios } from '../../../models/CategoriaUsuarios';
 import { FormikHelpers } from 'formik/dist/types';
 import { Input } from '../../../../../shared/components/Input/index';
+import { Small } from '../../../../../shared/components/Small/index';
 import { SpanError } from '../../../../../shared/components/SpanErrors/index';
 import { TextArea } from '../../../../../shared/components/TextArea/index';
 import { useFormik } from 'formik';
-import { Small } from '../../../../../shared/components/Small/index';
 
 interface FormValues {
   title: string;
@@ -66,7 +66,7 @@ export const CrearCategoria: React.FC<CrearCategoriaUsuariosProps> = ({
   return (
     <form className="category__form" onSubmit={ formik.handleSubmit } noValidate>
       <h3>Crear categoría de usuarios</h3>
-      <label htmlFor="title"><b>Título <span className="required">*</span></b></label>
+      <label htmlFor="title"><b>Título <div className="required">*</div></b></label>
       <Input
         id="title"
         name="title"
@@ -88,7 +88,7 @@ export const CrearCategoria: React.FC<CrearCategoriaUsuariosProps> = ({
         onChange={ formik.handleChange }
       ></TextArea>
 
-      <label htmlFor="price_high"><b>Valor temporada alta <span className="required">*</span></b></label>
+      <label htmlFor="price_high"><b>Valor temporada alta <div className="required">*</div></b></label>
       <Small>Este campo corresponde al valor en pesos ($) a las fechas festivas/altas por día que están 
         preconfiguradas en el calendario de festivos.</Small>
       <Input
@@ -104,7 +104,7 @@ export const CrearCategoria: React.FC<CrearCategoriaUsuariosProps> = ({
         <SpanError>{formik.errors.priceHigh}</SpanError>
       )}      
 
-      <label htmlFor="price_low"><b>Valor temporada baja <span className="required">*</span></b></label>
+      <label htmlFor="price_low"><b>Valor temporada baja <div className="required">*</div></b></label>
       <Small>Este campo corresponde al valor en pesos ($) a las fechas convencionales que el usuario 
         seleccione del calendario.</Small>
       <Input

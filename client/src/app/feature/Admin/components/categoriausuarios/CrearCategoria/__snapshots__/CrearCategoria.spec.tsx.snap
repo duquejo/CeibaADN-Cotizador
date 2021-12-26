@@ -13,7 +13,12 @@ exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
       for="title"
     >
       <b>
-        Título
+        Título 
+        <div
+          class="required"
+        >
+          *
+        </div>
       </b>
     </label>
     <input
@@ -41,9 +46,19 @@ exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
       for="price_high"
     >
       <b>
-        Valor temporada alta
+        Valor temporada alta 
+        <div
+          class="required"
+        >
+          *
+        </div>
       </b>
     </label>
+    <small
+      class="sc-eCImPb hBpRFP"
+    >
+      Este campo corresponde al valor en pesos ($) a las fechas festivas/altas por día que están preconfiguradas en el calendario de festivos.
+    </small>
     <input
       class="sc-gsDKAQ kdvfBj"
       id="priceHigh"
@@ -57,9 +72,19 @@ exports[`CrearCategoria test Debería coincidir con el snapshot 1`] = `
       for="price_low"
     >
       <b>
-        Valor temporada baja
+        Valor temporada baja 
+        <div
+          class="required"
+        >
+          *
+        </div>
       </b>
     </label>
+    <small
+      class="sc-eCImPb hBpRFP"
+    >
+      Este campo corresponde al valor en pesos ($) a las fechas convencionales que el usuario seleccione del calendario.
+    </small>
     <input
       class="sc-gsDKAQ kdvfBj"
       id="priceLow"

@@ -123,7 +123,7 @@ export const CrearCotizacion: React.FC<CrearCotizacionProps> = ({
   return (
     <form className="cotizador__form" onSubmit={ formik.handleSubmit }>
       
-      <label htmlFor="title"><b>Centro vacacional { selectedCentroVacacional && <Small className="inline underlined">{ selectedCentroVacacional.nombre }</Small> }<span className="required">*</span></b></label>
+      <label htmlFor="title"><b>Centro vacacional { selectedCentroVacacional && <Small className="inline underlined">{ selectedCentroVacacional.nombre }</Small> }<div className="required">*</div></b></label>
       <Small>Seleccione uno de los siguientes Centros Vacacionales</Small>
       {
         centrosvacacionales && centrosvacacionales.length ?
@@ -139,7 +139,7 @@ export const CrearCotizacion: React.FC<CrearCotizacionProps> = ({
         : <p style={{ margin: '15px 0' }}>No hay centros vacacionales actualmente, vuelva en unos segundos o contacte al administrador.</p>
       }
 
-      <label htmlFor="personas"><b>Personas <span className="required">*</span></b></label>
+      <label htmlFor="personas"><b>Personas <div className="required">*</div></b></label>
       <Small>Seleccione la cantidad de personas que desean ir al Centro vacacional seleccionado, recuerde, Los menores de edad también cuentan como adulto</Small>
       <Input
         type="number"
@@ -154,7 +154,7 @@ export const CrearCotizacion: React.FC<CrearCotizacionProps> = ({
         <SpanError>{formik.errors.personas}</SpanError>
       )}
 
-      <label htmlFor="categoria"><b>Rango salarial <span className="required">*</span></b></label>
+      <label htmlFor="categoria"><b>Rango salarial <div className="required">*</div></b></label>
       <Small>Seleccione el rango salarial al que pertenece como afiliado de la compañía</Small>
       <Select 
         name="categoriaUsuarios" 
@@ -173,7 +173,7 @@ export const CrearCotizacion: React.FC<CrearCotizacionProps> = ({
         <SpanError>{formik.errors.categoriaUsuarios}</SpanError>
       )}
 
-      <label htmlFor="holidays"><b>Rango de fechas de viaje <span className="required">*</span></b></label>
+      <label htmlFor="holidays"><b>Rango de fechas de viaje <div className="required">*</div></b></label>
       <Small>Seleccione un día o rango de fechas las cuales desearía reservar en el centro vacacional.</Small>
       <div>
         <DayPicker 

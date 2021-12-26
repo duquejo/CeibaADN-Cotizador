@@ -67,7 +67,7 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
             className="sc-dkPtRN ffCKks"
           >
             <div
-              className="sc-hKwDye imUYjf"
+              className="sc-hKwDye bXaHAE"
             >
               <form
                 className="calendar__form"
@@ -80,7 +80,12 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
                   htmlFor="title"
                 >
                   <b>
-                    Título
+                    Título 
+                    <div
+                      className="required"
+                    >
+                      *
+                    </div>
                   </b>
                 </label>
                 <input
@@ -573,10 +578,10 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
                                 24
                               </div>
                               <div
-                                aria-disabled={false}
+                                aria-disabled={true}
                                 aria-label="sáb. 25 de dic. de 2021"
                                 aria-selected={false}
-                                className="DayPicker-Day DayPicker-Day--today"
+                                className="DayPicker-Day DayPicker-Day--disabled"
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
                                 role="gridcell"
@@ -588,7 +593,7 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
                                 aria-disabled={false}
                                 aria-label="dom. 26 de dic. de 2021"
                                 aria-selected={false}
-                                className="DayPicker-Day"
+                                className="DayPicker-Day DayPicker-Day--today"
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
                                 role="gridcell"
@@ -1734,7 +1739,7 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
               </form>
             </div>
             <div
-              className="sc-hKwDye imUYjf"
+              className="sc-hKwDye bXaHAE"
             >
               Array [
                 <h3>
@@ -1780,7 +1785,7 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
             className="sc-dkPtRN ffCKks"
           >
             <div
-              className="sc-hKwDye imUYjf"
+              className="sc-hKwDye bXaHAE"
             >
               <form
                 className="category__form"
@@ -1794,7 +1799,12 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
                   htmlFor="title"
                 >
                   <b>
-                    Título
+                    Título 
+                    <div
+                      className="required"
+                    >
+                      *
+                    </div>
                   </b>
                 </label>
                 <input
@@ -1825,9 +1835,19 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
                   htmlFor="price_high"
                 >
                   <b>
-                    Valor temporada alta
+                    Valor temporada alta 
+                    <div
+                      className="required"
+                    >
+                      *
+                    </div>
                   </b>
                 </label>
+                <small
+                  className="sc-crHmcD cUsFA"
+                >
+                  Este campo corresponde al valor en pesos ($) a las fechas festivas/altas por día que están preconfiguradas en el calendario de festivos.
+                </small>
                 <input
                   className="sc-jRQBWg fpIRMD"
                   id="priceHigh"
@@ -1842,9 +1862,19 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
                   htmlFor="price_low"
                 >
                   <b>
-                    Valor temporada baja
+                    Valor temporada baja 
+                    <div
+                      className="required"
+                    >
+                      *
+                    </div>
                   </b>
                 </label>
+                <small
+                  className="sc-crHmcD cUsFA"
+                >
+                  Este campo corresponde al valor en pesos ($) a las fechas convencionales que el usuario seleccione del calendario.
+                </small>
                 <input
                   className="sc-jRQBWg fpIRMD"
                   id="priceLow"
@@ -1864,12 +1894,17 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
               </form>
             </div>
             <div
-              className="sc-hKwDye imUYjf"
+              className="sc-hKwDye bXaHAE"
             >
               Array [
                 <h3>
                   Listado de categorías de usuarios
                 </h3>,
+                <small
+                  className="sc-crHmcD cUsFA"
+                >
+                  A continuación obtendrá una vista general de las categorías almacenadas. Estas categorías de usuarios influyen en el valor total de la cotización al realizar el respectivo cálculo.
+                </small>,
                 <p>
                   No hay categorías de usuarios disponibles actualmente. 
                   <i>
@@ -1901,7 +1936,7 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
             className="sc-dkPtRN ffCKks"
           >
             <div
-              className="sc-hKwDye imUYjf"
+              className="sc-hKwDye bXaHAE"
             >
               <form
                 className="cv__form"
@@ -1914,7 +1949,12 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
                   htmlFor="cv-title"
                 >
                   <b>
-                    Título
+                    Título 
+                    <div
+                      className="required"
+                    >
+                      *
+                    </div>
                   </b>
                 </label>
                 <input
@@ -2073,7 +2113,7 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
               </form>
             </div>
             <div
-              className="sc-hKwDye imUYjf"
+              className="sc-hKwDye bXaHAE"
             >
               Array [
                 <h3>
@@ -2134,7 +2174,7 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
             className="sc-dkPtRN ffCKks"
           >
             <div
-              className="sc-hKwDye imUYjf"
+              className="sc-hKwDye bXaHAE"
             >
               <form
                 className="cotizacion__form"
@@ -2148,7 +2188,12 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
                   htmlFor="title"
                 >
                   <b>
-                    Identificador
+                    Identificador 
+                    <div
+                      className="required"
+                    >
+                      *
+                    </div>
                   </b>
                 </label>
                 <input

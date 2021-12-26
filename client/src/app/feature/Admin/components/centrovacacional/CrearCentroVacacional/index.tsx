@@ -88,7 +88,7 @@ export const CrearCentroVacacional: React.FC<any> = ({
     <form className="cv__form" onSubmit={ formik.handleSubmit }>
       <h3>Crear centro vacacional</h3>
 
-      <label htmlFor="cv-title"><b>Título <span className="required">*</span></b></label>
+      <label htmlFor="cv-title"><b>Título <div className="required">*</div></b></label>
       <Input
         name="title"
         placeholder="Nombre del centro vacacional, ejemplo: 'Cartagena Resort'."

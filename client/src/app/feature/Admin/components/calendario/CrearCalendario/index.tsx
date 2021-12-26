@@ -89,7 +89,7 @@ export const CrearCalendario: React.FC<CrearCalendarioProps> = ({
     <form className="calendar__form" onSubmit={ formik.handleSubmit }>
       <h3>Crear calendario</h3>
       
-      <label htmlFor="title"><b>Título <span className="required">*</span></b></label>
+      <label htmlFor="title"><b>Título <div className="required">*</div></b></label>
       <Input
         name="title"
         placeholder="Título personalizado del calendario, por ejemplo: 'Calendario de alta afluencia enero'."

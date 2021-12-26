@@ -145,7 +145,7 @@ export const ModalCalendarios: React.FC<any> = ({
                     <hr/>
                     <form onSubmit={formik.handleSubmit}>
                         <label htmlFor="title">
-                            <b>Título</b>
+                            <b>Título <div className="required">*</div></b>
                         </label>
                         <Input
                             name="title"

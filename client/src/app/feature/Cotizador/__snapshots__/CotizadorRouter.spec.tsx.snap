@@ -29,6 +29,11 @@ exports[`Pruebas en <CotizadorRouter /> Debe mostrar la vista del Cotizador 1`] 
               >
                 <b>
                   Centro vacacional 
+                  <div
+                    className="required"
+                  >
+                    *
+                  </div>
                 </b>
               </label>
               <small
@@ -49,7 +54,12 @@ exports[`Pruebas en <CotizadorRouter /> Debe mostrar la vista del Cotizador 1`] 
                 htmlFor="personas"
               >
                 <b>
-                  Personas
+                  Personas 
+                  <div
+                    className="required"
+                  >
+                    *
+                  </div>
                 </b>
               </label>
               <small
@@ -71,7 +81,12 @@ exports[`Pruebas en <CotizadorRouter /> Debe mostrar la vista del Cotizador 1`] 
                 htmlFor="categoria"
               >
                 <b>
-                  Rango salarial
+                  Rango salarial 
+                  <div
+                    className="required"
+                  >
+                    *
+                  </div>
                 </b>
               </label>
               <small
@@ -96,7 +111,12 @@ exports[`Pruebas en <CotizadorRouter /> Debe mostrar la vista del Cotizador 1`] 
                 htmlFor="holidays"
               >
                 <b>
-                  Rango de fechas de viaje
+                  Rango de fechas de viaje 
+                  <div
+                    className="required"
+                  >
+                    *
+                  </div>
                 </b>
               </label>
               <small
@@ -558,10 +578,10 @@ exports[`Pruebas en <CotizadorRouter /> Debe mostrar la vista del Cotizador 1`] 
                               24
                             </div>
                             <div
-                              aria-disabled={false}
+                              aria-disabled={true}
                               aria-label="sáb. 25 de dic. de 2021"
                               aria-selected={false}
-                              className="DayPicker-Day DayPicker-Day--today"
+                              className="DayPicker-Day DayPicker-Day--disabled"
                               onClick={[Function]}
                               onKeyDown={[Function]}
                               role="gridcell"
@@ -573,7 +593,7 @@ exports[`Pruebas en <CotizadorRouter /> Debe mostrar la vista del Cotizador 1`] 
                               aria-disabled={false}
                               aria-label="dom. 26 de dic. de 2021"
                               aria-selected={false}
-                              className="DayPicker-Day"
+                              className="DayPicker-Day DayPicker-Day--today"
                               onClick={[Function]}
                               onKeyDown={[Function]}
                               role="gridcell"

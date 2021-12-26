@@ -13,7 +13,12 @@ exports[`BuscarCotizacion test Debería coincidir con el snapshot 1`] = `
       for="title"
     >
       <b>
-        Identificador
+        Identificador 
+        <div
+          class="required"
+        >
+          *
+        </div>
       </b>
     </label>
     <input
@@ -47,7 +52,12 @@ exports[`BuscarCotizacion test Debería coincidir con el snapshot 2`] = `
     htmlFor="title"
   >
     <b>
-      Identificador
+      Identificador 
+      <div
+        className="required"
+      >
+        *
+      </div>
     </b>
   </label>
   <input

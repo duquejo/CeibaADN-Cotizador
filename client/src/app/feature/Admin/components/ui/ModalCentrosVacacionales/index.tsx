@@ -177,7 +177,7 @@ export const ModalCentrosVacacionales: React.FC<any> = ({
                     <form onSubmit={formik.handleSubmit}>
 
                         <label htmlFor="title">
-                            <b>Título</b>
+                            <b>Título <div className="required">*</div></b>
                         </label>
                         <Input
                             name="title"
