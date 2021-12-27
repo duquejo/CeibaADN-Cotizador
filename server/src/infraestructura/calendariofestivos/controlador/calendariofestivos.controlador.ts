@@ -13,6 +13,7 @@ import { ManejadorBorrarCalendarioFestivos } from 'src/aplicacion/calendariofest
 // Reading Imports
 import { ManejadorObtenerCalendarioFestivos } from 'src/aplicacion/calendariofestivos/consulta/obtener-calendariofestivos.manejador';
 import { CalendarioFestivosDto } from 'src/aplicacion/calendariofestivos/consulta/dto/calendariofestivos.dto';
+import { constantes } from '../../../dominio/shared/constantes.enum';
 
 @Controller('calendariosFestivos')
 export class CalendarioFestivosControlador {
@@ -72,8 +73,8 @@ export class CalendarioFestivosControlador {
     type: Number,
   })
   async obtenerCalendarios(
-    @Query( 'page', new DefaultValuePipe(1), ParseIntPipe ) page = 1,
-    @Query('limit', new DefaultValuePipe(100), ParseIntPipe ) limit = 100,
+    @Query('page', new DefaultValuePipe(constantes.PAGINACION_RECURSOS_GET), ParseIntPipe ) page: number = constantes.PAGINACION_RECURSOS_GET,
+    @Query('limit', new DefaultValuePipe(constantes.LIMITE_RECURSOS_GET), ParseIntPipe ) limit: number = constantes.LIMITE_RECURSOS_GET,
   ): Promise<CalendarioFestivosDto[]> {
     if( page > 0 ) {
       page = ( page - 1 ) * limit;

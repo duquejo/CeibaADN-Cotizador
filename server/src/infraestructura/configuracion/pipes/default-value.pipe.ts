@@ -9,6 +9,7 @@ import { isNil } from '@nestjs/common/utils/shared.utils';
  * @publicApi
  */
 @Injectable()
+// eslint-disable-next-line
 export class DefaultValuePipe<T = any, R = any>
   implements PipeTransform<T, T | R> {
   constructor(private readonly defaultValue: R) {}
