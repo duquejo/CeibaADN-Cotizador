@@ -1,6 +1,6 @@
 import { Controller, Post, UsePipes, Body, ValidationPipe, Get, Patch, Param, ParseIntPipe, Query, Delete } from '@nestjs/common';
 import { ApiQuery } from '@nestjs/swagger';
-import { DefaultValuePipe } from '../../configuracion/pipes/default-value.pipe';
+import { DefaultNumberPipe } from '../../configuracion/pipes/default-value.pipe';
 
 // Transactional Imports
 import { ComandoGuardarCalendarioFestivos } from 'src/aplicacion/calendariofestivos/comando/guardar-calendariofestivos.comando';
@@ -73,8 +73,8 @@ export class CalendarioFestivosControlador {
     type: Number,
   })
   async obtenerCalendarios(
-    @Query('page', new DefaultValuePipe(constantes.PAGINACION_RECURSOS_GET), ParseIntPipe ) page: number = constantes.PAGINACION_RECURSOS_GET,
-    @Query('limit', new DefaultValuePipe(constantes.LIMITE_RECURSOS_GET), ParseIntPipe ) limit: number = constantes.LIMITE_RECURSOS_GET,
+    @Query('page', new DefaultNumberPipe(constantes.PAGINACION_RECURSOS_GET), ParseIntPipe ) page: number = constantes.PAGINACION_RECURSOS_GET,
+    @Query('limit', new DefaultNumberPipe(constantes.LIMITE_RECURSOS_GET), ParseIntPipe ) limit: number = constantes.LIMITE_RECURSOS_GET,
   ): Promise<CalendarioFestivosDto[]> {
     if( page > 0 ) {
       page = ( page - 1 ) * limit;
