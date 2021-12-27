@@ -1,5 +1,5 @@
 import { Controller, Post, UsePipes, Body, ValidationPipe, Get, Patch, Param, ParseIntPipe, Query, Delete } from '@nestjs/common';
-import { ApiOperation, ApiQuery } from '@nestjs/swagger';
+import { ApiQuery } from '@nestjs/swagger';
 import { DefaultValuePipe } from '../../configuracion/pipes/default-value.pipe';
 
 // Transactional Imports
