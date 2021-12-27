@@ -9,7 +9,7 @@ export class ManejadorObtenerCalendarioFestivos {
     private _daoCalendarioFestivos: DaoCalendarioFestivos
   ) {}
 
-  async ejecutar(): Promise<CalendarioFestivosDto[]> {
-    return this._daoCalendarioFestivos.obtener();
+  async ejecutar( page: number, limit: number ): Promise<CalendarioFestivosDto[]> {
+    return this._daoCalendarioFestivos.obtener( page, limit );
   }
 }
