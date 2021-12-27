@@ -106,28 +106,7 @@ describe('Pruebas e2e sobre el administrador de la plataforma de los calendarios
     .should('be.empty');
     
     cy.get('.calendar__form textarea[name="description"]')
-    .should('be.empty');    
-  });
-
-  it('Debería poder borrar un calendario si hay disponibles', () => {
-    cy.get('table.calendar .calendar__details')
-    .should('have.length.gt', 0 )
-    .first()
-    .find('span')
-    .last()
-    .click()
-    .then( () => {
-
-      cy.get('.swal2-container')
-      .should('contain.text', '¿Estás seguro?')
-      .get('button.swal2-confirm')
-      .click();
-
-      cy.get('.swal2-container')
-      .should('contain.text', 'Éxito')
-      .get('button.swal2-confirm')
-      .click();
-    });
+    .should('be.empty');
   });
 
   it('Debería poder editar un calendario disponible', () => {
@@ -198,6 +177,27 @@ describe('Pruebas e2e sobre el administrador de la plataforma de los calendarios
     .should('have.value', 'Un texto de prueba');
 
     cy.get('.ReactModal__Content button[type="submit"]')
-    .click('bottom');    
-  });   
+    .click('bottom');
+  });  
+
+  it('Debería poder borrar un calendario si hay disponibles', () => {
+    cy.get('table.calendar .calendar__details')
+    .should('have.length.gt', 0 )
+    .first()
+    .find('span')
+    .last()
+    .click()
+    .then( () => {
+
+      cy.get('.swal2-container')
+      .should('contain.text', '¿Estás seguro?')
+      .get('button.swal2-confirm')
+      .click();
+
+      cy.get('.swal2-container')
+      .should('contain.text', 'Éxito')
+      .get('button.swal2-confirm')
+      .click();
+    });
+  });     
 });

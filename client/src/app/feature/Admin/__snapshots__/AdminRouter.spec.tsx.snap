@@ -105,12 +105,12 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
                 </label>
                 <textarea
                   className="sc-iqseJM eAHJmX"
-                  defaultValue=""
                   id="description"
                   name="description"
                   onChange={[Function]}
                   placeholder="Descripción del calendario. Extienda más información de carácter administrativo del mismo, generando más opciones de recordación o gestión."
                   rows={3}
+                  value=""
                 />
                 <label
                   htmlFor="holidays"
@@ -1824,12 +1824,12 @@ exports[`Pruebas en <AdminRouter /> Debe mostrar la vista del Administrador 1`] 
                 </label>
                 <textarea
                   className="sc-iqseJM eAHJmX"
-                  defaultValue=""
                   id="description"
                   name="description"
                   onChange={[Function]}
                   placeholder="Descripción de la categoría, por ejemplo: 'Categoría para asociados seccional Medellín'"
                   rows={3}
+                  value=""
                 />
                 <label
                   htmlFor="price_high"

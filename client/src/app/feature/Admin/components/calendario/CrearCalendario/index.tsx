@@ -107,7 +107,7 @@ export const CrearCalendario: React.FC<CrearCalendarioProps> = ({
         name="description"
         placeholder="Descripción del calendario. Extienda más información de carácter administrativo del mismo, generando más opciones de recordación o gestión."
         id="description"
-        defaultValue={ formik.values.description }
+        value={ formik.values.description }
         onChange={formik.handleChange}
       />    
 

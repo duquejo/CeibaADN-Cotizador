@@ -84,7 +84,7 @@ export const CrearCategoria: React.FC<CrearCategoriaUsuariosProps> = ({
         id="description"
         name="description"
         placeholder="Descripción de la categoría, por ejemplo: 'Categoría para asociados seccional Medellín'"
-        defaultValue={ formik.values.description }
+        value={ formik.values.description }
         onChange={ formik.handleChange }
       ></TextArea>
 
