@@ -103,7 +103,7 @@ describe('Pruebas al controlador del calendario de festivos', () => {
 
   afterAll( async () => await app.close() );
 
-  it('Debería obtener los calendarios de festivos almacenados', () => {
+  it('Debería obtener los calendarios de festivos almacenados con los valores por defecto', () => {
 
     const calendariosFestivosMock: any[] = [{
       nombre: 'Campaña empleados Diciembre', // Nombre
@@ -116,6 +116,50 @@ describe('Pruebas al controlador del calendario de festivos', () => {
     return request( app.getHttpServer() ).get( '/calendariosFestivos' )
       .expect( HttpStatus.OK )
       .expect( calendariosFestivosMock );
+  });
+
+  it('Debería obtener los calendarios de festivos almacenados a través de la paginación', () => {
+
+    const calendariosFestivosMock: any[] = [{
+      id: 1,
+      nombre: 'Campaña empleados Diciembre', // Nombre
+      descripcion: 'Campaña para empleados aguinaldo navideño', // Descripción
+      festivos: [ '2021-12-18' ] // Festivos
+    },{
+      id: 2,
+      nombre: 'Campaña empleados Diciembre', // Nombre
+      descripcion: 'Campaña para empleados aguinaldo navideño', // Descripción
+      festivos: [ '2021-12-18' ] // Festivos
+    }];
+    const pagina = 2;
+    const limite = 1;
+
+    daoCalendarioFestivos.obtener.returns( Promise.resolve( calendariosFestivosMock[1] ) );
+
+    return request( app.getHttpServer() ).get( `/calendariosFestivos` )
+      .query({
+        page: pagina,
+        limit: limite
+      })
+      .expect( HttpStatus.OK )
+      .expect( calendariosFestivosMock[1] );
+  });
+
+  it('Debería obtener un arreglo vacío si no hay resultados sobre una página al obtener los calendarios', () => {
+
+    const calendariosFestivosMock: any[] = [];
+    const pagina = 3;
+    const limite = 1;
+
+    daoCalendarioFestivos.obtener.returns( Promise.resolve( calendariosFestivosMock ) );
+
+    return request( app.getHttpServer() ).get( `/calendariosFestivos` )
+      .query({
+        page: pagina,
+        limit: limite
+      })
+      .expect( HttpStatus.OK )
+      .expect( [] );
   });
 
   it('Debería fallar al actualizar un calendario que no existe', async () => {

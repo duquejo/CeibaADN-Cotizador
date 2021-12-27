@@ -1,4 +1,6 @@
-import { Controller, Post, UsePipes, Body, ValidationPipe, Get, Patch, Param, ParseIntPipe, Delete } from '@nestjs/common';
+import { Controller, Post, UsePipes, Body, ValidationPipe, Get, Patch, Param, ParseIntPipe, Query, Delete } from '@nestjs/common';
+import { ApiQuery } from '@nestjs/swagger';
+import { DefaultValuePipe } from '../../configuracion/pipes/default-value.pipe';
 
 // Transactional Imports
 import { ComandoGuardarCalendarioFestivos } from 'src/aplicacion/calendariofestivos/comando/guardar-calendariofestivos.comando';
@@ -59,7 +61,25 @@ export class CalendarioFestivosControlador {
    * Obtener todos los calendarios Endpoint
    */
   @Get()
-  async obtenerCalendarios(): Promise<CalendarioFestivosDto[]> {
-    return this._manejadorObtenerCalendariosFestivos.ejecutar();
+  @ApiQuery({
+    name: 'page',
+    required: false,
+    type: Number,
+  })
+  @ApiQuery({
+    name: 'limit',
+    required: false,
+    type: Number,
+  })
+  async obtenerCalendarios(
+    @Query( 'page', new DefaultValuePipe(1), ParseIntPipe ) page = 1,
+    @Query('limit', new DefaultValuePipe(100), ParseIntPipe ) limit = 100,
+  ): Promise<CalendarioFestivosDto[]> {
+    if( page > 0 ) {
+      page = ( page - 1 ) * limit;
+    } else {
+      page = 0;
+    }
+    return this._manejadorObtenerCalendariosFestivos.ejecutar( page, limit );
   }
 }

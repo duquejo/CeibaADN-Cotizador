@@ -51,17 +51,19 @@ describe('Calendario Festivos', () => {
   it('Calendario festivos debería crear bien sin festivos', () => {
 
     // Arrange & Act
+    const nombre = 'Calendario de prueba';
     const _calendario: CalendarioFestivos = new CalendarioFestivosBuilder(
       calendarioTestData.nombre
     )
+    .setNombre( nombre )
     .setDescripcion( calendarioTestData.descripcion )
     .build(); 
 
     // Assert
-    expect( _calendario.nombre ).toBe( calendarioTestData.nombre );
+    expect( _calendario.nombre ).toBe( nombre );
     expect( _calendario.descripcion ).toBe( calendarioTestData.descripcion );
     expect( _calendario.festivos ).toEqual([]);
-  });  
+  });
 
   it('Calendario festivos debería fallar si la fecha no es válida', () => {
     

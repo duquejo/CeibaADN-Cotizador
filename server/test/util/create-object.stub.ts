@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { SinonSandbox, SinonStubbedInstance, stub } from 'sinon';
 
 type Func = (...args: any[]) => any;
@@ -22,5 +23,3 @@ export function createStubObj<T>(methodNames: StubObjMethodNames<T>, sandbox ?: 
   (methodNames as any).forEach((methodName) => stubbedInstance[methodName] = _stub());
   return stubbedInstance;
 }
-
-

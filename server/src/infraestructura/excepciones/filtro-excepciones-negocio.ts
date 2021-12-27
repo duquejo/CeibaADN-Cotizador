@@ -11,6 +11,7 @@ export class FiltroExcepcionesDeNegocio implements ExceptionFilter {
     this.logger.setContext(FiltroExcepcionesDeNegocio.name);
   }
 
+  /* istanbul ignore file */
   catch(error: ErrorDeNegocio, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();

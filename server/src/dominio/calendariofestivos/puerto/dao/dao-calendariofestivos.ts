@@ -5,5 +5,5 @@ export abstract class DaoCalendarioFestivos {
   /**
    * Read OP
    */
-  abstract obtener(): Promise<CalendarioFestivosDto[]>;
+  abstract obtener( page: number, limit: number ): Promise<CalendarioFestivosDto[]>;
 }
