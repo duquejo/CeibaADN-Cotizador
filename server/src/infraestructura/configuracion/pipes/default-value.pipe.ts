@@ -10,11 +10,9 @@ import { isNil } from '@nestjs/common/utils/shared.utils';
  */
 @Injectable()
 // eslint-disable-next-line
-export class DefaultValuePipe<T = any, R = any>
-  implements PipeTransform<T, T | R> {
-  constructor(private readonly defaultValue: R) {}
-
-  transform(value?: T, _metadata?: ArgumentMetadata): T | R {
+export class DefaultValuePipe implements PipeTransform {
+  constructor( private readonly defaultValue: any ){}
+  transform(value?: any, _metadata?: ArgumentMetadata) {
     if (
       isNil(value) ||
       (typeof value === 'number' && isNaN((value as unknown) as number))
