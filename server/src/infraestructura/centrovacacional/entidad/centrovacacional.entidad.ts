@@ -24,7 +24,7 @@ export class CentroVacacionalEntidad {
   calendarios: CalendarioFestivosEntidad[];
 
   // categoriaUsuarios.entidad.ts
-  @ManyToMany( () => CategoriaUsuariosEntidad, ( categoriaUsuarios: CategoriaUsuariosEntidad ) => categoriaUsuarios.centroVacacional )
+  @ManyToMany( () => CategoriaUsuariosEntidad, ( categoriaUsuarios: CategoriaUsuariosEntidad ) => categoriaUsuarios.centroVacacional,  { cascade: true, eager: true } )
   @JoinTable({ name: 'centrovacacional_categoriausuarios' })
   categoriaUsuarios!: CategoriaUsuariosEntidad[];
 

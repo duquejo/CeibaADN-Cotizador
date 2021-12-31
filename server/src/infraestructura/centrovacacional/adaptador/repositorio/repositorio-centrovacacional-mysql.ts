@@ -4,6 +4,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 import { CentroVacacional } from 'src/dominio/centrovacacional/modelo/centrovacacional';
 import { CentroVacacionalEntidad } from 'src/infraestructura/centrovacacional/entidad/centrovacacional.entidad';
+import { CalendarioFestivosEntidad } from 'src/infraestructura/calendariofestivos/entidad/calendariofestivos.entidad';
+import { CategoriaUsuariosEntidad } from 'src/infraestructura/categoriausuarios/entidad/categoriausuarios.entidad';
 import { RepositorioCentroVacacional } from 'src/dominio/centrovacacional/puerto/repositorio/repositorio-centrovacacional';
 @Injectable()
 export class RepositorioCentroVacacionalMysql implements RepositorioCentroVacacional {
@@ -23,9 +25,9 @@ export class RepositorioCentroVacacionalMysql implements RepositorioCentroVacaci
 
         entidad.nombre            = centroVacacional.nombre;
         entidad.descripcion       = centroVacacional.descripcion;
-        entidad.calendarios       = centroVacacional.calendarios;
+        entidad.calendarios       = centroVacacional.calendarios as CalendarioFestivosEntidad[];
         entidad.calendarioActivo  = centroVacacional.calendarioActivo;
-        entidad.categoriaUsuarios = centroVacacional.categoriasUsuarios;
+        entidad.categoriaUsuarios = centroVacacional.categoriasUsuarios as CategoriaUsuariosEntidad[];
 
         return this.repositorio.save(entidad);
     }
@@ -41,9 +43,9 @@ export class RepositorioCentroVacacionalMysql implements RepositorioCentroVacaci
         
         entidadActual.nombre            = centroVacacional.nombre;
         entidadActual.descripcion       = centroVacacional.descripcion;
-        entidadActual.calendarios       = centroVacacional.calendarios;
+        entidadActual.calendarios       = centroVacacional.calendarios as CalendarioFestivosEntidad[];
         entidadActual.calendarioActivo  = centroVacacional.calendarioActivo;
-        entidadActual.categoriaUsuarios = centroVacacional.categoriasUsuarios;
+        entidadActual.categoriaUsuarios = centroVacacional.categoriasUsuarios as CategoriaUsuariosEntidad[];
         
         await this.repositorio.save( entidadActual );
     }

@@ -1,4 +1,5 @@
 import { CentroVacacional } from '../../../../src/dominio/centrovacacional/modelo/centrovacacional';
+import { CentroVacacionalBuilder } from '../../../util/test-builder';
 
 describe('Centro vacacional', () => {
 
@@ -14,96 +15,95 @@ describe('Centro vacacional', () => {
 
     it('Centro vacacional debería crearse bien', () => {
         
-        // Arrange
-        const centroVacacionalValues = Object.values( centroVacacionalBaseData );
-
-        // Act
-        const centroVacacional = new _CentroVacacional( ...centroVacacionalValues );
+        // Arrange & Act
+        const _centroVacacional: CentroVacacional = new CentroVacacionalBuilder( 
+            centroVacacionalBaseData.nombre
+        )
+        .setDescripcion( centroVacacionalBaseData.descripcion )
+        .setCalendarios( centroVacacionalBaseData.calendarios )
+        .setCategoriasUsuarios( centroVacacionalBaseData.categoriasUsuarios )
+        .setCalendarioActivo( centroVacacionalBaseData.calendarioActivo )
+        .build();
 
         // Assert
-        expect( centroVacacional.nombre ).toEqual( centroVacacionalBaseData.nombre );
-        expect( centroVacacional.descripcion ).toBe( centroVacacionalBaseData.descripcion );   
-        expect( centroVacacional.calendarioActivo ).toBe( centroVacacionalBaseData.calendarioActivo );   
-        expect( centroVacacional.calendarios ).toEqual( centroVacacionalBaseData.calendarios );   
-        expect( centroVacacional.categoriasUsuarios ).toEqual( centroVacacionalBaseData.categoriasUsuarios );
+        expect( _centroVacacional.nombre ).toEqual( centroVacacionalBaseData.nombre );
+        expect( _centroVacacional.descripcion ).toBe( centroVacacionalBaseData.descripcion );
+        expect( _centroVacacional.calendarioActivo ).toBe( centroVacacionalBaseData.calendarioActivo );
+        expect( _centroVacacional.calendarios ).toEqual( centroVacacionalBaseData.calendarios );
+        expect( _centroVacacional.categoriasUsuarios ).toEqual( centroVacacionalBaseData.categoriasUsuarios );
     });
 
     it('Centro vacacional debería crearse con los valores por defecto', () => {
 
-        // Arrange
-        const centroVacacionalSinParametrosOpcionales = {
-          nombre: 'Finca San Jerónimo'
-        };
-        
-        // Act
-        const centroVacacional = new _CentroVacacional( ...Object.values( centroVacacionalSinParametrosOpcionales ) );
+        // Arrange & Act
+        const _centroVacacional: CentroVacacional = new CentroVacacionalBuilder( 
+            'Centro vacacional por defecto'
+        )
+        .setNombre( centroVacacionalBaseData.nombre )
+        .build();
     
         // Assert
-        expect( centroVacacional.nombre ).toEqual( centroVacacionalSinParametrosOpcionales.nombre );
-        expect( centroVacacional.descripcion ).toBeUndefined();
-        expect( centroVacacional.calendarioActivo ).toBeUndefined();
-        expect( centroVacacional.calendarios ).toBeUndefined();
-        expect( centroVacacional.categoriasUsuarios ).toBeUndefined();
+        expect( _centroVacacional.nombre ).toEqual( centroVacacionalBaseData.nombre );
+        expect( _centroVacacional.descripcion ).toBe('');
+        expect( _centroVacacional.calendarioActivo ).toBeNull();
+        expect( _centroVacacional.calendarios ).toEqual([]);
+        expect( _centroVacacional.categoriasUsuarios ).toEqual([]);
     });
 
     it('Centro vacacional debería crearse asignando como activo un valor existente en el arreglo del calendario', () => {
 
-        // Arrange
-        const centroVacacionalCopia = Object.assign( {}, centroVacacionalBaseData );
-
-        centroVacacionalCopia.calendarios = [ 2, 5 ];
-        centroVacacionalCopia.calendarioActivo = 5;
-
-        const centroVacacionalValues = Object.values( centroVacacionalCopia );
-
-        // Act
-        const centroVacacional = new _CentroVacacional( ...centroVacacionalValues );
+        // Arrange & Act
+        const calendariosActualizar = [ 2, 5 ];
+        const calendarioActivoActualizar = 5;
+        const _centroVacacional: CentroVacacional = new CentroVacacionalBuilder( 
+            centroVacacionalBaseData.nombre
+        )
+        .setDescripcion( centroVacacionalBaseData.descripcion )
+        .setCalendarios( calendariosActualizar )
+        .setCalendarioActivo( calendarioActivoActualizar )
+        .setCategoriasUsuarios( centroVacacionalBaseData.categoriasUsuarios )
+        .build();
 
         // Assert
-        expect( centroVacacional.nombre ).toBe( centroVacacionalCopia.nombre );
-        expect( centroVacacional.descripcion ).toBe( centroVacacionalCopia.descripcion );
-        expect( centroVacacional.calendarioActivo ).toBe( centroVacacionalCopia.calendarioActivo );
-        expect( centroVacacional.calendarios ).toBe( centroVacacionalCopia.calendarios );
-        expect( centroVacacional.categoriasUsuarios ).toEqual( centroVacacionalCopia.categoriasUsuarios );
+        expect( _centroVacacional.calendarioActivo ).toEqual( calendarioActivoActualizar );
+        expect( _centroVacacional.calendarios ).toEqual( calendariosActualizar );
     });
 
     it('Centro vacacional debería crearse asignando como activo el primer calendario del arreglo si su valor es nulo', () => {
 
-        // Arrange
-        const centroVacacionalCopia = Object.assign( {}, centroVacacionalBaseData );
-
-        // Calendario activo no corresponde a ninguno
-        centroVacacionalCopia.calendarios = [ 5, 9, 7 ];
-        centroVacacionalCopia.calendarioActivo = null;
-
-        const centroVacacionalValues = Object.values( centroVacacionalCopia );
-
-        // Act
-        const centroVacacional = new _CentroVacacional( ...centroVacacionalValues );
+        // Arrange & Act
+        const calendariosActualizar = [ 5, 9, 7 ];
+        const calendarioActivoActualizar = null;
+        const _centroVacacional: CentroVacacional = new CentroVacacionalBuilder( 
+            centroVacacionalBaseData.nombre
+        )
+        .setDescripcion( centroVacacionalBaseData.descripcion )
+        .setCalendarios( calendariosActualizar )
+        .setCalendarioActivo( calendarioActivoActualizar )
+        .setCategoriasUsuarios( centroVacacionalBaseData.categoriasUsuarios )
+        .build();
         
         // Assert
-        expect( centroVacacional.nombre ).toBe( centroVacacionalCopia.nombre );
-        expect( centroVacacional.descripcion ).toBe( centroVacacionalCopia.descripcion );
-        expect( centroVacacional.calendarios ).toEqual( centroVacacionalCopia.calendarios );
-        expect( centroVacacional.calendarios[0] ).toBe( centroVacacional.calendarioActivo );
-        expect( centroVacacional.categoriasUsuarios ).toEqual( centroVacacionalCopia.categoriasUsuarios );
+        expect( _centroVacacional.calendarios ).toEqual( calendariosActualizar );
+        expect( _centroVacacional.calendarioActivo ).toBe( calendariosActualizar[0] );
     });
 
     it('Centro vacacional debería dar por valor de calendario activo nulo si no hay calendarios', () => {
 
         // Arrange
-        const centroVacacionalCopia = Object.assign( {}, centroVacacionalBaseData );
-
         // Calendario activo no corresponde a ninguno
-        centroVacacionalCopia.calendarios = [];
-        centroVacacionalCopia.calendarioActivo = null;
-
-        const centroVacacionalValues = Object.values( centroVacacionalCopia );
-
-        // Act
-        const centroVacacional = new _CentroVacacional( ...centroVacacionalValues );
+        const calendariosActualizar = [];
+        const calendarioActivoActualizar = null;
+        const _centroVacacional: CentroVacacional = new CentroVacacionalBuilder( 
+            centroVacacionalBaseData.nombre
+        )
+        .setDescripcion( centroVacacionalBaseData.descripcion )
+        .setCalendarios( calendariosActualizar )
+        .setCalendarioActivo( calendarioActivoActualizar )
+        .setCategoriasUsuarios( centroVacacionalBaseData.categoriasUsuarios )
+        .build();
         
         // Assert
-        expect( centroVacacional.calendarioActivo ).toBeNull();
+        expect( _centroVacacional.calendarioActivo ).toBeNull();
     });
 });

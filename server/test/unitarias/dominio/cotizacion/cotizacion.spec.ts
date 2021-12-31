@@ -8,6 +8,7 @@ import { ErrorValorRequerido } from '../../../../src/dominio/errores/error-valor
 import { CentroVacacionalEntidad } from '../../../../src/infraestructura/centrovacacional/entidad/centrovacacional.entidad';
 import { CategoriaUsuariosEntidad } from '../../../../src/infraestructura/categoriausuarios/entidad/categoriausuarios.entidad';
 import { ErrorCotizacionInvalida } from '../../../../src/dominio/errores/error-cotizacion-invalida';
+import { CotizacionBuilder } from '../../../util/test-builder';
 
 
 describe('Cotizaciones', () => {
@@ -37,119 +38,150 @@ describe('Cotizaciones', () => {
     descripcion: "Cartagena",
     valorAlta: 50000,
     valorBaja: 25000
-  } as CategoriaUsuariosEntidad;  
+  } as CategoriaUsuariosEntidad;
 
   it( 'La base de la cotización debería crear bien', () => {
     
     // Arrange
-    const cotizacionValues = Object.values( cotizacionDataTest );
-
-    // Act
-    const cotizacion = new _Cotizacion( ...cotizacionValues );
+    const _cotizacion: Cotizacion = new CotizacionBuilder( 
+      cotizacionDataTest.centroVacacional,
+      cotizacionDataTest.categoriaUsuarios,
+      cotizacionDataTest.personas,
+      cotizacionDataTest.fechaInicio,
+      cotizacionDataTest.fechaFin
+    )
+    .build();
     
     // Assert
-    expect( cotizacion.centroVacacional ).toBe( cotizacionDataTest.centroVacacional );
-    expect( cotizacion.categoriaUsuarios ).toBe( cotizacionDataTest.categoriaUsuarios );
-    expect( cotizacion.personas ).toBe( cotizacionDataTest.personas );
-
-    expect( cotizacion.fechaInicio ).toBe( moment( cotizacionDataTest.fechaInicio ).format() );
-    expect( cotizacion.fechaFin ).toBe( moment( cotizacionDataTest.fechaFin ).format() );
-
+    expect( _cotizacion.centroVacacional ).toBe( cotizacionDataTest.centroVacacional );
+    expect( _cotizacion.categoriaUsuarios ).toBe( cotizacionDataTest.categoriaUsuarios );
+    expect( _cotizacion.personas ).toBe( cotizacionDataTest.personas );
+    expect( _cotizacion.fechaInicio ).toBe( moment( cotizacionDataTest.fechaInicio ).format() );
+    expect( _cotizacion.fechaFin ).toBe( moment( cotizacionDataTest.fechaFin ).format() );
   });
 
   it('La base de la cotización debería fallar si no se proveen las fechas', () => {
     // 3A
-    return expect( async () => new _Cotizacion() )
-          .rejects
-          .toStrictEqual( new ErrorValorRequerido( `Debes proporcionar una fecha` ) );
+    return expect( async () => {
+      return new CotizacionBuilder( 
+        cotizacionDataTest.centroVacacional,
+        cotizacionDataTest.categoriaUsuarios,
+        cotizacionDataTest.personas,
+        cotizacionDataTest.fechaInicio,
+        cotizacionDataTest.fechaFin
+      )
+      .setFechaInicio('')
+      .setFechaFin('')
+      .build();  
+    })
+    .rejects
+    .toStrictEqual( new ErrorValorRequerido( `Debes proporcionar una fecha` ) );
   });
 
   it('La cotización debería validar que la fecha inicial sea inferior que la fecha final', () => {
 
     // Arrange
-    const cotizacionDataTestCopia = Object.assign( {}, cotizacionDataTest );
-
-    cotizacionDataTestCopia.fechaInicio = '2021-12-10';
-    cotizacionDataTestCopia.fechaFin = '2021-10-18';
-
-    const cotizacionDataTestCopiaValues = Object.values( cotizacionDataTestCopia );
+    const nuevaFechaInicio = '2021-12-10';
+    const nuevaFechaFin = '2021-10-18';
 
     // Act & Assert
-    return expect( async () => new _Cotizacion( ...cotizacionDataTestCopiaValues ) )
-          .rejects
-          .toStrictEqual( new ErrorFechaInvalida( `{${ moment( cotizacionDataTestCopia.fechaFin ).format( constantes.FORMATO_FECHA ) }} debe ser mayor que {${ moment( cotizacionDataTestCopia.fechaInicio ).format( constantes.FORMATO_FECHA ) }}` ) );
+    return expect( async () => {
+      return new CotizacionBuilder( 
+        cotizacionDataTest.centroVacacional,
+        cotizacionDataTest.categoriaUsuarios,
+        cotizacionDataTest.personas,
+        cotizacionDataTest.fechaInicio,
+        cotizacionDataTest.fechaFin
+      )
+      .setFechaInicio( nuevaFechaInicio )
+      .setFechaFin( nuevaFechaFin )
+      .build();
+    })
+    .rejects
+    .toStrictEqual( new ErrorFechaInvalida( 
+      `{${ moment( nuevaFechaFin ).format( constantes.FORMATO_FECHA ) }} debe ser mayor que {${ moment( nuevaFechaInicio ).format( constantes.FORMATO_FECHA ) }}`
+    ) );
   });
 
   it('La cotización debería aceptar solo el formato \'YYYY-MM-DD\'', () => {
 
     // Arrange
-    const cotizacionDataTestCopia = Object.assign( {}, cotizacionDataTest );
-    cotizacionDataTestCopia.fechaInicio = '1-10-1998';
-    const cotizacionDataTestCopiaValues = Object.values( cotizacionDataTestCopia );
+    const nuevaFechaInicio = '1-10-1998';
 
     // Act & Assert
-    return expect( async () => new _Cotizacion( ...cotizacionDataTestCopiaValues ) )
-          .rejects
-          .toStrictEqual( new ErrorFechaInvalida( `{${ cotizacionDataTestCopia.fechaInicio }} no es una fecha válida` ) );
-  });
-
-  it('La cotización debería aceptar solo el formato \'YYYY-MM-DD\'', () => {
-
-    // Arrange
-    const cotizacionDataTestCopia = Object.assign( {}, cotizacionDataTest );
-    cotizacionDataTestCopia.fechaInicio = '1-10-1998';
-    const cotizacionDataTestCopiaValues = Object.values( cotizacionDataTestCopia );
-
-    // Act & Assert
-    return expect( async () => new _Cotizacion( ...cotizacionDataTestCopiaValues ) )
-          .rejects
-          .toStrictEqual( new ErrorFechaInvalida( `{${ cotizacionDataTestCopia.fechaInicio }} no es una fecha válida` ) );
+    return expect( async () => {
+      return new CotizacionBuilder( 
+        cotizacionDataTest.centroVacacional,
+        cotizacionDataTest.categoriaUsuarios,
+        cotizacionDataTest.personas,
+        cotizacionDataTest.fechaInicio,
+        cotizacionDataTest.fechaFin
+      )
+      .setFechaInicio( nuevaFechaInicio )
+      .build();      
+    })
+    .rejects
+    .toStrictEqual( new ErrorFechaInvalida( `{${ nuevaFechaInicio }} no es una fecha válida` ) );
   });
 
   it('Cotización debería tener disponible el método calcularCotizacion', () => {
 
-    // Arrange
-    const cotizacionValues = Object.values( cotizacionDataTest );
-
-    // Act
-    const cotizacion = new _Cotizacion( ...cotizacionValues );
+    // Arrange & Act
+    const _cotizacion: Cotizacion = new CotizacionBuilder( 
+      cotizacionDataTest.centroVacacional,
+      cotizacionDataTest.categoriaUsuarios,
+      cotizacionDataTest.personas,
+      cotizacionDataTest.fechaInicio,
+      cotizacionDataTest.fechaFin
+    )
+    .build();
 
     // Assert
-    const spy = jest.spyOn( cotizacion, 'calcularCotizacion' ).mockImplementation( () => '' );
-    expect( cotizacion.calcularCotizacion() ).toBe('');
-    expect( cotizacion.calcularCotizacion ).toHaveBeenCalledTimes(1);
-    spy.mockRestore(); // Clear mock
+    expect( _cotizacion.calcularCotizacion ).toBeDefined();
   });
 
   it('Cotización debería validar si el calendario está disponible para el cálculo', () => {
 
     // Arrange 
-    const cotizacionValues = Object.values( cotizacionDataTest );
     const centroVacacionalSinCalendarios = Object.assign( {}, centroVacacionalDataMock );
     delete centroVacacionalSinCalendarios.calendarios;
 
     // Act
-    const cotizacion = new _Cotizacion( ...cotizacionValues );
+    const _cotizacion: Cotizacion = new CotizacionBuilder( 
+      cotizacionDataTest.centroVacacional,
+      cotizacionDataTest.categoriaUsuarios,
+      cotizacionDataTest.personas,
+      cotizacionDataTest.fechaInicio,
+      cotizacionDataTest.fechaFin
+    )
+    .build();
 
-    return expect( async () => cotizacion.calcularCotizacion(
+    // Assert
+    return expect( async () => _cotizacion.calcularCotizacion(
       centroVacacionalSinCalendarios,
       categoriaUsuariosDataMock
-    ) )
+    ))
     .rejects
     .toStrictEqual( new ErrorCotizacionInvalida( `El centro vacacional no tiene calendarios disponibles en el momento` ) );
   });
 
-  it('Cotización debería validar si el centro vacacional tiene un calendario activo', () => {
+  it('Debería validarse la cotización si el centro vacacional tiene un calendario activo', () => {
 
-    // Arrange 
-    const cotizacionValues = Object.values( cotizacionDataTest );
+    // Arrange
     const centroVacacionalSinCalendarioActivo = Object.assign( {}, centroVacacionalDataMock );
     centroVacacionalSinCalendarioActivo.calendarioActivo = undefined;
 
     // Act
-    const cotizacion = new _Cotizacion( ...cotizacionValues );
+    const _cotizacion: Cotizacion = new CotizacionBuilder( 
+      cotizacionDataTest.centroVacacional,
+      cotizacionDataTest.categoriaUsuarios,
+      cotizacionDataTest.personas,
+      cotizacionDataTest.fechaInicio,
+      cotizacionDataTest.fechaFin
+    )
+    .build();
 
-    return expect( async () => cotizacion.calcularCotizacion(
+    return expect( async () => _cotizacion.calcularCotizacion(
       centroVacacionalSinCalendarioActivo,
       categoriaUsuariosDataMock
     ) )
@@ -157,15 +189,22 @@ describe('Cotizaciones', () => {
     .toStrictEqual( new ErrorCotizacionInvalida( `El centro vacacional no tiene calendarios disponibles en el momento` ) );
   });
 
-  it('Cotización debería calcular el valor correspondiente a partir de toda la información entregada', () => {
+  it('Debería calcularse el valor de la cotización a partir de toda la información suministrada', () => {
 
-    // Arrange 
-    const cotizacionValues = Object.values( cotizacionDataTest );
+    // Arrange & Act
+    const _cotizacion: Cotizacion = new CotizacionBuilder( 
+      cotizacionDataTest.centroVacacional,
+      cotizacionDataTest.categoriaUsuarios,
+      cotizacionDataTest.personas,
+      cotizacionDataTest.fechaInicio,
+      cotizacionDataTest.fechaFin
+    )
+    .setPersonas( 5 )
+    .setCentroVacacional( cotizacionDataTest.centroVacacional )
+    .setCategoriaUsuarios( cotizacionDataTest.categoriaUsuarios )
+    .build();
 
-    // Act
-    const cotizacion = new _Cotizacion( ...cotizacionValues );
-
-    const totalCotizacion = cotizacion.calcularCotizacion(
+    const totalCotizacion = _cotizacion.calcularCotizacion(
       centroVacacionalDataMock,
       categoriaUsuariosDataMock
     );
@@ -200,63 +239,56 @@ describe('Cotizaciones', () => {
      * 
      * 250000 * 3 = 750000 (Total grupo)
      */
-    expect( totalCotizacion.totalGrupo ).toBe( 750000 );
+    expect( totalCotizacion.totalGrupo ).toBe( 1250000 );
   });
 
-  it('Cotización debería calcular los días de alta y baja de manera efectiva', () => {
+  it('Debería calcularse efectivamente una cotización si los días de alta y baja son suministrados', () => {
 
     // Arrange 
     let diasAlta = 0;
 
-    const fechaInicio = cotizacionDataTest.fechaInicio; 
-    const fechaFin = cotizacionDataTest.fechaFin;
+    const _cotizacion: Cotizacion = new CotizacionBuilder( 
+      cotizacionDataTest.centroVacacional,
+      cotizacionDataTest.categoriaUsuarios,
+      cotizacionDataTest.personas,
+      cotizacionDataTest.fechaInicio,
+      cotizacionDataTest.fechaFin
+    )
+    .build();
 
-    const momFechaInicio: moment.Moment = moment( fechaInicio, constantes.FORMATO_FECHA ),
-        momFechaFin:    moment.Moment = moment( fechaFin, constantes.FORMATO_FECHA );
+    const momFechaInicio: moment.Moment = moment( 
+      _cotizacion.fechaInicio, 
+      constantes.FORMATO_FECHA
+    );
 
-    const cotizacionValues = Object.values( cotizacionDataTest );
+    const momFechaFin: moment.Moment = moment( 
+      _cotizacion.fechaFin, 
+      constantes.FORMATO_FECHA 
+    );
 
     // días alta check
     centroVacacionalDataMock.calendarios[0].festivos.forEach( festivo => {
       const momFestivo  = moment( festivo, constantes.FORMATO_FECHA );
-      const rangoFechas = moment( momFestivo ).isBetween( momFechaInicio, momFechaFin, undefined, '[]' );
+      const rangoFechas = moment( momFestivo ).isBetween( 
+        momFechaInicio, 
+        momFechaFin, 
+        undefined, 
+        '[]'
+      );
+
       if( rangoFechas ) {
         diasAlta++;
       }
     });
-  
 
     // Act
-    const cotizacion = new _Cotizacion( ...cotizacionValues );
-
-    const totalCotizacion = cotizacion.calcularCotizacion(
+    const totalCotizacion = _cotizacion.calcularCotizacion(
       centroVacacionalDataMock,
       categoriaUsuariosDataMock
     );
     
     // Assert
     expect( diasAlta ).toBe( totalCotizacion.diasAlta );
-    expect( ( totalCotizacion.diasTotales - diasAlta ) ).toBe(totalCotizacion.diasBaja);
-
-    /**
-     * Valor alta 50000
-     * Valor baja 25000
-     * 
-     * Fecha Inicial 2021-12-10
-     * Fecha Final 2021-12-18
-     * Festivo 2021-12-18
-     * 
-     * Personas 3
-     * 
-     * 9 días en total
-     * 1 día alta
-     * 8 días baja
-     * 
-     * 8 x 25000 = 200000 ( Total baja )
-     * 1 x 50000 = 500000 ( Total alta )
-     * 
-     * 250000 * 3 = 750000 (Total grupo)
-     */
-    expect( totalCotizacion.totalGrupo ).toBe( 750000 );
+    expect( ( totalCotizacion.diasTotales - diasAlta ) ).toBe( totalCotizacion.diasBaja );
   });
 });

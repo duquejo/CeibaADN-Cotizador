@@ -31,7 +31,7 @@ export class ServicioGuardarCentroVacacional {
              * Validar ID y obtener calendarios
              */             
             const [ resCalendarios, numCalendarios ]: [ CalendarioFestivosEntidad[], number] = (
-                await this._repositorioCalendarioFestivos.validarCalendarios( centroVacacional.calendarios )
+                await this._repositorioCalendarioFestivos.validarCalendarios( centroVacacional.calendarios as CalendarioFestivosEntidad[] )
             );
 
             if( numCalendarios === 0 ) {
@@ -56,7 +56,7 @@ export class ServicioGuardarCentroVacacional {
              * Validar ID y obtener categorías
              */                
             const [resCategorias,numCategorias]: [ CategoriaUsuariosEntidad[], number] = (
-                await this._repositorioCategoriaUsuarios.validarCategorias( centroVacacional.categoriasUsuarios )
+                await this._repositorioCategoriaUsuarios.validarCategorias( centroVacacional.categoriasUsuarios as CategoriaUsuariosEntidad[] )
             );
             
             if( numCategorias === 0 ) {

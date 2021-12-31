@@ -27,7 +27,7 @@ import { databaseConfigFactory } from 'src/infraestructura/configuracion/databas
       envFilePath: `env/${process.env.NODE_ENV}.env`,
       validationSchema: Joi.object({
         NODE_ENV: Joi.string()
-          .valid(NodeEnv.DEVELOPMENT, NodeEnv.PRODUCTION)
+          .valid(NodeEnv.DEVELOPMENT, NodeEnv.PRODUCTION, NodeEnv.TEST)
           .required(),
       }),
     }),

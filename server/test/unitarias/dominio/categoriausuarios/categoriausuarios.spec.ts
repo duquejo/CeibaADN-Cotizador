@@ -1,4 +1,5 @@
 import { CategoriaUsuarios } from '../../../../src/dominio/categoriausuarios/modelo/categoriausuarios';
+import { CategoriaUsuariosBuilder } from '../../../util/test-builder';
 
 describe('Categoría de usuarios', () => {
 
@@ -13,33 +14,37 @@ describe('Categoría de usuarios', () => {
 
   it('Categoría de usuarios debería crear bien', () => {
     
-    // Arrange
-    const categoriaUsuarioValues = Object.values( categoriaUsuarioDataTest );
-
-    // Act
-    const categoriaUsuarios = new _CategoriaUsuarios( ...categoriaUsuarioValues );
+    // Arrange & Act
+    const _categoriaUsuarios: CategoriaUsuarios = new CategoriaUsuariosBuilder(
+      categoriaUsuarioDataTest.nombre,
+      categoriaUsuarioDataTest.valorAlta,
+      categoriaUsuarioDataTest.valorBaja
+    )
+    .setDescripcion( categoriaUsuarioDataTest.descripcion )
+    .build();
     
     // Assert
-    expect( categoriaUsuarios.nombre ).toEqual( categoriaUsuarioDataTest.nombre );
-    expect( categoriaUsuarios.descripcion ).toEqual( categoriaUsuarioDataTest.descripcion );
-    expect( categoriaUsuarios.valorAlta ).toEqual( categoriaUsuarioDataTest.valorAlta );
-    expect( categoriaUsuarios.valorBaja ).toEqual( categoriaUsuarioDataTest.valorBaja );
+    expect( _categoriaUsuarios.nombre ).toEqual( categoriaUsuarioDataTest.nombre );
+    expect( _categoriaUsuarios.descripcion ).toEqual( categoriaUsuarioDataTest.descripcion );
+    expect( _categoriaUsuarios.valorAlta ).toEqual( categoriaUsuarioDataTest.valorAlta );
+    expect( _categoriaUsuarios.valorBaja ).toEqual( categoriaUsuarioDataTest.valorBaja );
   });
 
   it('Categoría de usuarios debería crearse con los valores por defecto', () => {
 
-    // Arrange
-    const calendarioSinParametros = {
-      nombre: 'Rango de $1\'500.000 en adelante'
-    };
-    
-    // Act
-    const categoriaUsuarios = new _CategoriaUsuarios( ...Object.values( calendarioSinParametros ) );
+    // Arrange & Act
+    const _categoriaUsuarios: CategoriaUsuarios = new CategoriaUsuariosBuilder(
+      categoriaUsuarioDataTest.nombre,
+      categoriaUsuarioDataTest.valorAlta,
+      categoriaUsuarioDataTest.valorBaja
+    )
+    .setValorAlta( 60000 )
+    .setValorBaja( 40000 )
+    .setNombre( 'Categoría con valores por defecto' )
+    .build();
 
     // Assert
-    expect( categoriaUsuarios.nombre ).toEqual( calendarioSinParametros.nombre );
-    expect( categoriaUsuarios.descripcion ).toBe('');
-    expect( categoriaUsuarios.valorAlta ).toBeUndefined();
-    expect( categoriaUsuarios.valorBaja ).toBeUndefined();
+    expect( _categoriaUsuarios.nombre ).toEqual( 'Categoría con valores por defecto' );
+    expect( _categoriaUsuarios.descripcion ).toBe('');
   });
 });

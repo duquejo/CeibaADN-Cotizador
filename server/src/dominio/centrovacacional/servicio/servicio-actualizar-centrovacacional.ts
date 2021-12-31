@@ -33,7 +33,7 @@ export class ServicioActualizarCentroVacacional {
              * Validar ID y obtener categorías
              */
             const [ resCat, numCat ]: [ CategoriaUsuariosEntidad[], number] = ( 
-                await this._repositorioCategoriaUsuarios.validarCategorias( centroVacacional.categoriasUsuarios ) 
+                await this._repositorioCategoriaUsuarios.validarCategorias( centroVacacional.categoriasUsuarios as CategoriaUsuariosEntidad[] ) 
             );
             
             if( numCat === 0 ) {
@@ -53,7 +53,7 @@ export class ServicioActualizarCentroVacacional {
              * Validar ID y obtener calendarios
              */            
             const [ resCal, numCal ]: [ CalendarioFestivosEntidad[], number] = (
-                await this._repositorioCalendarioFestivos.validarCalendarios( centroVacacional.calendarios )
+                await this._repositorioCalendarioFestivos.validarCalendarios( centroVacacional.calendarios as CalendarioFestivosEntidad[] )
             );
 
             if( numCal === 0 ) {
