@@ -1,8 +1,6 @@
+# ADN Ceiba Project - Cotizador de centros vacacionales (Backend)
+
 Hash de git relacionado: efc8d0cf
-
-# ADN Ceiba Project - Cotizador de centros vacacionales
-
-Initial Project Reference Using Hexagonal Architecture
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
@@ -67,4 +65,4 @@ Patrón con el cual dividimos nuestro modelo de objetos en dos, un modelo para c
 - `npm run test:e2e` Pruebas de integración
 - `npm run test` Todas las pruebas
 - `npm run test:cov` Todas las pruebas con cobertura
-"# CeibaADN-Cotizador" 
+  "# CeibaADN-Cotizador"
