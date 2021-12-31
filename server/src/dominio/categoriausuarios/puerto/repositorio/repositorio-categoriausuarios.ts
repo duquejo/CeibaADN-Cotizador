@@ -8,11 +8,12 @@ export abstract class RepositorioCategoriaUsuarios {
       * Reglas negocio
       */
      abstract validarCategorias( categoriasUsuariosId: CategoriaUsuariosEntidad[] ): Promise<[ CategoriaUsuariosEntidad[], number]>;
-     abstract existeCategoriaUsuarios( categoriasUsuarioId: number): Promise<[CategoriaUsuariosEntidad[], number]>;
+     abstract existeCategoriaUsuarios( categoriasUsuarioId: number): Promise<boolean>;
      abstract obtenerUnaCategoriaUsuarios( categoriasUsuarioId: number): Promise<CategoriaUsuariosEntidad>;
      
      /**
       * Operaciones transaccionales
       */
      abstract guardar( categoriaUsuarios: CategoriaUsuarios ): Promise<CategoriaUsuariosEntidad>;
+     abstract borrar( categoriaId : number ): Promise<void>;
 }

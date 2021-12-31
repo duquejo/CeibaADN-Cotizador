@@ -43,10 +43,8 @@ export class RepositorioCategoriaUsuariosMysql implements RepositorioCategoriaUs
      * Helper existeCategoriaUsuarios
      * @param {number} categoriasUsuarioId
      */
-    async existeCategoriaUsuarios( categoriasUsuarioId: number): Promise<[CategoriaUsuariosEntidad[], number]> {
-        return this.repositorio.findAndCount({
-            where: { id: categoriasUsuarioId }
-        });
+    async existeCategoriaUsuarios( categoriasUsuarioId: number): Promise<boolean> {
+        return await this.repositorio.findOne( categoriasUsuarioId ) ? true : false;
     }
 
     /**
@@ -56,4 +54,13 @@ export class RepositorioCategoriaUsuariosMysql implements RepositorioCategoriaUs
     async obtenerUnaCategoriaUsuarios( categoriasUsuarioId: number): Promise<CategoriaUsuariosEntidad> {
         return this.repositorio.findOne( categoriasUsuarioId );
     }
+
+    /**
+     * Borrar Categoria
+     * @param {number} categoriaId
+     */
+     async borrar( categoriaId: number ): Promise<void> {
+        await this.repositorio.delete( categoriaId );
+    }
+
 }

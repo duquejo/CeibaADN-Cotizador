@@ -545,40 +545,40 @@ exports[`CrearCotizacion test Debería coincidir con el snapshot 1`] = `
                   role="row"
                 >
                   <div
-                    aria-disabled="false"
+                    aria-disabled="true"
                     aria-label="lun. 27 de dic. de 2021"
                     aria-selected="false"
-                    class="DayPicker-Day DayPicker-Day--today"
+                    class="DayPicker-Day DayPicker-Day--disabled"
                     role="gridcell"
                     tabindex="-1"
                   >
                     27
                   </div>
                   <div
-                    aria-disabled="false"
+                    aria-disabled="true"
                     aria-label="mar. 28 de dic. de 2021"
                     aria-selected="false"
-                    class="DayPicker-Day"
+                    class="DayPicker-Day DayPicker-Day--disabled"
                     role="gridcell"
                     tabindex="-1"
                   >
                     28
                   </div>
                   <div
-                    aria-disabled="false"
+                    aria-disabled="true"
                     aria-label="mié. 29 de dic. de 2021"
                     aria-selected="false"
-                    class="DayPicker-Day"
+                    class="DayPicker-Day DayPicker-Day--disabled"
                     role="gridcell"
                     tabindex="-1"
                   >
                     29
                   </div>
                   <div
-                    aria-disabled="false"
+                    aria-disabled="true"
                     aria-label="jue. 30 de dic. de 2021"
                     aria-selected="false"
-                    class="DayPicker-Day"
+                    class="DayPicker-Day DayPicker-Day--disabled"
                     role="gridcell"
                     tabindex="-1"
                   >
@@ -588,7 +588,7 @@ exports[`CrearCotizacion test Debería coincidir con el snapshot 1`] = `
                     aria-disabled="false"
                     aria-label="vie. 31 de dic. de 2021"
                     aria-selected="false"
-                    class="DayPicker-Day"
+                    class="DayPicker-Day DayPicker-Day--today"
                     role="gridcell"
                     tabindex="-1"
                   >
@@ -708,23 +708,23 @@ exports[`CrearCotizacion test Debería coincidir con el snapshot 1`] = `
                 >
                   <div
                     aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--disabled DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--disabled DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--disabled DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
+                    class="DayPicker-Day DayPicker-Day--disabled DayPicker-Day--outside"
+                  />
+                  <div
+                    aria-disabled="true"
                     class="DayPicker-Day DayPicker-Day--today DayPicker-Day--outside"
-                  />
-                  <div
-                    aria-disabled="true"
-                    class="DayPicker-Day DayPicker-Day--outside"
-                  />
-                  <div
-                    aria-disabled="true"
-                    class="DayPicker-Day DayPicker-Day--outside"
-                  />
-                  <div
-                    aria-disabled="true"
-                    class="DayPicker-Day DayPicker-Day--outside"
-                  />
-                  <div
-                    aria-disabled="true"
-                    class="DayPicker-Day DayPicker-Day--outside"
                   />
                   <div
                     aria-disabled="false"

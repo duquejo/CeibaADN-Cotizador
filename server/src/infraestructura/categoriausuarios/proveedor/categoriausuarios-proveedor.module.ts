@@ -22,6 +22,13 @@ import { ManejadorObtenerCategoriaUsuarios } from 'src/aplicacion/categoriausuar
 import { daoCategoriaUsuariosProvider } from 'src/infraestructura/categoriausuarios/proveedor/dao/dao-categoriausuarios.proveedor';
 import { DaoCategoriaUsuarios } from 'src/dominio/categoriausuarios/puerto/dao/dao-categoriausuarios';
 
+/**
+ * Borrar
+ */
+import { ServicioBorrarCategoriaUsuarios } from '../../../dominio/categoriausuarios/servicio/servicio-borrar-categoriausuarios';
+import { servicioBorrarCategoriaUsuariosProveedor } from './servicio/servicio-borrar-calendariofestivos.proveedor';
+import { ManejadorBorrarCategoriaUsuarios } from '../../../aplicacion/categoriausuarios/comando/borrar-categoriausuarios.manejador';
+
 @Module({
   imports: [TypeOrmModule.forFeature( [ CategoriaUsuariosEntidad ] ) ],
   providers: [
@@ -30,6 +37,11 @@ import { DaoCategoriaUsuarios } from 'src/dominio/categoriausuarios/puerto/dao/d
       inject: [ RepositorioCategoriaUsuarios ],
       useFactory: servicioGuardarCategoriaUsuariosProveedor
     },
+    {
+      provide: ServicioBorrarCategoriaUsuarios,
+      inject: [ RepositorioCategoriaUsuarios ],
+      useFactory: servicioBorrarCategoriaUsuariosProveedor
+    },
 
     // Read Operations
     ManejadorObtenerCategoriaUsuarios, // Aplicación / Consulta / DTO
@@ -37,6 +49,7 @@ import { DaoCategoriaUsuarios } from 'src/dominio/categoriausuarios/puerto/dao/d
 
     // Transactional Operations
     ManejadorGuardarCategoriaUsuarios, // Aplicación / Comando
+    ManejadorBorrarCategoriaUsuarios, // Aplicación / Comando
 
     repositorioCategoriaUsuariosProvider, // Aplicación / Proveedor / Repositorio
   ],
@@ -51,6 +64,9 @@ import { DaoCategoriaUsuarios } from 'src/dominio/categoriausuarios/puerto/dao/d
 
     ServicioGuardarCategoriaUsuarios, // Dominio / Servicio
     ManejadorGuardarCategoriaUsuarios, // Aplicación / Comando
+
+    ServicioBorrarCategoriaUsuarios, // Dominio / Servicio
+    ManejadorBorrarCategoriaUsuarios, // Aplicación / Comando
   ]
 })
 export class CategoriaUsuariosProveedorModule {}

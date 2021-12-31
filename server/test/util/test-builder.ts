@@ -2,6 +2,7 @@ import * as moment from 'moment';
 import { CategoriaUsuarios } from 'src/dominio/categoriausuarios/modelo/categoriausuarios';
 import { CalendarioFestivos } from 'src/dominio/calendariofestivos/modelo/calendariofestivos';
 import { CentroVacacional } from 'src/dominio/centrovacacional/modelo/centrovacacional';
+import { Cotizacion } from 'src/dominio/cotizacion/modelo/cotizacion';
 
 /**
  * 
@@ -68,7 +69,7 @@ export class CalendarioFestivosBuilder {
 
 export class CategoriaUsuariosBuilder {
     private _nombre: string;
-    private _descripcion: string = '';
+    private _descripcion = '';
     private _valorAlta = 0;
     private _valorBaja = 0;
 
@@ -130,8 +131,8 @@ export class CategoriaUsuariosBuilder {
 
 export class CentroVacacionalBuilder {
     private _nombre: string;
-    private _descripcion: string = '';
-    private _calendarioActivo?: number = null;
+    private _descripcion = '';
+    private _calendarioActivo: number = null;
     private _calendarios: number[] = [];
     private _categoriasUsuarios: number[] = [];
 
@@ -196,5 +197,86 @@ export class CentroVacacionalBuilder {
 
     get categoriasUsuarios() {
         return this._categoriasUsuarios; 
+    }
+}
+
+export class CotizacionBuilder {
+    private _centroVacacional: number;
+    private _categoriaUsuarios: number;
+    private _personas: number;
+    private _fechaInicio: string;
+    private _fechaFin: string;
+
+    constructor( 
+        centroVacacional: number,
+        categoriaUsuarios: number,
+        personas: number,
+        fechaInicio: string,
+        fechaFin: string 
+    ) {
+        this._centroVacacional = centroVacacional;
+        this._categoriaUsuarios = categoriaUsuarios;
+        this._personas = personas;
+        this._fechaInicio = fechaInicio;
+        this._fechaFin = fechaFin;
+    }
+
+    setCentroVacacional( centroVacacional: number ): CotizacionBuilder {
+        this._centroVacacional = centroVacacional; 
+        return this;
+    }
+
+    setCategoriaUsuarios( categoriaUsuarios: number ): CotizacionBuilder {
+        this._categoriaUsuarios = categoriaUsuarios;
+        return this;
+    }
+
+    setPersonas( personas: number ): CotizacionBuilder {
+        this._personas = personas; 
+        return this;
+    }
+
+    setFechaInicio( fechaInicio: string ): CotizacionBuilder {
+        this._fechaInicio = fechaInicio; 
+        return this;
+    }
+
+    setFechaFin( fechaFin: string ): CotizacionBuilder {
+        this._fechaFin = fechaFin; 
+        return this;
+    }  
+
+    /**
+     * Construye un objeto del tipo Cotización
+     * @returns {Cotizacion}
+     */
+    build(): Cotizacion {
+        return new Cotizacion(
+            this._centroVacacional,
+            this._categoriaUsuarios,
+            this._personas,
+            this._fechaInicio,
+            this._fechaFin
+        );
+    }
+
+    get centroVacacional() {
+        return this._centroVacacional; 
+    }
+
+    get categoriaUsuarios() {
+        return this._categoriaUsuarios; 
+    }
+
+    get personas() {
+        return this._personas; 
+    }
+
+    get fechaInicio() {
+        return this._fechaInicio; 
+    }
+
+    get fechaFin() {
+        return this._fechaFin; 
     }
 }
